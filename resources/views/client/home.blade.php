@@ -13,7 +13,7 @@
 								<h6>THE BEST EXPERIENCE</h6> -->
                                 <img src="../klassy/images/Logo-4.png" alt="">
 								<div class="main-white-button scroll-to-section">
-									<a href="/membership-application">Become A Member</a>
+									<a href="/membership-information">Become A Member</a>
 								</div>
 							</div>
 						</div>
