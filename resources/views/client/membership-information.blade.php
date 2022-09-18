@@ -51,7 +51,7 @@
                   <h6>Complete the following steps</h6>
               </div>
               <div class="">
-                <a href="/membership-application" id="membership-button">Become A Member</a>
+                <a href="/membership-application" id="membership-button" target="_blank">Become A Member</a>
               </div>
           </div>
       </div>

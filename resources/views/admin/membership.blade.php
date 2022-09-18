@@ -22,10 +22,9 @@
         <td>{{ $m->updated_at }}</td>
         <td>
 
-            @if($m->status == 1)
+            @if($m->is_approved)
                 <span class="badge badge-info">Pre-approved</span>
-            @else
-                <span class="badge badge-success">Approved</span>
+           
             @endif
         </td>
         <td>
