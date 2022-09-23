@@ -15,7 +15,6 @@
   </thead>
   <tbody>
     @foreach ($membership as $m)
-<<<<<<< Updated upstream
         <tr>
         <td>{{ $m->Fname }}</td>
         <td>{{ $m->Lname }}</td>
@@ -32,24 +31,6 @@
             <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal{{ $m->id }}">Details</button>
         </td>
         </tr>
-=======
-      <tr>
-      <td>{{ $m->Fname }}</td>
-      <td>{{ $m->Lname }}</td>
-      <td>{{ $m->unit }}</td>
-      <td>{{ $m->updated_at }}</td>
-      <td>
-          @if($m->status == 1)
-            <span class="badge badge-info">Pre-approved</span>
-          @else
-            <span class="badge badge-success">Approved</span>
-          @endif
-      </td>
-      <td>
-          <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal{{ $m->id }}">Details</button>
-      </td>
-      </tr>
->>>>>>> Stashed changes
     @endforeach
   </tbody>
 </table>

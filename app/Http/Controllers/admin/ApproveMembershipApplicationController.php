@@ -76,6 +76,8 @@ class ApproveMembershipApplicationController extends Controller
         $membership->is_approved = $request->is_approved;
         $membership->save();
 
+        
+
         return back();
     }
 

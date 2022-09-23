@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Spouse extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'membership_application_id',
+        'spouseFname',
+        'spouseAge',
+        'spouseOcc',
+        'spouseMI',
+        'spouseEmplrName',
+        'spouseConNum',
+    ];
 }

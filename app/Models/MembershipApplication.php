@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Beneficiary;
+use App\Models\Spouse;
 
 class MembershipApplication extends Model
 {
@@ -29,21 +31,16 @@ class MembershipApplication extends Model
         'SSSnum',
         'email',
         'NumDependents',
-        'spouseFname',
-        'spouseAge',
-        'spouseOcc',
-        'spouseMI',
-        'spouseEmplrName',
-        'spouseConNum',
-        'benName',
-        'benRelation',
-        'benAge',
-        'benAddress',
-        'benMothersLname',
-        'benMothersFname',
-        'benMothersMname',
-        'status'
+        'is_approved'
         // 'selfiepic',
         // 'empIDpic'
     ];
+
+    public function Beneficiary(){
+        return $this->hasMany(Beneficiary::class);
+    }
+
+    public function spouse(){
+        return $this->hasOne(Spouse::class);
+    }
 }

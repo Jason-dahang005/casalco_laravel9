@@ -129,11 +129,6 @@
 				<div class="chef-item">
 					<div class="thumb">
 						<div class="overlay"></div>
-						<!-- <ul class="social-icons">
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-						</ul> -->
 						<img src="../klassy/images/RegularLoan.png" alt="Chef #1">
 					</div>
 					<div class="down-content">
@@ -215,21 +210,19 @@
                                     <li><a href='#tabs-2'><img src="../klassy/images/CUBEd.jpg" alt="">Lunch</a></a></li>
                                     <li><a href='#tabs-3'><img src="../klassy/images/cumc-logo-heading-svg.svg" alt="">Dinner</a></a></li>
                                   </ul> -->
-                                            <section class="section" id="about">
-                                                    
-                                                    <div class="row">
-                                                                        <div class="col-4">
-                                                                            <img src="../klassy/images/CU-Logo.jpg" alt="">
-                                                                        </div>
-                                                                        <div class="col-4">
-                                                                            <img src="../klassy/images/CUBEd.jpg" alt="">
-                                                                        </div>
-                                                                        <div class="col-4">
-                                                                            <img src="../klassy/images/cumc-logo-heading-svg.svg" alt="">
-                                                                        </div>
-                                                           
-                                                    </div>
-                                            </section>
+                                    <section class="section" id="about">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <img src="../klassy/images/CU-Logo.jpg" alt="">
+                                            </div>
+                                            <div class="col-4">
+                                                <img src="../klassy/images/CUBEd.jpg" alt="">
+                                            </div>
+                                            <div class="col-4">
+                                                <img src="../klassy/images/cumc-logo-heading-svg.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </section>
                               </div>
                           </div>
                       </div>

@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\MembershipApplication;
 
 return new class extends Migration
 {
@@ -15,6 +16,14 @@ return new class extends Migration
     {
         Schema::create('beneficiaries', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(MembershipApplication::class);
+            $table->string('benName')->nullable();
+            $table->string('benRelation')->nullable();
+            $table->string('benAge')->nullable();
+            $table->string('benAddress')->nullable();
+            $table->string('benMothersLname')->nullable();
+            $table->string('benMothersFname')->nullable();
+            $table->string('benMothersMname')->nullable();
             $table->timestamps();
         });
     }
