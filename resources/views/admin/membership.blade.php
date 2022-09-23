@@ -45,7 +45,19 @@
         </div>
         <!-- Modal body -->
         <div class="modal-body">
-          <h4>Personal Information</h4>
+          <div class="row">
+            <div class="col-4">
+              <h4>Personal Information</h4>
+              
+            </div>
+            <div class="col-4">
+              <input type="text" class="form-control" placeholder="Account No">
+              
+            </div>
+            <div class="col-4">
+              <input type="text" class="form-control" placeholder="OR No">
+            </div>
+          </div>
           <div class="border border-danger"></div>
           <div class="row pt-3">
             <div class="col-lg-4">

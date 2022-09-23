@@ -75,7 +75,6 @@ class ApproveMembershipApplicationController extends Controller
         $membership = MembershipApplication::find($id);
         $membership->is_approved = $request->is_approved;
         $membership->save();
-
         
 
         return back();
