@@ -120,6 +120,7 @@ use App\Http\Controllers\MembershipReportsController;
 
 Auth::routes();
 Route::view("/", "client.home");
+Route::view("/express-loan-form", "client.express-loan-form");
 Route::view('/regular-loans', 'client.regular-loans');
 Route::view('/special-loans', 'client.special-loans');
 Route::view('/express-loans', 'client.express-loans');

@@ -50,7 +50,30 @@
               <div class="section-heading">
                   <h6>Complete the following steps</h6>
               </div>
+              <div class="col-lg-12 offset-lg-12 text-center">
+                <div class="d-flex align-items-center flex-column bd-highlight mb-3">
+                <div class="py-2 bd-highlight border mb-3 rounded bg-primary text-white" style="width: 70px;">
+                  <h1>1</h1>
+                </div>
+                <div class="mb-4">
+                  <h6>Fill up the membership form</h6>
+                </div>
+                <div class="py-2  bd-highlight border mb-3 rounded bg-secondary text-white" style="width: 70px ">
+                  <h1>2</h1>
+                </div>  
+                <div class="mb-4">
+                  <h6>Watch the Casalco Membership <br>   seminar Video</h6>
+                </div>
+                <div class="py-2  bd-highlight border mb-3 rounded bg-success text-white" style="width: 70px">
+                  <h1>3</h1>
+                </div>
+                <div class="mb-4">
+                  <h6>Wait for a Call/Email and go for <br>   walk-in payment</h6>
+                </div>
+              </div>
+              </div>
               <div class="">
+                  
                 <a href="/membership-application" id="membership-button" target="_blank">Become A Member</a>
               </div>
           </div>
