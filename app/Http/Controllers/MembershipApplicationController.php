@@ -95,6 +95,7 @@ class MembershipApplicationController extends Controller
         $m->SSSnum = $r->SSSnum;
         $m->email = $r->email;
         $m->NumDependents = $r->NumDependents;
+        $m->membership_type = 0;
         $m->save();
 
         $b = new Beneficiary();

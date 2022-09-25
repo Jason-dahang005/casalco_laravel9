@@ -8,6 +8,7 @@
       <th>First Name</th>
       <th>Last Name</th>
       <th>Unit</th>
+      <th>Membership Type</th>
       <th>Date Pre-approved</th>
       <th>Status</th>
       {{-- <th>Actions</th> --}}
@@ -19,10 +20,17 @@
         <td>{{ $m->Fname }}</td>
         <td>{{ $m->Lname }}</td>
         <td>{{ $m->unit }}</td>
+        <td>
+          @if ($m->membership_type == 0)
+            <span class="badge badge-info">Online</span>
+          @else
+            <span class="badge badge-info">Walk-in</span>
+          @endif
+        </td>
         <td>{{ $m->updated_at }}</td>
         <td>
             @if($m->is_approved == 1)
-              <span class="badge badge-info">Pre-approved</span>
+              <span class="badge badge-primary">Pre-approved</span>
             @endif
         </td>
         {{-- <td>

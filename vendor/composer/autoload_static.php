@@ -534,7 +534,11 @@ class ComposerStaticInit0c294f2ce8aa2944cc980a2653073055
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Models\\AttachedFile' => __DIR__ . '/../..' . '/app/Models/AttachedFile.php',
         'App\\Models\\Beneficiary' => __DIR__ . '/../..' . '/app/Models/Beneficiary.php',
+<<<<<<< Updated upstream
         'App\\Models\\ExpressLoanApp' => __DIR__ . '/../..' . '/app/Models/ExpressLoanApp.php',
+=======
+        'App\\Models\\Member' => __DIR__ . '/../..' . '/app/Models/Member.php',
+>>>>>>> Stashed changes
         'App\\Models\\MembershipApplication' => __DIR__ . '/../..' . '/app/Models/MembershipApplication.php',
         'App\\Models\\Spouse' => __DIR__ . '/../..' . '/app/Models/Spouse.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',

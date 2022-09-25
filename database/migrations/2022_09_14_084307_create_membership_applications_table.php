@@ -36,7 +36,9 @@ return new class extends Migration
             $table->string('NumDependents');
             // $table->string('selfiepic');
             // $table->string('empIDpic');
-            $table->integer('is_approved')->default(0);        
+            $table->integer('is_approved')->default(0);
+            $table->boolean('membership_type')->comment('0 = online, 1 = walk-in');
+            $table->string('assigned_officer')->nullable();
             $table->timestamps();
         });
     }

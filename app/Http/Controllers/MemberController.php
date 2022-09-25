@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers;
 
+use App\Models\Member;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\MembershipApplication;
-use App\Models\Member;
 
-class ApproveMembershipApplicationController extends Controller
+class MemberController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,7 @@ class ApproveMembershipApplicationController extends Controller
      */
     public function index()
     {
-        $membership = MembershipApplication::where('is_approved', 1)->get();
-        return view('admin.membership', compact('membership'));
+        //
     }
 
     /**
@@ -44,10 +42,10 @@ class ApproveMembershipApplicationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Member  $member
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Member $member)
     {
         //
     }
@@ -55,49 +53,33 @@ class ApproveMembershipApplicationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Member  $member
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Member $member)
     {
-        $membership = MembershipApplication::find($id);
-        return view('officer.membership', compact('membership'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Member  $member
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Member $member)
     {
-        $membership = MembershipApplication::find($id);
-        $membership->is_approved = $request->is_approved;
-        $approved = $membership->save();
-
-        if ($approved) {
-            Member::create([
-                'user_id' => 1,
-                'membership_application_id' => 1,
-                'account_id' => 'qwe123',
-                'or_id' => 'qwe123'
-            ]);
-        }
-
-        
-
-        return back();
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Member  $member
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Member $member)
     {
         //
     }

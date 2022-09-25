@@ -36,7 +36,11 @@ return array(
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
     'App\\Models\\AttachedFile' => $baseDir . '/app/Models/AttachedFile.php',
     'App\\Models\\Beneficiary' => $baseDir . '/app/Models/Beneficiary.php',
+<<<<<<< Updated upstream
     'App\\Models\\ExpressLoanApp' => $baseDir . '/app/Models/ExpressLoanApp.php',
+=======
+    'App\\Models\\Member' => $baseDir . '/app/Models/Member.php',
+>>>>>>> Stashed changes
     'App\\Models\\MembershipApplication' => $baseDir . '/app/Models/MembershipApplication.php',
     'App\\Models\\Spouse' => $baseDir . '/app/Models/Spouse.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
