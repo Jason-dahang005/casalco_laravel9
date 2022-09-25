@@ -2,7 +2,7 @@
 @section('title', 'Membership')
 @section('officer_content')
 
-<button class="btn btn-sm btn-success mb-2" data-toggle="modal" data-target="#myModal1">Add Walk-in</button>
+<button class="btn btn-sm btn-success mb-2" data-toggle="modal" data-target="#myModal01">Add Walk-in</button>
 
 <table class="table table-bordered table-striped table-sm" id="example2">
 	<thead>
@@ -150,7 +150,7 @@
               <div class="form-group">
               <label for="First Name" class="form-label">Email Address</label>
               <label for="First Name" class="form-label">Gender</label>
-                <input type="text" class="form-control" disabled placeholder="Email Address" value="{{ $m->enail }}">
+                <input type="text" class="form-control" disabled placeholder="Email Address" value="{{ $m->email }}">
               </div>
             </div>
             <div class="col-lg-4">
@@ -282,7 +282,7 @@
 </div>
 @endforeach
 
-<div class="modal fade" id="myModal1">
+<div class="modal fade" id="myModal01">
   <div class="modal-dialog modal-lg modal-dialog-scrollable">
      <div class="modal-content">
         <!-- Modal Header -->

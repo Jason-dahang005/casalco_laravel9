@@ -10,15 +10,15 @@
               <div class="left-text-content">
                   <div class="section-heading">
                       <h6>Contact Us</h6>
-                      <h2>Here You Can Leave Us A Message For Inquirees</h2>
+                      <h2>Here You Can Leave Us A Message For Inquiries</h2>
                   </div>
-                  <p>Donec pretium est orci, non vulputate arcu hendrerit a. Fusce a eleifend riqsie, namei sollicitudin urna diam, sed commodo purus porta ut.</p>
+                 
                   <div class="row">
                       <div class="col-lg-6">
                           <div class="phone">
                               <i class="fa fa-phone"></i>
                               <h4>Phone Numbers</h4>
-                              <span><a href="#">080-090-0990</a><br><a href="#">080-090-0880</a></span>
+                              <span><a href="#">088-856-2710</a><br><a href="#">0915-580-3508</a></span>
                           </div>
                       </div>
                       <div class="col-lg-6">

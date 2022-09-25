@@ -10,9 +10,12 @@
               <div class="left-text-content">
                   <div class="section-heading">
                       <h6>About Us</h6>
-                      <h2>We Leave A Delicious Memory For You</h2>
+                      <h2>We Capito Savings & Loans Cooperatives, INC</h2>
                   </div>
-                  <p>Klassy Cafe is one of the best <a href="https://templatemo.com/tag/restaurant" target="_blank" rel="sponsored">restaurant HTML templates</a> with Bootstrap v4.5.2 CSS framework. You can download and feel free to use this website template layout for your restaurant business. You are allowed to use this template for commercial purposes. <br><br>You are NOT allowed to redistribute the template ZIP file on any template donwnload website. Please contact us for more information.</p>
+                  <h4>VISSION</h4>
+                  <p>CASALCO envission to become a competitive efficent and storng Cooperative serving the needs of its members.</p>
+                  <h4>MISSION</h4>
+                  <p>Provision of quality service to all CASALCO members and promotion of cooperativism with the highest ethical standard by bieng financially strong and responsive to the needs of its members constitute the primordial mission of CASALCO.</p>
                   <div class="row">
                       <div class="col-4">
                           <img src="../klassy/images/CU-Logo.jpg" alt="">
