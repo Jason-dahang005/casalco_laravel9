@@ -290,111 +290,132 @@
            <h4 class="modal-title">CASALCO Membership Application Form</h4>
         </div>
         <!-- Modal body -->
+        <form action="{{ route('membership-application.store') }}" method="POST" enctype="multipart/form-data">
         <div class="modal-body">
           <h4>Personal Information</h4>
+
+          @csrf	
           <div class="border border-danger"></div>
           <div class="row pt-3">
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">First Name</label>
-                <input type="text" class="form-control"  placeholder="First Name" value="">
+                <input name ="Fname" type="text" class="form-control"  placeholder="First Name" value="">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Middle Name</label>
-                <input type="text" class="form-control"  placeholder="Middle Name" value="">
+                <input name ="Mname" type="text" class="form-control"  placeholder="Middle Name" value="">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Last Name</label>
-                <input type="text" class="form-control"  placeholder="Last Name" value="">
+                <input name ="Lname" type="text" class="form-control"  placeholder="Last Name" value="">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Suffix</label>
-                <input type="text" class="form-control"  placeholder="Suffix" value="">
+                <input name ="suffix" type="text" class="form-control"  placeholder="Suffix" value="">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Gender</label>
-                <input type="text" class="form-control"  placeholder="Gender" value="">
+                <select name="gender" id="gender" class="form-control">
+                  <option value="" disabled selected >Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Birthday</label>
-                <input type="text" class="form-control"  placeholder="birthday" value="">
+                <input name ="dob" type="date" class="form-control"  placeholder="birthday" value="">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Birth Place</label>
-                <input type="text" class="form-control"  placeholder="Birth Place" value="">
+                <input name ="Bplace" type="text" class="form-control"  placeholder="Birth Place" value="">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Address</label>
-                <input type="text" class="form-control"  placeholder="Address" value="">
+                <input name ="address" type="text" class="form-control"  placeholder="Address" value="">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Unit</label>
-                <input type="text" class="form-control"  placeholder="Unit" value="">
+              <select name="unit" id="unit" class="form-control">
+                <option value="" disabled selected >Unit</option>
+                <option value="CU(main)">CU(main)</option>
+                <option value="CUMC">CUMC</option>
+                <option value="CUBE">CUBE</option>
+                <option value="Support Zebra">Support Zebra</option>
+                <option value="Associate">Associate</option>
+              </select>
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Occupation</label>
-                <input type="text" class="form-control"  placeholder="Occupation" value="">
+                <input name ="occupation" type="text" class="form-control"  placeholder="Occupation" value="">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Educ. Attainment</label>
-                <input type="text" class="form-control"  placeholder="Educ. Attainment" value="">
+                <input name ="educ" type="text" class="form-control"  placeholder="Educ. Attainment" value="">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Monthly Income</label>
-                <input type="text" class="form-control"  placeholder="Monthly Income" value="">
+                <input name ="MI" type="text" class="form-control"  placeholder="Monthly Income" value="">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Civil Status</label>
-                <input type="text" class="form-control"  placeholder="Civil Status" value="">
+              <select name="civilStatus" id="civilStatus" class="form-control">
+                <option value="" disabled selected >Civil Status</option>
+                <option value="Single">Single</option>
+                <option value="Married">Married</option>
+                <option value="Divorce">Divorced</option>
+                <option value="Siparated">Siparated</option>
+                <option value="Widowed">Widowed</option>
+              </select>
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Religion</label>
-                <input type="text" class="form-control"  placeholder="Religion" value="">
+                <input name ="religion" type="text" class="form-control"  placeholder="Religion" value="">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Contact Number</label>
-                <input type="text" class="form-control"  placeholder="Contact Number" value="">
+                <input name ="contactNum" type="text" class="form-control"  placeholder="Contact Number" value="">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Email Address</label>
               <label for="First Name" class="form-label">Gender</label>
-                <input type="text" class="form-control"  placeholder="Email Address" value="">
+                <input name ="email" type="email" class="form-control"  placeholder="Email Address" value="">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">No. of Dependents</label>
-                <input type="text" class="form-control"  placeholder="No. of Dependents" value="">
+                <input name ="NumDependents" type="text" class="form-control"  placeholder="No. of Dependents" value="">
               </div>
             </div>
           </div>
@@ -407,37 +428,37 @@
             <div class="col-lg-8">
               <div class="form-group">
               <label for="First Name" class="form-label">Full Name</label>
-                <input type="text" class="form-control"  placeholder="Full Name" value="">
+                <input name ="spouseFname" type="text" class="form-control"  placeholder="Full Name" value="">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Age</label>
-                <input type="text" class="form-control"  placeholder="Age" value="">
+                <input name ="spouseAge" type="text" class="form-control"  placeholder="Age" value="">
               </div>
             </div>
             <div class="col-lg-6">
               <div class="form-group">
               <label for="First Name" class="form-label">Occupation</label>
-                <input type="text" class="form-control"  placeholder="Occupation" value="">
+                <input name ="spouseOcc" type="text" class="form-control"  placeholder="Occupation" value="">
               </div>
             </div>
             <div class="col-lg-6">
               <div class="form-group">
               <label for="First Name" class="form-label">Monthly Income</label>
-                <input type="text" class="form-control"  placeholder="Monthly Income" value="">
+                <input name ="spouseMI" type="text" class="form-control"  placeholder="Monthly Income" value="">
               </div>
             </div>
             <div class="col-lg-6">
               <div class="form-group">
               <label for="First Name" class="form-label">Employeer's Name</label>
-                <input type="text" class="form-control"  placeholder="Employeer's Name" value="">
+                <input name ="spouseEmplrName" type="text" class="form-control"  placeholder="Employeer's Name" value="">
               </div>
             </div>
             <div class="col-lg-6">
               <div class="form-group">
               <label for="First Name" class="form-label">Contact No.</label>
-                <input type="text" class="form-control"  placeholder="Contact No." value="">
+                <input name ="spouseConNum" type="text" class="form-control"  placeholder="Contact No." value="">
               </div>
             </div>
           </div>
@@ -449,42 +470,47 @@
             <div class="col-lg-6">
               <div class="form-group">
               <label for="First Name" class="form-label">Full Name</label>
-                <input type="text" class="form-control"  placeholder="Full Name" value="">
+                <input name ="benName" type="text" class="form-control"  placeholder="Full Name" value="">
               </div>
             </div>
             <div class="col-lg-6">
               <div class="form-group">
               <label for="First Name" class="form-label">Relationship</label>
-                <input type="text" class="form-control"  placeholder="Relationship" value="">
+                <input name ="benRelation" type="text" class="form-control"  placeholder="Relationship" value="">
               </div>
             </div>
             <div class="col-lg-8">
               <div class="form-group">
               <label for="First Name" class="form-label">Address</label>
-                <input type="text" class="form-control"  placeholder="Address" value="">
+                <input name ="benAddress" type="text" class="form-control"  placeholder="Address" value="">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Age</label>
-                <input type="text" class="form-control"  placeholder="Age" value="">
+                <input name ="benAge" type="text" class="form-control"  placeholder="Age" value="">
               </div>
             </div>
-            {{-- <div class="col-lg-4">
+           
+            <div class="col-lg-4">
               <div class="form-group">
-                <input type="text" class="form-control"  placeholder="Employeer's Name">
+                <label for="First Name" class="form-label">Mother's Maiden Name:</label>
+                <label for="First Name" class="form-label">(Last Name)</label>
+                <input name ="benMothersLname" type="text" class="form-control"  placeholder="Last Name">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
-                <input type="text" class="form-control"  placeholder="Contact No.">
+                <label for="First Name" class="form-label">First Name</label>
+                <input name ="benMothersFname" type="text" class="form-control"  placeholder="Firs Name">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
-                <input type="text" class="form-control"  placeholder="Employeer's Name">
+                <label for="First Name" class="form-label">Middle Name</label>
+                <input name ="benMothersMname" type="text" class="form-control"  placeholder="Middle Name">
               </div>
-            </div> --}}
+            </div>
           </div>
           <div class="pt-3 pb-2">
             <h5 class ="font-weight-bold">Government ID's</h5>
@@ -494,24 +520,25 @@
             <div class="col-lg-6">
               <div class="form-group">
               <label for="First Name" class="form-label">TIN</label>
-                <input type="text" class="form-control"  placeholder="TIN" value="">
+                <input name ="TIN" type="text" class="form-control"  placeholder="TIN" value="">
               </div>
             </div>
             <div class="col-lg-6">
               <div class="form-group">
               <label for="First Name" class="form-label">SSS No.</label>
-                <input type="text" class="form-control"  placeholder="SSS" value="">
+                <input name ="SSSnum" type="text" class="form-control"  placeholder="SSS" value="">
               </div>
             </div>
           </div>
         </div>
         <!-- Modal footer -->
         <div class="modal-footer">
-          <form action="" method="POST">
+          
             
-            <input type="hidden" value="1" name="is_approved">
-            <button type="submit" class="btn btn-success w-100 mb-2">Pre-Approve</button>
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            <input  type="hidden" value="1" name="membership_type">
+            <button type="submit"  id="form-submit" class="btn btn-success w-100 mb-2">Validate</button>
+            <button type="button"  class="btn btn-success w-100 mb-2" data-dismiss="modal">Close</button>
+            {{-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> --}}
           </form>
         </div>
      </div>

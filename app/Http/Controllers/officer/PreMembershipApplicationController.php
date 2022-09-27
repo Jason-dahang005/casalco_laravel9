@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Beneficiary;
 use Illuminate\Http\Request;
 use App\Models\MembershipApplication;
+use App\Models\Spouse;
 
 class PreMembershipApplicationController extends Controller
 {
@@ -36,10 +37,55 @@ class PreMembershipApplicationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $r)
     {
-        // $member_app = Membership::all();
-        // return view('officer.membership')->with('member_app', $member_app);
+        $m = new MembershipApplication();
+        $m->Fname = $r->Fname;
+        $m->Mname = $r->Mname;
+        $m->Lname = $r->Lname;
+        $m->suffix = $r->suffix;
+        $m->gender = $r->gender;
+        $m->dob = $r->dob;
+        $m->Bplace = $r->Bplace;
+        $m->address = $r->address;
+        $m->unit = $r->unit;
+        $m->occupation = $r->occupation;
+        $m->educ = $r->educ;
+        $m->civilStatus = $r->civilStatus;
+        $m->religion = $r->religion;
+        $m->MI = $r->MI;
+        $m->contactNum = $r->contactNum;
+        $m->TIN = $r->TIN;
+        $m->SSSnum = $r->SSSnum;
+        $m->email = $r->email;
+        $m->NumDependents = $r->NumDependents;
+        $m->membership_type = 1;
+        $m->save();
+
+        $b = new Beneficiary();
+        $b->membership_application_id = $m->id;
+        $b->benName = $r->benName;
+        $b->benRelation = $r->benRelation;
+        $b->benAge = $r->benAge;
+        $b->benAddress = $r->benAddress;
+        $b->benMothersLname = $r->benMothersLname;
+        $b->benMothersFname = $r->benMothersFname;
+        $b->benMothersMname = $r->benMothersMname;
+        $b->save();
+
+        $s = new Spouse();
+        $s->membership_application_id = $m->id;
+        $s->spouseFname = $r->spouseFname;
+        $s->spouseAge = $r->spouseAge;
+        $s->spouseOcc = $r->spouseOcc;
+        $s->spouseMI = $r->spouseMI;
+        $s->spouseEmplrName = $r->spouseEmplrName;
+        $s->spouseConNum = $r->spouseConNum;
+        $s->save();
+
+
+
+        return redirect('/officer/membership-application')->with('success','Membership Application Successfully Sent, Please Just Wait For A Call/Email');
         
     }
 

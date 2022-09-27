@@ -7,6 +7,8 @@ use App\Http\Controllers\officer\OfficerDashboardController;
 use App\Http\Controllers\officer\PreMembershipApplicationController;
 use App\Http\Controllers\officer\ReportsMembershipApplicationController;
 
+
+
 use  App\Http\Controllers\MembershipApplicationController;
 
 use App\Http\Controllers\admin\AdminDashboardController;
@@ -133,6 +135,7 @@ Route::resource('/membership-application', MembershipApplicationController::clas
 Route::resource('/officer/dashboard', OfficerDashboardController::class);
 Route::resource('/officer/membership-application', PreMembershipApplicationController::class);
 Route::resource('/officer/pre-approved-membership', ReportsMembershipApplicationController::class);
+
 
 Route::resource('/admin/dashboard', AdminDashboardController::class);
 Route::resource('/admin/membership', ApproveMembershipApplicationController::class);
