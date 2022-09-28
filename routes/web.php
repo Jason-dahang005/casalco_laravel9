@@ -7,13 +7,12 @@ use App\Http\Controllers\officer\OfficerDashboardController;
 use App\Http\Controllers\officer\PreMembershipApplicationController;
 use App\Http\Controllers\officer\ReportsMembershipApplicationController;
 
-
-
 use  App\Http\Controllers\MembershipApplicationController;
 
 use App\Http\Controllers\admin\AdminDashboardController;
 use App\Http\Controllers\admin\ApproveMembershipApplicationController;
 use App\Http\Controllers\MembershipReportsController;
+use App\Http\Controllers\RegistrationController;
 
 // use App\Http\Controllers\admin\DashboardController;
 // use App\Http\Controllers\admin\MembershipController;
@@ -140,5 +139,7 @@ Route::resource('/officer/pre-approved-membership', ReportsMembershipApplication
 Route::resource('/admin/dashboard', AdminDashboardController::class);
 Route::resource('/admin/membership', ApproveMembershipApplicationController::class);
 Route::resource('/admin/approved-membership', MembershipReportsController::class);
+
+Route::resource('/registration', RegistrationController::class);
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

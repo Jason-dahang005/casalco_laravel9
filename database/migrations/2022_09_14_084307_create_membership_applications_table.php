@@ -34,6 +34,8 @@ return new class extends Migration
             $table->string('SSSnum');
             $table->string('email');
             $table->string('NumDependents');
+            $table->string('acc_id')->unique()->nullable();
+            $table->string('or_no')->nullable();
             // $table->string('selfiepic');
             // $table->string('empIDpic');
             $table->integer('is_approved')->default(0);

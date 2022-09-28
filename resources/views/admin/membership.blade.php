@@ -44,6 +44,9 @@
            <h4 class="modal-title">CASALCO Membership Application Form</h4>
         </div>
         <!-- Modal body -->
+        <form action="{{ route('membership-application.update', $m->id) }}" method="POST">
+          @csrf
+          @method('PUT')
         <div class="modal-body">
           <div class="row">
             <div class="col-4">
@@ -51,11 +54,11 @@
               
             </div>
             <div class="col-4">
-              <input type="text" class="form-control" placeholder="Account No">
+              <input type="text" class="form-control" name="acc_id" placeholder="Account No">
               
             </div>
             <div class="col-4">
-              <input type="text" class="form-control" placeholder="OR No">
+              <input type="text" class="form-control" name="or_no" placeholder="OR No">
             </div>
           </div>
           <div class="border border-danger"></div>
@@ -243,14 +246,11 @@
         </div>
         <!-- Modal footer -->
         <div class="modal-footer">
-          <form action="{{ route('membership-application.update', $m->id) }}" method="POST">
-            @csrf
-            @method('PUT')
             <input type="hidden" value="2" name="is_approved">
             <button type="submit" class="btn btn-success w-100">Approve</button>
             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          </form>
         </div>
+      </form>
      </div>
   </div>
 </div>

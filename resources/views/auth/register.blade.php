@@ -2,11 +2,28 @@
 
 @section('client_content')
 <div id="top">
+	@if(Session::has('error'))
+		<div class="alert alert-danger alert-dismissible fade show" role="alert">
+			<strong>{{ Session::get('error') }}</strong>
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+	@endif
+
+	@if(Session::has('success'))
+		<div class="alert alert-success alert-dismissible fade show" role="alert">
+			<strong>{{ Session::get('success') }}</strong>
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+	@endif
 	<div class="row">
 		<div class="col-lg-4"></div>
 		<div class="col-lg-4">
 			<div class="contact-form">
-				<form method="POST" action="{{ route('register') }}">
+				<form method="POST" action="{{ url('/registration') }}">
 					@csrf
 					<div class="row border py-5 px-4">
 						<div class="col-lg-12">
@@ -19,9 +36,18 @@
 						<div class="col-12">
 							<div class="form-group">
 								<fieldset>
-									<label for="">Name</label>
-								<input name="name" type="text" id="name" placeholder="Your name">
-								@error('name')<span class="text-danger"><strong>{{ $message }}</strong></span>@enderror
+									<label for="">ID Number</label>
+								<input name="acc_id" type="text" id="acc_id" placeholder="Your account id">
+								@error('acc_id')<span class="text-danger"><strong>{{ $message }}</strong></span>@enderror
+							</fieldset>
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="form-group">
+								<fieldset>
+									<label for="">Username</label>
+								<input name="username" type="text" id="username" placeholder="Your username">
+								@error('username')<span class="text-danger"><strong>{{ $message }}</strong></span>@enderror
 							</fieldset>
 							</div>
 						</div>
