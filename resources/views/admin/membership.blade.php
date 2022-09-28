@@ -50,13 +50,7 @@
               <h4>Personal Information</h4>
               
             </div>
-            <div class="col-4">
-              <input type="text" class="form-control" placeholder="Account No">
-              
-            </div>
-            <div class="col-4">
-              <input type="text" class="form-control" placeholder="OR No">
-            </div>
+            
           </div>
           <div class="border border-danger"></div>
           <div class="row pt-3">
@@ -246,6 +240,9 @@
           <form action="{{ route('membership-application.update', $m->id) }}" method="POST">
             @csrf
             @method('PUT')
+              <input type="text" class="form-control" name="acc_id" placeholder="Account No">
+              
+              <input type="text" class="form-control" name="or_no" placeholder="OR No">
             <input type="hidden" value="2" name="is_approved">
             <button type="submit" class="btn btn-success w-100">Approve</button>
             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -254,6 +251,8 @@
      </div>
   </div>
 </div>
+
 @endforeach
+
 
 @endsection

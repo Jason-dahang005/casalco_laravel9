@@ -76,6 +76,8 @@ class PreMembershipApplicationController extends Controller
     {
         $membership = MembershipApplication::find($id);
         $membership->is_approved = $request->is_approved;
+        $membership->acc_id = $request->acc_id;
+        $membership->or_no = $request->or_no;
         $membership->save();
 
         return back();

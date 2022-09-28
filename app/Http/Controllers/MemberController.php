@@ -36,7 +36,12 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $m = new Member();
+        $m->user_id = '';
+        $m->membership_application_id = $request->mem_id;
+        $m->account_id = $request->acc_id;
+        $m->or_no = $request->or_no;
+        $m->save();
     }
 
     /**

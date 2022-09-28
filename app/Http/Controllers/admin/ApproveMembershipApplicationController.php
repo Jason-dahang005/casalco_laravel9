@@ -61,7 +61,7 @@ class ApproveMembershipApplicationController extends Controller
     public function edit($id)
     {
         $membership = MembershipApplication::find($id);
-        return view('officer.membership', compact('membership'));
+        return view('admin.membership', compact('membership'));
     }
 
     /**
@@ -73,18 +73,18 @@ class ApproveMembershipApplicationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $membership = MembershipApplication::find($id);
-        $membership->is_approved = $request->is_approved;
-        $approved = $membership->save();
+        $m = MembershipApplication::find($id);
+        $m->is_approved = $request->is_approved;
+        $m->save();
 
-        if ($approved) {
-            Member::create([
-                'user_id' => 1,
-                'membership_application_id' => 1,
-                'account_id' => 'qwe123',
-                'or_id' => 'qwe123'
-            ]);
-        }
+        // if ($approved) {
+        //     Member::create([
+        //         'user_id' => 1,
+        //         'membership_application_id' => 1,
+        //         'account_id' => 'qwe123',
+        //         'or_id' => 'qwe123'
+        //     ]);
+        // }
 
         
 

@@ -15,11 +15,11 @@ class MembershipApplication extends Model
         'Fname',
         'Mname',
         'Lname',
-         'suffix',
-         'gender',
-         'dob',
-         'Bplace',
-         'address',
+        'suffix',
+        'gender',
+        'dob',
+        'Bplace',
+        'address',
         'unit',
         'occupation',
         'educ',
@@ -31,7 +31,9 @@ class MembershipApplication extends Model
         'SSSnum',
         'email',
         'NumDependents',
-        'is_approved'
+        'is_approved',
+        'acc_id',
+        'or_no'
         // 'selfiepic',
         // 'empIDpic'
     ];
