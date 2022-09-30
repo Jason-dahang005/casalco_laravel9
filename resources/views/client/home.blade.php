@@ -11,9 +11,14 @@
 							<div class="inner-content">
 								<!-- <h4>CASALCO</h4>
 								<h6>THE BEST EXPERIENCE</h6> -->
-                                <img src="../klassy/images/Logo-4.png" alt="">
+                                @guest<h6>"Do not save what is left after spending, but spend what is left after savings"</h6>
+                                <h6>-SAVE MONEY AND MONEY WILL SAVE YOU!-</h6> @endguest
+                                @auth<img src="../klassy/images/Logo-4.png" alt="">@endauth
 								<div class="main-white-button scroll-to-section">
-									<a href="/membership-information">Become A Member</a>
+									@guest
+                                    <a href="/membership-information">Become A Member</a>
+                                    @endguest
+                                  
 								</div>
 							</div>
 						</div>

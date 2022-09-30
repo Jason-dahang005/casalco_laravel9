@@ -15,11 +15,11 @@
       <div class="col-lg-6 col-md-12 col-12">
         <div class="card px-5 py-3">
           <div class="section-heading">
-            <h2 class="text-center">Membership Eligibility</h2>
+            <h2 class="text-center">WHO ARE ALLOWED TO BECOME A MEMBER OF CASALCO?</h2>
             <div class="px-4">
               <p class="mb-2"><i class="fa fa-check text-danger border border-danger p-1"></i> Must be a Filipino citizen</p>
               <p class="mb-2"><i class="fa fa-check text-danger border border-danger p-1"></i> Must be 18 years old and above (legal age)</p>
-              <p class="mb-2"><i class="fa fa-check text-danger border border-danger p-1"></i> Must be an employee of Capitol University, Capitol University Medical Center, Caitol University Basic Education
+              <p class="mb-2"><i class="fa fa-check text-danger border border-danger p-1"></i> Must be an employee of Capitol University, Capitol University Medical Center, Caitol University Basic Education, Support Zebra and Its dependents.
               </p>
             </div>
           </div>
@@ -30,10 +30,11 @@
           <div class="section-heading">
             <h2 class="text-center">Membership Requirements</h2>
             <div class="px-4">
-              <p class="mb-2"><i class="fa fa-check text-danger border border-danger p-1"></i> Must be a Filipino citizen</p>
-              <p class="mb-2"><i class="fa fa-check text-danger border border-danger p-1"></i> Must be 18 years old and above (legal age)</p>
-              <p class="mb-2"><i class="fa fa-check text-danger border border-danger p-1"></i> Must be an employee of Capitol University, Capitol University Medical Center, Caitol University Basic Education
+              <p class="mb-2"><i class="fa fa-check text-danger border border-danger p-1"></i> Birth Certificate</p>
+              <p class="mb-2"><i class="fa fa-check text-danger border border-danger p-1"></i> Employment Contract</p>
+              <p class="mb-2"><i class="fa fa-check text-danger border border-danger p-1"></i> 2x2 Picture
               </p>
+              <p class="mb-2"><i class="fa fa-check text-danger border border-danger p-1"></i> Attend Membership Orientation/Seminar</p>
             </div>
           </div>
         </div>
