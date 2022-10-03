@@ -129,6 +129,7 @@ Route::view('/express-loans', 'client.express-loans');
 Route::view('/contact-us', 'client.contact-us');
 Route::view('/about-us', 'client.about-us');
 Route::view('/membership-information', 'client.membership-information');
+Route::view('/dashboard', 'client.dashboard');
 Route::resource('/membership-application', MembershipApplicationController::class);
 
 Route::resource('/officer/dashboard', OfficerDashboardController::class);

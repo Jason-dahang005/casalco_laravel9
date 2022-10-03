@@ -28,8 +28,8 @@
 				<div class="col-lg-4 col-sm-12">
 					<fieldset>
                         <label for="First Name" class="form-label">Name of Member</label>
-						<input name="Fname" type="text" id="Fname" placeholder="Provide Name">
-						<span class="text-danger">@error('Fname')
+						<input name="name" type="text" id="name" placeholder="Provide Name">
+						<span class="text-danger">@error('name')
 								{{ $message }}
 							@enderror </span>
 					</fieldset>
@@ -39,8 +39,8 @@
 				<div class="col-lg-4 col-sm-12">
 					<fieldset>
                         <label for="First Name" class="form-label">Age</label>
-						<input name="occupation" type="text" id="occupation" placeholder="Provide Age">
-						<span class="text-danger">@error('occupation')
+						<input name="age" type="text" id="age" placeholder="Provide Age">
+						<span class="text-danger">@error('age')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
@@ -48,8 +48,8 @@
                 <div class="col-lg-4 col-sm-12">
 					<fieldset>
                         <label for="First Name" class="form-label">Birthdate</label>
-						<input name="occupation" type="date" id="occupation" placeholder="Birthdate">
-						<span class="text-danger">@error('occupation')
+						<input name="birthday" type="date" id="birthday" placeholder="Birthdate">
+						<span class="text-danger">@error('birthday')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
@@ -57,8 +57,8 @@
 				<div class="col-lg-4 col-sm-12">
 					<fieldset>
                         <label for="First Name" class="form-label">Present Address</label>
-						<input name="educ" type="text" id="educ" placeholder="Provide Address">
-						<span class="text-danger">@error('educ')
+						<input name="present_address" type="text" id="present_address" placeholder="Provide Address">
+						<span class="text-danger">@error('present_address')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
@@ -67,8 +67,8 @@
 				<div class="col-lg-4 col-sm-12">
 					<fieldset>
                         <label for="First Name" class="form-label">Permanent Address</label>
-						<input name="occupation" type="text" id="occupation" placeholder="Provide Address">
-						<span class="text-danger">@error('occupation')
+						<input name="permanent_address" type="text" id="permanent_address" placeholder="Provide Address">
+						<span class="text-danger">@error('permanent_address')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
@@ -85,8 +85,8 @@
                 <div class="col-lg-4 col-sm-12">
 					<fieldset>
                         <label for="First Name" class="form-label">FB account Name</label>
-						<input name="NumDependents" type="text" id="NumDependents" placeholder="FB account name">
-						<span class="text-danger">@error('NumDependents')
+						<input name="fb_acc" type="text" id="fb_acc" placeholder="FB account name">
+						<span class="text-danger">@error('fb_acc')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
@@ -94,8 +94,8 @@
                 <div class="col-lg-4 col-sm-12">
 					<fieldset>
                         <label for="First Name" class="form-label">Employer</label>
-						<input name="occupation" type="text" id="occupation" placeholder="Employer">
-						<span class="text-danger">@error('occupation')
+						<input name="emp" type="text" id="emp" placeholder="Employer">
+						<span class="text-danger">@error('emp')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
@@ -103,8 +103,8 @@
                 <div class="col-lg-4 col-sm-12">
 					<fieldset>
                         <label for="First Name" class="form-label">Cellphone No.</label>
-						<input name="occupation" type="text" id="occupation" placeholder="09xxxxxxxxx">
-						<span class="text-danger">@error('occupation')
+						<input name="cell_no" type="text" id="cell_no" placeholder="09xxxxxxxxx">
+						<span class="text-danger">@error('cell_no')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
@@ -112,8 +112,8 @@
                 <div class="col-lg-4 col-sm-12">
 					<fieldset>
                         <label for="First Name" class="form-label">Legnth of Service</label>
-						<input name="occupation" type="text" id="occupation" placeholder="Ex. 2 years">
-						<span class="text-danger">@error('occupation')
+						<input name="legnth_service" type="text" id="legnth_service" placeholder="Ex. 2 years">
+						<span class="text-danger">@error('legnth_service')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
@@ -121,8 +121,8 @@
                 <div class="col-lg-4 col-sm-12">
 					<fieldset>
                         <label for="First Name" class="form-label">SSS number</label>
-						<input name="occupation" type="text" id="occupation" placeholder="Enter your social security number; i.e 00-000000-0">
-						<span class="text-danger">@error('occupation')
+						<input name="sss" type="text" id="sss" placeholder="Enter your social security number; i.e 00-000000-0">
+						<span class="text-danger">@error('sss')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
@@ -131,8 +131,8 @@
                 <div class="col-lg-4 col-sm-12">
 					<fieldset>
                         <label for="First Name" class="form-label">Employmen Status</label>
-						<input name="occupation" type="text" id="occupation" placeholder="Employment Status">
-						<span class="text-danger">@error('occupation')
+						<input name="emp_status" type="text" id="emp_status" placeholder="Employment Status">
+						<span class="text-danger">@error('emp_status')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
@@ -140,8 +140,8 @@
                 <div class="col-lg-4 col-sm-12">
 					<fieldset>
                         <label for="First Name" class="form-label">CASALCO ID no.</label>
-						<input name="occupation" type="text" id="occupation" placeholder="ex. 20xx-xxxx">
-						<span class="text-danger">@error('occupation')
+						<input name="acc_id" type="text" id="acc_id" placeholder="ex. 20xx-xxxx">
+						<span class="text-danger">@error('acc_id')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
@@ -149,8 +149,8 @@
                 <div class="col-lg-4 col-sm-12">
 					<fieldset>
                         <label for="First Name" class="form-label">Present Position</label>
-						<input name="occupation" type="text" id="occupation" placeholder="Present Position">
-						<span class="text-danger">@error('occupation')
+						<input name="present_position" type="text" id="present_position" placeholder="Present Position">
+						<span class="text-danger">@error('present_position')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
@@ -158,8 +158,8 @@
                 <div class="col-lg-4 col-sm-12">
 					<fieldset>
                         <label for="First Name" class="form-label">TIN number</label>
-						<input name="occupation" type="text" id="occupation" placeholder="Enter your TIN; i.e. 000-000-000">
-						<span class="text-danger">@error('occupation')
+						<input name="tin" type="text" id="tin" placeholder="Enter your TIN; i.e. 000-000-000">
+						<span class="text-danger">@error('tin')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
@@ -167,8 +167,8 @@
                 <div class="col-lg-4 col-sm-12">
 					<fieldset>
                         <label for="First Name" class="form-label">Name of Spouse</label>
-						<input name="occupation" type="text" id="occupation" placeholder="Provide Name">
-						<span class="text-danger">@error('occupation')
+						<input name="s_name" type="text" id="s_name" placeholder="Provide Name">
+						<span class="text-danger">@error('s_name')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
@@ -191,8 +191,8 @@
 				<div class="col-lg-4 col-sm-12">
 					<fieldset>
                         <label for="First Name" class="form-label">Occupation</label>
-						<input name="religion" type="text" id="religion" placeholder="Occupation">
-						<span class="text-danger">@error('religion')
+						<input name="occupation" type="text" id="occupation" placeholder="Occupation">
+						<span class="text-danger">@error('occupation')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
@@ -200,8 +200,8 @@
 				<div class="col-lg-4 col-sm-12">
 					<fieldset>
                         <label for="First Name" class="form-label">No. of Children</label>
-						<input name="contactNum" type="text" id="contactNum" placeholder="No. of Children">
-						<span class="text-danger">@error('contactNum')
+						<input name="no_child" type="text" id="no_child" placeholder="No. of Children">
+						<span class="text-danger">@error('no_child')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
@@ -224,8 +224,8 @@
                 </div>
                 <div class="col-lg-6 col-sm-12">
 					<fieldset>
-						<input name="NumDependents" type="text" id="NumDependents" placeholder="Borrower Income">
-						<span class="text-danger">@error('NumDependents')
+						<input name="borrower_income" type="text" id="borrower_income" placeholder="Borrower Income">
+						<span class="text-danger">@error('borrower_income')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
@@ -233,8 +233,8 @@
 				
                 <div class="col-lg-6 col-sm-12">
 					<fieldset>
-						<input name="NumDependents" type="text" id="NumDependents" placeholder="Food & Subsistence">
-						<span class="text-danger">@error('NumDependents')
+						<input name="food_sub" type="text" id="food_sub" placeholder="Food & Subsistence">
+						<span class="text-danger">@error('food_sub')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
@@ -242,89 +242,89 @@
                 
 				<div class="col-lg-6 col-sm-12">
 					<fieldset>
-						<input name="NumDependents" type="text" id="NumDependents" placeholder="Other Income">
-						<span class="text-danger">@error('NumDependents')
+						<input name="other_income" type="text" id="other_income" placeholder="Other Income">
+						<span class="text-danger">@error('other_income')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
 				</div>
                 <div class="col-lg-6 col-sm-12">
 					<fieldset>
-						<input name="NumDependents" type="text" id="NumDependents" placeholder="Education Bill">
-						<span class="text-danger">@error('NumDependents')
+						<input name="educ_bill" type="text" id="educ_bill" placeholder="Education Bill">
+						<span class="text-danger">@error('educ_bill')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
 				</div>
                 <div class="col-lg-6 col-sm-12">
 					<fieldset>
-						<input name="NumDependents" type="text" id="NumDependents" placeholder="Spouse Income">
-						<span class="text-danger">@error('NumDependents')
+						<input name="s_income" type="text" id="s_income" placeholder="Spouse Income">
+						<span class="text-danger">@error('s_income')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
 				</div>
                 <div class="col-lg-6 col-sm-12">
 					<fieldset>
-						<input name="NumDependents" type="text" id="NumDependents" placeholder="Electric Bill">
-						<span class="text-danger">@error('NumDependents')
+						<input name="electric_bill" type="text" id="electric_bill" placeholder="Electric Bill">
+						<span class="text-danger">@error('electric_bill')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
 				</div>
                 <div class="col-lg-6 col-sm-12">
 					<fieldset>
-						<input name="NumDependents" type="text" id="NumDependents" placeholder="Types of Loan Applied">
-						<span class="text-danger">@error('NumDependents')
+						<input name="loan_type" type="text" id="loan_type" placeholder="Types of Loan Applied">
+						<span class="text-danger">@error('loan_type')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
 				</div>
                 <div class="col-lg-6 col-sm-12">
 					<fieldset>
-						<input name="NumDependents" type="text" id="NumDependents" placeholder="Water Bill">
-						<span class="text-danger">@error('NumDependents')
+						<input name="water_bill" type="text" id="water_bill" placeholder="Water Bill">
+						<span class="text-danger">@error('water_bill')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
 				</div>
                 <div class="col-lg-6 col-sm-12">
 					<fieldset>
-						<input name="NumDependents" type="text" id="NumDependents" placeholder="Amount Applied">
-						<span class="text-danger">@error('NumDependents')
+						<input name="amount" type="text" id="amount" placeholder="Amount Applied">
+						<span class="text-danger">@error('amount')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
 				</div>
                 <div class="col-lg-6 col-sm-12">
 					<fieldset>
-						<input name="NumDependents" type="text" id="NumDependents" placeholder="Transportation">
-						<span class="text-danger">@error('NumDependents')
+						<input name="transportation" type="text" id="transportation" placeholder="Transportation">
+						<span class="text-danger">@error('transportation')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
 				</div>
                 <div class="col-lg-6 col-sm-12">
 					<fieldset>
-						<input name="NumDependents" type="text" id="NumDependents" placeholder="Term Applied">
-						<span class="text-danger">@error('NumDependents')
+						<input name="term_applied" type="text" id="term_applied" placeholder="Term Applied">
+						<span class="text-danger">@error('term_applied')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
 				</div>
                 <div class="col-lg-6 col-sm-12">
 					<fieldset>
-						<input name="NumDependents" type="text" id="NumDependents" placeholder="Allowances">
-						<span class="text-danger">@error('NumDependents')
+						<input name="allowance" type="text" id="allowance" placeholder="Allowances">
+						<span class="text-danger">@error('allowance')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
 				</div>
                 <div class="col-lg-6 col-sm-12">
-					<select name="civilStatus" id="civilStatus">
+					<select name="mode_payment" id="mode_payment">
 						<option value="" disabled selected >Mode of Payment</option>
-						<option value="Single">SALARY DED.</option>
-						<option value="Married">PERSONAL</option>
+						<option value="salary deduction">SALARY DED.</option>
+						<option value="personal">PERSONAL</option>
 						
 					</select>
 					<span class="text-danger">@error('civilStatus')
@@ -333,16 +333,16 @@
 				</div>
                 <div class="col-lg-6 col-sm-12">
 					<fieldset>
-						<input name="NumDependents" type="text" id="NumDependents" placeholder="Others">
-						<span class="text-danger">@error('NumDependents')
+						<input name="others" type="text" id="others" placeholder="Others">
+						<span class="text-danger">@error('others')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
 				</div>
                 <div class="col-lg-6 col-sm-12">
 					<fieldset>
-						<input name="NumDependents" type="text" id="NumDependents" placeholder="Co-maker History">
-						<span class="text-danger">@error('NumDependents')
+						<input name="co_maker_history" type="text" id="co_maker_history" placeholder="Co-maker History">
+						<span class="text-danger">@error('co_maker_history')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
