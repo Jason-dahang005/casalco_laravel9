@@ -4,7 +4,7 @@
 			<button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
 			<div class="logo_section">
 				<a href="index.html">
-					<img class="img-responsive" src="../pluto/images/logo/logo.png" alt="#" />
+					<img class="img-responsive" src="../klassy/images/CasalcoLogo-7.png" alt="#" />
 				</a>
 			</div>
 			<div class="right_topbar">
@@ -17,7 +17,7 @@
 					<ul class="user_profile_dd">
 						<li>
 							<a class="dropdown-toggle" data-toggle="dropdown">
-								<img class="img-responsive rounded-circle" src="../pluto/images/layout_img/user_img.jpg" alt="#" />
+								<img class="img-responsive rounded-circle" src="../pluto/images/layout_img/user1.png" alt="#" />
 								<span class="name_user">{{ Auth::user()->name }}</span>
 							</a>
 							<div class="dropdown-menu">

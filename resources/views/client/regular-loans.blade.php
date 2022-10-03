@@ -29,7 +29,7 @@
             <!-- Item -->
             <div class="item">
               <div class="img-fill">
-                <img src="../klassy/images/slide-01.jpg" alt="">
+                <img src="../pluto/images/loan/appliance.png" alt="">
               </div>
             </div>
             <!-- // Item -->

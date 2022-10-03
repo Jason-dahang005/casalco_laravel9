@@ -30,10 +30,9 @@
           <div class="section-heading">
             <h2 class="text-center">Membership Requirements</h2>
             <div class="px-4">
-              <p class="mb-2"><i class="fa fa-check text-danger border border-danger p-1"></i> Must be a Filipino citizen</p>
-              <p class="mb-2"><i class="fa fa-check text-danger border border-danger p-1"></i> Must be 18 years old and above (legal age)</p>
-              <p class="mb-2"><i class="fa fa-check text-danger border border-danger p-1"></i> Must be an employee of Capitol University, Capitol University Medical Center, Caitol University Basic Education
-              </p>
+              <p class="mb-2"><i class="fa fa-check text-danger border border-danger p-1"></i> Birth Certificate &#40;18 - 60 years old&#41;</p>
+              <p class="mb-2"><i class="fa fa-check text-danger border border-danger p-1"></i> Employment Contract</p>
+              <p class="mb-2"><i class="fa fa-check text-danger border border-danger p-1"></i> 2x2 Picture</p>
             </div>
           </div>
         </div>

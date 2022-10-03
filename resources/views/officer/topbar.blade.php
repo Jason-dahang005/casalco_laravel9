@@ -17,7 +17,7 @@
 					<ul class="user_profile_dd">
 						<li>
 							<a class="dropdown-toggle" data-toggle="dropdown">
-								<img class="img-responsive rounded-circle" src="../pluto/images/layout_img/user_img.jpg" alt="#" />
+								<img class="img-responsive rounded-circle" src="../pluto/images/layout_img/user1.png" alt="#" />
 								<span class="name_user">{{ Auth::user()->name }}</span>
 							</a>
 							<div class="dropdown-menu">
