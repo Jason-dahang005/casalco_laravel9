@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\officer\OfficerDashboardController;
 use App\Http\Controllers\officer\PreMembershipApplicationController;
 use App\Http\Controllers\officer\ReportsMembershipApplicationController;
+use App\Http\Controllers\officer\PreLoanApplicationController;
 
 use  App\Http\Controllers\MembershipApplicationController;
 
@@ -13,6 +14,7 @@ use App\Http\Controllers\admin\AdminDashboardController;
 use App\Http\Controllers\admin\ApproveMembershipApplicationController;
 use App\Http\Controllers\MembershipReportsController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\ExpressLoanAppController;
 
 // use App\Http\Controllers\admin\DashboardController;
 // use App\Http\Controllers\admin\MembershipController;
@@ -130,11 +132,15 @@ Route::view('/contact-us', 'client.contact-us');
 Route::view('/about-us', 'client.about-us');
 Route::view('/membership-information', 'client.membership-information');
 Route::view('/dashboard', 'client.dashboard');
+Route::view('/officer/loan', 'officer.loan');
+Route::view('/officer/pre-approved-loans', 'officer.pre-approved-loans');
 Route::resource('/membership-application', MembershipApplicationController::class);
+Route::resource('/express-loan-form', ExpressLoanAppController::class);
 
 Route::resource('/officer/dashboard', OfficerDashboardController::class);
 Route::resource('/officer/membership-application', PreMembershipApplicationController::class);
 Route::resource('/officer/pre-approved-membership', ReportsMembershipApplicationController::class);
+Route::resource('/officer/loan', PreLoanApplicationController::class);
 
 
 Route::resource('/admin/dashboard', AdminDashboardController::class);

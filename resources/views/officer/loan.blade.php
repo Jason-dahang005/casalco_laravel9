@@ -2,19 +2,196 @@
 @section('title', 'Loan')
 @section('officer_content')
 
-<table class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Account Number</th>
-            <th>Loan Type</th>
-            <!-- <th>
-                <button class="btn btn-primary"> View </button>
-            </th> -->
 
+
+
+<button class="btn btn-sm btn-success mb-2" data-toggle="modal" data-target="#myModal01">Add Walk-in</button>
+
+<table class="table table-bordered table-striped table-sm" id="example2">
+	<thead>
+    <tr>
+      <th>Name</th>
+      <th>Account Number</th>
+      <th>Loan Catergry</th>
+      <th>Loan Type</th>
+      <th>Amount</th>
+      <th>Date Applied</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach ($loan as $l)
+        <tr>
+        <td>{{ $l->name }}</td>
+        <td>{{ $l->acc_id }}</td>
+        <td>
+          @if ($l->loan_cat == 0)
+            <span class="badge badge-info">Express Loan</span>
+          @else
+            <span class="badge badge-info">Regular Loan</span>
+          
+          @endif
+        </td>
+        <td>
+          @if ($l->loanApp_type == 0)
+            <span class="badge badge-info">Online</span>
+          @else
+            <span class="badge badge-info">Walk-in</span>
+          @endif
+        </td>
+        <td>{{ $l->amount }}</td>
+        <td>{{ $l->created_at }}</td>
+        <td>
+            @if($l->is_approved == 0)
+              <span class="badge badge-secondary">Pending</span>
+            @endif
+        </td>
+        <td>
+            <button class="btn btn-success" data-toggle="modal" data-target="#myModal{{ $l->id }}">Details</button>
+        </td>
         </tr>
-    </thead>
+    @endforeach
+  </tbody>
 </table>
+
+@foreach($loan as $l)
+<div class="modal fade" id="myModal{{ $l->id }}">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+     <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+           <h4 class="modal-title">CASALCO Loan Application Form</h4>
+        </div>
+        <!-- Modal body -->
+        <div class="modal-body">
+          <h4>Express Loan</h4>
+          <div class="border border-danger"></div>
+          <div class="row pt-3">
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">First Name</label>
+                <input type="text" class="form-control" disabled placeholder="First Name" value="{{ $l->name }}">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Middle Name</label>
+                <input type="text" class="form-control" disabled placeholder="Middle Name" value="{{ $l->acc_id }}">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Last Name</label>
+                <input type="text" class="form-control" disabled placeholder="Last Name" value="{{ $l->present_address }}">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Suffix</label>
+                <input type="text" class="form-control" disabled placeholder="Suffix" value="{{ $l->permanent_address }}">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Gender</label>
+                <input type="text" class="form-control" disabled placeholder="Gender" value="{{ $l->loan_type }}">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Birthday</label>
+                <input type="text" class="form-control" disabled placeholder="birthday" value="{{ $l->emp }}">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Birth Place</label>
+                <input type="text" class="form-control" disabled placeholder="Birth Place" value="{{ $l->emp_address }}">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Address</label>
+                <input type="text" class="form-control" disabled placeholder="Address" value="{{ $l->email }}">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Unit</label>
+                <input type="text" class="form-control" disabled placeholder="Unit" value="{{ $l->amount }}">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Occupation</label>
+                <input type="text" class="form-control" disabled placeholder="Occupation" value="{{ $l->mode_payment }}">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Educ. Attainment</label>
+                <input type="text" class="form-control" disabled placeholder="Educ. Attainment" value="{{ $l->term_applied }}">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Monthly Income</label>
+                <input type="text" class="form-control" disabled placeholder="Monthly Income" value="{{ $l->phone_no }}">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Civil Status</label>
+                <input type="text" class="form-control" disabled placeholder="Civil Status" value="{{ $l->tin }}">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Religion</label>
+                <input type="text" class="form-control" disabled placeholder="Religion" value="{{ $l->fb_acc }}">
+              </div>
+            </div>
+            <!-- <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Contact Number</label>
+                <input type="text" class="form-control" disabled placeholder="Contact Number" value="{{ $l->contactNum }}">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Email Address</label>
+              <label for="First Name" class="form-label">Gender</label>
+                <input type="text" class="form-control" disabled placeholder="Email Address" value="{{ $l->email }}">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">No. of Dependents</label>
+                <input type="text" class="form-control" disabled placeholder="No. of Dependents" value="{{ $l->NumDependents }}">
+              </div>
+            </div>
+          </div> -->
+
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <form action="{{ route('membership-application.update', $l->id) }}" method="POST">
+            @csrf
+            @method('PUT')
+            <input type="hidden" value="1" name="is_approved">
+            <button type="submit" class="btn btn-success w-100">Pre-Approve</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </form>
+        </div>
+     </div>
+  </div>
+</div>
+@endforeach
+
+
+
+
 
 
 @endsection

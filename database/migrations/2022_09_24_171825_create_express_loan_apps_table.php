@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('permanent_address');
             $table->string('loan_type');
             $table->string('emp');
-            $table->date('emp_address');
+            $table->string('emp_address');
             $table->string('email');
             $table->string('amount');
             $table->string('mode_payment');
@@ -31,6 +31,10 @@ return new class extends Migration
             $table->string('phone_no');
             $table->string('tin');
             $table->string('fb_acc');
+            $table->integer('is_approved')->default(0);
+            $table->boolean('loanApp_type')->comment('0 = online, 1 = walk-in');
+            $table->boolean('loan_cat')->comment('0 = Express Loan, 1 = Regular Loan, 2 = Special Loan');
+            
             $table->timestamps();
         });
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ExpressLoanApp;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,7 @@ class ExpressLoanAppController extends Controller
      */
     public function index()
     {
+        // $loan = User::where(auth()->user()->id)->get();
         return view('client.express-loan-form');
     }
 
@@ -34,9 +36,29 @@ class ExpressLoanAppController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $r)
     {
-        //
+        $l = new ExpressLoanApp();
+        $l->user_id = $r->user_id;
+        $l->acc_id = $r->acc_id;
+        $l->name =$r->name;
+        $l->present_address = $r->present_address;
+        $l->permanent_address = $r->permanent_address;
+        $l->loan_type = $r->loan_type;
+        $l->emp  = $r->emp;
+        $l->emp_address = $r->emp_address;
+        $l->email = $r->email;
+        $l->amount = $r->amount;
+        $l->mode_payment = $r->mode_payment;
+        $l->term_applied = $r->term_applied;
+        $l->phone_no = $r->phone_no;
+        $l->tin = $r->tin;
+        $l->fb_acc = $r->fb_acc;
+        $l->loanApp_type = $r->loanApp_type;
+        $l->loan_cat = $r->loan_cat;
+        $l->save();
+
+        return redirect('/client/express-loan-form');
     }
 
     /**

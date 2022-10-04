@@ -3,11 +3,11 @@
 @section('client_content')
 
 <div class="contact-form">
-		<form action="{{ url('/membership-application') }}" method="POST" enctype="multipart/form-data">
+		<form action="{{ url('/express-loan-form') }}" method="POST" enctype="multipart/form-data">
 		
 			<div class="row pt-5">
 				<div class="col-lg-2">
-						
+				
 				</div>
 
 				<div class="col-lg-8 border">
@@ -20,8 +20,10 @@
 						<!-- <hr> -->
 						
 					</div>
-				
-				
+					
+					<input  type="hidden" value="{{ Auth::user()->id }}" name="user_id">
+					<input  type="hidden" value="0" name="loanApp_type">
+					<input  type="hidden" value="1" name="loan_cat">
 				
 					@csrf	
 				<div class="col-lg-6 col-sm-12">
@@ -41,12 +43,13 @@
 				
 				<div class="col-lg-6 col-sm-12">
 					<fieldset>
-						<input name="acc_no" type="text" id="acc_no" placeholder="Account No.">
+						<input name="acc_id" type="text" id="acc_id"  placeholder="Account No." value="{{ Auth::user()->acc_id }}">
 						<span class="text-danger">@error('acc_no')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
 				</div>
+				
 				<div class="col-lg-12">
 					<fieldset>
 						<input name="present_address" type="text" id="present_address" placeholder="Present Address">
@@ -94,7 +97,7 @@
 				</div>
 				<div class="col-lg-4 col-sm-12">
 					<fieldset>
-						<input name="email" type="email" id="email" placeholder="Email Address">
+						<input name="email" type="email" id="email" placeholder="Email Address" value="{{Auth::user()->email}}">
 						<span class="text-danger">@error('email')
 							{{ $message }}
 						@enderror </span>
