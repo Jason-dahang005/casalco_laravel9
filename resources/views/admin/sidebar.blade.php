@@ -33,7 +33,7 @@
         <a href="#element1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-clipboard blue1_color"></i> <span>Reports</span></a>
         <ul class="collapse list-unstyled" id="element1">
           <li><a href="/admin/approved-membership">> <span>Approved Memberships</span></a></li>
-          <li><a href="/admin/loan">> <span>Approved Loans</span></a></li>
+          <li><a href="/admin/approved-loans">> <span>Approved Loans</span></a></li>
         </ul>
       </li>
     </ul>

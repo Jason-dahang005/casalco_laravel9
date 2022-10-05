@@ -4,16 +4,16 @@
 			<button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
 			<div class="logo_section">
 				<a href="index.html">
-					<img class="img-responsive" src="../klassy/images/CasalcoLogo-7.png" alt="#" />
+					<img class="img-responsive" src="../pluto/images/logo/CasalcoLogo-4.png" alt="#" />
 				</a>
 			</div>
 			<div class="right_topbar">
 				<div class="icon_info">
-					<ul>
+					{{-- <ul>
 						<li><a href="#"><i class="fa fa-bell-o"></i><span class="badge">2</span></a></li>
 						<li><a href="#"><i class="fa fa-question-circle"></i></a></li>
 						<li><a href="#"><i class="fa fa-envelope-o"></i><span class="badge">3</span></a></li>
-					</ul>
+					</ul> --}}
 					<ul class="user_profile_dd">
 						<li>
 							<a class="dropdown-toggle" data-toggle="dropdown">

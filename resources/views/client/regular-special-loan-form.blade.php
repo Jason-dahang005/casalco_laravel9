@@ -3,7 +3,7 @@
 @section('client_content')
 
 <div class="contact-form">
-		<form action="{{ url('/membership-application') }}" method="POST" enctype="multipart/form-data">
+		<form action="{{ url('/regular-special-loan-form') }}" method="POST" enctype="multipart/form-data">
 		
 			<div class="row pt-5">
 				<div class="col-lg-2">
@@ -28,10 +28,19 @@
 				<div class="col-lg-4 col-sm-12">
 					<fieldset>
                         <label for="First Name" class="form-label">Name of Member</label>
-						<input name="name" type="text" id="name" placeholder="Provide Name">
+						<input name="name" type="text" id="name" placeholder="Provide Name" ">
 						<span class="text-danger">@error('name')
 								{{ $message }}
 							@enderror </span>
+					</fieldset>
+				</div>
+				<div class="col-lg-4 col-sm-12">
+					<fieldset>
+                        <label for="First Name" class="form-label">CASALCO ID no.</label>
+						<input name="acc_id" type="text" id="acc_id" placeholder="ex. 20xx-xxxx" ">
+						<span class="text-danger">@error('acc_id')
+							{{ $message }}
+						@enderror </span>
 					</fieldset>
 				</div>
 				
@@ -48,7 +57,7 @@
                 <div class="col-lg-4 col-sm-12">
 					<fieldset>
                         <label for="First Name" class="form-label">Birthdate</label>
-						<input name="birthday" type="date" id="birthday" placeholder="Birthdate">
+						<input name="dob" type="date" id="dob" placeholder="Birthdate">
 						<span class="text-danger">@error('birthday')
 							{{ $message }}
 						@enderror </span>
@@ -103,17 +112,17 @@
                 <div class="col-lg-4 col-sm-12">
 					<fieldset>
                         <label for="First Name" class="form-label">Cellphone No.</label>
-						<input name="cell_no" type="text" id="cell_no" placeholder="09xxxxxxxxx">
-						<span class="text-danger">@error('cell_no')
+						<input name="phone_no" type="text" id="phone_no" placeholder="09xxxxxxxxx">
+						<span class="text-danger">@error('phone_no')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
 				</div>
                 <div class="col-lg-4 col-sm-12">
 					<fieldset>
-                        <label for="First Name" class="form-label">Legnth of Service</label>
-						<input name="legnth_service" type="text" id="legnth_service" placeholder="Ex. 2 years">
-						<span class="text-danger">@error('legnth_service')
+                        <label for="First Name" class="form-label">Length of Service</label>
+						<input name="length_service" type="text" id="length_service" placeholder="Ex. 2 years">
+						<span class="text-danger">@error('length_service')
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
@@ -137,15 +146,7 @@
 						@enderror </span>
 					</fieldset>
 				</div>
-                <div class="col-lg-4 col-sm-12">
-					<fieldset>
-                        <label for="First Name" class="form-label">CASALCO ID no.</label>
-						<input name="acc_id" type="text" id="acc_id" placeholder="ex. 20xx-xxxx">
-						<span class="text-danger">@error('acc_id')
-							{{ $message }}
-						@enderror </span>
-					</fieldset>
-				</div>
+                
                 <div class="col-lg-4 col-sm-12">
 					<fieldset>
                         <label for="First Name" class="form-label">Present Position</label>
@@ -205,8 +206,20 @@
 							{{ $message }}
 						@enderror </span>
 					</fieldset>
-                    
 				</div>
+					<div class="col-lg-4 col-sm-12">
+						<label for="First Name" class="form-label">Loan Category</label>
+						<select name="loan_cat" id="loan_cat">
+							<option value="" disabled selected >Seclect</option>
+							<option value="1">Regular Loan</option>
+							<option value="2">Special Loan</option>
+						</select>
+						<span class="text-danger">@error('loan_cat')
+							{{ $message }}
+						@enderror </span>
+					</div>
+                    
+				
                 <div class="col-lg-12">
                     <hr>
                 </div>
@@ -339,6 +352,10 @@
 						@enderror </span>
 					</fieldset>
 				</div>
+				<div class="col-lg-12">
+					<h5 class ="font-weight-bold text-danger pb-3">Co-Maker</h5>
+				</div>
+
                 <div class="col-lg-6 col-sm-12">
 					<fieldset>
 						<input name="co_maker_history" type="text" id="co_maker_history" placeholder="Co-maker History">
@@ -347,6 +364,26 @@
 						@enderror </span>
 					</fieldset>
 				</div>
+				<div class="col-lg-6 col-sm-12">
+					<fieldset>
+						<input name="co_maker_name" type="text" id="co_maker_name" placeholder="Co-maker Name">
+						<span class="text-danger">@error('co_maker_name')
+							{{ $message }}
+						@enderror </span>
+					</fieldset>
+				</div>
+
+				<div class="col-lg-12">
+					<fieldset>
+					<label class="form-label" for="selfiepic">Attach Co-maker's Statement</label>
+					<!-- <input type="file" class="w-28 mt-2" name="selfiepic" id="selfiepic" > -->
+					<input type="file" class="form-control" id="customFile" name="co_maker_form" onchange="previewFile(this)">
+					
+						
+					
+					</fieldset>
+				</div>
+
 
                 
 			
