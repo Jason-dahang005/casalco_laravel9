@@ -31,7 +31,8 @@ class MembershipApplication extends Model
         'SSSnum',
         'email',
         'NumDependents',
-        'is_approved'
+        'is_approved',
+        'Mothers_Mname'
         // 'selfiepic',
         // 'empIDpic'
     ];

@@ -22,7 +22,7 @@
 						<h4 class="pt-5 justify-content-center">Casalco Membership Form</h4>
 						<hr class="line">
 						<h5 class ="font-weight-bold">Personal Information</h5>
-						<p class="font-weight-500">We require your personal information to ensure calidty of you memnbership application</p>
+						<p class="font-weight-500">We require your personal information to ensure validty of you memnbership application</p>
 						<hr>
 						
 					</div>
@@ -176,6 +176,14 @@
 					</fieldset>
 				</div>
 				<div class="col-lg-12">
+					<fieldset>
+						<input name="Mothers_Mname" type="text" id="Mothers_Mname" placeholder="Mother's Maiden Name ">
+						<span class="text-danger">@error('Mothers_Mname')
+							{{ $message }}
+						@enderror </span>
+					</fieldset>
+				</div>
+				<div class="col-lg-12">
 						<h5 class ="font-weight-bold">Spouse Personal Information</h5>
 						<hr>	
 				</div>
@@ -228,6 +236,34 @@
 						@enderror </span>
 					</fieldset>
 					</div>
+					{{-- <div class="col-lg-12">
+						<p >Mother's Maiden Name</p>
+							
+					</div> --}}
+					<div class="col-lg-12">
+						<fieldset>
+							<input name="spouse_mother" type="text" id="spouse_mother" placeholder="Mother's Maiden Name">
+							<span class="text-danger">@error('spouse_mother')
+								{{ $message }}
+							@enderror </span>
+						</fieldset>
+					</div>
+					{{-- <div class="col-lg-4 col-sm-12">
+						<fieldset>
+							<input name="benMothersFname" type="text" id="benMothersFname" placeholder="First Name">
+							<span class="text-danger">@error('benMothersFname')
+								{{ $message }}
+							@enderror </span>
+						</fieldset>
+					</div>
+					<div class="col-lg-4 col-sm-12">
+						<fieldset>
+							<input name="benMothersMname" type="text" id="benMothersMname" placeholder="Middle Name">
+							<span class="text-danger">@error('benMothersMname')
+								{{ $message }}
+							@enderror </span>
+						</fieldset>
+					</div> --}}
 					<div class="col-lg-12">
 						<h5 class ="font-weight-bold">Nomination of Benificiary</h5>
 						<hr>	
@@ -265,34 +301,7 @@
 					</fieldset>
 					</div>
 					
-					<div class="col-lg-12">
-						<p >Mother's Maiden Name</p>
-							
-					</div>
-					<div class="col-lg-4 col-sm-12">
-						<fieldset>
-							<input name="benMothersLname" type="text" id="benMothersLname" placeholder="Last Name">
-							<span class="text-danger">@error('benMothersLname')
-								{{ $message }}
-							@enderror </span>
-						</fieldset>
-					</div>
-					<div class="col-lg-4 col-sm-12">
-						<fieldset>
-							<input name="benMothersFname" type="text" id="benMothersFname" placeholder="First Name">
-							<span class="text-danger">@error('benMothersFname')
-								{{ $message }}
-							@enderror </span>
-						</fieldset>
-					</div>
-					<div class="col-lg-4 col-sm-12">
-						<fieldset>
-							<input name="benMothersMname" type="text" id="benMothersMname" placeholder="Middle Name">
-							<span class="text-danger">@error('benMothersMname')
-								{{ $message }}
-							@enderror </span>
-						</fieldset>
-					</div>
+					
 					<!-- <div class="col-lg-12 pb-3">
 					<fieldset>
 						<button type="submit" id="form-submit" class="main-button-icon w-25 mr-5">Add a Benificiary</button>

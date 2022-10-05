@@ -95,6 +95,7 @@ class MembershipApplicationController extends Controller
         $m->SSSnum = $r->SSSnum;
         $m->email = $r->email;
         $m->NumDependents = $r->NumDependents;
+        $m->Mothers_Mname = $r->Mothers_Mname;
         $m->membership_type = 0;
         $m->save();
 
@@ -104,9 +105,9 @@ class MembershipApplicationController extends Controller
         $b->benRelation = $r->benRelation;
         $b->benAge = $r->benAge;
         $b->benAddress = $r->benAddress;
-        $b->benMothersLname = $r->benMothersLname;
-        $b->benMothersFname = $r->benMothersFname;
-        $b->benMothersMname = $r->benMothersMname;
+        // $b->benMothersLname = $r->benMothersLname;
+        // $b->benMothersFname = $r->benMothersFname;
+        // $b->benMothersMname = $r->benMothersMname;
         $b->save();
 
         $s = new Spouse();
@@ -117,6 +118,7 @@ class MembershipApplicationController extends Controller
         $s->spouseMI = $r->spouseMI;
         $s->spouseEmplrName = $r->spouseEmplrName;
         $s->spouseConNum = $r->spouseConNum;
+        $s->spouse_mother = $r->spouse_mother;
         $s->save();
 
 

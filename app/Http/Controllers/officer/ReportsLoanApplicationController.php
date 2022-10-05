@@ -5,7 +5,7 @@ use App\Models\ExpressLoanApp;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class PreLoanApplicationController extends Controller
+class ReportsLoanApplicationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class PreLoanApplicationController extends Controller
      */
     public function index()
     {
-        $loan = ExpressLoanApp::where('is_approved', 0)->get();
+        $loan = ExpressLoanApp::where('is_approved', 1)->get();
         
-        return view('officer.loan', compact('loan'));
+        return view('officer.pre-approved-loans', compact('loan'));
     }
 
     /**
@@ -71,13 +71,7 @@ class PreLoanApplicationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $loan = ExpressLoanApp::find($id);
-        $loan->is_approved = $request->is_approved;
-        // $loan->acc_id = $request->acc_id;
-        // $loan->or_no = $request->or_no;
-        $loan->save();
-
-        return back();
+        //
     }
 
     /**

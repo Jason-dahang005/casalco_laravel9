@@ -17,5 +17,6 @@ class Spouse extends Model
         'spouseMI',
         'spouseEmplrName',
         'spouseConNum',
+        'spouse_mother'
     ];
 }

@@ -15,8 +15,8 @@ class Beneficiary extends Model
         'benRelation',
         'benAge',
         'benAddress',
-        'benMothersLname',
-        'benMothersFname',
-        'benMothersMname',
+        // 'benMothersLname',
+        // 'benMothersFname',
+        // 'benMothersMname',
     ];
 }

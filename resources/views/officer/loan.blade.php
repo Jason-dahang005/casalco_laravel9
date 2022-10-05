@@ -48,7 +48,9 @@
             @endif
         </td>
         <td>
+          
             <button class="btn btn-success" data-toggle="modal" data-target="#myModal{{ $l->id }}">Details</button>
+          
         </td>
         </tr>
     @endforeach
@@ -152,31 +154,12 @@
                 <input type="text" class="form-control" disabled placeholder="Religion" value="{{ $l->fb_acc }}">
               </div>
             </div>
-            <!-- <div class="col-lg-4">
-              <div class="form-group">
-              <label for="First Name" class="form-label">Contact Number</label>
-                <input type="text" class="form-control" disabled placeholder="Contact Number" value="{{ $l->contactNum }}">
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="form-group">
-              <label for="First Name" class="form-label">Email Address</label>
-              <label for="First Name" class="form-label">Gender</label>
-                <input type="text" class="form-control" disabled placeholder="Email Address" value="{{ $l->email }}">
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="form-group">
-              <label for="First Name" class="form-label">No. of Dependents</label>
-                <input type="text" class="form-control" disabled placeholder="No. of Dependents" value="{{ $l->NumDependents }}">
-              </div>
-            </div>
-          </div> -->
+            
 
         
         <!-- Modal footer -->
         <div class="modal-footer">
-          <form action="{{ route('membership-application.update', $l->id) }}" method="POST">
+          <form action="{{ route('loan.update', $l->id) }}" method="POST">
             @csrf
             @method('PUT')
             <input type="hidden" value="1" name="is_approved">
@@ -187,6 +170,7 @@
      </div>
   </div>
 </div>
+  </div>
 @endforeach
 
 

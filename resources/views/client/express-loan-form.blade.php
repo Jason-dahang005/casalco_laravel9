@@ -28,7 +28,7 @@
 					@csrf	
 				<div class="col-lg-6 col-sm-12">
 					<fieldset>
-						<input name="name" type="text" id="name" placeholder="Name of Member">
+						<input name="name" type="text" id="name" placeholder="Name of Member" value= "{{ Auth::user()->username }}">
 						<span class="text-danger">@error('name')
 								{{ $message }}
 							@enderror </span>

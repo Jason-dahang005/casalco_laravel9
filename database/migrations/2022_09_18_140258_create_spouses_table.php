@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('spouseMI')->nullable();
             $table->string('spouseEmplrName')->nullable();
             $table->string('spouseConNum')->nullable();
+            $table->string('spouse_mother');
             $table->timestamps();
         });
     }

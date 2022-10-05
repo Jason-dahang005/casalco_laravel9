@@ -7,7 +7,7 @@ use App\Http\Controllers\officer\OfficerDashboardController;
 use App\Http\Controllers\officer\PreMembershipApplicationController;
 use App\Http\Controllers\officer\ReportsMembershipApplicationController;
 use App\Http\Controllers\officer\PreLoanApplicationController;
-
+use App\Http\Controllers\officer\ReportsLoanApplicationController;
 use  App\Http\Controllers\MembershipApplicationController;
 
 use App\Http\Controllers\admin\AdminDashboardController;
@@ -141,7 +141,7 @@ Route::resource('/officer/dashboard', OfficerDashboardController::class);
 Route::resource('/officer/membership-application', PreMembershipApplicationController::class);
 Route::resource('/officer/pre-approved-membership', ReportsMembershipApplicationController::class);
 Route::resource('/officer/loan', PreLoanApplicationController::class);
-
+Route::resource('/officer/pre-approved-loans', ReportsloanApplicationController::class);
 
 Route::resource('/admin/dashboard', AdminDashboardController::class);
 Route::resource('/admin/membership', ApproveMembershipApplicationController::class);
