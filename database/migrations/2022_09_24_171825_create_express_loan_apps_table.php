@@ -16,7 +16,7 @@ return new class extends Migration
     {
         Schema::create('express_loan_apps', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class);
+            $table->foreignIdFor(User::class)->nullable();
             $table->string('acc_id');
             $table->string('name');
             $table->string('present_address');
@@ -33,7 +33,7 @@ return new class extends Migration
             $table->string('fb_acc');
             $table->integer('is_approved')->default(0);
             $table->boolean('loanApp_type')->comment('0 = online, 1 = walk-in');
-            $table->boolean('loan_cat')->comment('0 = Express Loan, 1 = Regular Loan, 2 = Special Loan');
+            $table->boolean('loan_cat')->default(0);
             
             $table->timestamps();
         });
