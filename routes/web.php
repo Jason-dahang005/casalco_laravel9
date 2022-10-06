@@ -138,6 +138,7 @@ Route::view('/about-us', 'client.about-us');
 Route::view('/membership-information', 'client.membership-information');
 Route::view('/dashboard', 'client.dashboard');
 Route::view('/officer/loan', 'officer.loan');
+Route::view('/loans', 'client.loans');
 Route::view('/officer/pre-approved-loans', 'officer.pre-approved-loans');
 Route::resource('/membership-application', MembershipApplicationController::class);
 Route::resource('/express-loan-form', ExpressLoanAppController::class);

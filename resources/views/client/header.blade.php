@@ -13,13 +13,13 @@
           <ul class="nav">
             <li class="scroll-to-section"><a href="/" class="{{ (request()->is('/')) ? 'active' : '' }}">Home</a></li>
 
-            <li class="submenu">
-              <a href="javascript:;">Loans</a>
-              <ul>
+            <li>
+              <a href="/loans" class="{{ (request()->is('loans')) ? 'active' : '' }}">Loans</a>
+              {{-- <ul>
                 <li><a href="/regular-loans" class="{{ (request()->is('regular-loans')) ? 'active' : '' }}">Regular Loans</a></li>
                 <li><a href="/express-loans" class="{{ (request()->is('express-loans')) ? 'active' : '' }}">Express Loans</a></li>
                 <li><a href="/special-loans" class="{{ (request()->is('special-loans')) ? 'active' : '' }}">Special Loans</a></li>
-              </ul>
+              </ul> --}}
             </li>
 
             <li class="scroll-to-section"><a href="/about-us" class="{{ (request()->is('about-us')) ? 'active' : '' }}">About Us</a></li>

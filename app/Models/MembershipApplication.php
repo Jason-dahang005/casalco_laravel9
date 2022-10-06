@@ -37,11 +37,11 @@ class MembershipApplication extends Model
         // 'empIDpic'
     ];
 
-    public function Beneficiary(){
-        return $this->hasMany(Beneficiary::class);
+    public function ben(){
+        return $this->hasMany(Beneficiary::class, 'membership_application_id');
     }
 
     public function spouse(){
-        return $this->hasOne(Spouse::class);
+        return $this->hasOne(Spouse::class, 'membership_application_id');
     }
 }

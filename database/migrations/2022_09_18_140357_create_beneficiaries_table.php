@@ -16,7 +16,7 @@ return new class extends Migration
     {
         Schema::create('beneficiaries', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(MembershipApplication::class);
+            $table->foreignId('membership_application_id')->constrained();
             $table->string('benName')->nullable();
             $table->string('benRelation')->nullable();
             $table->string('benAge')->nullable();

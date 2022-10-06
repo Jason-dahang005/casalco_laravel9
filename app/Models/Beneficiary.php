@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\MembershipApplication;
 
 class Beneficiary extends Model
 {
@@ -19,4 +20,8 @@ class Beneficiary extends Model
         // 'benMothersFname',
         // 'benMothersMname',
     ];
+
+    public function membership(){
+        return $this->belongsTo(MembershipApplication::class);
+    }
 }

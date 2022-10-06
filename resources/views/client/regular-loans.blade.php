@@ -16,10 +16,6 @@
         <div class="left-content">
           <div class="inner-content">
             <h4>Appliance Loan</h4>
-            {{-- <h6>THE BEST EXPERIENCE</h6>
-            <div class="main-white-button scroll-to-section">
-              <a href="#reservation">Make A Reservation</a>
-            </div> --}}
           </div>
         </div>
       </div>
@@ -29,21 +25,21 @@
             <!-- Item -->
             <div class="item">
               <div class="img-fill">
-                <img src="../pluto/images/loan/appliance.png" alt="">
+                <img src="../klassy/loan-images/regular-loan/appliance1.png" class="img-fluid" alt="">
               </div>
             </div>
             <!-- // Item -->
             <!-- Item -->
             <div class="item">
               <div class="img-fill">
-                <img src="../klassy/images/slide-02.jpg" alt="">
+                <img src="../klassy/loan-images/regular-loan/appliance2.png" alt="">
               </div>
             </div>
             <!-- // Item -->
             <!-- Item -->
             <div class="item">
               <div class="img-fill">
-                <img src="../klassy/images/slide-03.jpg" alt="">
+                <img src="../klassy/loan-images/regular-loan/appliance3.jpg" alt="">
               </div>
             </div>
             <!-- // Item -->
