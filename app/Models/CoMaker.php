@@ -15,4 +15,7 @@ class CoMaker extends Model
         'co_maker_form',
         
     ];
+    public function regular(){
+        return $this->belongsTo(RegularSpecialLoan::class);
+}
 }

@@ -20,5 +20,8 @@ class MonthlyIncome extends Model
         'mode_payment',
       
     ];
+    public function regular(){
+        return $this->belongsTo(RegularSpecialLoan::class);
+}
 
 }

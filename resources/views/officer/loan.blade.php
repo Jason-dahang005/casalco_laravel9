@@ -65,6 +65,7 @@
         </tr>
     @endforeach
   </tbody>
+  
 </table>
 
 @foreach($loan as $l)
@@ -198,6 +199,7 @@
           <h4>Express Loan</h4>
          
           <input  type="hidden" value="1" name="loanApp_type">
+         
           <div class="border border-danger"></div>
           <div class="row pt-3">
             <div class="col-lg-4">
@@ -229,13 +231,16 @@
               <label for="First Name" class="form-label">Loan Type</label>
               <select name="loan_type" id="loan_type" class ="form-control">
                 <option value="" disabled selected >Types of Loan Applied</option>
-                <option value="PLC">PCL</option>
-                <option value="FLC">FLC</option>
-                <option value="ICL">ICL</option>
-                <option value="BLD">BLD</option>
+                <option value="Grocery Loan">Grocery Loan</option>
+                <option value="PettyCash">PettyCash</option>
+                <option value="FastCash">FastCash</option>
+                <option value="InstaCash">InstaCash</option>
+                <option value="Health Insurace">Health Insurace</option>
+                <option value="Birthday Loan">Birthday Loan</option>
                 
               </select>
               </div>
+              <input  type="hidden" value="{{ Auth::user()->id }}" name="user_id">
             </div>
             <div class="col-lg-4">
               <div class="form-group">

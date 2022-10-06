@@ -10,7 +10,7 @@ class ExpressLoanApp extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id',
+        'loan_application_id',
         'acc_id',
         'name',
         'present_address',
@@ -27,4 +27,10 @@ class ExpressLoanApp extends Model
         'fb_acc',
 
     ];
+
+    public function loan(){
+        return $this->belongsTo(LoanApplication::class);
 }
+
+}
+
