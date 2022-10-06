@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ExpressLoanApp;
 use App\Models\User;
 use App\Http\Controllers\Controller;
+use App\Models\LoanApplication;
 use Illuminate\Http\Request;
 
 class ExpressLoanAppController extends Controller
@@ -38,8 +39,12 @@ class ExpressLoanAppController extends Controller
      */
     public function store(Request $r)
     {
+        $loan = new LoanApplication();
+        $loan->users_id = $r->user_id;
+        $loan->save();
+
         $l = new ExpressLoanApp();
-        $l->user_id = $r->user_id;
+        $l->loan_application_id = $loan->id;
         $l->acc_id = $r->acc_id;
         $l->name =$r->name;
         $l->present_address = $r->present_address;

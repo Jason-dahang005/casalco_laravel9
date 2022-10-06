@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\RegularSpecialLoan;
 use App\Http\Controllers\Controller;
 use App\Models\CoMaker;
+use App\Models\LoanApplication;
 use App\Models\MonthlyExpenses;
 use App\Models\MonthlyIncome;
 use Illuminate\Http\Request;
@@ -39,7 +40,12 @@ class RegularSpecialLoanController extends Controller
      */
     public function store(Request $r)
     {
+        $loan = new LoanApplication();
+        $loan->users_id = $r->user_id;
+        $loan->save();
+
         $l = new RegularSpecialLoan();
+        $l->loan_application_id = $loan->id;
         $l->name = $r->name;
         $l->acc_id = $r->acc_id;
         $l->age = $r->age;

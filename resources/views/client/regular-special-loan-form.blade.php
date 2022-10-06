@@ -34,6 +34,7 @@
 							@enderror </span>
 					</fieldset>
 				</div>
+				<input  type="hidden" value="{{ Auth::user()->id }}" name="user_id">
 				<div class="col-lg-4 col-sm-12">
 					<fieldset>
                         <label for="First Name" class="form-label">CASALCO ID no.</label>

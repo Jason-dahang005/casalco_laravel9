@@ -19,4 +19,7 @@ class MonthlyExpenses extends Model
         'allowance',
         'others',
     ];
+    public function regular(){
+        return $this->belongsTo(RegularSpecialLoan::class);
+}
 }

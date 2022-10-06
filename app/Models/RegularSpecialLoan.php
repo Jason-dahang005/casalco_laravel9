@@ -14,6 +14,7 @@ class RegularSpecialLoan extends Model
     use HasFactory;
    
     protected $fillable = [
+        'loan_applications_id',
         'name',
         'acc_id',
         'age',
@@ -36,14 +37,17 @@ class RegularSpecialLoan extends Model
         'loan_cat',
     ];
 
-    public function MonthlyExpenses(){
+    public function loan(){
+        return $this->belongsTo(LoanApplication::class);
+}
+    public function monthlyE(){
         return $this->hasOne(MonthlyExpenses::class);
 
     }
-    public function MonthlyIncome(){
+    public function monthlyI(){
         return $this->hasOne(MonthlyIncome::class);
     }
-    public function CoMaker(){
+    public function comaker(){
         return $this->hasOne(CoMaker::class);
     }
 }

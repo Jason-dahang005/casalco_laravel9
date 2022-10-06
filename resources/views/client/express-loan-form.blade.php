@@ -69,10 +69,12 @@
 				<div class="col-lg-4 col-sm-12">
 					<select name="loan_type" id="loan_type">
 						<option value="" disabled selected >Types of Loan Applied</option>
-						<option value="PLC">PCL</option>
-						<option value="FLC">FLC</option>
-						<option value="ICL">ICL</option>
-						<option value="BLD">BLD</option>
+						<option value="Grocery Loan">Grocery Loan</option>
+						<option value="PettyCash">PettyCash</option>
+						<option value="FastCash">FastCash</option>
+						<option value="InstaCash">InstaCash</option>
+						<option value="Health Insurace">Health Insurace</option>
+						<option value="Birthday Loan">Birthday Loan</option>
 						
 					</select>
 					<span class="text-danger">@error('loan_type')
@@ -154,7 +156,17 @@
 						@enderror </span>
 					</fieldset>
 				</div>
-                
+                <div class="col-lg-4 col-sm-12">
+					<label for="First Name" class="form-label">Loan Category</label>
+					<select name="loan_cat" id="loan_cat">
+						<option value="" disabled selected >Seclect</option>
+						<option value="0">Express Loan</option>
+						<option value="1">LAD-Loan Agains Deposit</option>
+					</select>
+					<span class="text-danger">@error('loan_cat')
+						{{ $message }}
+					@enderror </span>
+				</div>
 
 					
 					
