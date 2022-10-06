@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Member;
+use App\Models\MembershipApplication;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -15,7 +15,8 @@ class MemberController extends Controller
      */
     public function index()
     {
-        //
+        $membership = MembershipApplication::where('is_approved', 2)->get();
+        return view('/admin/member', compact('membership'));
     }
 
     /**

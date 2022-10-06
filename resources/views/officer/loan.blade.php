@@ -5,7 +5,17 @@
 
 
 
-<button class="btn btn-sm btn-success mb-2" data-toggle="modal" data-target="#myModal01">Add Walk-in</button>
+<!-- <button class="btn btn-sm btn-success mb-2" data-toggle="modal" data-target="#myModal01">Add Walk-in</button> -->
+
+<div class="btn-group">
+  <button type="button" class="btn btn-success mb-2 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Add Walk-in
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal1" >Express Loan</a>
+    <a class="dropdown-item" href="#">Regular/Special Loan</a>
+  </div>
+</div>
 
 <table class="table table-bordered table-striped table-sm" id="example2">
 	<thead>
@@ -102,7 +112,7 @@
             </div>
             <div class="col-lg-4">
               <div class="form-group">
-              <label for="First Name" class="form-label">Birthday</label>
+              <label for="First Name" class="form-label">Employee</label>
                 <input type="text" class="form-control" disabled placeholder="birthday" value="{{ $l->emp }}">
               </div>
             </div>
@@ -170,8 +180,133 @@
      </div>
   </div>
 </div>
-  </div>
+</div>
+</div>
 @endforeach
+
+<div class="modal fade" id="myModal1">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+     <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+           <h4 class="modal-title">CASALCO Loan Application Form</h4>
+        </div>
+        <!-- Modal body -->
+        <form action="{{ url('/officer/loan') }}" method="POST">
+            @csrf
+        <div class="modal-body">
+          <h4>Express Loan</h4>
+         
+          <input  type="hidden" value="1" name="loanApp_type">
+          <div class="border border-danger"></div>
+          <div class="row pt-3">
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" placeholder="Name" >
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Account ID</label>
+                <input type="text" class="form-control" name="acc_id" placeholder="Account ID">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Present Address</label>
+                <input type="text" class="form-control" name="present_address" placeholder="Present Address" >
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Permanent Address</label>
+                <input type="text" class="form-control" name="permanent_address" placeholder="Permanent Address">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Loan Type</label>
+              <select name="loan_type" id="loan_type" class ="form-control">
+                <option value="" disabled selected >Types of Loan Applied</option>
+                <option value="PLC">PCL</option>
+                <option value="FLC">FLC</option>
+                <option value="ICL">ICL</option>
+                <option value="BLD">BLD</option>
+                
+              </select>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Employee</label>
+                <input type="text" class="form-control" name="emp" placeholder="Employee">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Employee Address</label>
+                <input type="text" class="form-control" name="emp_address" placeholder="Employee Address" >
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Email</label>
+                <input type="text" class="form-control" name="email" placeholder="Email" >
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Amount</label>
+                <input type="text" class="form-control" name="amount" placeholder="Amount" >
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Mode of Payment</label>
+                <input type="text" class="form-control" name="mode_payment" placeholder="Mode of Payment">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Term Applied</label>
+                <input type="text" class="form-control" name="term_applied" placeholder="Term Applied" >
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Phone No.</label>
+                <input type="text" class="form-control" name="phone_no" placeholder="Phone No.">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">TIN</label>
+                <input type="text" class="form-control" name="tin" placeholder="TIN" >
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Fb Account</label>
+                <input type="text" class="form-control" name="fb_acc" placeholder="Fb Account" >
+              </div>
+            </div>
+            
+
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          
+           
+           
+            <button type="submit" class="btn btn-success w-100 mb-4 mt-4">Submit</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </form>
+        </div>
+     </div>
+  </div>
+</div>
+</div>
 
 
 

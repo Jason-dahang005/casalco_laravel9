@@ -14,9 +14,11 @@ use App\Http\Controllers\admin\AdminDashboardController;
 use App\Http\Controllers\admin\ApproveMembershipApplicationController;
 use App\Http\Controllers\admin\ApproveLoanApplicationController;
 use App\Http\Controllers\admin\LoanApplicationReportsController;
+use App\Http\Controllers\admin\AccountController;
 
 
 use App\Http\Controllers\MembershipReportsController;
+use App\Http\Controllers\MemberController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\ExpressLoanAppController;
 use App\Http\Controllers\RegularSpecialLoanController;
@@ -140,6 +142,7 @@ Route::view('/dashboard', 'client.dashboard');
 Route::view('/officer/loan', 'officer.loan');
 Route::view('/loans', 'client.loans');
 Route::view('/officer/pre-approved-loans', 'officer.pre-approved-loans');
+Route::view('/admin/member', 'admin.member');
 Route::resource('/membership-application', MembershipApplicationController::class);
 Route::resource('/express-loan-form', ExpressLoanAppController::class);
 Route::resource('/regular-special-loan-form', RegularSpecialLoanController::class);
@@ -159,6 +162,8 @@ Route::resource('/admin/membership', ApproveMembershipApplicationController::cla
 Route::resource('/admin/approved-membership', MembershipReportsController::class);
 Route::resource('/admin/loan', ApproveLoanApplicationController::class);
 Route::resource('/admin/approved-loans', LoanApplicationReportsController::class);
+Route::resource('/admin/member', MemberController::class);
+Route::resource('/admin/accounts', AccountController::class);
 
 Route::resource('/registration', RegistrationController::class);
 

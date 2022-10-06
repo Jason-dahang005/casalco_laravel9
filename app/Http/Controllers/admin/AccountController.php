@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\officer;
-use App\Models\ExpressLoanApp;
+namespace App\Http\Controllers\admin;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
-class PreLoanApplicationController extends Controller
+use Hash;
+class AccountController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,8 @@ class PreLoanApplicationController extends Controller
      */
     public function index()
     {
-        $loan = ExpressLoanApp::where('is_approved', 0)->get();
-        
-        return view('officer.loan', compact('loan'));
+        $user = User::where('user_type', 2)->get();
+        return view('/admin/accounts', compact('user'));
     }
 
     /**
@@ -35,29 +34,29 @@ class PreLoanApplicationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $r)
+    public function store(Request $request)
     {
-        $l = new ExpressLoanApp();
-        $l->user_id = $r->user_id;
-        $l->acc_id = $r->acc_id;
-        $l->name =$r->name;
-        $l->present_address = $r->present_address;
-        $l->permanent_address = $r->permanent_address;
-        $l->loan_type = $r->loan_type;
-        $l->emp  = $r->emp;
-        $l->emp_address = $r->emp_address;
-        $l->email = $r->email;
-        $l->amount = $r->amount;
-        $l->mode_payment = $r->mode_payment;
-        $l->term_applied = $r->term_applied;
-        $l->phone_no = $r->phone_no;
-        $l->tin = $r->tin;
-        $l->fb_acc = $r->fb_acc;
-        $l->loanApp_type = $r->loanApp_type;
-     
-        $l->save();
+        $request->validate([
+            'acc_id'        => 'required|unique:users',
+            'user_type'     => 'required',
+            'username'      => 'required|unique:users',
+            'email'         => 'required|email|unique:users',
+            'password'      => 'required|min:8'
+        ]);
 
-        return back();
+      
+        
+            $user = new User();
+            $user->acc_id = $request->acc_id;
+            $user->user_type = $request->user_type;
+            $user->username = $request->username;
+            $user->email = $request->email;
+            $user->password = Hash::make($request->password);
+            $user->save();
+
+            return back();
+        
+        
     }
 
     /**
@@ -91,13 +90,7 @@ class PreLoanApplicationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $loan = ExpressLoanApp::find($id);
-        $loan->is_approved = $request->is_approved;
-        // $loan->acc_id = $request->acc_id;
-        // $loan->or_no = $request->or_no;
-        $loan->save();
-
-        return back();
+        //
     }
 
     /**

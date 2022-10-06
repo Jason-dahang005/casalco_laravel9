@@ -23,7 +23,7 @@
 					
 					<input  type="hidden" value="{{ Auth::user()->id }}" name="user_id">
 					<input  type="hidden" value="0" name="loanApp_type">
-					<input  type="hidden" value="1" name="loan_cat">
+				
 				
 					@csrf	
 				<div class="col-lg-6 col-sm-12">

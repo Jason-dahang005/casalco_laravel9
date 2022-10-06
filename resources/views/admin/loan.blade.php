@@ -2,6 +2,8 @@
 @section('title', 'Loan')
 @section('admin_content')
 
+
+
 <table class="table table-bordered table-striped table-sm" id="example2">
 	<thead>
     <tr>
