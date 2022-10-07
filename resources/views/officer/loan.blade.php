@@ -32,29 +32,31 @@
   </thead>
   <tbody>
     @foreach ($loan as $l)
+    @foreach ($l->express as $e )
+   
         <tr>
-        <td>{{ $l->name }}</td>
-        <td>{{ $l->acc_id }}</td>
+        <td>{{ $e->name }}</td>
+        <td>{{ $e->acc_id }}</td>
         <td>
-          @if ($l->loan_cat == 0)
+          @if ($e->loan_cat == 0)
             <span class="badge badge-info">Express Loan</span>
           @else
-            <span class="badge badge-info">Regular Loan</span>
+            <span class="badge badge-info">LAD</span>
           
           @endif
         </td>
         <td>
-          @if ($l->loanApp_type == 0)
+          @if ($e->loanApp_type == 0)
             <span class="badge badge-info">Online</span>
           @else
             <span class="badge badge-info">Walk-in</span>
           @endif
         </td>
-        <td>{{ $l->amount }}</td>
-        <td>{{ $l->created_at }}</td>
+        <td>{{ $e->amount }}</td>
+        <td>{{ $e->created_at }}</td>
         <td>
-            @if($l->is_approved == 0)
-              <span class="badge badge-secondary">Pending</span>
+            @if($l->is_approved==0)
+              <span class="badge badge-info">Pending</span>
             @endif
         </td>
         <td>
@@ -63,12 +65,53 @@
           
         </td>
         </tr>
+           
+    @endforeach
+    @endforeach
+
+    @foreach ($loan as $l)
+    @foreach ($l->regularSpecial as $u )
+   
+        <tr>
+        <td>{{ $u->name }}</td>
+        <td>{{ $u->acc_id }}</td>
+        <td>
+          @if ($u->loan_cat == 0)
+            <span class="badge badge-info">Regular Loan</span>
+          @else
+            <span class="badge badge-info">Special Loan</span>
+          
+          @endif
+        </td>
+        <td>
+          @if ($u->loanApp_type == 0)
+            <span class="badge badge-info">Online</span>
+          @else
+            <span class="badge badge-info">Walk-in</span>
+          @endif
+        </td>
+        <td>{{ $u->monthlyI->amount }}</td>
+        <td>{{ $u->created_at }}</td>
+        <td>
+            @if($l->is_approved==0)
+              <span class="badge badge-info">Pending</span>
+            @endif
+        </td>
+        <td>
+          
+            <button class="btn btn-success" data-toggle="modal" data-target="#myModal101{{ $u->id }}">Details</button>
+          
+        </td>
+        </tr>
+           
+    @endforeach
     @endforeach
   </tbody>
   
 </table>
 
 @foreach($loan as $l)
+@foreach ($l->express as $e )
 <div class="modal fade" id="myModal{{ $l->id }}">
   <div class="modal-dialog modal-lg modal-dialog-scrollable">
      <div class="modal-content">
@@ -78,91 +121,91 @@
         </div>
         <!-- Modal body -->
         <div class="modal-body">
-          <h4>Express Loan</h4>
+          <h4>Express Loan/LAD</h4>
           <div class="border border-danger"></div>
           <div class="row pt-3">
             <div class="col-lg-4">
               <div class="form-group">
-              <label for="First Name" class="form-label">First Name</label>
-                <input type="text" class="form-control" disabled placeholder="First Name" value="{{ $l->name }}">
+              <label for="First Name" class="form-label">Name</label>
+                <input type="text" class="form-control" disabled placeholder="" value="{{ $e->name }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
-              <label for="First Name" class="form-label">Middle Name</label>
-                <input type="text" class="form-control" disabled placeholder="Middle Name" value="{{ $l->acc_id }}">
+              <label for="First Name" class="form-label">Account Number</label>
+                <input type="text" class="form-control" disabled placeholder="" value="{{ $e->acc_id }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
-              <label for="First Name" class="form-label">Last Name</label>
-                <input type="text" class="form-control" disabled placeholder="Last Name" value="{{ $l->present_address }}">
+              <label for="First Name" class="form-label">Present Address</label>
+                <input type="text" class="form-control" disabled placeholder="" value="{{ $e->present_address }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
-              <label for="First Name" class="form-label">Suffix</label>
-                <input type="text" class="form-control" disabled placeholder="Suffix" value="{{ $l->permanent_address }}">
+              <label for="First Name" class="form-label">Permanent Address</label>
+                <input type="text" class="form-control" disabled placeholder="Suffix" value="{{ $e->permanent_address }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
-              <label for="First Name" class="form-label">Gender</label>
-                <input type="text" class="form-control" disabled placeholder="Gender" value="{{ $l->loan_type }}">
+              <label for="First Name" class="form-label">Loan Type</label>
+                <input type="text" class="form-control" disabled placeholder="" value="{{ $e->loan_type }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
-              <label for="First Name" class="form-label">Employee</label>
-                <input type="text" class="form-control" disabled placeholder="birthday" value="{{ $l->emp }}">
+              <label for="First Name" class="form-label">Employer</label>
+                <input type="text" class="form-control" disabled placeholder="birthday" value="{{ $e->emp }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
-              <label for="First Name" class="form-label">Birth Place</label>
-                <input type="text" class="form-control" disabled placeholder="Birth Place" value="{{ $l->emp_address }}">
+              <label for="First Name" class="form-label">Employer Address</label>
+                <input type="text" class="form-control" disabled placeholder="Birth Place" value="{{ $e->emp_address }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
-              <label for="First Name" class="form-label">Address</label>
-                <input type="text" class="form-control" disabled placeholder="Address" value="{{ $l->email }}">
+              <label for="First Name" class="form-label">Email</label>
+                <input type="text" class="form-control" disabled placeholder="Address" value="{{ $e->email }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
-              <label for="First Name" class="form-label">Unit</label>
-                <input type="text" class="form-control" disabled placeholder="Unit" value="{{ $l->amount }}">
+              <label for="First Name" class="form-label">Amount</label>
+                <input type="text" class="form-control" disabled placeholder="Unit" value="{{ $e->amount }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
-              <label for="First Name" class="form-label">Occupation</label>
-                <input type="text" class="form-control" disabled placeholder="Occupation" value="{{ $l->mode_payment }}">
+              <label for="First Name" class="form-label">Mode of Payments</label>
+                <input type="text" class="form-control" disabled placeholder="Occupation" value="{{ $e->mode_payment }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
-              <label for="First Name" class="form-label">Educ. Attainment</label>
-                <input type="text" class="form-control" disabled placeholder="Educ. Attainment" value="{{ $l->term_applied }}">
+              <label for="First Name" class="form-label">Term Applied</label>
+                <input type="text" class="form-control" disabled placeholder="Educ. Attainment" value="{{ $e->term_applied }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
-              <label for="First Name" class="form-label">Monthly Income</label>
-                <input type="text" class="form-control" disabled placeholder="Monthly Income" value="{{ $l->phone_no }}">
+              <label for="First Name" class="form-label">Phone No.</label>
+                <input type="text" class="form-control" disabled placeholder="Monthly Income" value="{{ $e->phone_no }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
-              <label for="First Name" class="form-label">Civil Status</label>
-                <input type="text" class="form-control" disabled placeholder="Civil Status" value="{{ $l->tin }}">
+              <label for="First Name" class="form-label">TIN</label>
+                <input type="text" class="form-control" disabled placeholder="Civil Status" value="{{ $e->tin }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
-              <label for="First Name" class="form-label">Religion</label>
-                <input type="text" class="form-control" disabled placeholder="Religion" value="{{ $l->fb_acc }}">
+              <label for="First Name" class="form-label">FB account</label>
+                <input type="text" class="form-control" disabled placeholder="Religion" value="{{ $e->fb_acc }}">
               </div>
             </div>
             
@@ -184,6 +227,131 @@
 </div>
 </div>
 @endforeach
+@endforeach
+
+
+
+@foreach($loan as $l)
+@foreach ($l->regularSpecial as $u )
+<div class="modal fade" id="myModal101{{ $u->id }}">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+     <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+           <h4 class="modal-title">CASALCO Loan Application Form</h4>
+        </div>
+        <!-- Modal body -->
+        <div class="modal-body">
+          <h4>Regular/Special Loan</h4>
+          <div class="border border-danger"></div>
+          <div class="row pt-3">
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">First Name</label>
+                <input type="text" class="form-control" disabled placeholder="First Name" value="{{ $u->name }}">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Middle Name</label>
+                <input type="text" class="form-control" disabled placeholder="Middle Name" value="{{ $u->acc_id }}">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Last Name</label>
+                <input type="text" class="form-control" disabled placeholder="Last Name" value="{{ $u->present_address }}">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Suffix</label>
+                <input type="text" class="form-control" disabled placeholder="Suffix" value="{{ $u->permanent_address }}">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Gender</label>
+                <input type="text" class="form-control" disabled placeholder="Gender" value="{{ $u->loan_type }}">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Employee</label>
+                <input type="text" class="form-control" disabled placeholder="birthday" value="{{ $u->emp }}">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Birth Place</label>
+                <input type="text" class="form-control" disabled placeholder="Birth Place" value="{{ $u->emp_address }}">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Address</label>
+                <input type="text" class="form-control" disabled placeholder="Address" value="{{ $u->email }}">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Unit</label>
+                <input type="text" class="form-control" disabled placeholder="Unit" value="{{ $u->amount }}">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Occupation</label>
+                <input type="text" class="form-control" disabled placeholder="Occupation" value="{{ $u->mode_payment }}">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Educ. Attainment</label>
+                <input type="text" class="form-control" disabled placeholder="Educ. Attainment" value="{{ $u->term_applied }}">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Monthly Income</label>
+                <input type="text" class="form-control" disabled placeholder="Monthly Income" value="{{ $u->phone_no }}">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Civil Status</label>
+                <input type="text" class="form-control" disabled placeholder="Civil Status" value="{{ $u->tin }}">
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+              <label for="First Name" class="form-label">Religion</label>
+                <input type="text" class="form-control" disabled placeholder="Religion" value="{{ $u->fb_acc }}">
+              </div>
+            </div>
+            
+
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <form action="{{ route('loan.update', $l->id) }}" method="POST">
+            @csrf
+            @method('PUT')
+            <input type="hidden" value="1" name="is_approved">
+            <button type="submit" class="btn btn-success w-100">Pre-Approve</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </form>
+        </div>
+     </div>
+  </div>
+</div>
+</div>
+</div>
+@endforeach
+@endforeach
+
+
+
 
 <div class="modal fade" id="myModal1">
   <div class="modal-dialog modal-lg modal-dialog-scrollable">

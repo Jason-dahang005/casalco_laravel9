@@ -16,7 +16,7 @@ return new class extends Migration
     {
         Schema::create('regular_special_loans', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(LoanApplication::class)->nullable();
+            $table->foreignIdFor(LoanApplication::class);
             $table->string('name');
             $table->string('acc_id');
             $table->string('age');
@@ -36,8 +36,8 @@ return new class extends Migration
             $table->string('email');
             $table->string('occupation');
             $table->string('no_child');
-            $table->string('loan_cat');
-            $table->integer('is_approved')->default(0);
+            $table->boolean('loan_cat')->comment('0 = regular, 1 = special');
+            $table->boolean('loanApp_type')->comment('0 = online, 1 = walk-in');
             $table->timestamps();
         });
     }

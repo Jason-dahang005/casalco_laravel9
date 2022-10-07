@@ -60,10 +60,11 @@ class ExpressLoanAppController extends Controller
         $l->tin = $r->tin;
         $l->fb_acc = $r->fb_acc;
         $l->loanApp_type = $r->loanApp_type;
+        $l->loan_cat = $r->loan_cat;
        
         $l->save();
 
-        return back();
+        return back()->with('success', 'You have successfully registered as a member, kindly login');
     }
 
     /**

@@ -28,8 +28,8 @@
 </div> -->
             <div class="row">
                     <div class="col-md-8 offset-md-2">
-                        <video width="100%" controls muted autoplay loop> 
-                                <source src="../klassy/images/Casalco-video.mp4" type="video/mp4"> 
+                        <video width="110%" controls autoplay loop> 
+                                <source src="../klassy/images/CASALCO_ORIENTATION.mp4" type="video/mp4"> 
                         </video> 
                        
                     </div>

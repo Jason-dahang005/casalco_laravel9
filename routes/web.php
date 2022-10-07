@@ -22,6 +22,7 @@ use App\Http\Controllers\MemberController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\ExpressLoanAppController;
 use App\Http\Controllers\RegularSpecialLoanController;
+use App\Http\Controllers\LoanHistoryController;
 
 // use App\Http\Controllers\admin\DashboardController;
 // use App\Http\Controllers\admin\MembershipController;
@@ -143,9 +144,13 @@ Route::view('/officer/loan', 'officer.loan');
 Route::view('/loans', 'client.loans');
 Route::view('/officer/pre-approved-loans', 'officer.pre-approved-loans');
 Route::view('/admin/member', 'admin.member');
+Route::view('/loan-history', 'client.loan-history');
+Route::view('/pre_seminar', 'client.pre_seminar');
 Route::resource('/membership-application', MembershipApplicationController::class);
 Route::resource('/express-loan-form', ExpressLoanAppController::class);
 Route::resource('/regular-special-loan-form', RegularSpecialLoanController::class);
+Route::resource('/loan-history', LoanHistoryController::class);
+
 
 
 //offcer

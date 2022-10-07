@@ -28,7 +28,7 @@
 				<div class="col-lg-4 col-sm-12">
 					<fieldset>
                         <label for="First Name" class="form-label">Name of Member</label>
-						<input name="name" type="text" id="name" placeholder="Provide Name" ">
+						<input name="name" type="text" id="name" placeholder="Provide Name" value="{{ Auth::user()->username }}">
 						<span class="text-danger">@error('name')
 								{{ $message }}
 							@enderror </span>
@@ -38,7 +38,7 @@
 				<div class="col-lg-4 col-sm-12">
 					<fieldset>
                         <label for="First Name" class="form-label">CASALCO ID no.</label>
-						<input name="acc_id" type="text" id="acc_id" placeholder="ex. 20xx-xxxx" ">
+						<input name="acc_id" type="text" id="acc_id" placeholder="ex. 20xx-xxxx" value="{{ Auth::user()->acc_id }}">
 						<span class="text-danger">@error('acc_id')
 							{{ $message }}
 						@enderror </span>
@@ -147,7 +147,7 @@
 						@enderror </span>
 					</fieldset>
 				</div>
-                
+                <input  type="hidden" value="0" name="loanApp_type">
                 <div class="col-lg-4 col-sm-12">
 					<fieldset>
                         <label for="First Name" class="form-label">Present Position</label>
@@ -212,14 +212,15 @@
 						<label for="First Name" class="form-label">Loan Category</label>
 						<select name="loan_cat" id="loan_cat">
 							<option value="" disabled selected >Seclect</option>
-							<option value="1">Regular Loan</option>
-							<option value="2">Special Loan</option>
+							<option value="0">Regular Loan</option>
+							<option value="1">Special Loan</option>
 						</select>
 						<span class="text-danger">@error('loan_cat')
 							{{ $message }}
 						@enderror </span>
 					</div>
                     
+					
 				
                 <div class="col-lg-12">
                     <hr>

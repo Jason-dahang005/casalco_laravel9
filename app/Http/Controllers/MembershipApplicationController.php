@@ -121,9 +121,9 @@ class MembershipApplicationController extends Controller
         $s->spouse_mother = $r->spouse_mother;
         $s->save();
 
+        return redirect('pre_seminar');
 
-
-        return redirect('/')->with('success','Membership Application Successfully Sent, Please Just Wait For A Call/Email');
+        // return redirect('/')->with('success','Membership Application Successfully Sent, Please Just Wait For A Call/Email');
 
     }
 

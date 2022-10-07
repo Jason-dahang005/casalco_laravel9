@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 use App\Models\ExpressLoanApp;
 use App\Http\Controllers\Controller;
+use App\Models\LoanApplication;
 use Illuminate\Http\Request;
 
 class LoanApplicationReportsController extends Controller
@@ -14,7 +15,7 @@ class LoanApplicationReportsController extends Controller
      */
     public function index()
     {
-        $loan = ExpressLoanApp::where('is_approved', 2)->get();
+        $loan = LoanApplication::where('is_approved', 2)->get();
         
         return view('admin.approved-loans', compact('loan'));
     }

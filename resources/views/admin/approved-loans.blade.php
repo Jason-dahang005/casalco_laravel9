@@ -17,11 +17,13 @@
   </thead>
   <tbody>
     @foreach ($loan as $l)
+    @foreach ($l->express as $e )
+   
         <tr>
-        <td>{{ $l->name }}</td>
-        <td>{{ $l->acc_id }}</td>
+        <td>{{ $e->name }}</td>
+        <td>{{ $e->acc_id }}</td>
         <td>
-          @if ($l->loan_cat == 0)
+          @if ($e->loan_cat == 0)
             <span class="badge badge-info">Express Loan</span>
           @else
             <span class="badge badge-info">Regular Loan</span>
@@ -29,14 +31,14 @@
           @endif
         </td>
         <td>
-          @if ($l->loanApp_type == 0)
+          @if ($e->loanApp_type == 0)
             <span class="badge badge-info">Online</span>
           @else
             <span class="badge badge-info">Walk-in</span>
           @endif
         </td>
-        <td>{{ $l->amount }}</td>
-        <td>{{ $l->created_at }}</td>
+        <td>{{ $e->amount }}</td>
+        <td>{{ $e->created_at }}</td>
         <td>
             @if($l->is_approved)
               <span class="badge badge-info">Approved</span>
@@ -48,6 +50,7 @@
           
         </td> --}}
         </tr>
+    @endforeach
     @endforeach
   </tbody>
 </table>

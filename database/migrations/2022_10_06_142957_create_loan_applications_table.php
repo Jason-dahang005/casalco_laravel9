@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('loan_applications', function (Blueprint $table) {
             $table->id();
             $table->foreignId('users_id')->constrained();
+            $table->integer('is_approved')->default(0);
             $table->timestamps();
         });
     }

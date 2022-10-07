@@ -19,11 +19,13 @@
   </thead>
   <tbody>
     @foreach ($loan as $l)
+    @foreach ($l->express as $e )
+   
         <tr>
-        <td>{{ $l->name }}</td>
-        <td>{{ $l->acc_id }}</td>
+        <td>{{ $e->name }}</td>
+        <td>{{ $e->acc_id }}</td>
         <td>
-          @if ($l->loan_cat == 0)
+          @if ($e->loan_cat == 0)
             <span class="badge badge-info">Express Loan</span>
           @else
             <span class="badge badge-info">Regular Loan</span>
@@ -31,14 +33,14 @@
           @endif
         </td>
         <td>
-          @if ($l->loanApp_type == 0)
+          @if ($e->loanApp_type == 0)
             <span class="badge badge-info">Online</span>
           @else
             <span class="badge badge-info">Walk-in</span>
           @endif
         </td>
-        <td>{{ $l->amount }}</td>
-        <td>{{ $l->created_at }}</td>
+        <td>{{ $e->amount }}</td>
+        <td>{{ $e->created_at }}</td>
         <td>
             @if($l->is_approved)
               <span class="badge badge-info">Pre-approved</span>
@@ -50,11 +52,14 @@
           
         </td>
         </tr>
+           
+    @endforeach
     @endforeach
   </tbody>
 </table>
 
 @foreach($loan as $l)
+@foreach ($l->express as $e )
 <div class="modal fade" id="myModal{{ $l->id }}">
   <div class="modal-dialog modal-lg modal-dialog-scrollable">
      <div class="modal-content">
@@ -70,85 +75,85 @@
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">First Name</label>
-                <input type="text" class="form-control" disabled placeholder="First Name" value="{{ $l->name }}">
+                <input type="text" class="form-control" disabled placeholder="First Name" value="{{ $e->name }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Middle Name</label>
-                <input type="text" class="form-control" disabled placeholder="Middle Name" value="{{ $l->acc_id }}">
+                <input type="text" class="form-control" disabled placeholder="Middle Name" value="{{ $e->acc_id }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Last Name</label>
-                <input type="text" class="form-control" disabled placeholder="Last Name" value="{{ $l->present_address }}">
+                <input type="text" class="form-control" disabled placeholder="Last Name" value="{{ $e->present_address }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Suffix</label>
-                <input type="text" class="form-control" disabled placeholder="Suffix" value="{{ $l->permanent_address }}">
+                <input type="text" class="form-control" disabled placeholder="Suffix" value="{{ $e->permanent_address }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Gender</label>
-                <input type="text" class="form-control" disabled placeholder="Gender" value="{{ $l->loan_type }}">
+                <input type="text" class="form-control" disabled placeholder="Gender" value="{{ $e->loan_type }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Birthday</label>
-                <input type="text" class="form-control" disabled placeholder="birthday" value="{{ $l->emp }}">
+                <input type="text" class="form-control" disabled placeholder="birthday" value="{{ $e->emp }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Birth Place</label>
-                <input type="text" class="form-control" disabled placeholder="Birth Place" value="{{ $l->emp_address }}">
+                <input type="text" class="form-control" disabled placeholder="Birth Place" value="{{ $e->emp_address }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Address</label>
-                <input type="text" class="form-control" disabled placeholder="Address" value="{{ $l->email }}">
+                <input type="text" class="form-control" disabled placeholder="Address" value="{{ $e->email }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Unit</label>
-                <input type="text" class="form-control" disabled placeholder="Unit" value="{{ $l->amount }}">
+                <input type="text" class="form-control" disabled placeholder="Unit" value="{{ $e->amount }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Occupation</label>
-                <input type="text" class="form-control" disabled placeholder="Occupation" value="{{ $l->mode_payment }}">
+                <input type="text" class="form-control" disabled placeholder="Occupation" value="{{ $e->mode_payment }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Educ. Attainment</label>
-                <input type="text" class="form-control" disabled placeholder="Educ. Attainment" value="{{ $l->term_applied }}">
+                <input type="text" class="form-control" disabled placeholder="Educ. Attainment" value="{{ $e->term_applied }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Monthly Income</label>
-                <input type="text" class="form-control" disabled placeholder="Monthly Income" value="{{ $l->phone_no }}">
+                <input type="text" class="form-control" disabled placeholder="Monthly Income" value="{{ $e->phone_no }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Civil Status</label>
-                <input type="text" class="form-control" disabled placeholder="Civil Status" value="{{ $l->tin }}">
+                <input type="text" class="form-control" disabled placeholder="Civil Status" value="{{ $e->tin }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Religion</label>
-                <input type="text" class="form-control" disabled placeholder="Religion" value="{{ $l->fb_acc }}">
+                <input type="text" class="form-control" disabled placeholder="Religion" value="{{ $e->fb_acc }}">
               </div>
             </div>
             
@@ -169,6 +174,6 @@
 </div>
   </div>
 @endforeach
-
+@endforeach
 
 @endsection

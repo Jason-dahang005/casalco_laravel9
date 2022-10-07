@@ -9,7 +9,10 @@
           <div class="col-lg-4">
 						<div class="left-content">
 							<div class="inner-content">
+								@guest
+									
 								<h4>Do not save what is left after spending, but spend what is left after savings</h4>
+								@endguest
                                 @auth<img src="../klassy/images/Logo-4.png" alt="">@endauth
 								<div class="main-white-button scroll-to-section">
 									@guest
