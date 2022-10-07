@@ -5,183 +5,28 @@
 <div id="top">
   <div class="container-fluid">
     <div class="row">
-			<div class="col-lg-12 offset-lg-12 text-center">
-				<div class="section-heading">
-					<h2>Express Loans</h2>
-				</div>
-			</div>
-		</div>
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="left-content">
-          <div class="inner-content">
-            <h4>Grocery Loan</h4>
-            {{-- <h6>THE BEST EXPERIENCE</h6>
-            <div class="main-white-button scroll-to-section">
-              <a href="#reservation">Make A Reservation</a>
-            </div> --}}
-          </div>
+      <div class="col-lg-7">
+        <h1 class="text-center display-4 pt-3">Express Loan</h1>
+        <div class="text-center">
+          <ul>
+            <li class="py-2">Grocery Loan (1.5%) max. 2 months to pay</li>
+            <li class="py-2">Petty Loan (0.75%)(10K) 8 months to pay</li>
+            <li class="py-2">FastCash Loan (1%) (5K) 4 months to pay</li>
+            <li class="py-2">InstaCash Loan (5%) (3K) 1 month to pay</li>
+            <li class="py-2">Health Insurance Loan (Yearly/Renewable)</li>
+            <li class="py-2">Birthday Loan 10K no interest</li>
+          </ul>
         </div>
+       @auth
+        <div class="text-center pt-2">
+          <a href="#" class="btn btn-primary">Apply Now</a>
+        </div>
+       @endauth
       </div>
-      <div class="col-lg-8">
-        <div class="main-banner header-text">
-          <div class="Modern-Slider">
-            <!-- Item -->
-            <div class="item">
-              <div class="img-fill">
-                <img src="../pluto/images/loan/grocery.jpg" alt="">
-              </div>
-            </div>
-            <!-- // Item -->
-            <!-- Item -->
-            <div class="item">
-              <div class="img-fill">
-                <img src="../klassy/images/slide-02.jpg" alt="">
-              </div>
-            </div>
-            <!-- // Item -->
-            <!-- Item -->
-            <div class="item">
-              <div class="img-fill">
-                <img src="../klassy/images/slide-03.jpg" alt="">
-              </div>
-            </div>
-            <!-- // Item -->
-          </div>
-        </div>
+      <div class="col-lg-5">
+        <img src="../klassy/loan-images/loan-img2.jpg" style="display: block; max-width: 100%;" class="img-fluid loan-img" alt="">
       </div>
     </div>
-
-    <div class="py-4"></div>
-
-    <div class="row">
-      <div class="col-lg-8">
-        <div class="main-banner header-text">
-          <div class="Modern-Slider">
-            <!-- Item -->
-            <div class="item">
-              <div class="img-fill">
-                <img src="../klassy/images/slide-01.jpg" alt="">
-              </div>
-            </div>
-            <!-- // Item -->
-            <!-- Item -->
-            <div class="item">
-              <div class="img-fill">
-                <img src="../klassy/images/slide-02.jpg" alt="">
-              </div>
-            </div>
-            <!-- // Item -->
-            <!-- Item -->
-            <div class="item">
-              <div class="img-fill">
-                <img src="../klassy/images/slide-03.jpg" alt="">
-              </div>
-            </div>
-            <!-- // Item -->
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="left-content">
-          <div class="inner-content">
-            <h4>PettyCash Loan</h4>
-            {{-- <h6>THE BEST EXPERIENCE</h6>
-            <div class="main-white-button scroll-to-section">
-              <a href="#reservation">Make A Reservation</a>
-            </div> --}}
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="py-4"></div>
-    
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="left-content">
-          <div class="inner-content">
-            <h4>FastCash Loan</h4>
-            {{-- <h6>THE BEST EXPERIENCE</h6>
-            <div class="main-white-button scroll-to-section">
-              <a href="#reservation">Make A Reservation</a>
-            </div> --}}
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-8">
-        <div class="main-banner header-text">
-          <div class="Modern-Slider">
-            <!-- Item -->
-            <div class="item">
-              <div class="img-fill">
-                <img src="../klassy/images/slide-01.jpg" alt="">
-              </div>
-            </div>
-            <!-- // Item -->
-            <!-- Item -->
-            <div class="item">
-              <div class="img-fill">
-                <img src="../klassy/images/slide-02.jpg" alt="">
-              </div>
-            </div>
-            <!-- // Item -->
-            <!-- Item -->
-            <div class="item">
-              <div class="img-fill">
-                <img src="../klassy/images/slide-03.jpg" alt="">
-              </div>
-            </div>
-            <!-- // Item -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="py-4"></div>
-    
-    
-    <div class="row">
-      <div class="col-lg-8">
-        <div class="main-banner header-text">
-          <div class="Modern-Slider">
-            <!-- Item -->
-            <div class="item">
-              <div class="img-fill">
-                <img src="../klassy/images/slide-01.jpg" alt="">
-              </div>
-            </div>
-            <!-- // Item -->
-            <!-- Item -->
-            <div class="item">
-              <div class="img-fill">
-                <img src="../klassy/images/slide-02.jpg" alt="">
-              </div>
-            </div>
-            <!-- // Item -->
-            <!-- Item -->
-            <div class="item">
-              <div class="img-fill">
-                <img src="../klassy/images/slide-03.jpg" alt="">
-              </div>
-            </div>
-            <!-- // Item -->
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="left-content">
-          <div class="inner-content">
-            <h4>InstaCash Loan</h4>
-            {{-- <h6>THE BEST EXPERIENCE</h6>
-            <div class="main-white-button scroll-to-section">
-              <a href="#reservation">Make A Reservation</a>
-            </div> --}}
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
 </div>
 
