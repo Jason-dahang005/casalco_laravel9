@@ -29,9 +29,7 @@
         </td>
         <td>{{ $m->updated_at }}</td>
         <td>
-            @if($m->is_approved == 1)
-              <span class="badge badge-primary">Pre-approved</span>
-            @endif
+            <span class="badge badge-primary">Pre-approved</span>
         </td>
         {{-- <td>
             <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal{{ $m->id }}">Details</button>

@@ -15,10 +15,7 @@ class Beneficiary extends Model
         'benName',
         'benRelation',
         'benAge',
-        'benAddress',
-        // 'benMothersLname',
-        // 'benMothersFname',
-        // 'benMothersMname',
+        'benAddress'
     ];
 
     public function membership(){

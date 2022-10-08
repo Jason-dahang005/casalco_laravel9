@@ -29,7 +29,7 @@
             <span class="badge badge-info">Walk-in</span>
           @endif
         </td>
-        <td>{{ $m->created_at }}</td>
+        <td>{{ date('m-d-Y h:i a', strtotime($m->created_at)) }}</td>
         <td>
             @if($m->is_approved == 0)
               <span class="badge badge-secondary">Pending</span>
@@ -113,7 +113,7 @@
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Occupation</label>
-                <input type="text" class="form-control" disabled placeholder="Occupation" value="{{ $m->occuaption }}">
+                <input type="text" class="form-control" disabled placeholder="Occupation" value="{{ $m->occupation }}">
               </div>
             </div>
             <div class="col-lg-4">
@@ -161,6 +161,7 @@
             </div>
           </div>
 
+          @if (!empty($m->spouse))
           <div class="pt-3 pb-2">
             <h5 class ="font-weight-bold">Spouse Personal Information</h5>
           </div>
@@ -203,11 +204,13 @@
               </div>
             </div>
           </div>
+          @endif
+          
+          @foreach ($m->ben as $b)
           <div class="pt-3 pb-2">
             <h5 class ="font-weight-bold">Nomination of Benificiary</h5>
           </div>
           <div class="border border-danger"></div>
-          @foreach ($m->ben as $b)
           <div class="row pt-3">
             <div class="col-lg-6">
               <div class="form-group">
@@ -420,6 +423,12 @@
                 <input name ="NumDependents" type="text" class="form-control"  placeholder="No. of Dependents" value="">
               </div>
             </div>
+            <div class="col-lg-12">
+              <div class="form-group">
+                <label for="">Mother's Maiden Name</label>
+                <input type="text" name="Mothers_Mname" class="form-control" placeholder="Mother's Maiden Name">
+              </div>
+            </div>
           </div>
 
           <div class="pt-3 pb-2">
@@ -491,26 +500,6 @@
               <div class="form-group">
               <label for="First Name" class="form-label">Age</label>
                 <input name ="benAge" type="text" class="form-control"  placeholder="Age" value="">
-              </div>
-            </div>
-           
-            <div class="col-lg-4">
-              <div class="form-group">
-                <label for="First Name" class="form-label">Mother's Maiden Name:</label>
-                <label for="First Name" class="form-label">(Last Name)</label>
-                <input name ="benMothersLname" type="text" class="form-control"  placeholder="Last Name">
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="form-group">
-                <label for="First Name" class="form-label">First Name</label>
-                <input name ="benMothersFname" type="text" class="form-control"  placeholder="Firs Name">
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="form-group">
-                <label for="First Name" class="form-label">Middle Name</label>
-                <input name ="benMothersMname" type="text" class="form-control"  placeholder="Middle Name">
               </div>
             </div>
           </div>

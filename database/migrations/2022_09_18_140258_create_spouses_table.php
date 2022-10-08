@@ -16,14 +16,15 @@ return new class extends Migration
     {
         Schema::create('spouses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('membership_application_id')->constrained();
-            $table->string('spouseFname')->nullable();
-            $table->string('spouseAge')->nullable();
-            $table->string('spouseOcc')->nullable();
-            $table->string('spouseMI')->nullable();
-            $table->string('spouseEmplrName')->nullable();
-            $table->string('spouseConNum')->nullable();
+            $table->unsignedBigInteger('membership_application_id');
+            $table->string('spouseFname');
+            $table->string('spouseAge');
+            $table->string('spouseOcc');
+            $table->string('spouseMI');
+            $table->string('spouseEmplrName');
+            $table->string('spouseConNum');
             $table->string('spouse_mother');
+            $table->foreign('membership_application_id')->references('id')->on('membership_applications')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -1,5 +1,5 @@
 @extends('admin.index')
-@section('title', 'Loan')
+@section('title', 'Loan Application')
 @section('admin_content')
 
 

@@ -20,8 +20,4 @@ class Spouse extends Model
         'spouseConNum',
         'spouse_mother'
     ];
-
-    public function membership(){
-        return $this->belongsTo(MembershipApplication::class);
-    }
 }

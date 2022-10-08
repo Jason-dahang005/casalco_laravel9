@@ -32,16 +32,17 @@ class MembershipApplication extends Model
         'email',
         'NumDependents',
         'is_approved',
-        'Mothers_Mname'
+        'Mothers_Mname',
+        'membership_type'
         // 'selfiepic',
         // 'empIDpic'
     ];
 
     public function ben(){
-        return $this->hasMany(Beneficiary::class, 'membership_application_id');
+        return $this->hasMany(Beneficiary::class);
     }
 
     public function spouse(){
-        return $this->hasOne(Spouse::class, 'membership_application_id');
+        return $this->hasOne(Spouse::class, 'membership_application_id', 'id');
     }
 }

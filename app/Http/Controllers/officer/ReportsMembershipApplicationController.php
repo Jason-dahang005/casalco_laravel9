@@ -15,7 +15,7 @@ class ReportsMembershipApplicationController extends Controller
      */
     public function index()
     {
-        $membership = MembershipApplication::where('is_approved', 1)->get();
+        $membership = MembershipApplication::all();
         return view('officer.pre-approved-membership', compact('membership'));
     }
 

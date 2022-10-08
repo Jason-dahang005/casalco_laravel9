@@ -16,14 +16,12 @@ return new class extends Migration
     {
         Schema::create('beneficiaries', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('membership_application_id')->constrained();
-            $table->string('benName')->nullable();
-            $table->string('benRelation')->nullable();
-            $table->string('benAge')->nullable();
-            $table->string('benAddress')->nullable();
-            // $table->string('benMothersLname')->nullable();
-            // $table->string('benMothersFname')->nullable();
-            // $table->string('benMothersMname')->nullable();
+            $table->unsignedBigInteger('membership_application_id');
+            $table->string('benName');
+            $table->string('benRelation');
+            $table->string('benAge');
+            $table->string('benAddress');
+            $table->foreign('membership_application_id')->references('id')->on('membership_applications')->onDelete('cascade');
             $table->timestamps();
         });
     }

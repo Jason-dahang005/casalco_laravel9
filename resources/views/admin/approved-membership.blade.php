@@ -9,6 +9,7 @@
       <th>Last Name</th>
       <th>Unit</th>
       <th>Date Approved</th>
+      <th>Membership Type</th>
       <th>Status</th>
       {{-- <th>Actions</th> --}}
     </tr>
@@ -21,11 +22,14 @@
         <td>{{ $m->unit }}</td>
         <td>{{ $m->updated_at }}</td>
         <td>
-            @if($m->status == 1)
-            <span class="badge badge-info">Pre-approved</span>
-            @else
+          @if ($m->membership_type == 0)
+            <span class="badge badge-info">Online</span>
+          @else
+            <span class="badge badge-info">Walk-in</span>
+          @endif
+        </td>
+        <td>
             <span class="badge badge-success">Approved</span>
-            @endif
         </td>
         {{-- <td>
             <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal{{ $m->id }}">Details</button>
