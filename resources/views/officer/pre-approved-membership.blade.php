@@ -10,6 +10,7 @@
       <th>Unit</th>
       <th>Membership Type</th>
       <th>Date Pre-approved</th>
+      <th>Officer</th>
       <th>Status</th>
       {{-- <th>Actions</th> --}}
     </tr>
@@ -28,6 +29,7 @@
           @endif
         </td>
         <td>{{ $m->updated_at }}</td>
+        <td>{{ $m->assigned_officer }}</td>
         <td>
             <span class="badge badge-primary">Pre-approved</span>
         </td>

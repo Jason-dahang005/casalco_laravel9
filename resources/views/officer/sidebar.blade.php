@@ -10,7 +10,7 @@
       <div class="user_profle_side">
         <div class="user_img"><img class="img-responsive" src="../pluto/images/layout_img/user1.png" alt="#" /></div>
         <div class="user_info">
-        <h6>{{ Auth::user()->name }}</h6>
+        <h6>{{ Auth::user()->username }}</h6>
         <p><span class="online_animation"></span> Online</p>
         </div>
       </div>

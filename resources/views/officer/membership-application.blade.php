@@ -35,6 +35,7 @@
               <span class="badge badge-secondary">Pending</span>
             @endif
         </td>
+        
         <td>
             <button class="btn btn-success" data-toggle="modal" data-target="#myModal{{ $m->id }}">Details</button>
         </td>
