@@ -51,6 +51,22 @@
 	
 	<!-- Global Init -->
 	<script src="../klassy/js/custom.js"></script>
+
+
+		{{-- Data table --}}
+
+	<script src="{{ asset('/klassy/datatables/jquery.dataTables.min.js') }}"></script>
+	<script src="{{ asset('/klassy/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+	<script src="{{ asset('/klassy/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+	<script src="{{ asset('/klassy/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+	<script src="{{ asset('/klassy/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
+	<script src="{{ asset('/klassy/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
+	<script src="{{ asset('/klassy/jszip/jszip.min.js') }}"></script>
+	<script src="{{ asset('/klassy/pdfmake/pdfmake.min.js') }}"></script>
+	<script src="{{ asset('/klassy/pdfmake/vfs_fonts.js') }}"></script>
+	<script src="{{ asset('/klassy/datatables-buttons/js/buttons.html5.min.js') }}"></script>
+	<script src="{{ asset('/klassy/datatables-buttons/js/buttons.print.min.js') }}"></script>
+	<script src="{{ asset('/klassy/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
 	
 	<script>
 
@@ -65,6 +81,29 @@
 				$("#portfolio").fadeTo(50, 1);
 			}, 500);
 					
+			});
+		});
+
+		
+
+				$(function () {
+			$("#example5").DataTable({
+			"responsive": true, "lengthChange": true, "autoWidth": true,
+			"buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+			}).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+
+
+				
+			$('#example2').DataTable({
+			"paging": true,
+			"lengthChange": true,
+			"searching": true,
+			"ordering": true,
+			"info": true,
+			"autoWidth": true,
+			"responsive": true,
+					order: [[3, 'desc']]
 			});
 		});
 

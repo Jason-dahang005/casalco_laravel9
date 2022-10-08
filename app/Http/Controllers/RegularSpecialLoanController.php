@@ -66,6 +66,7 @@ class RegularSpecialLoanController extends Controller
         $l->email = $r->email;
         $l->no_child = $r->no_child;
         $l->loan_cat = $r->loan_cat;
+        $l->loanApp_type = $r->loanApp_type;
         $l->save();
 
 

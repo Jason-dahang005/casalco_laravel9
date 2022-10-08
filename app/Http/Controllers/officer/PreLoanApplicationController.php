@@ -15,7 +15,7 @@ class PreLoanApplicationController extends Controller
      */
     public function index()
     {
-        $loan = ExpressLoanApp::where('is_approved', 0)->get();
+        $loan = LoanApplication::where('is_approved', 0)->get();
         
         return view('officer.loan', compact('loan'));
     }
@@ -97,7 +97,7 @@ class PreLoanApplicationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $loan = ExpressLoanApp::find($id);
+        $loan = LoanApplication::find($id);
         $loan->is_approved = $request->is_approved;
         // $loan->acc_id = $request->acc_id;
         // $loan->or_no = $request->or_no;

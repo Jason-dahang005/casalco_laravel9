@@ -45,7 +45,7 @@ class RegularSpecialLoan extends Model
 
     }
     public function monthlyI(){
-        return $this->hasOne(MonthlyIncome::class);
+        return $this->hasOne(MonthlyIncome::class,'regular_special_loan_id');
     }
     public function comaker(){
         return $this->hasOne(CoMaker::class);

@@ -2,7 +2,16 @@
 
 @section('client_content')
 
+
 <div class="contact-form">
+	@if(Session::has('success'))
+		<div class="alert alert-success alert-dismissible fade show" role="alert">
+			<strong>{{ Session::get('success') }}</strong>
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+	@endif
 		<form action="{{ url('/express-loan-form') }}" method="POST" enctype="multipart/form-data">
 		
 			<div class="row pt-5">
@@ -157,7 +166,7 @@
 					</fieldset>
 				</div>
                 <div class="col-lg-4 col-sm-12">
-					<label for="First Name" class="form-label">Loan Category</label>
+				
 					<select name="loan_cat" id="loan_cat">
 						<option value="" disabled selected >Seclect</option>
 						<option value="0">Express Loan</option>
