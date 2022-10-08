@@ -39,6 +39,50 @@ class PreMembershipApplicationController extends Controller
      */
     public function store(Request $r)
     {
+        $ms = MembershipApplication::create([
+            'Fname'             => $r->Fname,
+            'Mname'             => $r->Mname,
+            'Lname'             => $r->Lname,
+            'suffix'            => $r->suffix,
+            'gender'            => $r->gender,
+            'dob'               => $r->dob,
+            'Bplace'            => $r->Bplace,
+            'address'           => $r->address,
+            'unit'              => $r->unit,
+            'occupation'        => $r->occupation,
+            'educ'              => $r->educ,
+            'civilStatus'       => $r->civilStatus,
+            'religion'          => $r->religion,
+            'MI'                => $r->MI,
+            'contactNum'        => $r->contactNum,
+            'TIN'               => $r->TIN,
+            'SSSnum'            => $r->SSSnum,
+            'email'             => $r->email,
+            'NumDependents'     => $r->NumDependents,
+            'Mothers_Mname'     => $r->Mothers_Mname,
+            'membership_type'   => 0
+        ]);
+
+        if (!empty($r->spouseFname)) {
+            $ms->spouse()->create([
+                'spouseFname'       => $r->spouseFname,
+                'spouseAge'         => $r->spouseAge,
+                'spouseOcc'         => $r->spouseOcc,
+                'spouseMI'          => $r->spouseMI,
+                'spouseEmplrName'   => $r->spouseEmplrName,
+                'spouseConNum'      => $r->spouseConNum,
+                'spouse_mother'     => $r->spouse_mother,
+            ]);
+        }
+
+        if(!empty($r->benName)){
+            $ms->ben()->create([
+                'benName' => $r->benName,
+                'benRelation' => $r->benRelation,
+                'benAge' => $r->benAge,
+                'benAddress' => $r->benAddress,
+            ]);
+        }
         
         // if(empty($r->spouseFname)){
         //     $m = new MembershipApplication();
