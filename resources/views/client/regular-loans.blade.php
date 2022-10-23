@@ -15,7 +15,7 @@
         </div>
         @auth
         <div class="text-center py-5">
-          <a href="#" class="btn btn-primary">Apply Now</a>
+          <a href="/regular-special-loan-form" class="btn btn-primary">Apply Now</a>
         </div>
         @endauth
       </div>

@@ -10,18 +10,22 @@
       <th>First Name</th>
       <th>Last Name</th>
       <th>Unit</th>
+      <th>Image</th>
       <th>Membership Type</th>
       <th>Date Registered</th>
       <th>Status</th>
       <th>Actions</th>
     </tr>
-  </thead>
+  </thead> 
   <tbody>
     @foreach ($membership as $m)
         <tr>
         <td>{{ $m->Fname }}</td>
         <td>{{ $m->Lname }}</td>
         <td>{{ $m->unit }}</td>
+        <td>
+          <img src="{{asset($m->selfiepic)}}" width = '50' height = '50' class = "img img-responsive" />
+        </td>
         <td>
           @if ($m->membership_type == 0)
             <span class="badge badge-info">Online</span>
@@ -58,6 +62,7 @@
           <div class="border border-danger"></div>
           <div class="row pt-3">
             <div class="col-lg-4">
+              <img src="{{asset($m->selfiepic)}}" alt="">
               <div class="form-group">
               <label for="First Name" class="form-label">First Name</label>
                 <input type="text" class="form-control" disabled placeholder="First Name" value="{{ $m->Fname }}">
@@ -78,7 +83,7 @@
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Suffix</label>
-                <input type="text" class="form-control" disabled placeholder="Suffix" value="{{ $m->Fname }}">
+                <input type="text" class="form-control" disabled placeholder="Suffix" value="{{ $m->suffix }}">
               </div>
             </div>
             <div class="col-lg-4">
@@ -474,6 +479,14 @@
               </div>
             </div>
           </div>
+          <div class="col-lg-12">
+              <div class="form-group">
+                <label for="">Mother's Maiden Name</label>
+                <input type="text" name="spouse_mother" class="form-control" placeholder="Mother's Maiden Name">
+              </div>
+            </div>
+
+
           <div class="pt-3 pb-2">
             <h5 class ="font-weight-bold">Nomination of Benificiary</h5>
           </div>

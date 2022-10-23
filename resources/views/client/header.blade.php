@@ -12,7 +12,7 @@
           @if(!Request::is("login") && !Request::is("register") && !Request::is("membership-application"))
           <ul class="nav">
             <li class="scroll-to-section"><a href="/" class="{{ (request()->is('/')) ? 'active' : '' }}">Home</a></li>
-
+            <li class="scroll-to-section"><a href="/membership-information" class="{{ (request()->is('membership-information')) ? 'active' : '' }}">Be a Member</a></li>
             <li>
               <a href="/loans" class="{{ (request()->is('loans')) ? 'active' : '' }}">Loans</a>
               {{-- <ul>

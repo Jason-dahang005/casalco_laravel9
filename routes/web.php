@@ -23,7 +23,7 @@ use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\ExpressLoanAppController;
 use App\Http\Controllers\RegularSpecialLoanController;
 use App\Http\Controllers\LoanHistoryController;
-
+use App\Http\Controllers\PreSeminarController;
 // use App\Http\Controllers\admin\DashboardController;
 // use App\Http\Controllers\admin\MembershipController;
 // use App\Http\Controllers\admin\LoanController;
@@ -150,6 +150,7 @@ Route::resource('/membership-application', MembershipApplicationController::clas
 Route::resource('/express-loan-form', ExpressLoanAppController::class);
 Route::resource('/regular-special-loan-form', RegularSpecialLoanController::class);
 Route::resource('/loan-history', LoanHistoryController::class);
+Route::resource('/home', PreSeminarController::class);
 
 
 

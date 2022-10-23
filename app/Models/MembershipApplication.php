@@ -33,8 +33,8 @@ class MembershipApplication extends Model
         'NumDependents',
         'is_approved',
         'Mothers_Mname',
-        'membership_type'
-        // 'selfiepic',
+        'membership_type',
+        'selfiepic'
         // 'empIDpic'
     ];
 

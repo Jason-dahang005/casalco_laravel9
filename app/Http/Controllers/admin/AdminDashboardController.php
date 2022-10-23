@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\MembershipApplication;
+use App\Models\LoanApplication;
 
 class AdminDashboardController extends Controller
 {
@@ -16,7 +17,9 @@ class AdminDashboardController extends Controller
     public function index()
     {
         $membership = MembershipApplication::where('is_approved', 1)->get();
-        return view('admin.dashboard', compact('membership'));
+        $loan = LoanApplication::where('is_approved', '1')->count();
+        $members = MembershipApplication::where('is_approved', 2)->count();
+        return view('admin.dashboard', compact(['membership', 'members', 'loan']));
     }
 
     /**

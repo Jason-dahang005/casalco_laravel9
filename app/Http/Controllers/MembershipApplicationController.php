@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\MembershipApplication;
 use App\Models\Beneficiary;
 use App\Models\Spouse;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class MembershipApplicationController extends Controller
 {
@@ -39,29 +39,35 @@ class MembershipApplicationController extends Controller
      */
     public function store(Request $r)
     {
-        $ms = MembershipApplication::create([
-            'Fname'             => $r->Fname,
-            'Mname'             => $r->Mname,
-            'Lname'             => $r->Lname,
-            'suffix'            => $r->suffix,
-            'gender'            => $r->gender,
-            'dob'               => $r->dob,
-            'Bplace'            => $r->Bplace,
-            'address'           => $r->address,
-            'unit'              => $r->unit,
-            'occupation'        => $r->occupation,
-            'educ'              => $r->educ,
-            'civilStatus'       => $r->civilStatus,
-            'religion'          => $r->religion,
-            'MI'                => $r->MI,
-            'contactNum'        => $r->contactNum,
-            'TIN'               => $r->TIN,
-            'SSSnum'            => $r->SSSnum,
-            'email'             => $r->email,
-            'NumDependents'     => $r->NumDependents,
-            'Mothers_Mname'     => $r->Mothers_Mname,
-            'membership_type'   => 0
-        ]);
+        // $ms = MembershipApplication::create([
+        //     'Fname'             => $r->Fname,
+        //     'Mname'             => $r->Mname,
+        //     'Lname'             => $r->Lname,
+        //     'suffix'            => $r->suffix,
+        //     'gender'            => $r->gender,
+        //     'dob'               => $r->dob,
+        //     'Bplace'            => $r->Bplace,
+        //     'address'           => $r->address,
+        //     'unit'              => $r->unit,
+        //     'occupation'        => $r->occupation,
+        //     'educ'              => $r->educ,
+        //     'civilStatus'       => $r->civilStatus,
+        //     'religion'          => $r->religion,
+        //     'MI'                => $r->MI,
+        //     'contactNum'        => $r->contactNum,
+        //     'TIN'               => $r->TIN,
+        //     'SSSnum'            => $r->SSSnum,
+        //     'email'             => $r->email,
+        //     'NumDependents'     => $r->NumDependents,
+        //     'Mothers_Mname'     => $r->Mothers_Mname,
+        //     // 'selfiepic'         => $r->selfiepic,
+        //     'membership_type'   => 0
+        // ]);
+        $requestData = $r->all();
+        $fileName =  time().$r->file('selfiepic')->getClientOriginalName();
+        $path = $r->file('selfiepic')->storeAs('image', $fileName, 'public');
+        $requestData["selfiepic"] = '/storage/'.$path;
+        $ms = MembershipApplication::create($requestData);
 
         if (!empty($r->spouseFname)) {
             $ms->spouse()->create([
@@ -84,7 +90,7 @@ class MembershipApplicationController extends Controller
             ]);
         }
 
-        
+        // Alert::success('Submit Succesfully!', 'Watch the Seminar and Wait form a Call Thank you!');
         // $request->validate([
         //     'Fname'           => 'required',
         //     'Mname'           => 'required',

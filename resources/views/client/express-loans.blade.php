@@ -19,7 +19,7 @@
         </div>
        @auth
         <div class="text-center pt-2">
-          <a href="#" class="btn btn-primary">Apply Now</a>
+          <a href="/express-loan-form" class="btn btn-primary">Apply Now</a>
         </div>
        @endauth
       </div>

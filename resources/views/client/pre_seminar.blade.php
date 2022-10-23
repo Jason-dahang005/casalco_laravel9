@@ -28,13 +28,13 @@
 </div> -->
             <div class="row">
                     <div class="col-md-8 offset-md-2">
-                        <video width="110%" controls autoplay loop> 
+                        <video width="110%" controls loop> 
                                 <source src="../klassy/images/CASALCO_ORIENTATION.mp4" type="video/mp4"> 
                         </video> 
                        
                     </div>
                     <div class="col-md-10 offset-md-6">
-                    <a class="btn btn-primary" href="/" role="button">Proceed</a>
+                    <a class="btn btn-primary" href="/home" role="button">Proceed</a>
                     </div>
             </div>
 								

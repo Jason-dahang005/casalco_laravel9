@@ -6,7 +6,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-7">
-        <h1 class="text-center display-4 pt-3">Express Loan</h1>
+        <h1 class="text-center display-4 pt-3">Special Loan</h1>
         <div class="text-center">
           <ul>
             <li class="py-2">Midyear & Christmas Loan</li>
@@ -20,7 +20,7 @@
         </div>
         @auth
           <div class="text-center pt-2">
-            <a href="#" class="btn btn-primary ">Apply Now</a>
+            <a href="/regular-special-loan-form" class="btn btn-primary ">Apply Now</a>
           </div>
         @endauth
       </div>

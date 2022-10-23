@@ -30,6 +30,7 @@
 				
 				
 					@csrf	
+					<input name="membership_type" type="hidden" id="membership_type" value = "0">
 				<div class="col-lg-4 col-sm-12">
 					<fieldset>
 						<input name="Fname" type="text" id="Fname" placeholder="First Name">
@@ -116,7 +117,14 @@
 				</div>
 				<div class="col-lg-4 col-sm-12">
 					<fieldset>
-						<input name="educ" type="text" id="educ" placeholder="Educ. Attianment">
+					<select name="educ" id="educ">
+						<option value="" disabled selected >Education Attainment</option>
+						<option value="Doctor's">Doctor's</option>
+						<option value="Master's">Master's</option>
+						<option value="College Graduate">College Graduate</option>
+						<option value="Undergraduate">Undergraduate</option>
+						
+					</select>
 						<span class="text-danger">@error('educ')
 							{{ $message }}
 						@enderror </span>
@@ -316,7 +324,7 @@
 					</div>
 					<div class="col-lg-4 col-sm-12">
 						<fieldset>
-							<input name="TIN" type="text" id="TIN" placeholder="Tax Identification Number">
+							<input name="TIN" type="text" id="TIN" placeholder="Tax Identification Number" value = "none">
 							<span class="text-danger">@error('TIN')
 								{{ $message }}
 							@enderror </span>

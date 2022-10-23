@@ -150,6 +150,7 @@
             </div>
           </div>
 
+          @if (!empty($m->spouse))
           <div class="pt-3 pb-2">
             <h5 class ="font-weight-bold">Spouse Personal Information</h5>
           </div>
@@ -157,35 +158,45 @@
           <div class="row pt-3">
             <div class="col-lg-8">
               <div class="form-group">
-                <input type="text" class="form-control" disabled placeholder="Full Name" value="{{ $m->spouseFname }}">
+              <label for="First Name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" disabled placeholder="Full Name" value="{{ $m->spouse->spouseFname }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
-                <input type="text" class="form-control" disabled placeholder="Age" value="{{ $m->spouseAge }}">
+              <label for="First Name" class="form-label">Age</label>
+                <input type="text" class="form-control" disabled placeholder="Age" value="{{ $m->spouse->spouseAge }}">
               </div>
             </div>
             <div class="col-lg-6">
               <div class="form-group">
-                <input type="text" class="form-control" disabled placeholder="Occupation" value="{{ $m->spouseOcc }}">
+              <label for="First Name" class="form-label">Occupation</label>
+                <input type="text" class="form-control" disabled placeholder="Occupation" value="{{ $m->spouse->spouseOcc }}">
               </div>
             </div>
             <div class="col-lg-6">
               <div class="form-group">
-                <input type="text" class="form-control" disabled placeholder="Monthly Income" value="{{ $m->spouseMI }}">
+              <label for="First Name" class="form-label">Monthly Income</label>
+                <input type="text" class="form-control" disabled placeholder="Monthly Income" value="{{ $m->spouse->spouseMI }}">
               </div>
             </div>
             <div class="col-lg-6">
               <div class="form-group">
-                <input type="text" class="form-control" disabled placeholder="Employeer's Name" value="{{ $m->spouseEmplrName }}">
+              <label for="First Name" class="form-label">Employeer's Name</label>
+                <input type="text" class="form-control" disabled placeholder="Employeer's Name" value="{{ $m->spouse->spouseEmplrName }}">
               </div>
             </div>
             <div class="col-lg-6">
               <div class="form-group">
-                <input type="text" class="form-control" disabled placeholder="Contact No." value="{{ $m->spouseConNum }}">
+              <label for="First Name" class="form-label">Contact No.</label>
+                <input type="text" class="form-control" disabled placeholder="Contact No." value="{{ $m->spouse->spouseConNum }}">
               </div>
             </div>
           </div>
+          @endif
+
+
+          @foreach ($m->ben as $b)
           <div class="pt-3 pb-2">
             <h5 class ="font-weight-bold">Nomination of Benificiary</h5>
           </div>
@@ -193,22 +204,26 @@
           <div class="row pt-3">
             <div class="col-lg-6">
               <div class="form-group">
-                <input type="text" class="form-control" disabled placeholder="Full Name" value="{{ $m->benName }}">
+              <label for="First Name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" disabled placeholder="Full Name" value="{{ $b->benName }}">
               </div>
             </div>
             <div class="col-lg-6">
               <div class="form-group">
-                <input type="text" class="form-control" disabled placeholder="Relationship" value="{{ $m->benRelation }}">
+              <label for="First Name" class="form-label">Relationship</label>
+                <input type="text" class="form-control" disabled placeholder="Relationship" value="{{ $b->benRelation }}">
               </div>
             </div>
             <div class="col-lg-8">
               <div class="form-group">
-                <input type="text" class="form-control" disabled placeholder="Address" value="{{ $m->benAddress }}">
+              <label for="First Name" class="form-label">Address</label>
+                <input type="text" class="form-control" disabled placeholder="Address" value="{{ $b->benAddress }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
-                <input type="text" class="form-control" disabled placeholder="Age" value="{{ $m->benAge }}">
+              <label for="First Name" class="form-label">Age</label>
+                <input type="text" class="form-control" disabled placeholder="Age" value="{{ $b->benAge }}">
               </div>
             </div>
             {{-- <div class="col-lg-4">
@@ -227,6 +242,10 @@
               </div>
             </div> --}}
           </div>
+          @endforeach
+
+
+
           <div class="pt-3 pb-2">
             <h5 class ="font-weight-bold">Government ID's</h5>
           </div>

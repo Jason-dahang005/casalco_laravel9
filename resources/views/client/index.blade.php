@@ -22,6 +22,7 @@
 	
 </head>
 <body>
+	@include('sweetalert::alert')
 	@include('client.header')
 
 	@yield('client_content')
@@ -29,7 +30,7 @@
 	@if(!Request::is("login") && !Request::is("register") && !Request::is("membership-application") && !Request::is("pre_seminar") )
 		@include('client.footer')
 	@endif
-
+	
 	<!-- jQuery -->
 	<script src="../klassy/js/jquery-2.1.0.min.js"></script>
 
@@ -121,5 +122,6 @@
 		});
 
 	</script>
+	
 </body>
 </html>

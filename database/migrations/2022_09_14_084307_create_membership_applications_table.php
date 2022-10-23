@@ -37,7 +37,7 @@ return new class extends Migration
             $table->string('acc_id')->unique()->nullable();
             $table->string('or_no')->nullable();
             $table->string('Mothers_Mname');
-            // $table->string('selfiepic');
+            $table->string('selfiepic',300);
             // $table->string('empIDpic');
             $table->integer('is_approved')->default(0);
             $table->boolean('membership_type')->comment('0 = online, 1 = walk-in');

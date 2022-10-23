@@ -12,7 +12,7 @@
       </div>
       <div class="counter_no">
         <div>
-        <p class="total_no">0</p>
+        <p class="total_no">{{ $members }}</p>
         <p class="head_couter">Total Number of Members</p>
         </div>
       </div>
@@ -42,7 +42,7 @@
       </div>
       <div class="counter_no">
         <div>
-        <p class="total_no">0</p>
+        <p class="total_no">{{ $loan }}</p>
         <p class="head_couter">Pre-approved <br> Loan Application</p>
         </div>
       </div>

@@ -12,7 +12,7 @@
     Add Walk-in
   </button>
   <div class="dropdown-menu">
-    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal1" >Express Loan</a>
+    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal02" >Express Loan</a>
     <a class="dropdown-item" href="#">Regular/Special Loan</a>
   </div>
 </div>
@@ -353,7 +353,7 @@
 
 
 
-<div class="modal fade" id="myModal1">
+<div class="modal fade" id="myModal02">
   <div class="modal-dialog modal-lg modal-dialog-scrollable">
      <div class="modal-content">
         <!-- Modal Header -->

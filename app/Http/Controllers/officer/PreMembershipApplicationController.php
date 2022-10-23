@@ -60,7 +60,9 @@ class PreMembershipApplicationController extends Controller
             'email'             => $r->email,
             'NumDependents'     => $r->NumDependents,
             'Mothers_Mname'     => $r->Mothers_Mname,
-            'membership_type'   => 0
+            'membership_type'   => 1,
+            'is_approved'       => 1,
+            'assigned_officer'  => auth()->user()->username
         ]);
 
         if (!empty($r->spouseFname)) {
