@@ -525,6 +525,7 @@ class ComposerStaticInit0c294f2ce8aa2944cc980a2653073055
         'App\\Http\\Controllers\\MemberController' => __DIR__ . '/../..' . '/app/Http/Controllers/MemberController.php',
         'App\\Http\\Controllers\\MembershipApplicationController' => __DIR__ . '/../..' . '/app/Http/Controllers/MembershipApplicationController.php',
         'App\\Http\\Controllers\\MembershipReportsController' => __DIR__ . '/../..' . '/app/Http/Controllers/MembershipReportsController.php',
+        'App\\Http\\Controllers\\PreSeminarController' => __DIR__ . '/../..' . '/app/Http/Controllers/PreSeminarController.php',
         'App\\Http\\Controllers\\RegistrationController' => __DIR__ . '/../..' . '/app/Http/Controllers/RegistrationController.php',
         'App\\Http\\Controllers\\RegularSpecialLoanAppController' => __DIR__ . '/../..' . '/app/Http/Controllers/RegularSpecialLoanAppController.php',
         'App\\Http\\Controllers\\RegularSpecialLoanController' => __DIR__ . '/../..' . '/app/Http/Controllers/RegularSpecialLoanController.php',

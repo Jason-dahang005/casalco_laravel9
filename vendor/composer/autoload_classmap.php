@@ -21,6 +21,7 @@ return array(
     'App\\Http\\Controllers\\MemberController' => $baseDir . '/app/Http/Controllers/MemberController.php',
     'App\\Http\\Controllers\\MembershipApplicationController' => $baseDir . '/app/Http/Controllers/MembershipApplicationController.php',
     'App\\Http\\Controllers\\MembershipReportsController' => $baseDir . '/app/Http/Controllers/MembershipReportsController.php',
+    'App\\Http\\Controllers\\PreSeminarController' => $baseDir . '/app/Http/Controllers/PreSeminarController.php',
     'App\\Http\\Controllers\\RegistrationController' => $baseDir . '/app/Http/Controllers/RegistrationController.php',
     'App\\Http\\Controllers\\RegularSpecialLoanAppController' => $baseDir . '/app/Http/Controllers/RegularSpecialLoanAppController.php',
     'App\\Http\\Controllers\\RegularSpecialLoanController' => $baseDir . '/app/Http/Controllers/RegularSpecialLoanController.php',
