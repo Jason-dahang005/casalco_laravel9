@@ -46,17 +46,18 @@ use App\Http\Controllers\PreSeminarController;
 |
 */
 
-// Route::middleware(['auth', 'isAdmin'])->group(function() { 
-  // ADMIN SIDE START ----------------------------------------------------------
+Route::middleware(['auth', 'isAdmin'])->group(function() { 
 
-//   Route::view('/admin/dashboard', 'admin.dashboard');
-//   Route::view('/admin/membership', 'admin.membership');
-//   Route::view('/admin/loan', 'admin.loan');
-//   Route::view('/admin/approved-loans', 'admin.approved-loans');
-//   Route::view('/admin/member', 'admin.member');
+  Route::resource('/admin/dashboard', AdminDashboardController::class);
+  Route::resource('/admin/membership', ApproveMembershipApplicationController::class);
+  Route::resource('/admin/approved-membership', MembershipReportsController::class);
+  Route::resource('/admin/loan', ApproveLoanApplicationController::class);
+  Route::resource('/admin/approved-loans', LoanApplicationReportsController::class);
+  Route::resource('/admin/member', MemberController::class);
+  Route::resource('/admin/accounts', AccountController::class);
+  
 
-  // ADMIN SIDE END  -----------------------------------------------------------
-// });
+});
 
 
 // CLIENT SIDE START ---------------------------------------------------------
@@ -139,7 +140,6 @@ Route::view('/express-loans', 'client.express-loans');
 Route::view('/contact-us', 'client.contact-us');
 Route::view('/about-us', 'client.about-us');
 Route::view('/membership-information', 'client.membership-information');
-Route::view('/dashboard', 'client.dashboard');
 Route::view('/officer/loan', 'officer.loan');
 Route::view('/loans', 'client.loans');
 Route::view('/officer/pre-approved-loans', 'officer.pre-approved-loans');
@@ -152,25 +152,24 @@ Route::resource('/regular-special-loan-form', RegularSpecialLoanController::clas
 Route::resource('/loan-history', LoanHistoryController::class);
 Route::resource('/home', PreSeminarController::class);
 
+Route::middleware(['auth', 'isClient'])->group(function() { 
+  Route::view('/dashboard', 'client.dashboard');
+});
 
 
 //offcer
-Route::resource('/officer/dashboard', OfficerDashboardController::class);
-Route::resource('/officer/membership-application', PreMembershipApplicationController::class);
-Route::resource('/officer/pre-approved-membership', ReportsMembershipApplicationController::class);
-Route::resource('/officer/loan', PreLoanApplicationController::class);
-Route::resource('/officer/pre-approved-loans', ReportsloanApplicationController::class);
-
+Route::middleware(['auth', 'isOfficer'])->group(function() { 
+  Route::resource('/officer/dashboard', OfficerDashboardController::class);
+  Route::resource('/officer/membership-application', PreMembershipApplicationController::class);
+  Route::resource('/officer/pre-approved-membership', ReportsMembershipApplicationController::class);
+  Route::resource('/officer/loan', PreLoanApplicationController::class);
+  Route::resource('/officer/pre-approved-loans', ReportsloanApplicationController::class);
+});
 
 //Admin
-Route::resource('/admin/dashboard', AdminDashboardController::class);
-Route::resource('/admin/membership', ApproveMembershipApplicationController::class);
-Route::resource('/admin/approved-membership', MembershipReportsController::class);
-Route::resource('/admin/loan', ApproveLoanApplicationController::class);
-Route::resource('/admin/approved-loans', LoanApplicationReportsController::class);
-Route::resource('/admin/member', MemberController::class);
-Route::resource('/admin/accounts', AccountController::class);
 
 Route::resource('/registration', RegistrationController::class);
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::view('error-page', 'error-page');

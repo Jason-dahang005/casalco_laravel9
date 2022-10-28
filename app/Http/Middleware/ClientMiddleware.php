@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class AdminMiddleware
+class ClientMiddleware
 {
     /**
      * Handle an incoming request.
@@ -17,7 +17,7 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::user()->user_type == 1){ 
+        if(Auth::user()->user_type == 0){ 
             return $next($request);
         } else {
             return redirect('/error-page');
