@@ -35,8 +35,8 @@ reset
 --------------------------------------------- 
 */
 .line{
-  background-color: orange;
-  height: 5px;
+  background-color: #fb5849;
+  height: 7px;
   border: none;
 }
 .button{
