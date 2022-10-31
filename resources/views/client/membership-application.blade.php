@@ -9,7 +9,7 @@
 	@endif
 
 	<div class="contact-form">
-		<form action="{{ url('/membership-application') }}" method="POST" enctype="multipart/form-data">
+		<form action="{{ url('/membership-application') }}" method="POST" enctype="multipart/form-data" id="membership-form">
 		
 			<div class="row pt-5">
 				<div class="col-lg-2">
@@ -33,10 +33,8 @@
 					<input name="membership_type" type="hidden" id="membership_type" value = "0">
 				<div class="col-lg-4 col-sm-12">
 					<fieldset>
+						<span class="text-danger">@error('Fname'){{ $message }}@enderror </span>
 						<input name="Fname" type="text" id="Fname" placeholder="First Name">
-						<span class="text-danger">@error('Fname')
-								{{ $message }}
-							@enderror </span>
 					</fieldset>
 				</div>
 				<div class="col-lg-4 col-sm-12">
@@ -100,7 +98,6 @@
 						<option value="CU(main)">CU(main)</option>
 						<option value="CUMC">CUMC</option>
 						<option value="CUBE">CUBE</option>
-						<option value="Support Zebra">Support Zebra</option>
 						<option value="Associate">Associate</option>
 					</select>
 					<span class="text-danger">@error('unit')

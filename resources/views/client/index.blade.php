@@ -22,7 +22,6 @@
 	
 </head>
 <body>
-	@include('sweetalert::alert')
 	@include('client.header')
 
 	@yield('client_content')

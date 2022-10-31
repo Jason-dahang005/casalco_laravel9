@@ -1743,3 +1743,8 @@ responsive
   width: 100%;
   font-size: 3.5rem;
 }
+
+#membership-form fieldset input, select {
+  text-transform: uppercase;
+  color: #737373 !important;
+}

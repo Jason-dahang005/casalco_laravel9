@@ -131,7 +131,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function() {
 // });
 
 Auth::routes();
-Route::view("/", "client.home");
+//Route::view("/", "client.home");
 Route::view("/regular-special-loan-form", "client.regular-special-loan-form");
 Route::view("/express-loan-form", "client.express-loan-form");
 Route::view('/regular-loans', 'client.regular-loans');
@@ -173,3 +173,5 @@ Route::resource('/registration', RegistrationController::class);
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::view('error-page', 'error-page');
+
+Route::view('/', 'client.home.home-index');

@@ -39,6 +39,12 @@ class MembershipApplicationController extends Controller
      */
     public function store(Request $r)
     {
+        $valid = $r->validate([
+            'Fname'         => 'required|string',
+            'Mname'         => 'required',
+            'Lname'         => 'required',
+            'MI'            => 'required|numeric'
+        ]);
 
         $requestData = $r->all();
         $fileName =  time().$r->file('selfiepic')->getClientOriginalName();
