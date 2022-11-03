@@ -9,8 +9,8 @@
         Layout.init();    
         Layout.initOWL();
         Layout.initTwitter();
-        //Layout.initFixHeaderWithPreHeader(); /* Switch On Header Fixing (only if you have pre-header) */
-        //Layout.initNavScrolling(); 
+        Layout.initFixHeaderWithPreHeader(); /* Switch On Header Fixing (only if you have pre-header) */
+        Layout.initNavScrolling(); 
     });
   </script>
   <!-- END PAGE LEVEL JAVASCRIPTS -->

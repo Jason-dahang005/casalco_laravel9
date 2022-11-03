@@ -138,8 +138,8 @@ Route::view('/regular-loans', 'client.regular-loans');
 Route::view('/special-loans', 'client.special-loans');
 Route::view('/express-loans', 'client.express-loans');
 Route::view('/contact-us', 'client.contact-us');
-Route::view('/about-us', 'client.about-us');
-Route::view('/membership-information', 'client.membership-information');
+//Route::view('/about-us', 'client.about-us');
+//Route::view('/membership-information', 'client.membership-information');
 Route::view('/officer/loan', 'officer.loan');
 Route::view('/loans', 'client.loans');
 Route::view('/officer/pre-approved-loans', 'officer.pre-approved-loans');
@@ -175,3 +175,5 @@ Route::resource('/registration', RegistrationController::class);
 Route::view('error-page', 'error-page');
 
 Route::view('/', 'client.home.home-index');
+Route::view('about-us', 'client.about-us.about-us-index');
+Route::view('membership-information', 'client.membership.membership-information.mem-info-index');

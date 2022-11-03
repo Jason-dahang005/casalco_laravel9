@@ -42,7 +42,7 @@ class LoginController extends Controller
     public function login(Request $r){
         $input = $r->all();
 
-        $this->validate($r, [
+        $valid = $r->validate([
             'email' => 'required|email',
             'password' => 'required'
         ]);
@@ -56,7 +56,7 @@ class LoginController extends Controller
                 return redirect('/');
             }
         }else{
-            return redirect('/login');
+            return redirect('/login')->with('error', 'Unknown credentials!');
         }
     }
 }

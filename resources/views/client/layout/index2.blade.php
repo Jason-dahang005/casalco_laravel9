@@ -4,7 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>@yield('title') | CASALCO</title>
+
+  <title>
+    @if (Request()->is('/'))
+      Capitol Savings and Loan Cooperative
+    @else
+      @yield('title') | Capitol Savings and Loan Cooperative
+    @endif
+  </title>
 
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -20,7 +27,7 @@
   <meta property="og:image" content="-CUSTOMER VALUE-"><!-- link to image for socio -->
   <meta property="og:url" content="-CUSTOMER VALUE-">
 
-  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="shortcut icon" href="{{ asset('sys_img/favicon.ico') }}">
 
   @include('client.styles.font')
   @include('client.styles.global')
@@ -31,9 +38,18 @@
 <body class="corporate">
   @include('client.layout.topbar')
   @include('client.layout.header')
-  @yield('client_content')
+  
+  @if(Request::is('/'))
+    @yield('client_content')
+  @else
+    <div class="main">
+      <div class="container">
+        @yield('client_content')
+      </div>
+    </div>
+  @endif
 
-  {{-- @include('client.layout.pre-footer') --}}
+  @include('client.layout.pre-footer')
   @include('client.layout.footer')
 
   @include('client.scripts.core-plugins')
