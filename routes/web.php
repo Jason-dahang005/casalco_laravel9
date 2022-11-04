@@ -131,7 +131,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function() {
 // });
 
 Auth::routes();
-//Route::view("/", "client.home");
+Route::view("/home", "client.home");
 Route::view("/regular-special-loan-form", "client.regular-special-loan-form");
 Route::view("/express-loan-form", "client.express-loan-form");
 Route::view('/regular-loans', 'client.regular-loans');
@@ -177,3 +177,4 @@ Route::view('error-page', 'error-page');
 Route::view('/', 'client.home.home-index');
 Route::view('about-us', 'client.about-us.about-us-index');
 Route::view('membership-information', 'client.membership.membership-information.mem-info-index');
+Route::view('membership-application-form', 'client.membership.membership-application-form.mem-app-form-index');

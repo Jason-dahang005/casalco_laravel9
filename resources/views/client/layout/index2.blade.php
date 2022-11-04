@@ -36,8 +36,12 @@
 
 </head>
 <body class="corporate">
-  @include('client.layout.topbar')
-  @include('client.layout.header')
+  @if(Request()->is('membership-application-form'))
+    @include('client.layout.header')
+  @else
+    @include('client.layout.topbar')
+    @include('client.layout.header')
+  @endif
   
   @if(Request::is('/'))
     @yield('client_content')
@@ -49,8 +53,12 @@
     </div>
   @endif
 
-  @include('client.layout.pre-footer')
-  @include('client.layout.footer')
+  @if(!Request()->is('membership-application-form'))
+    @include('client.layout.pre-footer')
+    @include('client.layout.footer')
+  @else
+    @include('client.layout.footer')
+  @endif
 
   @include('client.scripts.core-plugins')
   @include('client.scripts.page-level-js')

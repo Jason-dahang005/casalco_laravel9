@@ -20,7 +20,11 @@
       </ul>
     </li>
 
-    <li class="dropdown">
+    <li>
+      <a href="#">Services</a>
+    </li>
+
+    {{-- <li class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">Pages</a>   
       <ul class="dropdown-menu">
         <li><a href="page-about.html">About Us</a></li>
@@ -38,8 +42,9 @@
         <li><a href="page-site-map.html">Site Map</a></li>
         <li><a href="page-contacts.html">Contact</a></li>                
       </ul>
-    </li>
-    <li class="dropdown">
+    </li> --}}
+
+    {{-- <li class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">Multilevel</a>
       <ul class="dropdown-menu">
         <li class="dropdown-submenu">
@@ -61,8 +66,9 @@
           </ul>
         </li>
       </ul>
-    </li>
-    <li class="dropdown">
+    </li> --}}
+
+    {{-- <li class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
         Portfolio 
         
@@ -74,8 +80,9 @@
         <li><a href="portfolio-2.html">Portfolio 2</a></li>
         <li><a href="portfolio-item.html">Portfolio Item</a></li>
       </ul>
-    </li>
-    <li class="dropdown">
+    </li> --}}
+
+    {{-- <li class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
         Blog 
         
@@ -85,9 +92,9 @@
         <li><a href="blog.html">Blog Page</a></li>
         <li><a href="blog-item.html">Blog Item</a></li>
       </ul>
-    </li>
+    </li> --}}
 
-     <li class="dropdown dropdown-megamenu">
+     {{-- <li class="dropdown dropdown-megamenu">
       <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
         Mega Menu
         
@@ -140,11 +147,11 @@
           </div>
         </li>
       </ul>
-    </li>
+    </li> --}}
 
     
     
-    <li><a href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes&amp;utm_source=download&amp;utm_medium=banner&amp;utm_campaign=metronic_frontend_freebie" target="_blank">Admin theme</a></li>
+    {{-- <li><a href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes&amp;utm_source=download&amp;utm_medium=banner&amp;utm_campaign=metronic_frontend_freebie" target="_blank">Admin theme</a></li> --}}
 
     <li class="{{ (request()->is('membership-information')) ? 'active' : '' }}">
       <a href="membership-information">Membership</a>

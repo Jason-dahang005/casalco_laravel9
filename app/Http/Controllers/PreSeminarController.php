@@ -15,7 +15,6 @@ class PreSeminarController extends Controller
      */
     public function index()
     {
-        Alert::success('Membership Submitted Successfully', 'Please wait for a Call');
         return view('client.home');
     }
 
