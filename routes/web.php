@@ -142,6 +142,7 @@ Route::view('/regular-loans', 'client.regular-loans');
 Route::view('/special-loans', 'client.special-loans');
 Route::view('/express-loans', 'client.express-loans');
 Route::view('/contact-us', 'client.contact-us');
+Route::view('/form', 'client.membership-application');
 //Route::view('/about-us', 'client.about-us');
 //Route::view('/membership-information', 'client.membership-information');
 Route::view('/officer/loan', 'officer.loan');

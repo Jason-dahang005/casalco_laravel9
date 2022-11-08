@@ -15,29 +15,29 @@ return new class extends Migration
     {
         Schema::create('membership_applications', function (Blueprint $table) {
             $table->id();
-            $table->string('Fname');
-            $table->string('Mname');
-            $table->string('Lname');
+            $table->string('first_name');
+            $table->string('middle_name');
+            $table->string('last_name');
             $table->string('suffix')->nullable();
             $table->string('gender');
             $table->date('dob');
             $table->string('Bplace');
             $table->string('address');
             $table->string('unit');
-            $table->string('occupation');
+            $table->string('Occu');
             $table->string('educ');
             $table->string('MI');
             $table->string('civilStatus');
             $table->string('religion');
-            $table->string('contactNum');
+            $table->string('contact_number');
             $table->string('TIN');
             $table->string('SSSnum');
             $table->string('email');
-            $table->string('NumDependents');
+            $table->string('Dependents');
             $table->string('acc_id')->unique()->nullable();
             $table->string('or_no')->nullable();
-            $table->string('Mothers_Mname');
-            $table->string('selfiepic',300);
+            $table->string('mothers_maiden_name');
+            $table->string('selfie_pic',300);
             // $table->string('empIDpic');
             $table->integer('is_approved')->default(0);
             $table->boolean('membership_type')->comment('0 = online, 1 = walk-in');

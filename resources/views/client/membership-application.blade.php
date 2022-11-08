@@ -34,12 +34,12 @@
 				<div class="col-lg-4 col-sm-12">
 					<fieldset>
 						<span class="text-danger">@error('Fname'){{ $message }}@enderror </span>
-						<input name="Fname" type="text" id="Fname" placeholder="First Name">
+						<input name="first_name" type="text" id="Fname" placeholder="First Name">
 					</fieldset>
 				</div>
 				<div class="col-lg-4 col-sm-12">
 					<fieldset>
-						<input name="Mname" type="text" id="Mname" placeholder="Middle Name">
+						<input name="middle_name" type="text" id="Mname" placeholder="Middle Name">
 						<span class="text-danger">@error('Mname')
 							{{ $message }}
 						@enderror </span>
@@ -47,7 +47,7 @@
 				</div>
 				<div class="col-lg-4 col-sm-12">
 					<fieldset>
-						<input name="Lname" type="text" id="Lname" placeholder="Last Name">
+						<input name="last_name" type="text" id="Lname" placeholder="Last Name">
 						<span class="text-danger">@error('Lname')
 							{{ $message }}
 						@enderror </span>
@@ -106,7 +106,7 @@
 				</div>
 				<div class="col-lg-4 col-sm-12">
 					<fieldset>
-						<input name="occupation" type="text" id="occupation" placeholder="Occupation">
+						<input name="Occu" type="text" id="occupation" placeholder="Occupation">
 						<span class="text-danger">@error('occupation')
 							{{ $message }}
 						@enderror </span>
@@ -158,7 +158,7 @@
 				</div>
 				<div class="col-lg-4 col-sm-12">
 					<fieldset>
-						<input name="contactNum" type="text" id="contactNum" placeholder="Contact Number">
+						<input name="contact_number" type="text" id="contactNum" placeholder="Contact Number">
 						<span class="text-danger">@error('contactNum')
 							{{ $message }}
 						@enderror </span>
@@ -174,7 +174,7 @@
 				</div>
 				<div class="col-lg-4 col-sm-12">
 					<fieldset>
-						<input name="NumDependents" type="text" id="NumDependents" placeholder="Number of Dependents">
+						<input name="Dependents" type="text" id="NumDependents" placeholder="Number of Dependents">
 						<span class="text-danger">@error('NumDependents')
 							{{ $message }}
 						@enderror </span>
@@ -182,7 +182,7 @@
 				</div>
 				<div class="col-lg-12">
 					<fieldset>
-						<input name="Mothers_Mname" type="text" id="Mothers_Mname" placeholder="Mother's Maiden Name ">
+						<input name="mothers_maiden_name" type="text" id="Mothers_Mname" placeholder="Mother's Maiden Name ">
 						<span class="text-danger">@error('Mothers_Mname')
 							{{ $message }}
 						@enderror </span>
@@ -343,7 +343,7 @@
 						<fieldset>
 						<label class="form-label" for="selfiepic">Attach Selfie Picture</label>
 						<!-- <input type="file" class="w-28 mt-2" name="selfiepic" id="selfiepic" > -->
-						<input type="file" class="form-control" id="customFile" name="selfiepic" onchange="previewFile(this)">
+						<input type="file" class="form-control" id="customFile" name="selfie_pic" onchange="previewFile(this)">
 						
 							<img src="" alt="" id="previewImg" style="max-width: 130px; margin-top: 20px;">
 						

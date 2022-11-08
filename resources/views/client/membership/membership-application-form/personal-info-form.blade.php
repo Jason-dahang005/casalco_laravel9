@@ -8,6 +8,8 @@
           <small class="text-danger">@error('first name') {{ $message }}@enderror</small>
         </div>
       </div>
+
+      <input type="hidden" class="form-control" name="membership_type" value="0">
   
       <div class="col-lg-4 col-md-4">
         <div class="form-group">
@@ -47,15 +49,15 @@
       <div class="col-lg-4 col-md-4">
         <div class="form-group">
           <small>BIRTH DATE</small><span class="asterisk">*</span>
-          <input type="date" class="form-control" required name="birth_date">
-          <small class="text-danger">@error('birth date') {{ $message }}@enderror</small>
+          <input type="date" class="form-control" required name="dob">
+          <small class="text-danger">@error('dob') {{ $message }}@enderror</small>
         </div>
       </div>
   
       <div class="col-lg-4 col-md-4">
         <div class="form-group">
           <small>BIRTH PLACE</small><span class="asterisk">*</span>
-          <input type="text" class="form-control" required name="birth_place" placeholder="ENTER BIRTH PLACE">
+          <input type="text" class="form-control" required name="Bplace" required name="birth_place" placeholder="ENTER BIRTH PLACE">
           <small class="text-danger">@error('birth place') {{ $message }}@enderror</small>
         </div>
       </div>
@@ -67,14 +69,16 @@
           <small class="text-danger">@error('address') {{ $message }}@enderror</small>
         </div>
       </div>
-  
+
       <div class="col-lg-4 col-md-4">
         <div class="form-group">
           <small>OCCUPATION</small><span class="asterisk">*</span>
-          <input type="text" class="form-control" required name="occupation" placeholder="ENTER OCCUPATION">
-          <small class="text-danger">@error('occupation') {{ $message }}@enderror</small>
+          <input type="text" class="form-control" required name="Occu" required name="occupatoin" placeholder="ENTER OCCUPATION">
+          <small class="text-danger">@error('occupatoin') {{ $message }}@enderror</small>
         </div>
       </div>
+  
+    
   
       <div class="col-lg-4 col-md-4">
         <div class="form-group">
@@ -107,7 +111,7 @@
       <div class="col-lg-4 col-md-4">
         <div class="form-group">
           <small>MONTHLY INCOME</small><span class="asterisk">*</span>
-          <input type="text" class="form-control" required name="monthly_income" placeholder="ENTER MONTHLY INCOME">
+          <input type="text" required name="MI" class="form-control" required name="monthly_income" placeholder="ENTER MONTHLY INCOME">
           <small class="text-danger">@error('monthly income') {{ $message }}@enderror</small>
         </div>
       </div>
@@ -132,4 +136,36 @@
           <small class="text-danger">@error('religion') {{ $message }}@enderror</small>
         </div>
       </div>
+
+      <div class="col-lg-4 col-md-4">
+        <div class="form-group">
+          <small>CONTACT NUMBER</small><span class="asterisk">*</span>
+          <input type="text" class="form-control" required name="contact_number" placeholder="ENTER CONTACT NUMBER">
+          <small class="text-danger">@error('contact number') {{ $message }}@enderror</small>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+        <div class="form-group">
+          <small>NUMBER OF DEPENDENT</small><span class="asterisk">*</span>
+          <input type="text" class="form-control" required name="Dependents" placeholder="ENTER NUMBER OF DEPENDENTS">
+          <small class="text-danger">@error('Dependents') {{ $message }}@enderror</small>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+        <div class="form-group">
+          <small>MOTHER'S MAIDEN NAME</small><span class="asterisk">*</span>
+          <input type="text" class="form-control" name="mothers_maiden_name" placeholder="ENTER MOTHER'S MAIDEN NAME">
+          <small class="text-danger">@error("mother's maiden name") {{ $message }}@enderror</small>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+      <div class="form-group">
+        <small>EMAIL</small><span class="asterisk">*</span>
+        <input type="email" class="form-control" required name="email" placeholder="ENTER EMAIL">
+        <small class="text-danger">@error('email') {{ $message }}@enderror</small>
+      </div>
+    </div>
     </div>

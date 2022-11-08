@@ -41,9 +41,9 @@ class MembershipApplicationController extends Controller
     {
       
         $requestData = $r->all();
-        $fileName =  time().$r->file('selfiepic')->getClientOriginalName();
-        $path = $r->file('selfiepic')->storeAs('image', $fileName, 'public');
-        $requestData["selfiepic"] = '/storage/'.$path;
+        $fileName =  time().$r->file('selfie_pic')->getClientOriginalName();
+        $path = $r->file('selfie_pic')->storeAs('image', $fileName, 'public');
+        $requestData["selfie_pic"] = '/storage/'.$path;
         $ms = MembershipApplication::create($requestData);
 
         if (!empty($r->spouseFname)) {

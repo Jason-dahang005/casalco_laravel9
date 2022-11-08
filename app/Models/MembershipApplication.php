@@ -12,29 +12,29 @@ class MembershipApplication extends Model
     use HasFactory;
 
     protected $fillable = [
-        'Fname',
-        'Mname',
-        'Lname',
+        'first_name',
+        'middle_name',
+        'last_name',
          'suffix',
          'gender',
          'dob',
          'Bplace',
          'address',
         'unit',
-        'occupation',
+        'Occu',
         'educ',
         'MI',
         'civilStatus',
         'religion',
-        'contactNum',
+        'contact_number',
         'TIN',
         'SSSnum',
         'email',
-        'NumDependents',
+        'Dependents',
         'is_approved',
-        'Mothers_Mname',
+        'mothers_maiden_name',
         'membership_type',
-        'selfiepic'
+        'selfie_pic'
         // 'empIDpic'
     ];
 
