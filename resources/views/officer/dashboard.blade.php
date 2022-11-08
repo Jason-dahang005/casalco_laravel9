@@ -3,52 +3,59 @@
 @section('officer_content')
 
 <div class="row column1">
-  <div class="col-md-6 col-lg-3">
-    <div class="full counter_section margin_bottom_30">
-    <div class="couter_icon">
-      <div> 
-      <i class="fa fa-user yellow_color"></i>
+  <!-- <div class="col-md-6 col-lg-4">
+    <a href="/officer/membership-application">
+      <div class="full counter_section margin_bottom_30">
+				<div class="couter_icon">
+					<div> 
+					<i class="fa fa-user yellow_color"></i>
+					</div>
+				</div>
+				<div class="counter_no">
+					<div>
+					<p class="total_no">0</p>
+					<p class="head_couter">List of Members</p>
+					</div>
+				</div>
       </div>
-    </div>
-    <div class="counter_no">
-      <div>
-      <p class="total_no">0</p>
-      <p class="head_couter">Total Number of Members</p>
-      </div>
-    </div>
-    </div>
+   </a>
+  </div> -->
+  <div class="col-md-6 col-lg-6">
+    <a href="/officer/membership-application"">
+			<div class="full counter_section margin_bottom_30">
+				<div class="couter_icon">
+					<div> 
+					<i class="fa fa-folder blue1_color"></i>
+					</div>
+				</div>
+				<div class="counter_no">
+					<div>
+					<p class="total_no">{{ count($membership) }}</p>
+					<p class="head_couter">Pending Membership Application</p>
+					</div>
+				</div>
+			</div>
+		</a>
   </div>
-  <div class="col-md-6 col-lg-3">
-    <div class="full counter_section margin_bottom_30">
-    <div class="couter_icon">
-      <div> 
-      <i class="fa fa-folder blue1_color"></i>
-      </div>
-    </div>
-    <div class="counter_no">
-      <div>
-      <p class="total_no">{{ count($membership) }}</p>
-      <p class="head_couter">Pending Membership Application</p>
-      </div>
-    </div>
-    </div>
-  </div>
-  <div class="col-md-6 col-lg-3">
-    <div class="full counter_section margin_bottom_30">
-    <div class="couter_icon">
-      <div> 
-      <i class="fa fa-money green_color"></i>
-      </div>
-    </div>
-    <div class="counter_no">
-      <div>
-      <p class="total_no">0</p>
-      <p class="head_couter">Pending Loan <br> Application</p>
-      </div>
-    </div>
-    </div>
+  <div class="col-md-6 col-lg-6">
+    <a href="/officer/loan">
+			<div class="full counter_section margin_bottom_30">
+				<div class="couter_icon">
+					<div> 
+					<i class="fa fa-money green_color"></i>
+					</div>
+				</div>
+				<div class="counter_no">
+					<div>
+					<p class="total_no">0</p>
+					<p class="head_couter">Pending Loan Application
+					</div>
+				</div>
+			</div>
+		</a>
   </div>
  </div>
+ 
  {{-- <div class="row column1 social_media_section">
   <div class="col-md-6 col-lg-3">
      <div class="full socile_icons fb margin_bottom_30">

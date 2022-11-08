@@ -1,8 +1,8 @@
 @extends('officer.index')
-@section('title', 'Membership')
+@section('title', 'Membership Application List')
 @section('officer_content')
 
-<button class="btn btn-sm btn-success mb-2" data-toggle="modal" data-target="#myModal01">Add Walk-in</button>
+<!-- <button class="btn btn-sm btn-success mb-2" data-toggle="modal" data-target="#myModal01">Add Walk-in</button> -->
 
 <table class="table table-bordered table-striped table-sm" id="example5">
 	<thead>

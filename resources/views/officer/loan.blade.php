@@ -1,5 +1,5 @@
 @extends('officer.index')
-@section('title', 'Loan')
+@section('title', 'Loan Application List')
 @section('officer_content')
 
 
@@ -7,7 +7,7 @@
 
 <!-- <button class="btn btn-sm btn-success mb-2" data-toggle="modal" data-target="#myModal01">Add Walk-in</button> -->
 
-<div class="btn-group">
+<!-- <div class="btn-group">
   <button type="button" class="btn btn-success mb-2 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Add Walk-in
   </button>
@@ -15,7 +15,7 @@
     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal02" >Express Loan</a>
     <a class="dropdown-item" href="#">Regular/Special Loan</a>
   </div>
-</div>
+</div> -->
 
 <table class="table table-bordered table-striped table-sm" id="example2">
 	<thead>

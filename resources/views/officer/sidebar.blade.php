@@ -18,7 +18,7 @@
   </div>
   <div class="sidebar_blog_2">
     <ul class="list-unstyled components">
-      <li class="active">
+      <li class="">
         <a href="/officer/dashboard"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
       </li>
       <li>
