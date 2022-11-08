@@ -6,11 +6,13 @@
   <script src="{{ asset('metronic/pages/scripts/bs-carousel.js') }}" type="text/javascript"></script>
   <script type="text/javascript">
     jQuery(document).ready(function() {
-        Layout.init();    
-        Layout.initOWL();
-        Layout.initTwitter();
+      Layout.init();    
+      Layout.initOWL();
+      Layout.initTwitter();
+      @if(!Request()->is('membership-application-form'))
         Layout.initFixHeaderWithPreHeader(); /* Switch On Header Fixing (only if you have pre-header) */
         Layout.initNavScrolling(); 
+      @endif
     });
   </script>
   <!-- END PAGE LEVEL JAVASCRIPTS -->

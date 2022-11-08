@@ -35,6 +35,8 @@ use App\Http\Controllers\PreSeminarController;
 
 // use App\Http\Controllers\client\MembershipController;
 
+use App\Http\Controllers\PracticeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,6 +60,8 @@ Route::middleware(['auth', 'isAdmin'])->group(function() {
   
 
 });
+
+Route::get('practice', [PracticeController::class, 'age']);
 
 
 // CLIENT SIDE START ---------------------------------------------------------

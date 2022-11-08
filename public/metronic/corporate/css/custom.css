@@ -16,7 +16,6 @@
 
 .mem-bg{
   margin: auto;
-  width: 900px;
   box-shadow: -1px 0px 5px 3px rgba(0,0,0,0.34);
   -webkit-box-shadow: -1px 0px 5px 3px rgba(0,0,0,0.34);
   -moz-box-shadow: -1px 0px 5px 3px rgba(0,0,0,0.34);
@@ -30,10 +29,41 @@
   margin: 20px 0;
 }
 
+.this-form .form-control{
+  text-transform: uppercase !important;
+}
+
 .personal-info-text{
   padding-top: 20px;
+  
+}
+
+.spouse-info-text{
+  display: flex;
 }
 
 .personal-info-text h3{
   font-weight: bolder;
+}
+
+.personal-info-text small{
+  color: #E84D1C;
+}
+
+.submit_btn{
+  background-color: #E84D1C;
+  color: #fff;
+  border: none;
+  padding: 20px;
+  width: 100%;
+  font-size: 14px;
+}
+
+.submit_btn:hover{
+   background-color:  #d14115;
+   cursor: pointer;
+}
+
+.selfie, .id_pic{
+  border: none !important;
 }
