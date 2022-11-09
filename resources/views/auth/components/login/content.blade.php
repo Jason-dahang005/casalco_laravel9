@@ -36,12 +36,12 @@
           </form>
         </div>
         <div class="col-md-4 col-sm-4 pull-right">
-          <div class="form-info">
+          <!-- <div class="form-info">
             <h2><em>Important</em> Information</h2>
             <p>Duis autem vel eum iriure at dolor vulputate velit esse vel molestie at dolore.</p>
 
             <button type="button" class="btn btn-default">More details</button>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

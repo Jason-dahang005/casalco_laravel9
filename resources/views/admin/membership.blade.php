@@ -8,6 +8,7 @@
       <th>First Name</th>
       <th>Last Name</th>
       <th>Unit</th>
+      <th>Date Applied</th>
       <th>Date Pre-Approved</th>
       <th>Status</th>
       <th>Actions</th>
@@ -16,10 +17,11 @@
   <tbody>
     @foreach ($membership as $m)
         <tr>
-        <td>{{ $m->Fname }}</td>
-        <td>{{ $m->Lname }}</td>
+        <td>{{ $m->first_name }}</td>
+        <td>{{ $m->last_name }}</td>
         <td>{{ $m->unit }}</td>
-        <td>{{ $m->updated_at }}</td>
+        <td>{{ date('m-d-Y h:i a', strtotime($m->created_at)) }}</td>
+        <td>{{ date('m-d-Y h:i a', strtotime($m->updated_at)) }}</td>
         <td>
 
             @if($m->is_approved)
@@ -65,22 +67,22 @@
           <div class="row pt-3">
             <div class="col-lg-4">
               <div class="form-group">
-                <input type="text" class="form-control" disabled placeholder="First Name" value="{{ $m->Fname }}">
+                <input type="text" class="form-control" disabled placeholder="First Name" value="{{ $m->first_name }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
-                <input type="text" class="form-control" disabled placeholder="Middle Name" value="{{ $m->Mname }}">
+                <input type="text" class="form-control" disabled placeholder="Middle Name" value="{{ $m->middle_name }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
-                <input type="text" class="form-control" disabled placeholder="Last Name" value="{{ $m->Lname }}">
+                <input type="text" class="form-control" disabled placeholder="Last Name" value="{{ $m->last_name }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
-                <input type="text" class="form-control" disabled placeholder="Suffix" value="{{ $m->Fname }}">
+                <input type="text" class="form-control" disabled placeholder="Suffix" value="{{ $m->suffix }}">
               </div>
             </div>
             <div class="col-lg-4">
@@ -110,7 +112,7 @@
             </div>
             <div class="col-lg-4">
               <div class="form-group">
-                <input type="text" class="form-control" disabled placeholder="Occupation" value="{{ $m->occuaption }}">
+                <input type="text" class="form-control" disabled placeholder="Occupation" value="{{ $m->Occu }}">
               </div>
             </div>
             <div class="col-lg-4">
@@ -135,17 +137,17 @@
             </div>
             <div class="col-lg-4">
               <div class="form-group">
-                <input type="text" class="form-control" disabled placeholder="Contact NUmber" value="{{ $m->contactNum }}">
+                <input type="text" class="form-control" disabled placeholder="Contact NUmber" value="{{ $m->contact_number }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
-                <input type="text" class="form-control" disabled placeholder="Email Address" value="{{ $m->enail }}">
+                <input type="text" class="form-control" disabled placeholder="Email Address" value="{{ $m->email }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
-                <input type="text" class="form-control" disabled placeholder="No. of Dependents" value="{{ $m->NumDependents }}">
+                <input type="text" class="form-control" disabled placeholder="No. of Dependents" value="{{ $m->Dependents }}">
               </div>
             </div>
           </div>
