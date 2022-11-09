@@ -12,7 +12,7 @@
       <th>Unit</th>
       {{-- <th>Image</th> --}}
       <th>Membership Type</th>
-      <th>Date Registered</th>
+      <th>Date Applied</th>
       <th>Status</th>
       <th>Actions</th>
     </tr>
@@ -20,8 +20,8 @@
   <tbody>
     @foreach ($membership as $m)
         <tr>
-        <td>{{ $m->Fname }}</td>
-        <td>{{ $m->Lname }}</td>
+        <td>{{ $m->first_name }}</td>
+        <td>{{ $m->middle_name }}</td>
         <td>{{ $m->unit }}</td>
         {{-- <td>
           <img src="{{ asset($m->selfiepic) }}" width = '50' height = '50' class = "img img-responsive" />
@@ -81,19 +81,19 @@
               
               <div class="form-group">
               <label for="First Name" class="form-label">First Name</label>
-                <input type="text" class="form-control" disabled placeholder="First Name" value="{{ $m->Fname }}">
+                <input type="text" class="form-control" disabled placeholder="First Name" value="{{ $m->first_name }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Middle Name</label>
-                <input type="text" class="form-control" disabled placeholder="Middle Name" value="{{ $m->Mname }}">
+                <input type="text" class="form-control" disabled placeholder="Middle Name" value="{{ $m->middle_name }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Last Name</label>
-                <input type="text" class="form-control" disabled placeholder="Last Name" value="{{ $m->Lname }}">
+                <input type="text" class="form-control" disabled placeholder="Last Name" value="{{ $m->last_name }}">
               </div>
             </div>
             <div class="col-lg-4">

@@ -88,7 +88,7 @@ class ApproveMembershipApplicationController extends Controller
 
         
 
-        return back();
+        return redirect('admin.membership');
     }
 
     /**

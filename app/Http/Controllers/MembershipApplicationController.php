@@ -7,7 +7,6 @@ use App\Models\Beneficiary;
 use App\Models\Spouse;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use RealRashid\SweetAlert\Facades\Alert;
 
 class MembershipApplicationController extends Controller
 {
@@ -67,7 +66,8 @@ class MembershipApplicationController extends Controller
             ]);
         }
 
-        return redirect('pre_seminar');
+
+        return redirect('pre_seminar')->with('success', 'oraytz');
     }
 
     /**

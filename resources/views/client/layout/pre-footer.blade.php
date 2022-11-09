@@ -2,8 +2,7 @@
 <div class="pre-footer">
   <div class="container">
     <div class="row">
-      <!-- BEGIN BOTTOM ABOUT BLOCK -->
-      <div class="col-md-4 col-sm-6 pre-footer-col">
+      <!-- <div class="col-md-4 col-sm-6 pre-footer-col">
         <h2>About us</h2>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam sit nonummy nibh euismod tincidunt ut laoreet dolore magna aliquarm erat sit volutpat.</p>
 
@@ -28,9 +27,6 @@
           </ul>                    
         </div>
       </div>
-      <!-- END BOTTOM ABOUT BLOCK -->
-
-      <!-- BEGIN BOTTOM CONTACTS -->
       <div class="col-md-4 col-sm-6 pre-footer-col">
         <h2>Our Contacts</h2>
         <address class="margin-bottom-40">
@@ -55,14 +51,10 @@
           </form>
         </div>
       </div>
-      <!-- END BOTTOM CONTACTS -->
-
-      <!-- BEGIN TWITTER BLOCK --> 
       <div class="col-md-4 col-sm-6 pre-footer-col">
         <h2 class="margin-bottom-0">Latest Tweets</h2>
         <a class="twitter-timeline" href="https://twitter.com/twitterapi" data-tweet-limit="2" data-theme="dark" data-link-color="#57C8EB" data-widget-id="455411516829736961" data-chrome="noheader nofooter noscrollbar noborders transparent">Loading tweets by @keenthemes...</a>
-      </div>
-      <!-- END TWITTER BLOCK -->
+      </div> -->
     </div>
   </div>
 </div>

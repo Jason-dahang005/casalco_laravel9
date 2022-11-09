@@ -61,7 +61,6 @@ Route::middleware(['auth', 'isAdmin'])->group(function() {
 
 });
 
-Route::get('practice', [PracticeController::class, 'age']);
 
 
 // CLIENT SIDE START ---------------------------------------------------------
@@ -177,7 +176,6 @@ Route::resource('/registration', RegistrationController::class);
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::view('error-page', 'error-page');
 
 Route::view('/', 'client.home.home-index');
 Route::view('about-us', 'client.about-us.about-us-index');

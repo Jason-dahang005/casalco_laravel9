@@ -36,6 +36,7 @@
 
 </head>
 <body class="corporate">
+
   @if(Request()->is('membership-application-form'))
     @include('client.layout.header')
   @else
