@@ -75,18 +75,10 @@ class ApproveMembershipApplicationController extends Controller
     {
         $membership = MembershipApplication::find($id);
         $membership->is_approved = $request->is_approved;
-        $approved = $membership->save();
-
-        if ($approved) {
-            Member::create([
-                'user_id' => 1,
-                'membership_application_id' => 1,
-                'account_id' => 'qwe123',
-                'or_id' => 'qwe123'
-            ]);
-        }
-
-        
+        $membership->acc_id = $request->acc_id;
+        $membership->or_no = $request->or_no;
+        $membership->assigned_officer = auth()->user()->username;
+        $membership->save();
 
         return redirect('admin.membership');
     }

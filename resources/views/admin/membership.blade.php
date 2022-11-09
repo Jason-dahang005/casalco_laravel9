@@ -46,7 +46,7 @@
            <h4 class="modal-title">CASALCO Membership Application Form</h4>
         </div>
         <!-- Modal body -->
-        <form action="{{ route('membership-application.update', $m->id) }}" method="POST">
+        <form action="{{ route('membership.update', $m->id) }}" method="POST">
           @csrf
           @method('PUT')
         <div class="modal-body">
