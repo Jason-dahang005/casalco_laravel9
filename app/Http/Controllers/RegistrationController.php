@@ -48,12 +48,11 @@ class RegistrationController extends Controller
         $user = MembershipApplication::where('acc_id', '=', $request->acc_id)->first();
         if($user){
             $user = new User();
-            $user->acc_id = $request->acc_id;
             $user->username = $request->username;
             $user->email = $request->email;
             $user->password = Hash::make($request->password);
             $user->save();
-            return back()->with('success', 'You have successfully registered as a member, kindly login');
+            return redirect('/dashboard');
         }else{
             return back()->with('error', 'Account ID does not exist, become a member first');
         }

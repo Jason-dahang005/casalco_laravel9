@@ -80,7 +80,7 @@ class ApproveMembershipApplicationController extends Controller
         $membership->assigned_officer = auth()->user()->username;
         $membership->save();
 
-        return redirect('admin.membership');
+        return redirect('admin/membership');
     }
 
     /**
