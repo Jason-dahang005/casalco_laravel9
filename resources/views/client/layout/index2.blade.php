@@ -34,6 +34,7 @@
   @include('client.styles.page-level-plugin')
   @include('client.styles.theme')
 
+
 </head>
 <body class="corporate">
   @if(Request()->is('membership-application-form'))
@@ -62,5 +63,7 @@
 
   @include('client.scripts.core-plugins')
   @include('client.scripts.page-level-js')
+  @include('sweetalert::alert')
+
 </body>
 </html>
