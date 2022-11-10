@@ -7,6 +7,7 @@ use App\Models\Beneficiary;
 use App\Models\Spouse;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class MembershipApplicationController extends Controller
 {
@@ -67,7 +68,7 @@ class MembershipApplicationController extends Controller
         }
         Alert::success('Membership Submitted Successfully', 'Please Wait For a Call');
 
-        return redirect('/admin/membership-application-form');
+        return redirect('/membership-application-form');
     }
 
     /**

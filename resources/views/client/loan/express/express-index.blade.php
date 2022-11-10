@@ -1,5 +1,5 @@
 @extends('client.layout.index2')
-@section('title', 'Online Membership Application Form')
+@section('title', 'Online Loan Application Form')
 @section('client_content')
 
 <div class="h-100 d-flex align-items-center justify-content-center">
@@ -30,22 +30,10 @@
        <div class="col-lg-4 col-md-4">
       <div class="form-group">
         <small>LOAN CATEGORIES</small><span class="asterisk">*</span>
-        <select required name="mode_payment" id="mode_payment" class="form-control">
+        <select required name="mode_payment" id="mode_payment" class="form-control" id="select-condition">
           <option value="" disabled selected >SELECT CATEGORIES</option>
           <option value="EXPRESS LOAN">EXPRESS LOAN</option>
-          <option value="LAD(LOAN AGAINS DEPOSIT)">LAD(LOAN AGAINS DEPOSIT)</option>
-        
-        </select>
-        <small class="text-danger">@error('mode_payment') {{ $message }}@enderror</small>
-      </div>
-      </div>
-      <div class="col-lg-4 col-md-4">
-      <div class="form-group">
-        <small>LOAN CATEGORIES</small><span class="asterisk">*</span>
-        <select required name="mode_payment" id="mode_payment" class="form-control">
-          <option value="" disabled selected >SELECT CATEGORIES</option>
-          <option value="EXPRESS LOAN">EXPRESS LOAN</option>
-          <option value="LAD(LOAN AGAINS DEPOSIT)">LAD(LOAN AGAINS DEPOSIT)</option>
+          <option value="LAD">LAD(LOAN AGAINS DEPOSIT)</option>
         
         </select>
         <small class="text-danger">@error('mode_payment') {{ $message }}@enderror</small>
@@ -184,13 +172,7 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-4">
-        <div class="form-group">
-          <small>PHONE NUMBER</small><span class="asterisk">*</span>
-          <input type="text" class="form-control" required name="phone_no" placeholder="ENTER PHONE NUMBER">
-          <small class="text-danger">@error('phone_no') {{ $message }}@enderror</small>
-        </div>
-      </div>
+
 
       <div class="col-lg-4 col-md-4">
         <div class="form-group">
@@ -225,4 +207,19 @@
   </div>
 </div>
 
+
+
+$( "#select-condition" ).change(function() {
+  if(this.value == 'LAD'){
+    $('#loan_type').removeClass( "hide" );
+   
+  }else if(this.value == 'EXPRESS LOAN'){
+    $('#loan_type').addClass( "hide" );
+   
+  }
+  else{
+    $('#loan_type').removeClass( "show" ).addClass("hide");
+
+  }
+});
 @endsection
