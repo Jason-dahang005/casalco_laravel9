@@ -28,7 +28,7 @@
   <meta property="og:url" content="-CUSTOMER VALUE-">
 
   <link rel="shortcut icon" href="{{ asset('sys_img/favicon.ico') }}">
-
+  
   @include('client.styles.font')
   @include('client.styles.global')
   @include('client.styles.page-level-plugin')
