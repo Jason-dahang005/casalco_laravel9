@@ -73,7 +73,13 @@ class LoanHistoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $loan = LoanApplication::find($id);
+        $loan->is_approved = $request->is_approved;
+        // $loan->acc_id = $request->acc_id;
+        // $loan->or_no = $request->or_no;
+        $loan->save();
+
+        return back();
     }
 
     /**
@@ -84,6 +90,10 @@ class LoanHistoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $loan = LoanApplication::find($id);
+
+        $loan->delete();
+
+        return back();
     }
 }

@@ -66,7 +66,7 @@ class MembershipApplicationController extends Controller
                 'benAddress' => $r->benAddress,
             ]);
         }
-        Alert::success('Membership Submitted Successfully', 'Please Wait For a Call');
+       // Alert::success('Membership Submitted Successfully', 'Please Wait For a Call');
 
         return redirect('/membership-application-form');
     }

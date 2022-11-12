@@ -9,7 +9,7 @@
 
 	<div class="col-lg-6 col-md-6">
 		<div class="form-group">
-			<small>CASALCO ID Picture</small><span class="asterisk">*</span>
+			<small>Employee ID Picture</small><span class="asterisk">*</span>
 			<input type="file" class="form-control id_pic"  name="id_pic" placeholder="ENTER RELATIONSHIP">
 		</div>
 	</div>
