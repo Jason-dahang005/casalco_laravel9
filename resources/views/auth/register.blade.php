@@ -24,8 +24,8 @@
             <div class="form-group">
               <label for="acc_id" class="col-lg-4 control-label">Member's ID No.<span class="require">*</span></label>
               <div class="col-lg-8">
-                <input type="text" class="form-control" name="acc_id">
-                <span class="text-danger">@error('acc_id') {{ $message }}@enderror</span>
+                <input type="text" class="form-control" name="Member's id no">
+                <span class="text-danger">@error("Member's id no") {{ $message }}@enderror</span>
               </div>
             </div>
             <div class="form-group">

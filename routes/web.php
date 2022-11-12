@@ -22,8 +22,11 @@ use App\Http\Controllers\MemberController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\ExpressLoanAppController;
 use App\Http\Controllers\RegularSpecialLoanController;
-use App\Http\Controllers\LoanHistoryController;
+//use App\Http\Controllers\LoanHistoryController;
 use App\Http\Controllers\PreSeminarController;
+use App\Http\Controllers\client\ClientDashboardController;
+use App\Http\Controllers\client\LoanHistoryController;
+use App\Http\Controllers\client\ActiveLoanController;
 // use App\Http\Controllers\admin\DashboardController;
 // use App\Http\Controllers\admin\MembershipController;
 // use App\Http\Controllers\admin\LoanController;
@@ -157,7 +160,10 @@ Route::resource('/loan-history', LoanHistoryController::class);
 Route::resource('/home', PreSeminarController::class);
 
 Route::middleware(['auth', 'isClient'])->group(function() { 
-  Route::view('/dashboard', 'client.dashboard');
+  Route::resource('/client/dashboard', ClientDashboardController::class);
+  Route::resource('/client/loan-history', LoanHistoryController::class);
+  Route::resource('/client/active-loan', ActiveLoanController::class);
+  Route::view('/express-loans', 'client.loan.express.express-index');
 });
 
 
@@ -181,4 +187,3 @@ Route::view('/', 'client.home.home-index');
 Route::view('about-us', 'client.about-us.about-us-index');
 Route::view('membership-information', 'client.membership.membership-information.mem-info-index');
 Route::view('membership-application-form', 'client.membership.membership-application-form.mem-app-form-index');
-Route::view('/express-loans', 'client.loan.express.express-index');

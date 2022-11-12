@@ -14,14 +14,19 @@
     <li class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">Loan</a>
       <ul class="dropdown-menu">
+        <li><a href="">(LAD) Loan Against Deposit</a></li>
         <li><a href="portfolio-4.html">Regular Loan</a></li>
         <li><a href="portfolio-3.html">Express Loan</a></li>
         <li><a href="portfolio-2.html">Special Loan</a></li>
       </ul>
     </li>
 
-    <li>
-      <a href="#">Services</a>
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">Services</a>
+      <ul class="dropdown-menu">
+        <li><a href="portfolio-4.html">Regular & Special Loan Application Form</a></li>
+        <li><a href="portfolio-3.html">LAD & Express Loan Application Form</a></li>
+      </ul>
     </li>
 
     {{-- <li class="dropdown">

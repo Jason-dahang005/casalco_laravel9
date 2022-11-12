@@ -53,7 +53,7 @@ class LoginController extends Controller
             }elseif (auth()->user()->user_type == 2) {
                 return redirect('/officer/dashboard');
             }else{
-                return redirect('/');
+                return redirect('/client/dashboard');
             }
         }else{
             return redirect('/login')->with('error', 'Unknown credentials!');

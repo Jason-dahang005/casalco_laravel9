@@ -1,14 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\MembershipApplication;
-use App\Models\User;
-use Hash;
 
-class RegistrationController extends Controller
+class ClientDashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +14,7 @@ class RegistrationController extends Controller
      */
     public function index()
     {
-        //
+        return view('client.dashboard.dashboard');
     }
 
     /**
@@ -38,26 +35,7 @@ class RegistrationController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            "Member's id no"    => 'required',
-            'username'          => 'required|unique:users',
-            'email'             => 'required|email|unique:users',
-            'password'          => 'required|min:8'
-        ]);
-
-        $user = MembershipApplication::where('acc_id', '=', $request->acc_id)->first();
-        if($user){
-            $user = new User();
-            $user->username = $request->username;
-            $user->email = $request->email;
-            $user->password = Hash::make($request->password);
-            $user->save();
-            return redirect('/dashboard');
-        }else{
-            return back()->with('error', 'Account ID does not exist, become a member first');
-        }
-
-
+        //
     }
 
     /**
