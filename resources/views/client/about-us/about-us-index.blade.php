@@ -3,27 +3,33 @@
 @section('client_content')
 
 <!-- BEGIN SIDEBAR & CONTENT -->
-<div class="row margin-bottom-40">
-  <!-- BEGIN CONTENT -->
-  <div class="col-md-12 col-sm-12">
-    <h1>About Us</h1>
-    <div class="content-page">
-      <div class="row margin-bottom-30">
-        <!-- BEGIN INFO BLOCK -->               
-        @include('client.about-us.vision')
-        <!-- END INFO BLOCK -->   
-      </div>
-      <div class="row margin-bottom-30">
-        <!-- BEGIN INFO BLOCK -->
-        @include('client.about-us.mission')
-        <!-- END INFO BLOCK --> 
-      </div>
-
+<div class="container about-us">
+  <!-- BEGIN ROW -->
+  <div class="row">
+    <!-- BEGIN CONTENT -->
+    <div class="col-sm">
+      <h2>About Us</h2>
     </div>
-    <!-- END CONTENT PAGE -->
+    <!-- END CONTENT -->
+      <!-- BEGIN CONTENT PAGE -->
+      <div class="content-page">
+        <div class="vision">
+          <!-- BEGIN INFO BLOCK -->               
+          @include('client.about-us.vision')
+          <!-- END INFO BLOCK -->   
+        </div>
+        <div class="mission">
+          <!-- BEGIN INFO BLOCK -->
+          @include('client.about-us.mission')
+          <!-- END INFO BLOCK --> 
+        </div>
+      </div>
+      <!-- END CONTENT PAGE -->
+    <div class="col-sm backImage">
+      <img src="../klassy/images/CasalcoLogo-7.png">
+    </div>
   </div>
-  <!-- END CONTENT -->
-  
+  <!-- END ROW -->
 </div>
 <!-- END SIDEBAR & CONTENT -->
   
