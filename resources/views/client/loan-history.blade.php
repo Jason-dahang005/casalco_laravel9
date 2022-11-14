@@ -5,63 +5,135 @@
 <div id="top">
 @foreach ($history as $l )
   @foreach ( $l->express as $s )
-  <?php
-           $loan_type = $s->loan_type;
-           $amount = (int)$s->amount;
-           $term_applied = (int)$s->term_applied;
-            if($loan_type == "PettyCash"){
-                 
-                  $servicefee = $amount*0.04+100;
-                  $deduction = $amount-$servicefee;
-                  $monthly = $amount/$term_applied;
-                  $interest=$amount*0.0075;
-                  $totalinterest=$interest*$term_applied;
-                  $totalamount=$amount+$totalinterest;
-                  $monthlyINt = $monthly+$interest;
+ <!-- AMORTIZATION COMPUTATION -->
+ <?php
+      $loan_type = $s->loan_type;
+      $mode_payment = $s->mode_payment;
+      $amount = (int)$s->amount;
+      $term_applied = (int)$s->term_applied;
+
+        if($loan_type == "PettyCash"){
+            
+              $servicefee = $amount*0.04+100;
+              $deduction = $amount-$servicefee;
+              $term_app = $term_applied;
+              $monthly = $amount/$term_applied;
+              $interest=$amount*0.0075;
+              $totalinterest=$interest*$term_applied;
+              $totalamount=$amount+$totalinterest;
+              $monthlyINt = $monthly+$interest;
+          if($mode_payment == "Quencena") {
+            
+                $servicefee = $amount*0.04+100;
+                $deduction = $amount-$servicefee;
+                $term_app = $term_applied*2;
+                $monthly = $amount/$term_app;
+                $interest=$amount*0.0075/2;
+                $totalinterest=$interest*$term_app;
+                $totalamount=$amount+$totalinterest;
+                $monthlyINt = $monthly+$interest;
+
+          }
+
+        }
+      
+        if($loan_type == "FastCash"){
+
+            $servicefee = $amount*0.03+80;
+            $deduction = $amount-$servicefee;
+            $term_app = $term_applied;
+            $monthly = $amount/$term_applied;
+            $interest=$amount*0.01;
+            $totalinterest=$interest*$term_applied;
+            $totalamount=$amount+$totalinterest;
+            $monthlyINt = $monthly+$interest;
+
+            if($mode_payment == "Quencena"){
+            $servicefee = $amount*0.03+80;
+            $deduction = $amount-$servicefee;
+            $term_app = $term_applied*2;
+            $monthly = $amount/$term_app;
+            $interest=$amount*0.01/2;
+            $totalinterest=$interest*$term_app;
+            $totalamount=$amount+$totalinterest;
+            $monthlyINt = $monthly+$interest;
 
             }
-              if($loan_type == "FastCash"){
 
-                $servicefee = $amount*0.01+80;
-                $deduction = $amount-$servicefee;
-                $monthly = $amount/$term_applied;
-                $interest=$amount*0.01;
-                $totalinterest=$interest*$term_applied;
-                $totalamount=$amount+$totalinterest;
-                $monthlyINt = $monthly+$interest;
-              }
-              if($loan_type == "InstaCash"){
 
-                $servicefee = $amount*0.025+20;
-                $deduction = $amount-$servicefee;
-                $monthly = $amount/$term_applied;
-                $subinterest=$amount/200;
-                $interest=$subinterest*10;
-                $totalinterest=$interest*$term_applied;
-                $totalamount=$amount+$totalinterest;
-                $monthlyINt = $monthly+$interest;
-              }
-              if($loan_type == "HealthInsurace"){
+          }
+        if($loan_type == "InstaCash"){
 
-                $servicefee = $amount*0.02+30;
-                $deduction = $amount-$servicefee;
-                $monthly = $amount/$term_applied;
-                $interest=$amount*0.015;
-                $totalinterest=$interest*$term_applied;
-                $totalamount=$amount+$totalinterest;
-                $monthlyINt = $monthly+$interest;
-              }
-              if($loan_type == "BirthdayLoan"){
+          $servicefee = $amount*0.025+20;
+          $deduction = $amount-$servicefee;
+          $term_app = $term_applied;
+          $monthly = $amount/$term_applied;
+          $subinterest=$amount/200;
+          $interest=$subinterest*10;
+          $totalinterest=$interest*$term_applied;
+          $totalamount=$amount+$totalinterest;
+          $monthlyINt = $monthly+$interest;
 
-                $servicefee = $amount*0.01+80;
-                $deduction = $amount-$servicefee;
-                $monthly = $amount/$term_applied;
-                $interest=0;
-                $totalinterest=$interest*$term_applied;
-                $totalamount=$amount+$totalinterest;
-                $monthlyINt = $monthly+$interest;
-              }
-    ?>
+          if($mode_payment == "Quencena"){
+            $servicefee = $amount*0.025+20;
+            $deduction = $amount-$servicefee;
+            $term_app = $term_applied*2;
+            $monthly = $amount/$term_app;
+            $subinterest=$amount/200;
+            $interest=$subinterest*10/2;
+            $totalinterest=$interest*$term_app;
+            $totalamount=$amount+$totalinterest;
+            $monthlyINt = $monthly+$interest;
+          }
+        }
+        if($loan_type == "HealthInsurace"){
+
+          $servicefee = $amount*0.02+30;
+          $deduction = $amount-$servicefee;
+          $term_app = $term_applied;
+          $monthly = $amount/$term_applied;
+          $interest=$amount*0.015;
+          $totalinterest=$interest*$term_applied;
+          $totalamount=$amount+$totalinterest;
+          $monthlyINt = $monthly+$interest;
+
+          if($mode_payment == "Quencena"){
+            $servicefee = $amount*0.02+30;
+            $deduction = $amount-$servicefee;
+            $term_app = $term_applied*2;
+            $monthly = $amount/$term_app;
+            $interest=$amount*0.015/2;
+            $totalinterest=$interest*$term_app;
+            $totalamount=$amount+$totalinterest;
+            $monthlyINt = $monthly+$interest;
+
+          }
+        }
+        if($loan_type == "BirthdayLoan"){
+
+          $servicefee = $amount*0.01+100;
+          $deduction = $amount-$servicefee;
+          $term_app = $term_applied;
+          $monthly = $amount/$term_applied;
+          $interest=0;
+          $totalinterest=$interest*$term_applied;
+          $totalamount=$amount+$totalinterest;
+          $monthlyINt = $monthly+$interest;
+
+          if($mode_payment == "Quencena"){
+          $servicefee = $amount*0.01+100;
+          $deduction = $amount-$servicefee;
+          $term_app = $term_applied*2;
+          $monthly = $amount/$term_app;
+          $interest=0;
+          $totalinterest=$interest*$term_app;
+          $totalamount=$amount+$totalinterest;
+          $monthlyINt = $monthly+$interest;
+          }
+        }
+?>
+
+<!-- END OF COMPUTATION -->
   
   
 <table class="table table-bordered table-striped table-sm" id="#example2">		
