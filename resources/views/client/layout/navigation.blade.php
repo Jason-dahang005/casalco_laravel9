@@ -15,7 +15,7 @@
       <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">Loan</a>
       <ul class="dropdown-menu">
         <li><a href="">(LAD) Loan Against Deposit</a></li>
-        <li><a href="portfolio-4.html">Regular Loan</a></li>
+        <li><a href="/regular-loans-information">Regular Loan</a></li>
         <li><a href="portfolio-3.html">Express Loan</a></li>
         <li><a href="portfolio-2.html">Special Loan</a></li>
       </ul>
@@ -25,7 +25,7 @@
       <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">Services</a>
       <ul class="dropdown-menu">
         <li><a href="portfolio-4.html">Regular & Special Loan Application Form</a></li>
-        <li><a href="portfolio-3.html">LAD & Express Loan Application Form</a></li>
+        <li><a href="/express-loan-application-form" target="_blank">LAD & Express Loan Application Form</a></li>
       </ul>
     </li>
 

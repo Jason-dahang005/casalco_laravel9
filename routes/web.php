@@ -40,6 +40,8 @@ use App\Http\Controllers\client\ActiveLoanController;
 
 use App\Http\Controllers\PracticeController;
 
+use  App\Http\Controllers\client\ExpressLoanController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -158,12 +160,16 @@ Route::resource('/express-loan-form', ExpressLoanAppController::class);
 Route::resource('/regular-special-loan-form', RegularSpecialLoanController::class);
 Route::resource('/loan-history', LoanHistoryController::class);
 Route::resource('/home', PreSeminarController::class);
+Route::view('/regular-loans-information', 'client.loan.regular.regular-loans-information');
+Route::resource('/express-loan-application-form', ExpressLoanController::class);
 
 Route::middleware(['auth', 'isClient'])->group(function() { 
   Route::resource('/client/dashboard', ClientDashboardController::class);
   Route::resource('/client/loan-history', LoanHistoryController::class);
   Route::resource('/client/active-loan', ActiveLoanController::class);
   Route::view('/express-loans', 'client.loan.express.express-index');
+  
+  
 });
 
 
@@ -174,6 +180,7 @@ Route::middleware(['auth', 'isOfficer'])->group(function() {
   Route::resource('/officer/pre-approved-membership', ReportsMembershipApplicationController::class);
   Route::resource('/officer/loan', PreLoanApplicationController::class);
   Route::resource('/officer/pre-approved-loans', ReportsloanApplicationController::class);
+  
 });
 
 //Admin
