@@ -15,10 +15,10 @@ use App\Http\Controllers\admin\ApproveMembershipApplicationController;
 use App\Http\Controllers\admin\ApproveLoanApplicationController;
 use App\Http\Controllers\admin\LoanApplicationReportsController;
 use App\Http\Controllers\admin\AccountController;
+use App\Http\Controllers\admin\MemberListController;
 
 
 use App\Http\Controllers\MembershipReportsController;
-use App\Http\Controllers\MemberController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\ExpressLoanAppController;
 use App\Http\Controllers\RegularSpecialLoanController;
@@ -51,90 +51,18 @@ use App\Http\Controllers\PracticeController;
 |
 */
 
-Route::middleware(['auth', 'isAdmin'])->group(function() { 
+Route::middleware(['auth', 'isAdmin'])->group(function() {
 
   Route::resource('/admin/dashboard', AdminDashboardController::class);
   Route::resource('/admin/membership', ApproveMembershipApplicationController::class);
   Route::resource('/admin/approved-membership', MembershipReportsController::class);
   Route::resource('/admin/loan', ApproveLoanApplicationController::class);
   Route::resource('/admin/approved-loans', LoanApplicationReportsController::class);
-  Route::resource('/admin/member', MemberController::class);
+  Route::resource('/admin/member-list', MemberListController::class);
   Route::resource('/admin/accounts', AccountController::class);
-  
+
 
 });
-
-
-
-// CLIENT SIDE START ---------------------------------------------------------
-
-// Route::view('/', 'client.home');
-// Route::view('/regular-loans', 'client.regular-loans');
-// Route::view('/express-loans', 'client.express-loans');
-// Route::view('/special-loans', 'client.special-loans');
-// Route::view('/contact-us', 'client.contact-us');
-// Route::view('/about-us', 'client.about-us');
-// Route::view('/membership-application', 'client.membership-application');
-// Route::post('/membership_app',[MembershipController::class, 'membership_app']);
-// Route::view('/pre_seminar', 'client.pre_seminar');
-
-
-
-
-// CLIENT SIDE END   ---------------------------------------------------------
-
-// ===================================================================================================================
-
-// OFFICER SIDE START --------------------------------------------------------
-// Route::resource('/officer/dashboard', OfficerDashboardController::class);
-// Route::resource('membership',App\Http\Controllers\officer\MembershipAppController::class);
-// Route::resource('/officer/membership-application', PreMembershipApplicationController::class);
-// Route::view('/officer/dashboard', 'officer.dashboard');
-// Route::view('/officer/loan', 'officer.loan');
-// Route::view('/officer/membership', 'officer.membership');
-// Route::view('/officer/pre-approve-loans', 'officer.pre-approve-loans');
-// Route::view('/officer/pre-approved-membership', 'officer.pre-approved-membership');
-// Route::get('/officer/membership',[MembershipAppController::class, 'memberapp_list']);
-// OFFICER SIDE END   --------------------------------------------------------
-
-// ===================================================================================================================
-
-// ADMIN SIDE START ----------------------------------------------------------
-
-// Route::view('/admin/dashboard', 'admin.dashboard');
-// Route::view('/admin/membership', 'admin.membership');
-// Route::view('/admin/loan', 'admin.loan');
-// Route::view('/admin/approved-loans', 'admin.approved-loans');
-// Route::view('/admin/member', 'admin.member');
-
-// ADMIN SIDE END  -----------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Route::resource('/officer-dashboard', OfficerDashboardController::class);
-// Route::resource('/membership', MembershipAppController::class);
-// Route::resource('/loan', LoanAppController::class);
-
-// Route::get('/approved-loans', function () {
-//     return view('admin.approved-loans');
-// });
 
 Auth::routes();
 Route::view("/home", "client.home");
@@ -159,7 +87,7 @@ Route::resource('/regular-special-loan-form', RegularSpecialLoanController::clas
 Route::resource('/loan-history', LoanHistoryController::class);
 Route::resource('/home', PreSeminarController::class);
 
-Route::middleware(['auth', 'isClient'])->group(function() { 
+Route::middleware(['auth', 'isClient'])->group(function() {
   Route::resource('/client/dashboard', ClientDashboardController::class);
   Route::resource('/client/loan-history', LoanHistoryController::class);
   Route::resource('/client/active-loan', ActiveLoanController::class);
@@ -168,7 +96,7 @@ Route::middleware(['auth', 'isClient'])->group(function() {
 
 
 //offcer
-Route::middleware(['auth', 'isOfficer'])->group(function() { 
+Route::middleware(['auth', 'isOfficer'])->group(function() {
   Route::resource('/officer/dashboard', OfficerDashboardController::class);
   Route::resource('/officer/membership-application', PreMembershipApplicationController::class);
   Route::resource('/officer/pre-approved-membership', ReportsMembershipApplicationController::class);

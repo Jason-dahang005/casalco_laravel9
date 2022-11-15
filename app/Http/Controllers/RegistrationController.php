@@ -39,7 +39,7 @@ class RegistrationController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            "Member's id no"    => 'required',
+            "Member's_id_no"    => 'required',
             'username'          => 'required|unique:users',
             'email'             => 'required|email|unique:users',
             'password'          => 'required|min:8'
@@ -52,7 +52,7 @@ class RegistrationController extends Controller
             $user->email = $request->email;
             $user->password = Hash::make($request->password);
             $user->save();
-            return redirect('/dashboard');
+            return redirect('/client/dashboard');
         }else{
             return back()->with('error', 'Account ID does not exist, become a member first');
         }

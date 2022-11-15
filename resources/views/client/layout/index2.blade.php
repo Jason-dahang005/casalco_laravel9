@@ -55,12 +55,8 @@
     </div>
   @endif
 
-  @if(!Request()->is('membership-application-form'))
-    @include('client.layout.pre-footer')
-    @include('client.layout.footer')
-  @else
-    @include('client.layout.footer')
-  @endif
+  @include('client.layout.footer')
+
 
   @include('client.scripts.core-plugins')
   @include('client.scripts.page-level-js')

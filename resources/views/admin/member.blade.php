@@ -13,16 +13,7 @@
     </tr>
   </thead>
   <tbody>
-  @foreach ($membership as $m)
-        <tr>
-        <td>{{ $m->Fname }}</td>
-        <td>{{ $m->Lname }}</td>
-        <td>{{ $m->acc_id }}</td>
-       
-       <td>{{$m->unit}}</td>
-       <td>{{ $m->updated_at }}</td>
-        </tr>
-    @endforeach
+    {{ $member }}
   </tbody>
 </table>
 

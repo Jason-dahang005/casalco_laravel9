@@ -28,7 +28,7 @@
           <li><a href="/admin/loan">> <span>Loan</span></a></li>
         </ul>
       </li>
-      <li><a href="/admin/member"><i class="fa fa-users red_color"></i> <span>Members</span></a></li>
+      <li><a href="/admin/member-list"><i class="fa fa-users red_color"></i> <span>Members</span></a></li>
       <li><a href="/admin/accounts"><i class="fa fa-users red_color"></i> <span>Accounts</span></a></li>
       <li>
         <a href="#element1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-clipboard blue1_color"></i> <span>Reports</span></a>

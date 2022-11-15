@@ -4,8 +4,9 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\MembershipApplication;
 
-class MemberController extends Controller
+class MemberListController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,8 @@ class MemberController extends Controller
      */
     public function index()
     {
-     
+        $member = MembershipApplication::where('is_approved', 2)->get();
+        return view('admin.member-list', compact('member'));
     }
 
     /**
