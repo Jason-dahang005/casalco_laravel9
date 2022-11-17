@@ -69,7 +69,7 @@
 
               </div>
               <div class="col-sm">
-                <img src="{{ asset($m->selfiepic)}}" width = '100' height = '100' class = "img img-responsive" />
+                <img src="{{ asset($m->selfie_pic)}}" width = '100' height = '100' class = "img img-responsive" />
               </div>
             </div>
           </div>

@@ -10,7 +10,7 @@
 	<div class="col-lg-6 col-md-6">
 		<div class="form-group">
 			<small>Employee ID Picture</small><span class="asterisk">*</span>
-			<input type="file" class="form-control id_pic"  name="id_pic" placeholder="ENTER RELATIONSHIP">
+			<input type="file" class="form-control id_pic"  name="empIDpic" placeholder="ENTER RELATIONSHIP">
 		</div>
 	</div>
 </div>
