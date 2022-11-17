@@ -89,6 +89,9 @@ Route::resource('/regular-special-loan-form', RegularSpecialLoanController::clas
 Route::resource('/loan-history', LoanHistoryController::class);
 Route::resource('/home', PreSeminarController::class);
 Route::view('/regular-loans-information', 'client.loan.regular.regular-loans-information');
+Route::view('/LAD-loans-information', 'client.loan.loan_against_deposit.lad-loans-information');
+Route::view('/express-loans-information','client.loan.express.express-loans-information');
+Route::view('/special-loans-information','client.loan.special.special-loans-information');
 Route::resource('/express-loan-application-form', ExpressLoanController::class);
 
 Route::middleware(['auth', 'isClient'])->group(function() {

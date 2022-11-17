@@ -1,5 +1,5 @@
 @extends('client.layout.index2')
-@section('title', 'Express Loan')
+@section('title', 'Special Loan')
 @section('client_content')
     
 <!-- BEGIN CONTAINER -->
@@ -7,7 +7,7 @@
 
     <!-- BEGIN CONTAINER-HEAD -->
     <div class="lad-container-head">
-        <h4>PETTY CASH DEPOSIT</h4>
+        <h4>MIDYEAR AND CHRISTMAS PROMO</h4>
     </div>
     <!-- END CONTAINER-HEAD -->
 
@@ -33,7 +33,7 @@
 
     <!-- BEGIN CONTAINER-HEAD -->
     <div class="container-head">
-        <h4>FAST CASH LOAN</h4>
+        <h4>MPL</h4>
     </div>
     <!-- END CONTAINER-HEAD -->
 
@@ -59,7 +59,7 @@
 
     <!-- BEGIN CONTAINER-HEAD -->
     <div class="lad-container-head">
-        <h4>INSTACASH DEPOSIT</h4>
+        <h4>PRIVELEGE</h4>
     </div>
     <!-- END CONTAINER-HEAD -->
 
@@ -85,7 +85,7 @@
 
     <!-- BEGIN CONTAINER-HEAD -->
     <div class="container-head">
-        <h4>BIRTHDAY LOAN</h4>
+        <h4>MEDICAL LOAN</h4>
     </div>
     <!-- END CONTAINER-HEAD -->
 
@@ -111,7 +111,59 @@
 
     <!-- BEGIN CONTAINER-HEAD -->
     <div class="lad-container-head">
-        <h4>HEALTH CARE DEPOSIT</h4>
+        <h4>TRAVEL DEPOSIT</h4>
+    </div>
+    <!-- END CONTAINER-HEAD -->
+
+    <!-- BEGIN CONTAINER-BODY -->
+    <div class="lad-container-body">
+        <main> Lorem ipsum dolor sit amet?</main>
+    </div>
+    <!-- END CONTAINER-BODY -->
+
+    <!-- BEGIN IMAGE-CONTAINER -->
+    <div class="lad-image-container">
+        <img src="../klassy/images/CasalcoLogo-7.png" alt="insert image here">
+    </div>
+    <!-- END IMAGE-CONTAINER -->
+
+</div>
+<!-- END CONTAINER -->
+
+<br><br><br>
+
+<!-- BEGIN CONTAINER -->
+<div class="regular-container">
+
+    <!-- BEGIN CONTAINER-HEAD -->
+    <div class="container-head">
+        <h4>INSTANT LOAN</h4>
+    </div>
+    <!-- END CONTAINER-HEAD -->
+
+    <!-- BEGIN CONTAINER-BODY -->
+    <div class="container-body">
+        <main> Lorem ipsum dolor sit amet?</main>
+    </div>
+    <!-- END CONTAINER-BODY -->
+
+    <!-- BEGIN IMAGE-CONTAINER -->
+    <div class="image-container">
+        <img src="../klassy/images/CasalcoLogo-7.png" alt="insert image here">
+    </div>
+    <!-- END IMAGE-CONTAINER -->
+
+</div>
+<!-- END CONTAINER -->
+
+<br><br><br>
+
+<!-- BEGIN CONTAINER -->
+<div class="lad-container">
+
+    <!-- BEGIN CONTAINER-HEAD -->
+    <div class="lad-container-head">
+        <h4>CAR LOAN</h4>
     </div>
     <!-- END CONTAINER-HEAD -->
 

@@ -14,10 +14,10 @@
     <li class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">Loan</a>
       <ul class="dropdown-menu">
-        <li><a href="">(LAD) Loan Against Deposit</a></li>
+        <li><a href="/LAD-loans-information">(LAD) Loan Against Deposit</a></li>
         <li><a href="/regular-loans-information">Regular Loan</a></li>
-        <li><a href="portfolio-3.html">Express Loan</a></li>
-        <li><a href="portfolio-2.html">Special Loan</a></li>
+        <li><a href="/express-loans-information">Express Loan</a></li>
+        <li><a href="/special-loans-information">Special Loan</a></li>
       </ul>
     </li>
 
