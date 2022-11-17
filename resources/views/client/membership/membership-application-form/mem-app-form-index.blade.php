@@ -7,7 +7,7 @@
     @include('client.membership.membership-application-form.header-text')
     <form  action="{{ url('/membership-application') }}" method="POST" enctype="multipart/form-data" class="this-form">
       <div class="content-form-page">
-      @csrf
+        @csrf
         @include('client.membership.membership-application-form.personal-info-form')
         @include('client.membership.membership-application-form.spouse-info-form')
         @include('client.membership.membership-application-form.beneficiary-info-form')

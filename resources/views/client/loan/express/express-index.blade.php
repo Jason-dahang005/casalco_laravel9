@@ -1,7 +1,7 @@
 @extends('client.layout.index2')
 @section('title', 'Online Loan Application Form')
 @section('client_content')
-
+1
 <div class="h-100 d-flex align-items-center justify-content-center">
   <div class="mem-bg">
     @include('client.loan.express.header-text')
@@ -18,7 +18,7 @@
       </div>
 
       <input type="hidden" class="form-control" name="membership_type" value="0">
-  
+
       <div class="col-lg-4 col-md-4">
         <div class="form-group">
           <small>ACCOUNT NUMBER</small><span class="asterisk">*</span>
@@ -34,13 +34,13 @@
           <option value="" disabled selected >SELECT CATEGORIES</option>
           <option value="EXPRESS LOAN">EXPRESS LOAN</option>
           <option value="LAD">LAD(LOAN AGAINS DEPOSIT)</option>
-        
+
         </select>
         <small class="text-danger">@error('mode_payment') {{ $message }}@enderror</small>
       </div>
       </div>
-  
-  
+
+
       <div class="col-lg-4 col-md-4">
         <div class="form-group">
           <small>ADDRESS</small><span class="asterisk">*</span>
@@ -48,14 +48,14 @@
           <small class="text-danger">@error('present_address') {{ $message }}@enderror</small>
         </div>
       </div>
-  
+
       <!-- <div class="col-lg-4 col-md-4">
         <div class="form-group">
           <small>SUFFIX</small>
           <input type="text" class="form-control" name="suffix" placeholder="ENTER SUFFIX">
         </div>
       </div> -->
-  
+
       <div class="col-lg-4 col-md-4">
         <div class="form-group">
           <small>TYPES OF LOAN APPLIED</small><span class="asterisk">*</span>
@@ -71,7 +71,7 @@
           <small class="text-danger">@error('loan_type') {{ $message }}@enderror</small>
         </div>
       </div>
-  
+
       <!-- <div class="col-lg-4 col-md-4">
         <div class="form-group">
           <small>BIRTH DATE</small><span class="asterisk">*</span>
@@ -88,7 +88,7 @@
         </div>
       </div>
 
-     
+
       <div class="col-lg-4 col-md-4">
         <div class="form-group">
           <small>EMPLOYER ADDRESS</small><span class="asterisk">*</span>
@@ -104,9 +104,9 @@
           <small class="text-danger">@error('email') {{ $message }}@enderror</small>
         </div>
       </div>
-  
-    
-<!--   
+
+
+<!--
       <div class="col-lg-4 col-md-4">
         <div class="form-group">
           <small>UNIT</small><span class="asterisk">*</span>
@@ -120,7 +120,7 @@
           <small class="text-danger">@error('unit') {{ $message }}@enderror</small>
         </div>
       </div>
-  
+
       <div class="col-lg-4 col-md-4">
         <div class="form-group">
           <small>EDUCATIONAL ATTAINMENT</small><span class="asterisk">*</span>
@@ -134,7 +134,7 @@
           <small class="text-danger">@error('educational attainment') {{ $message }}@enderror</small>
         </div>
       </div> -->
-  
+
       <div class="col-lg-4 col-md-4">
         <div class="form-group">
           <small>AMOUNT APPLIED</small><span class="asterisk">*</span>
@@ -142,7 +142,7 @@
           <small class="text-danger">@error('monthly income') {{ $message }}@enderror</small>
         </div>
       </div>
-  
+
       <div class="col-lg-4 col-md-4">
       <div class="form-group">
         <small>MODE OF PAYMENT</small><span class="asterisk">*</span>
@@ -150,12 +150,12 @@
           <option value="" disabled selected >SELECT MODE OF PAYMENT</option>
           <option value="SEMI-MONTHLY">SEMI-MONTHLY</option>
           <option value="MONTHLY">MONTHLY</option>
-        
+
         </select>
         <small class="text-danger">@error('mode_payment') {{ $message }}@enderror</small>
       </div>
     </div>
-  
+
       <div class="col-lg-4 col-md-4">
         <div class="form-group">
           <small>TERM APPLIED</small><span class="asterisk">*</span>
@@ -189,10 +189,10 @@
         <small class="text-danger">@error('email') {{ $message }}@enderror</small>
       </div>
     </div>
-    
+
     </div>
 
-       
+
         <div class="line"></div>
         <br>
         <div class="row">
@@ -212,10 +212,10 @@
 $( "#select-condition" ).change(function() {
   if(this.value == 'LAD'){
     $('#loan_type').removeClass( "hide" );
-   
+
   }else if(this.value == 'EXPRESS LOAN'){
     $('#loan_type').addClass( "hide" );
-   
+
   }
   else{
     $('#loan_type').removeClass( "show" ).addClass("hide");

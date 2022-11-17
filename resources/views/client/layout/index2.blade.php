@@ -28,7 +28,7 @@
   <meta property="og:url" content="-CUSTOMER VALUE-">
 
   <link rel="shortcut icon" href="{{ asset('sys_img/favicon.ico') }}">
-  
+
   @include('client.styles.font')
   @include('client.styles.global')
   @include('client.styles.page-level-plugin')
@@ -38,13 +38,13 @@
 </head>
 <body class="corporate">
 
-  @if(Request()->is('membership-application-form'))
+  @if(Request()->is('membership-application-form') || Request()->is('express-loan-application-form'))
     @include('client.layout.header')
   @else
     @include('client.layout.topbar')
     @include('client.layout.header')
   @endif
-  
+
   @if(Request::is('/'))
     @yield('client_content')
   @else

@@ -16,7 +16,7 @@
       <th>Status</th>
       <th>Actions</th>
     </tr>
-  </thead> 
+  </thead>
   <tbody>
     @foreach ($membership as $m)
         <tr>
@@ -39,7 +39,7 @@
               <span class="badge badge-secondary">Pending</span>
             @endif
         </td>
-        
+
         <td>
             <button class="btn btn-success" data-toggle="modal" data-target="#myModal{{ $m->id }}">Details</button>
         </td>
@@ -53,9 +53,9 @@
   <div class="modal-dialog modal-lg modal-dialog-scrollable">
      <div class="modal-content">
         <!-- Modal Header -->
-        
+
         <div class=" text-center border">
-          
+
            <h4 class="modal-title">CASALCO Registry Form</h4>
         </div>
         <!-- Modal body -->
@@ -63,10 +63,10 @@
           <div class="container">
             <div class="row">
               <div class="col-sm">
-               
+
               </div>
               <div class="col-sm">
-                
+
               </div>
               <div class="col-sm">
                 <img src="{{ asset($m->selfiepic)}}" width = '100' height = '100' class = "img img-responsive" />
@@ -74,11 +74,11 @@
             </div>
           </div>
           <h4>Personal Information</h4>
-         
+
           <div class="border border-danger"></div>
           <div class="row pt-3">
             <div class="col-lg-4">
-              
+
               <div class="form-group">
               <label for="First Name" class="form-label">First Name</label>
                 <input type="text" class="form-control" disabled placeholder="First Name" value="{{ $m->first_name }}">
@@ -135,7 +135,7 @@
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Occupation</label>
-                <input type="text" class="form-control" disabled placeholder="Occupation" value="{{ $m->occupation }}">
+                <input type="text" class="form-control" disabled placeholder="Occupation" value="{{ $m->Occu }}">
               </div>
             </div>
             <div class="col-lg-4">
@@ -165,7 +165,7 @@
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">Contact Number</label>
-                <input type="text" class="form-control" disabled placeholder="Contact Number" value="{{ $m->contactNum }}">
+                <input type="text" class="form-control" disabled placeholder="Contact Number" value="{{ $m->contact_number }}">
               </div>
             </div>
             <div class="col-lg-4">
@@ -178,7 +178,7 @@
             <div class="col-lg-4">
               <div class="form-group">
               <label for="First Name" class="form-label">No. of Dependents</label>
-                <input type="text" class="form-control" disabled placeholder="No. of Dependents" value="{{ $m->NumDependents }}">
+                <input type="text" class="form-control" disabled placeholder="No. of Dependents" value="{{ $m->Dependents }}">
               </div>
             </div>
           </div>
@@ -227,7 +227,7 @@
             </div>
           </div>
           @endif
-          
+
           @foreach ($m->ben as $b)
           <div class="pt-3 pb-2">
             <h5 class ="font-weight-bold">Nomination of Benificiary</h5>
@@ -321,7 +321,7 @@
         <div class="modal-body">
           <h4>Personal Information</h4>
 
-          @csrf	
+          @csrf
           <div class="border border-danger"></div>
           <div class="row pt-3">
             <div class="col-lg-4">
@@ -554,8 +554,8 @@
         </div>
         <!-- Modal footer -->
         <div class="modal-footer">
-          
-            
+
+
             <input  type="hidden" value="1" name="membership_type">
             <button type="submit"  id="form-submit" class="btn btn-success w-100 mb-2">Validate</button>
             <button type="button"  class="btn btn-success w-100 mb-2" data-dismiss="modal">Close</button>

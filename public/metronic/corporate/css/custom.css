@@ -16,9 +16,9 @@
 
 .mem-bg{
   margin: auto;
-  box-shadow: -1px 0px 5px 3px rgba(0,0,0,0.34);
-  -webkit-box-shadow: -1px 0px 5px 3px rgba(0,0,0,0.34);
-  -moz-box-shadow: -1px 0px 5px 3px rgba(0,0,0,0.34);
+  box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.43);
+-webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.43);
+-moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.43);
   padding: 20px 20px;
   margin-bottom: 20px;
 }
@@ -35,7 +35,7 @@
 
 .personal-info-text{
   padding-top: 20px;
-  
+
 }
 
 .spouse-info-text{
@@ -78,8 +78,13 @@
   margin-left: auto;
   margin-right: auto;
   width: 25%;
-  
+
 }
 
+.loan_type_div {
+    border: 1px solid #E84D1C ;
+}
 
-
+#mode_of_payment{
+    background-color: #d14115;
+}

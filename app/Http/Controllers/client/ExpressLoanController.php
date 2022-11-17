@@ -14,7 +14,7 @@ class ExpressLoanController extends Controller
      */
     public function index()
     {
-        return view('client.loan.express.express-loan-form');
+        return view('client.loan.express.express-loan-index');
     }
 
     /**
@@ -35,7 +35,28 @@ class ExpressLoanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name_of_member'        => 'required|string',
+            'date'                  => 'required',
+            'account_no'            => 'required',
+            'present_address'       => 'required',
+            'permanent_address'     => 'required',
+            'loan_type'             => 'required',
+            'employer'              => 'required',
+            'employer_address'      => 'required',
+            'date_of_birth'         => 'required',
+            'age'                   => 'required',
+            'cellphone_no'          => 'required',
+            'TIN_no'                => 'required',
+            'email_address'         => 'required',
+            'facebook_account'      => 'required',
+            'amount_applied'        => 'required',
+            'term_applied'          => 'required',
+            'mode_of_payment'       => 'required',
+            'scanned_signature'     => 'required',
+        ]);
+
+        
     }
 
     /**
