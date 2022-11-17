@@ -50,7 +50,7 @@
   color: #E84D1C;
 }
 
-.submit_btn{
+.submit_btn, .apply-button{
   background-color: #E84D1C;
   color: #fff;
   border: none;
@@ -81,10 +81,46 @@
 
 }
 
-.loan_type_div {
-    border: 1px solid #E84D1C ;
+.regular-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+
 }
 
-#mode_of_payment{
-    background-color: #d14115;
+.container-head, .container-body{
+  justify-self: center;
+  grid-column: 2 / -1;
 }
+
+.image-container{
+  justify-self: center;
+  grid-row: 1 / 1;
+}
+
+.apply-button{
+  margin-left: 43%;
+  border-radius: 30px !important;
+}
+.apply{
+  height: 50px;
+}
+
+.lad-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: #d14115 solid 1px;
+
+}
+
+.lad-container-head, .lad-container-body{
+  justify-self: center;
+  grid-column: 1;
+}
+
+.lad-image-container{
+  justify-self: center;
+  grid-column: 2;
+  grid-row: 1;
+}
+
