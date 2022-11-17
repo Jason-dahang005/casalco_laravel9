@@ -272,11 +272,13 @@
           <div class="row pt-3">
             <div class="col-lg-6">
               <div class="form-group">
+                <small>TIN No.</small>
                 <input type="text" class="form-control" disabled placeholder="TIN" value="{{ $m->TIN }}">
               </div>
             </div>
             <div class="col-lg-6">
               <div class="form-group">
+                <small>SSS No.</small>
                 <input type="text" class="form-control" disabled placeholder="SSS" value="{{ $m->SSSnum }}">
               </div>
             </div>
