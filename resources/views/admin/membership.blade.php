@@ -67,86 +67,103 @@
           <div class="row pt-3">
             <div class="col-lg-4">
               <div class="form-group">
+                <small>First Name</small>
                 <input type="text" class="form-control" disabled placeholder="First Name" value="{{ $m->first_name }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
+                <small>Middle Name</small>
                 <input type="text" class="form-control" disabled placeholder="Middle Name" value="{{ $m->middle_name }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
+                <small>Last Name</small>
                 <input type="text" class="form-control" disabled placeholder="Last Name" value="{{ $m->last_name }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
+                <small>Suffix</small>
                 <input type="text" class="form-control" disabled placeholder="Suffix" value="{{ $m->suffix }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
+                <small>Gender</small>
                 <input type="text" class="form-control" disabled placeholder="Gender" value="{{ $m->gender }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
+                <small>Date of Birth</small>
                 <input type="text" class="form-control" disabled placeholder="birthday" value="{{ $m->dob }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
+                <small>Birth Place</small>
                 <input type="text" class="form-control" disabled placeholder="Birth Place" value="{{ $m->Bplace }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
+                <small>Address</small>
                 <input type="text" class="form-control" disabled placeholder="Address" value="{{ $m->address }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
+                <small>Unit</small>
                 <input type="text" class="form-control" disabled placeholder="Unit" value="{{ $m->unit }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
+                <small>Occupation</small>
                 <input type="text" class="form-control" disabled placeholder="Occupation" value="{{ $m->Occu }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
+                <small>Education Attained</small>
                 <input type="text" class="form-control" disabled placeholder="Educ. Attainment" value="{{ $m->educ }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
+                <small>Monthly Income</small>
                 <input type="text" class="form-control" disabled placeholder="Monthly Income" value="{{ $m->MI }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
+                <small>Civil Status</small>
                 <input type="text" class="form-control" disabled placeholder="Civil Status" value="{{ $m->civilStatus }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
+                <small>Religion</small>
                 <input type="text" class="form-control" disabled placeholder="Religion" value="{{ $m->religion }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
+                <small>Contact No.</small>
                 <input type="text" class="form-control" disabled placeholder="Contact NUmber" value="{{ $m->contact_number }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
+                <small>Email</small>
                 <input type="text" class="form-control" disabled placeholder="Email Address" value="{{ $m->email }}">
               </div>
             </div>
             <div class="col-lg-4">
               <div class="form-group">
+                <small>No. of Dependents</small>
                 <input type="text" class="form-control" disabled placeholder="No. of Dependents" value="{{ $m->Dependents }}">
               </div>
             </div>

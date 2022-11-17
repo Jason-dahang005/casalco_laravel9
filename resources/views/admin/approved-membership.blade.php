@@ -18,7 +18,7 @@
     @foreach ($membership as $m)
         <tr>
         <td>{{ $m->first_name }}</td>
-        <td>{{ $m->last_ name }}</td>
+        <td>{{ $m->last_name }}</td>
         <td>{{ $m->unit }}</td>
         <td>{{ $m->updated_at }}</td>
         <td>
