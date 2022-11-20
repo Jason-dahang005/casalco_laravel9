@@ -45,18 +45,18 @@ class ExpressLoanController extends Controller
             'employer'              => 'required',
             'employer_address'      => 'required',
             'date_of_birth'         => 'required',
-            'age'                   => 'required',
+            'age'                   => 'required|numeric',
             'cellphone_no'          => 'required',
-            'TIN_no'                => 'required',
+            'tin_no'                => 'required',
             'email_address'         => 'required',
             'facebook_account'      => 'required',
-            'amount_applied'        => 'required',
-            'term_applied'          => 'required',
+            'amount_applied'        => 'required|numeric',
+            'term_applied'          => 'required|numeric',
             'mode_of_payment'       => 'required',
             'scanned_signature'     => 'required',
         ]);
 
-        
+
     }
 
     /**

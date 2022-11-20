@@ -22,6 +22,11 @@
         <a href="/officer/dashboard"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
       </li>
       <li>
+        <a href="/product-loans">
+            <i class="fa fa-money green_color"></i><span>Product Loans<span>
+        </a>
+      </li>
+      <li>
         <a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-folder-open orange_color"></i> <span>Applications</span></a>
         <ul class="collapse list-unstyled" id="element">
           <li><a href="/officer/membership-application">> <span>Membership Application</span></a></li>

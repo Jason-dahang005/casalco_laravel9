@@ -13,6 +13,10 @@
     <h3 class="text-danger">
       {{ Session::get('error')}}
     </h3>
+    @elseif(Session::has('success'))
+    <h3 class="bg-success">
+        {{ Session::get('success')}}
+    </h3>
   @endif
   <h1>Create an account</h1>
   <div class="content-form-page">
@@ -24,8 +28,8 @@
             <div class="form-group">
               <label for="acc_id" class="col-lg-4 control-label">Member's ID No.<span class="require">*</span></label>
               <div class="col-lg-8">
-                <input type="text" class="form-control" name="Member's_id_no">
-                <span class="text-danger">@error("Member's_id_no") {{ $message }}@enderror</span>
+                <input type="text" class="form-control" name="Member_id_no">
+                <span class="text-danger">@error("Member_id_no") {{ $message }}@enderror</span>
               </div>
             </div>
             <div class="form-group">

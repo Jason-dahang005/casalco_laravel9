@@ -10,7 +10,7 @@
       </div>
 
       <input type="hidden" class="form-control" name="membership_type" value="0">
-  
+
       <div class="col-lg-4 col-md-4">
         <div class="form-group">
           <small>MIDDLE NAME</small><span class="asterisk">*</span>
@@ -18,7 +18,7 @@
           <small class="text-danger">@error('middle name') {{ $message }}@enderror</small>
         </div>
       </div>
-  
+
       <div class="col-lg-4 col-md-4">
         <div class="form-group">
           <small>LAST NAME</small><span class="asterisk">*</span>
@@ -26,14 +26,14 @@
           <small class="text-danger">@error('last name') {{ $message }}@enderror</small>
         </div>
       </div>
-  
+
       <div class="col-lg-4 col-md-4">
         <div class="form-group">
           <small>SUFFIX</small>
           <input type="text" class="form-control" name="suffix" placeholder="ENTER SUFFIX">
         </div>
       </div>
-  
+
       <div class="col-lg-4 col-md-4">
         <div class="form-group">
           <small>GENDER</small><span class="asterisk">*</span>
@@ -45,7 +45,7 @@
           <small class="text-danger">@error('gender') {{ $message }}@enderror</small>
         </div>
       </div>
-  
+
       <div class="col-lg-4 col-md-4">
         <div class="form-group">
           <small>BIRTH DATE</small><span class="asterisk">*</span>
@@ -53,7 +53,7 @@
           <small class="text-danger">@error('dob') {{ $message }}@enderror</small>
         </div>
       </div>
-  
+
       <div class="col-lg-4 col-md-4">
         <div class="form-group">
           <small>BIRTH PLACE</small><span class="asterisk">*</span>
@@ -61,7 +61,7 @@
           <small class="text-danger">@error('birth place') {{ $message }}@enderror</small>
         </div>
       </div>
-  
+
       <div class="col-lg-4 col-md-4">
         <div class="form-group">
           <small>ADDRESS</small><span class="asterisk">*</span>
@@ -77,9 +77,9 @@
           <small class="text-danger">@error('occupatoin') {{ $message }}@enderror</small>
         </div>
       </div>
-  
-    
-  
+
+
+
       <div class="col-lg-4 col-md-4">
         <div class="form-group">
           <small>UNIT</small><span class="asterisk">*</span>
@@ -93,7 +93,7 @@
           <small class="text-danger">@error('unit') {{ $message }}@enderror</small>
         </div>
       </div>
-  
+
       <div class="col-lg-4 col-md-4">
         <div class="form-group">
           <small>EDUCATIONAL ATTAINMENT</small><span class="asterisk">*</span>
@@ -107,7 +107,7 @@
           <small class="text-danger">@error('educational attainment') {{ $message }}@enderror</small>
         </div>
       </div>
-  
+
       <div class="col-lg-4 col-md-4">
         <div class="form-group">
           <small>MONTHLY INCOME</small><span class="asterisk">*</span>
@@ -115,7 +115,7 @@
           <small class="text-danger">@error('monthly income') {{ $message }}@enderror</small>
         </div>
       </div>
-  
+
       <div class="col-lg-4 col-md-4">
         <small>CIVIL STATUS</small><span class="asterisk">*</span>
         <select required name="civilStatus" id="civil_status" class="form-control">
@@ -128,7 +128,7 @@
         </select>
         <small class="text-danger">@error('civil status') {{ $message }}@enderror</small>
       </div>
-  
+
       <div class="col-lg-4 col-md-4">
         <div class="form-group">
           <small>RELIGION</small><span class="asterisk">*</span>
@@ -160,12 +160,12 @@
           <small class="text-danger">@error("mother's maiden name") {{ $message }}@enderror</small>
         </div>
       </div>
-
-      <div class="col-lg-4 col-md-4">
-      <div class="form-group">
-        <small>EMAIL</small><span class="asterisk">*</span>
-        <input type="email" class="form-control" required name="email" placeholder="ENTER EMAIL">
-        <small class="text-danger">@error('email') {{ $message }}@enderror</small>
-      </div>
+      <div class="col-lg-6 col-mg-6">
+        <div class="form-group">
+            <small>EMAIL ADDRESS</small><span class="asterisk">*</span>
+            <input type="email" class="form-control" required name="email" placeholder="ENTER EMAIL">
+            <small class="text-danger">@error('email') {{ $message }}@enderror</small>
+        </div>
     </div>
     </div>
+</div>

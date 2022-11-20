@@ -3,10 +3,17 @@
     <div class="content-form-page">
         @csrf
         <div class="row">
+            <div class="header-text">
+                <ul>
+                  <li>Please fill-out all the fillable forms below. &#40;Asterisk &#40;*&#41; indicates required field&#41;</li>
+                  <li>To qualify for membership, you must be at least 18 years old.</li>
+                </ul>
+              </div>
+              <h2 style="font-weight: 900; text-align: center; font-size: .4in; padding: 20px 0">Online Loan Application Form</h2>
         <div class="col-lg-6 col-md-6">
             <div class="form-group">
                 <small>Name of Member</small><span class="asterisk">*</span>
-                <input type="text" class="form-control" name="name_of_member" placeholder="Enter name of member" value="{{ old('name_of_member') }}">
+                <input type="text" class="form-control" name="name_of_member" onclick="text(0)" placeholder="Enter name of member" value="{{ old('name_of_member') }}">
                 <small class="text-danger">@error('name_of_member') {{ $message }}@enderror</small>
             </div>
         </div>
@@ -14,7 +21,7 @@
         <div class="col-lg-3 col-md-3">
             <div class="form-group">
                 <small>Date</small><span class="asterisk">*</span>
-                <input type="date" class="form-control" name="date" placeholder="Enter date" value="{{ old('date') }}">
+                <input type="date" class="form-control" name="date" onclick="text(1)" placeholder="Enter date" value="{{ old('date') }}">
                 <small class="text-danger">@error('date') {{ $message }}@enderror</small>
             </div>
         </div>
@@ -45,34 +52,39 @@
 
         <div class="col-lg-12 col-md-12">
             <div class="form-group">
-                <small>TYPES OF LOAN APPLIED:</small>
+                <small>TYPES OF LOAN APPLIED<span class="asterisk">*</span></small>
                 <div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2">
+                            <small class="text-success">MAX. 8 MONTHS</small>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" id="check1" name="loan_type" value="pcl" @checked(old('loan_type') === 'pcl')>
+                                <input class="form-check-input" type="radio" id="pcl" name="loan_type" value="pcl" @checked(old('loan_type') === 'pcl')>
                                 <label>PettyCash Loan</label>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2">
+                            <small class="text-success">MAX. 4 MONTHS</small>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" id="fcl" name="loan_type" value="fcl" @checked(old('loan_type') === 'fcl')>
                                 <label>FastCash Loan</label>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2">
+                            <small class="text-success">MAX. 1 MONTH</small>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" id="icl" name="loan_type" value="icl" @checked(old('loan_type') === 'icl')>
                                 <label>InstaCash Loan</label>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2">
+                            <small class="text-success">MAX. 12 MONTHS</small>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" id="check1" name="loan_type" value="bdl" @checked(old('loan_type') === 'bdl')>
-                                <label>Birth Day Loan</label>
+                                <label>Birthday Loan</label>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2">
+                            <small class="text-success">MAX. 12 MONTHS</small>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" id="check1" name="loan_type" value="cl"  @checked(old('loan_type') === 'cl')>
                                 <label>Calamity Loan </label>
@@ -103,7 +115,7 @@
         <div class="col-lg-4 col-md-4">
             <div class="form-group">
                 <small>Date of Birth</small><span class="asterisk">*</span>
-                <input type="text" class="form-control" name="date_of_birth" placeholder="Enter birthdate">
+                <input type="date" class="form-control" name="date_of_birth" placeholder="Enter date of birth">
                 <small class="text-danger">@error('date_of_birth') {{ $message }}@enderror</small>
             </div>
         </div>
@@ -127,8 +139,8 @@
         <div class="col-lg-4 col-md-4">
             <div class="form-group">
                 <small>TIN No.</small><span class="asterisk">*</span>
-                <input type="text" class="form-control" name="TIN_no" placeholder="Enter TIN No.">
-                <small class="text-danger">@error('TIN_no') {{ $message }}@enderror</small>
+                <input type="text" class="form-control" name="tin_no" placeholder="Enter TIN No.">
+                <small class="text-danger">@error('tin_no') {{ $message }}@enderror</small>
             </div>
         </div>
         <div class="col-lg-4 col-md-4">
@@ -147,37 +159,15 @@
         </div>
         <div class="col-lg-4 col-md-4">
             <div class="form-group">
-                <small>Amount Applied&#40;Numbers only, no comma or decimals&#41;</small><span class="asterisk">*</span>
+                <small>Amount Applied&#40;<small class="text-danger">Numbers only, no comma or decimals</small>&#41;</small><span class="asterisk">*</span>
                 <input type="text" class="form-control" name="amount_applied" placeholder="Enter Amount Applied">
                 <small class="text-danger">@error('amount_applied') {{ $message }}@enderror</small>
             </div>
         </div>
         <div class="col-lg-4 col-md-4">
-            <div class="form-group">
-                <small>Term Applied</small><span class="asterisk">*</span>
-                <select name="term_applied" id="term_applied" class="form-control">
-                    <option value="" disabled selected>Select No of Months</option>
-                    @if ('loan_type' === 'fcl')
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    @elseif('loan_type' === 'icl')
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                    @endif
-
-                </select>
+            <div class="form-group" id="">
+                <small>Term Applied&#40;<small class="text-danger">Number of months only</small>&#41;</small><span class="asterisk">*</span>
+                <input type="text" class="form-control" name="term_applied" placeholder="enter term applied">
                 <small class="text-danger">@error('term_applied') {{ $message }}@enderror</small>
             </div>
         </div>

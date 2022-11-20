@@ -34,8 +34,8 @@ class MembershipApplication extends Model
         'is_approved',
         'mothers_maiden_name',
         'membership_type',
-        'selfie_pic'
-        // 'empIDpic'
+        'selfie_pic',
+        'empIDpic',
     ];
 
     public function ben(){
@@ -44,5 +44,9 @@ class MembershipApplication extends Model
 
     public function spouse(){
         return $this->hasOne(Spouse::class, 'membership_application_id', 'id');
+    }
+
+    public function members(){
+        return $this->hasOne(Member::class);
     }
 }

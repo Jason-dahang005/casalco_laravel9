@@ -8,6 +8,7 @@ use App\Models\Spouse;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Hash;
 
 class MembershipApplicationController extends Controller
 {
@@ -39,11 +40,13 @@ class MembershipApplicationController extends Controller
      */
     public function store(Request $r)
     {
-      
+
         $requestData = $r->all();
         $fileName =  time().$r->file('selfie_pic')->getClientOriginalName();
         $path = $r->file('selfie_pic')->storeAs('image', $fileName, 'public');
+        $path2 = $r->file('empIDpic')->storeAs('image', $fileName, 'public');
         $requestData["selfie_pic"] = '/storage/'.$path;
+        $requestData["empIDpic"] = '/storage/'.$path2;
         $ms = MembershipApplication::create($requestData);
 
         if (!empty($r->spouseFname)) {

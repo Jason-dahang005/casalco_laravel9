@@ -38,7 +38,7 @@ return new class extends Migration
             $table->string('or_no')->nullable();
             $table->string('mothers_maiden_name');
             $table->string('selfie_pic',300);
-            // $table->string('empIDpic');
+            $table->string('empIDpic');
             $table->integer('is_approved')->default(0);
             $table->boolean('membership_type')->comment('0 = online, 1 = walk-in');
             $table->string('assigned_officer')->nullable();

@@ -3,13 +3,16 @@
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 
+// OFFICER CONTROLLER
 use App\Http\Controllers\officer\OfficerDashboardController;
 use App\Http\Controllers\officer\PreMembershipApplicationController;
 use App\Http\Controllers\officer\ReportsMembershipApplicationController;
 use App\Http\Controllers\officer\PreLoanApplicationController;
 use App\Http\Controllers\officer\ReportsLoanApplicationController;
-use  App\Http\Controllers\MembershipApplicationController;
+use App\Http\Controllers\MembershipApplicationController;
+use App\Http\Controllers\officer\ProductLoanController;
 
+// ADMIN CONTROLLER
 use App\Http\Controllers\admin\AdminDashboardController;
 use App\Http\Controllers\admin\ApproveMembershipApplicationController;
 use App\Http\Controllers\admin\ApproveLoanApplicationController;
@@ -17,7 +20,7 @@ use App\Http\Controllers\admin\LoanApplicationReportsController;
 use App\Http\Controllers\admin\AccountController;
 use App\Http\Controllers\admin\MemberListController;
 
-
+// CLIENT CONTROLLER
 use App\Http\Controllers\MembershipReportsController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\ExpressLoanAppController;
@@ -27,6 +30,7 @@ use App\Http\Controllers\PreSeminarController;
 use App\Http\Controllers\client\ClientDashboardController;
 use App\Http\Controllers\client\LoanHistoryController;
 use App\Http\Controllers\client\ActiveLoanController;
+
 // use App\Http\Controllers\admin\DashboardController;
 // use App\Http\Controllers\admin\MembershipController;
 // use App\Http\Controllers\admin\LoanController;
@@ -99,8 +103,6 @@ Route::middleware(['auth', 'isClient'])->group(function() {
   Route::resource('/client/loan-history', LoanHistoryController::class);
   Route::resource('/client/active-loan', ActiveLoanController::class);
   Route::view('/express-loans', 'client.loan.express.express-index');
-  
-  
 });
 
 
@@ -111,7 +113,8 @@ Route::middleware(['auth', 'isOfficer'])->group(function() {
   Route::resource('/officer/pre-approved-membership', ReportsMembershipApplicationController::class);
   Route::resource('/officer/loan', PreLoanApplicationController::class);
   Route::resource('/officer/pre-approved-loans', ReportsloanApplicationController::class);
-  
+  Route::resource('/product-loans', ProductLoanController::class);
+
 });
 
 //Admin

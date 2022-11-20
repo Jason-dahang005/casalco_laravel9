@@ -4,7 +4,6 @@
 
 <div class="h-100 d-flex align-items-center justify-content-center">
   <div class="mem-bg">
-    @include('client.membership.membership-application-form.header-text')
     <form  action="{{ url('/membership-application') }}" method="POST" enctype="multipart/form-data" class="this-form">
       <div class="content-form-page">
         @csrf

@@ -17,10 +17,10 @@ return new class extends Migration
     {
         Schema::create('members', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class);
-            $table->foreignIdFor(MembershipApplication::class);
-            $table->string('account_id')->unique();
-            $table->string('or_no');
+            $table->unsignedBigInteger('membership_application_id');
+            $table->unsignedBigInteger('users_id');
+            $table->foreign('membership_application_id')->references('id')->on('membership_applications')->onDelete('cascade');
+            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
