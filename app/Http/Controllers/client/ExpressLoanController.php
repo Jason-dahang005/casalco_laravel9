@@ -4,6 +4,11 @@ namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Member;
+use App\Models\User;
+use Auth;
+use Carbon\Carbon;
+use App\Models\LoanApplication;
 
 class ExpressLoanController extends Controller
 {
@@ -14,7 +19,16 @@ class ExpressLoanController extends Controller
      */
     public function index()
     {
-        return view('client.loan.express.express-loan-index');
+        $express = Member::join('users', 'users.id', '=', 'members.users_id')
+                        ->join('membership_applications', 'membership_applications.id', '=', 'members.membership_application_id')
+                        ->select('users.*', 'membership_applications.*')
+                        ->where('users_id', '=', auth()->user()->id)
+                        ->first();
+
+        $edad = $express['dob'];
+        $years = Carbon::parse($edad)->age;
+
+        return view('client.loan.express.express-loan-index', compact(['express', 'years']));
     }
 
     /**
@@ -37,7 +51,6 @@ class ExpressLoanController extends Controller
     {
         $request->validate([
             'name_of_member'        => 'required|string',
-            'date'                  => 'required',
             'account_no'            => 'required',
             'present_address'       => 'required',
             'permanent_address'     => 'required',
@@ -55,6 +68,16 @@ class ExpressLoanController extends Controller
             'mode_of_payment'       => 'required',
             'scanned_signature'     => 'required',
         ]);
+
+        $loanApp = $request->all();
+
+        $pikshurSaPerma = time().$request->file('scanned_signature')->getClientOriginalName();
+        $path = $request->file('scanned_signature')->storeAs('image', $pikshurSaPerma, 'public');
+        $loanApp["scanned_signature"] = '/storage/'.$path;
+
+        LoanApplication::create($loanApp);
+
+        return back()->with('success', 'Application Successfully Sent!');
 
 
     }

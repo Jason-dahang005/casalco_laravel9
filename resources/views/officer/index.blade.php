@@ -49,7 +49,15 @@
 									 </div>
 								</div>
 						 </div>
-							@yield('officer_content')
+                         @if (!Request::is('/officer/dashboard'))
+                            <div class="row">
+                                @yield('officer_content')
+                            </div>
+                         @else
+                            <div class="row column">
+                                @yield('officer_content')
+                            </div>
+                         @endif
 						</div>
 						<div class="container-fluid">
 							@include('officer.footer')
@@ -68,7 +76,7 @@
 	<!-- select country -->
 	<script src="{{ asset('/pluto/js/bootstrap-select.js') }}"></script>
 	<!-- owl carousel -->
-	<script src="{{ asset('/pluto/js/owl.carousel.js') }}"></script> 
+	<script src="{{ asset('/pluto/js/owl.carousel.js') }}"></script>
 	<!-- chart js -->
 	<script src="{{ asset('/pluto/js/Chart.min.js') }}"></script>
 	<script src="{{ asset('/pluto/js/Chart.bundle.min.js') }}"></script>
@@ -106,7 +114,7 @@
 
 
 
-		
+
     $('#example2').DataTable({
       "paging": true,
       "lengthChange": true,

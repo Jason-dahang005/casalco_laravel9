@@ -1,4 +1,6 @@
 
+
+@foreach ($express as $e)
 <form action="{{ url('/express-loan-application-form') }}" method="POST" enctype="multipart/form-data" class="this-form">
     <div class="content-form-page">
         @csrf
@@ -13,7 +15,7 @@
         <div class="col-lg-6 col-md-6">
             <div class="form-group">
                 <small>Name of Member</small><span class="asterisk">*</span>
-                <input type="text" class="form-control" name="name_of_member" onclick="text(0)" placeholder="Enter name of member" value="{{ old('name_of_member') }}">
+                <input type="text" class="form-control" name="name_of_member" placeholder="Enter name of member" value="{{ $e->mem->first_name }}">
                 <small class="text-danger">@error('name_of_member') {{ $message }}@enderror</small>
             </div>
         </div>
@@ -207,3 +209,4 @@
 
     </div>
 </form>
+@endforeach

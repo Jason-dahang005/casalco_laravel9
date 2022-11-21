@@ -14,4 +14,12 @@ class Member extends Model
         'users_id'
     ];
 
+    public function users(){
+        return $this->belongsTo(User::class);
+    }
+
+    public function mem(){
+        return $this->belongsTo(MembershipApplication::class);
+    }
+
 }

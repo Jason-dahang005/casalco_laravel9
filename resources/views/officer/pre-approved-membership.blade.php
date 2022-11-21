@@ -2,7 +2,7 @@
 @section('title', 'Membership')
 @section('officer_content')
 
-<table class="table table-bordered table-striped table-sm" id="example2">
+<table class="table table-striped" id="example2">
 	<thead>
     <tr>
       <th>First Name</th>

@@ -46,7 +46,4 @@ class MembershipApplication extends Model
         return $this->hasOne(Spouse::class, 'membership_application_id', 'id');
     }
 
-    public function members(){
-        return $this->hasOne(Member::class);
-    }
 }
