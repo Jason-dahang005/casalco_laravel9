@@ -72,7 +72,7 @@ class MembershipApplicationController extends Controller
         }
        // Alert::success('Membership Submitted Successfully', 'Please Wait For a Call');
 
-        return redirect('/membership-application-form');
+        return redirect('/pre_seminar');
     }
 
     /**

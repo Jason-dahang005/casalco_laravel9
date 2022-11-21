@@ -14,14 +14,14 @@
       <!-- BEGIN CONTENT PAGE -->
       <div class="content-page">
         <div class="vision">
-          <!-- BEGIN INFO BLOCK -->               
+          <!-- BEGIN INFO BLOCK -->
           @include('client.about-us.vision')
-          <!-- END INFO BLOCK -->   
+          <!-- END INFO BLOCK -->
         </div>
         <div class="mission">
           <!-- BEGIN INFO BLOCK -->
           @include('client.about-us.mission')
-          <!-- END INFO BLOCK --> 
+          <!-- END INFO BLOCK -->
         </div>
       </div>
       <!-- END CONTENT PAGE -->
@@ -32,5 +32,6 @@
   <!-- END ROW -->
 </div>
 <!-- END SIDEBAR & CONTENT -->
-  
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 @endsection

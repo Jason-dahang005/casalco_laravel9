@@ -19,7 +19,7 @@ class PreMembershipApplicationController extends Controller
      */
     public function index()
     {   $membership = MembershipApplication::where('is_approved', 0)->get();
-        
+
         return view('officer.membership-application', compact('membership'));
     }
 
@@ -87,7 +87,7 @@ class PreMembershipApplicationController extends Controller
                 'benAddress' => $r->benAddress,
             ]);
         }
-        
+
         // if(empty($r->spouseFname)){
         //     $m = new MembershipApplication();
         //     $m->Fname = $r->Fname;
@@ -229,7 +229,7 @@ class PreMembershipApplicationController extends Controller
 
 
         return redirect('/officer/membership-application')->with('success','Membership Application Successfully Sent, Please Just Wait For A Call/Email');
-        
+
     }
 
     /**
@@ -250,10 +250,9 @@ class PreMembershipApplicationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(MembershipApplication $membership_application)
     {
-        $membership = MembershipApplication::find($id);
-        return view('officer.membership-application', compact('membership'));
+        return view('officer.membership-application.edit', compact('membership_application'));
     }
 
     /**

@@ -21,13 +21,17 @@
       </ul>
     </li>
 
-    <li class="dropdown">
+    <li>
+        <a href="/contact-us">Contact Us</a>
+    </li>
+
+    {{-- <li class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">Services</a>
       <ul class="dropdown-menu">
         <li><a href="portfolio-4.html">Regular & Special Loan Application Form</a></li>
         <li><a href="/express-loan-application-form" target="_blank">LAD & Express Loan Application Form</a></li>
       </ul>
-    </li>
+    </li> --}}
 
     <li class="{{ (request()->is('membership-information')) ? 'active' : '' }}">
       <a href="membership-information">Membership</a>

@@ -2,7 +2,6 @@
 @section('title', 'Membership Information')
 @section('officer_content')
 
-
      <div class="modal-content">
         <!-- Modal Header -->
         <div class="modal-header">
