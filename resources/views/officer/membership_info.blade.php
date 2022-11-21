@@ -2,7 +2,7 @@
 @section('title', 'Loan Application List')
 @section('officer_content')
 
-@foreach($membership as $m)
+@foreach($membership as $m) 
 <div>
   <div>
      <div class="modal-content">
