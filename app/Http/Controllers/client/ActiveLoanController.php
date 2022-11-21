@@ -4,7 +4,8 @@ namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\LoanApplication;
+use App\Models\Member;
 class ActiveLoanController extends Controller
 {
     /**
@@ -14,7 +15,15 @@ class ActiveLoanController extends Controller
      */
     public function index()
     {
-        return view('client.dashboard.active-loan');
+        $express = Member::join('users', 'users.id', '=', 'members.users_id')
+        ->join('membership_applications', 'membership_applications.id', '=', 'members.membership_application_id')
+        ->select('users.*', 'membership_applications.*')
+        ->where('users_id', '=', auth()->user()->id)
+        ->first();
+
+        $acc_id = $express['acc_id'];
+        $loan = LoanApplication::where('account_no', $acc_id)->get();
+        return view('client.dashboard.active-loan', compact('loan'));
     }
 
     /**

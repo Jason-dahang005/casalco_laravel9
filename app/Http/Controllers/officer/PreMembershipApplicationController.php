@@ -7,6 +7,8 @@ use App\Models\Beneficiary;
 use Illuminate\Http\Request;
 use App\Models\MembershipApplication;
 use App\Models\Spouse;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class PreMembershipApplicationController extends Controller
 {
@@ -270,7 +272,8 @@ class PreMembershipApplicationController extends Controller
         $membership->assigned_officer = auth()->user()->username;
         $membership->save();
 
-        return back();
+        Alert::success('Successfull','Pre-Approved');
+        return redirect('officer/pre-approved-membership');
     }
 
     /**

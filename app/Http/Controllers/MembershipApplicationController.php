@@ -43,8 +43,9 @@ class MembershipApplicationController extends Controller
 
         $requestData = $r->all();
         $fileName =  time().$r->file('selfie_pic')->getClientOriginalName();
+        $fileName2 =  time().$r->file('empIDpic')->getClientOriginalName();
         $path = $r->file('selfie_pic')->storeAs('image', $fileName, 'public');
-        $path2 = $r->file('empIDpic')->storeAs('image', $fileName, 'public');
+        $path2 = $r->file('empIDpic')->storeAs('image', $fileName2, 'public');
         $requestData["selfie_pic"] = '/storage/'.$path;
         $requestData["empIDpic"] = '/storage/'.$path2;
         $ms = MembershipApplication::create($requestData);

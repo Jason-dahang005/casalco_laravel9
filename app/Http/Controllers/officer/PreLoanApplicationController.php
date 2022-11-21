@@ -85,7 +85,8 @@ class PreLoanApplicationController extends Controller
      */
     public function edit($id)
     {
-        //
+        $loan = LoanApplication::find($id);
+        return view('officer.loan', compact('loan'));
     }
 
     /**
@@ -103,7 +104,7 @@ class PreLoanApplicationController extends Controller
         // $loan->or_no = $request->or_no;
         $loan->save();
 
-        return back();
+        return redirect('officer/pre-approved-loans');
     }
 
     /**
