@@ -58,7 +58,7 @@
 
         <div class=" text-center border">
 
-           <h4 class="modal-title">CASALCO Registry Form</h4>
+           <h4 class="modal-title">CASALCO Registration Form</h4>
         </div>
         <!-- Modal body -->
         <div class="modal-body">
@@ -417,7 +417,7 @@
                 <option value="Single">Single</option>
                 <option value="Married">Married</option>
                 <option value="Divorce">Divorced</option>
-                <option value="Siparated">Siparated</option>
+                <option value="Separated">Separated</option>
                 <option value="Widowed">Widowed</option>
               </select>
               </div>
