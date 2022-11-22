@@ -24,7 +24,7 @@
         <div class="col-lg-9 col-md-9">
             <div class="form-group">
                 <small>Name of Member</small><span class="asterisk">*</span>
-                <input type="text" class="form-control" name="name_of_member" placeholder="Enter name of member" value="{{ $express->first_name }}">
+                <input type="text" class="form-control" name="name_of_member" placeholder="Enter name of member" value="{{ $express->first_name }} {{ $express->last_name }}">
                 <small class="text-danger">@error('name_of_member') {{ $message }}@enderror</small>
             </div>
         </div>
@@ -84,6 +84,13 @@
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" id="check1" name="loan_type" value="bdl" @checked(old('loan_type') === 'bdl')>
                                 <label>Birthday Loan</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2">
+                            <small class="text-success">MAX. 12 MONTHS</small>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="check1" name="loan_type" value="bdl" @checked(old('loan_type') === 'hcl')>
+                                <label>Health Care Loan</label>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2">

@@ -60,7 +60,8 @@ class ApproveLoanApplicationController extends Controller
      */
     public function edit($id)
     {
-        //
+        $loan = LoanApplication::find($id);
+        return view('officer.loan', compact('loan'));
     }
 
     /**
@@ -78,7 +79,7 @@ class ApproveLoanApplicationController extends Controller
         // $loan->or_no = $request->or_no;
         $loan->save();
 
-        return back();
+        return redirect('admin/approved-loans');
     }
 
     /**

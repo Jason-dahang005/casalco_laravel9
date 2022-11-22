@@ -50,13 +50,13 @@ class MembershipInfoController extends Controller
      */
     public function show($id)
     {
-        // $membership = MembershipApplication::find($id);
+        $membership = MembershipApplication::findOrFail($id);
 
         // // return view('officer/membership_info')->withMembershipApplication($membership);
-        // return view('officer/membership_info', compact('membership'));
-        return view('officer.membership_info', [
-            'members' => MembershipApplication::findOrFail($id)
-        ]);
+        return view('officer.membership_info', compact('membership'));
+        // return view('officer.membership_info', [
+        //     'members' => MembershipApplication::findOrFail($id)
+        // ]);
     }
 
     /**
