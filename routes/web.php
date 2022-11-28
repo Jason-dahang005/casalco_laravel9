@@ -25,6 +25,8 @@ use App\Http\Controllers\MembershipReportsController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\ExpressLoanAppController;
 use App\Http\Controllers\RegularSpecialLoanController;
+use App\Http\Controllers\client\LoanApplicationController;
+
 //use App\Http\Controllers\LoanHistoryController;
 use App\Http\Controllers\PreSeminarController;
 use App\Http\Controllers\client\ClientDashboardController;
@@ -79,7 +81,6 @@ Route::view('/regular-loans', 'client.regular-loans');
 Route::view('/special-loans', 'client.special-loans');
 Route::view('/express-loans', 'client.express-index');
 
-Route::view('/contact-us', 'client.contact-us');
 Route::view('/form', 'client.membership-application');
 //Route::view('/about-us', 'client.about-us');
 //Route::view('/membership-information', 'client.membership-information');
@@ -131,9 +132,11 @@ Route::resource('/registration', RegistrationController::class);
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
+// Guest
 Route::view('/', 'client.home.home-index');
 Route::view('about-us', 'client.about-us.about-us-index');
 Route::view('membership-information', 'client.membership.membership-information.mem-info-index');
 Route::view('membership-application-form', 'client.membership.membership-application-form.mem-app-form-index');
 Route::view('seminar-index', 'client.online_seminar.seminar-index');
+Route::view('contact-us', 'client.contact-us.contact-us-index');
+Route::resource('loan-application-form', LoanApplicationController::class);

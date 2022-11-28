@@ -6,7 +6,7 @@
     </a>
 
     <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
-    @if(!Request()->is('membership-application-form') && !Request()->is('express-loan-application-form'))
+    @if(!Request()->is('membership-application-form') && !Request()->is('express-loan-application-form') && !Request()->is('loan-application-form'))
       @include('client.layout.navigation')
     @endif
   </div>

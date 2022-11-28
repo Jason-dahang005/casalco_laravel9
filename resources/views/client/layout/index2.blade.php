@@ -38,7 +38,7 @@
 </head>
 <body class="corporate">
 
-  @if(Request()->is('membership-application-form') || Request()->is('express-loan-application-form'))
+  @if(Request()->is('membership-application-form') || Request()->is('express-loan-application-form') || Request()->is('loan-application-form'))
     @include('client.layout.header')
   @else
     @include('client.layout.topbar')

@@ -1,4 +1,4 @@
-          <h2 class="no-top-space">Requirements for membership</h2>
+          <h3 class="no-top-space"><strong>Requirements for membership</strong></h3>
           <p>Must submit the following::</p>
           <div class="row front-lists-v1">
             <div class="col-md-12">

@@ -2,43 +2,12 @@
 <div class="col-md-12 col-sm-12">
     <div class="content-page">
       <div class="row margin-bottom-30">
-        <!-- BEGIN CAROUSEL -->
-        <div class="col-md-5 front-carousel">
-          <div class="carousel slide" id="myCarousel">
-            <!-- Carousel items -->
-            <div class="carousel-inner">
-              <div class="item">
-                <img alt="" src="assets/pages/img/works/img1.jpg">
-                <div class="carousel-caption">
-                  <p>Excepturi sint occaecati cupiditate non provident</p>
-                </div>
-              </div>
-              <div class="item active">
-                <img alt="" src="assets/pages/img/works/img2.jpg">
-                <div class="carousel-caption">
-                  <p>Ducimus qui blanditiis praesentium voluptatum</p>
-                </div>
-              </div>
-              <div class="item">
-                <img alt="" src="assets/pages/img/works/img3.jpg">
-                <div class="carousel-caption">
-                  <p>Ut non libero consectetur adipiscing elit magna</p>
-                </div>
-              </div>
-            </div>
-            <!-- Carousel nav -->
-            <a data-slide="prev" href="#myCarousel" class="carousel-control left">
-              <i class="fa fa-angle-left"></i>
-            </a>
-            <a data-slide="next" href="#myCarousel" class="carousel-control right">
-              <i class="fa fa-angle-right"></i>
-            </a>
-          </div>
+        <div class="col-md-7" style="border: 1px solid black">
+            <img alt="" src="{{ asset('klassy/images/generic_image.png') }}">
         </div>
-        <!-- END CAROUSEL -->
 
         <!-- BEGIN PORTFOLIO DESCRIPTION -->
-        <div class="col-md-7">
+        <div class="col-md-5">
           <h2>HEALTH CARE LOAN</h2>
           <p>Molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa quis tempor incididunt ut et dolore et dolorum fuga. Ut non libero consectetur adipiscing elit magna. Sed et quam lacus.</p>
           <p>Lorem ipsum dolor sit amet, dolore eiusmod quis tempor incididunt ut et dolore Ut veniam unde nostrudlaboris. Sed unde omnis iste natus error sit voluptatem.</p>

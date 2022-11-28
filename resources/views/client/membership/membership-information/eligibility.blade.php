@@ -1,4 +1,4 @@
-          <h2 class="no-top-space">Who are allowed to become a member of CASALCO?</h2>
+          <h3 class="no-top-space"><strong>Who are allowed to become a member of CASALCO?</strong></h3>
           <p>All employees of:</p>
           <div class="row front-lists-v1">
             <div class="col-md-12">
