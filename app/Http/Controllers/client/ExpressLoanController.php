@@ -6,9 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Member;
 use App\Models\User;
-use Auth;
 use Carbon\Carbon;
 use App\Models\LoanApplication;
+use Illuminate\Support\Facades\Auth;
 
 class ExpressLoanController extends Controller
 {
@@ -19,16 +19,19 @@ class ExpressLoanController extends Controller
      */
     public function index()
     {
-        $express = Member::join('users', 'users.id', '=', 'members.users_id')
+        if (Auth::check()) {
+            $loan = Member::join('users', 'users.id', '=', 'members.users_id')
                         ->join('membership_applications', 'membership_applications.id', '=', 'members.membership_application_id')
-                        ->select('users.*', 'membership_applications.*')
+                        ->select('users.*', 'membership_applications.*', 'members.*')
                         ->where('users_id', '=', auth()->user()->id)
                         ->first();
 
-        $edad = $express['dob'];
+        $edad = $loan['dob'];
         $years = Carbon::parse($edad)->age;
 
-        return view('client.loan.express.express-loan-index', compact(['express', 'years']));
+        return view('client.loan_application.express_loan.express-loan-application', compact(['loan', 'years']));
+        }
+        return view('client.loan_application.express_loan.express-loan-application');
     }
 
     /**

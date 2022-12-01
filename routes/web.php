@@ -26,6 +26,12 @@ use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\ExpressLoanAppController;
 use App\Http\Controllers\RegularSpecialLoanController;
 use App\Http\Controllers\client\LoanApplicationController;
+use App\Http\Controllers\client\LadLoanController;
+use  App\Http\Controllers\client\ExpressLoanController;
+use App\Http\Controllers\client\RegularLoanController;
+use  App\Http\Controllers\client\SpecialLoanController;
+use  App\Http\Controllers\client\ApplyLoanController;
+
 
 //use App\Http\Controllers\LoanHistoryController;
 use App\Http\Controllers\PreSeminarController;
@@ -47,7 +53,7 @@ use App\Http\Controllers\officer\MembershipInfoController;
 
 use App\Http\Controllers\PracticeController;
 
-use  App\Http\Controllers\client\ExpressLoanController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -99,7 +105,11 @@ Route::view('/regular-loans-information', 'client.loan.regular.regular-loans-inf
 Route::view('/LAD-loans-information', 'client.loan.loan_against_deposit.lad-loans-information');
 Route::view('/express-loans-information','client.loan.express.express-loans-information');
 Route::view('/special-loans-information','client.loan.special.special-loans-information');
-Route::resource('/express-loan-application-form', ExpressLoanController::class);
+
+Route::resource('/express-loan-application', ExpressLoanController::class);
+Route::resource('/lad-loan-application', LadLoanController::class);
+Route::resource('/regular-loan-application', RegularLoanController::class);
+Route::resource('/special-loan-application', SpecialLoanController::class);
 
 
 // client
@@ -109,6 +119,8 @@ Route::middleware(['auth', 'isClient'])->group(function() {
   Route::resource('/client/active-loan', ActiveLoanController::class);
   Route::view('/express-loans', 'client.loan.express.express-index');
   Route::resource('/profile', ProfileController::class);
+  Route::resource('/apply-loan', ApplyLoanController::class);
+  Route::resource('/loan-application', LoanApplication::class);
 });
 
 
@@ -139,4 +151,4 @@ Route::view('membership-information', 'client.membership.membership-information.
 Route::view('membership-application-form', 'client.membership.membership-application-form.mem-app-form-index');
 Route::view('seminar-index', 'client.online_seminar.seminar-index');
 Route::view('contact-us', 'client.contact-us.contact-us-index');
-Route::resource('loan-application-form', LoanApplicationController::class);
+Route::resource('loan-application', LoanApplicationController::class);

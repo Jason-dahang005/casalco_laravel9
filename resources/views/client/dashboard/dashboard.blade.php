@@ -38,7 +38,7 @@
       </a>
     </div>
     <div class="col-md-6 col-lg-4">
-        <a href="/admin/membership">
+        <a href="/loan-application">
           <div class="full counter_section margin_bottom_30">
             <div class="couter_icon">
               <div>

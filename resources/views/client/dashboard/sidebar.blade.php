@@ -20,7 +20,7 @@
     <ul class="list-unstyled components">
         <li><a href="/"><i class="fa fa-home red_color"></i> <span>Home</span></a></li>
         <li><a href="/client/dashboard"><i class="fa fa-dashboard orange_color"></i> <span>Dashboard</span></a></li>
-        <li><a href=""><i class="fa fa-money yellow_color"></i> <span>Loan Application</span></a></li>
+        <li><a href="/loan-application"><i class="fa fa-money yellow_color"></i> <span>Loan Application</span></a></li>
 	    <li><a href="/client/active-loan"><i class="fa fa-check-circle green_color"></i> <span>Active Loans</span></a></li>
       <li><a href="/client/loan-history"><i class="fa fa-history blue1_color"></i> <span>Loan History</span></a></li>
     </ul>

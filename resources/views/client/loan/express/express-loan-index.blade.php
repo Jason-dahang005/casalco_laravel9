@@ -20,11 +20,11 @@
                   <li>To qualify for membership, you must be at least 18 years old.</li>
                 </ul>
               </div>
-              <h2 style="font-weight: 900; text-align: center; font-size: .4in; padding: 20px 0">Online Loan Application Form</h2>
+              <h2 style="font-weight: 900; text-align: center; font-size: .4in; padding: 20px 0">@yield('title')</h2>
         <div class="col-lg-9 col-md-9">
             <div class="form-group">
                 <small>Name of Member</small><span class="asterisk">*</span>
-                <input type="text" class="form-control" name="name_of_member" placeholder="Enter name of member" value="{{ $express->first_name }} {{ $express->last_name }}">
+                <input type="text" class="form-control" name="name_of_member" placeholder="Enter name of member" value="@auth {{ $express->first_name }} {{ $express->last_name }} @endauth">
                 <small class="text-danger">@error('name_of_member') {{ $message }}@enderror</small>
             </div>
         </div>
@@ -32,7 +32,7 @@
         <div class="col-lg-3 col-md-3">
             <div class="form-group">
                 <small>Account No.</small><span class="asterisk">*</span>
-                <input type="text" class="form-control" name="account_no" placeholder="Enter account no" value="{{ $express->acc_id }}">
+                <input type="text" class="form-control" name="account_no" placeholder="Enter account no" value="@auth {{ $express->acc_id }} @endauth">
                 <small class="text-danger">@error('account_no') {{ $message }}@enderror</small>
             </div>
         </div>
@@ -40,7 +40,7 @@
         <div class="col-lg-6 col-md-6">
             <div class="form-group">
                 <small>Present Address</small><span class="asterisk">*</span>
-                <input type="text" class="form-control" name="present_address" placeholder="Enter present_address" value="{{ $express->address }}">
+                <input type="text" class="form-control" name="present_address" placeholder="Enter present_address" value="@auth {{ $express->address }} @endauth">
                 <small class="text-danger">@error('present_address') {{ $message }}@enderror</small>
             </div>
         </div>
@@ -125,7 +125,7 @@
         <div class="col-lg-4 col-md-4">
             <div class="form-group">
                 <small>Date of Birth</small><span class="asterisk">*</span>
-                <input type="date" class="form-control" name="date_of_birth" placeholder="Enter date of birth" value="{{ $express->dob }}">
+                <input type="date" class="form-control" name="date_of_birth" placeholder="Enter date of birth" value="@auth {{ $express->dob }} @endauth">
                 <small class="text-danger">@error('date_of_birth') {{ $message }}@enderror</small>
             </div>
         </div>
@@ -133,7 +133,7 @@
         <div class="col-lg-4 col-md-4">
             <div class="form-group">
                 <small>Age</small><span class="asterisk">*</span>
-                <input type="text" class="form-control" name="age" placeholder="Enter Age" value="{{ $years }}">
+                <input type="text" class="form-control" name="age" placeholder="Enter Age" value=" @auth{{ $years }} @endauth">
                 <small class="text-danger">@error('age') {{ $message }}@enderror</small>
             </div>
         </div>
@@ -141,7 +141,7 @@
         <div class="col-lg-4 col-md-4">
             <div class="form-group">
                 <small>Cellphone No.</small><span class="asterisk">*</span>
-                <input type="text" class="form-control" name="cellphone_no" placeholder="Enter Cellphone No." value="{{ $express->contact_number }}">
+                <input type="text" class="form-control" name="cellphone_no" placeholder="Enter Cellphone No." value="@auth {{ $express->contact_number }} @endauth">
                 <small class="text-danger">@error('cellphone_no') {{ $message }}@enderror</small>
             </div>
         </div>
@@ -149,14 +149,14 @@
         <div class="col-lg-4 col-md-4">
             <div class="form-group">
                 <small>TIN No.</small><span class="asterisk">*</span>
-                <input type="text" class="form-control" name="tin_no" placeholder="Enter TIN No." value="{{ $express->TIN }}">
+                <input type="text" class="form-control" name="tin_no" placeholder="Enter TIN No." value="@auth {{ $express->TIN }} @endauth">
                 <small class="text-danger">@error('tin_no') {{ $message }}@enderror</small>
             </div>
         </div>
         <div class="col-lg-4 col-md-4">
             <div class="form-group">
                 <small>Email Address</small><span class="asterisk">*</span>
-                <input type="email" class="form-control" name="email_address" placeholder="Enter Email Address" value="{{ $express->email }}">
+                <input type="email" class="form-control" name="email_address" placeholder="Enter Email Address" value="@auth {{ $express->email }} @endauth">
                 <small class="text-danger">@error('email_address') {{ $message }}@enderror</small>
             </div>
         </div>
@@ -210,7 +210,13 @@
     <div class="row">
         <div class="col-lg-4"></div>
         <div class="col-lg-4">
-            <button class="submit_btn" type="submit">SUBMIT APPLICATION</button>
+            @auth
+                <button class="submit_btn" type="submit">SUBMIT APPLICATION</button>
+            @endauth
+
+            @guest
+                <button class="submit_btn" type="button" onclick="location.href='/login'">SUBMIT APPLICATION</button>
+            @endguest
         </div>
         <div class="col-lg-4"></div>
     </div>

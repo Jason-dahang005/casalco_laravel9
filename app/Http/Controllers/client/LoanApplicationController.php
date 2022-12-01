@@ -14,7 +14,7 @@ class LoanApplicationController extends Controller
      */
     public function index()
     {
-        return view('client.loan_application.regular_special_loan.loan_app_index');
+        return view('client.dashboard.loan-application');
     }
 
     /**
