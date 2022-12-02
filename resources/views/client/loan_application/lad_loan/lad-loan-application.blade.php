@@ -56,7 +56,7 @@
 
                 <div class="col-lg-12 col-md-12">
 
-                        <input required type="text" name="product_loan" value="none">
+                        <input required type="hidden" name="product_loan" value="lad">
 
                 </div>
 

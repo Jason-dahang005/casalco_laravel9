@@ -4,7 +4,7 @@ namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\LoanApplication;
 class LoanHistoryController extends Controller
 {
     /**
@@ -14,7 +14,10 @@ class LoanHistoryController extends Controller
      */
     public function index()
     {
-        return view('client.dashboard.loan-history');
+        $loan = LoanApplication::where('users_id', auth()->user()->id)
+        ->where('is_approved', 3)
+        ->get();
+        return view('client.dashboard.loan-history', compact('loan'));
     }
 
     /**

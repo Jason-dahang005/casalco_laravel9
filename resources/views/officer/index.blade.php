@@ -127,7 +127,7 @@
 			order: [[4, 'desc']]
     });
 
-		$('#example5').DataTable({
+	$('#loan_application').DataTable({
       "paging": true,
       "lengthChange": true,
       "searching": true,
@@ -135,8 +135,7 @@
       "info": true,
       "autoWidth": true,
       "responsive": true,
-			order: [[4, 'desc']]
-    });
+    })
   });
 	</script>
 </body>

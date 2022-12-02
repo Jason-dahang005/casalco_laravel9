@@ -21,13 +21,18 @@ class ExpressLadLoanDetails extends Model
         'loan_application_id'
     ];
 
-    /**
-     * Get the user that owns the ExpressLadLoanDetails
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function loan_app(): BelongsTo
-    {
-        return $this->belongsTo(App\Model\LoanApplication::class, 'loan_applications_id', 'id');
-    }
+    // /**
+    //  * Get the user that owns the ExpressLadLoanDetails
+    //  *
+    //  * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+    //  */
+    // public function loan_app(): BelongsTo
+    // {
+    //     return $this->belongsTo(App\Model\LoanApplication::class, 'loan_applications_id', 'id');
+    // }
+
+
+    public function loan(){
+        return $this->belongsTo(LoanApplication::class);
+}
 }

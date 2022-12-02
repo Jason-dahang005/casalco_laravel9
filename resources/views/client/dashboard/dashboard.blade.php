@@ -13,7 +13,7 @@
           </div>
           <div class="counter_no">
             <div>
-            <p class="total_no">0</p>
+            <p class="total_no">{{ count($active) }}</p>
             <p class="head_couter">Active Loans</p>
             </div>
           </div>
@@ -21,7 +21,7 @@
       </a>
     </div>
     <div class="col-md-6 col-lg-4">
-      <a href="/admin/membership">
+      <a href="/client/loan-history">
         <div class="full counter_section margin_bottom_30">
           <div class="couter_icon">
             <div>
@@ -30,7 +30,7 @@
           </div>
           <div class="counter_no">
             <div>
-            <p class="total_no">0</p>
+            <p class="total_no">{{ count($paid) }}</p>
             <p class="head_couter">Loan History</p>
             </div>
           </div>
@@ -47,7 +47,7 @@
             </div>
             <div class="counter_no">
               <div>
-              <p class="total_no">0</p>
+              <p class="total_no">{{ count($loan) }}</p>
               <p class="head_couter">Loan Application</p>
               </div>
             </div>

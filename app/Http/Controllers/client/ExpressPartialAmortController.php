@@ -5,7 +5,7 @@ namespace App\Http\Controllers\client;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\LoanApplication;
-class ClientDashboardController extends Controller
+class ExpressPartialAmortController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,18 +14,7 @@ class ClientDashboardController extends Controller
      */
     public function index()
     {
-        $loan = LoanApplication::where('users_id', auth()->user()->id)
-                                ->where('is_approved', 0)
-                                ->get();
-
-        $active = LoanApplication::where('users_id', auth()->user()->id)
-        ->where('is_approved', 2)
-        ->get();
-
-        $paid = LoanApplication::where('users_id', auth()->user()->id)
-        ->where('is_approved', 3)
-        ->get();
-        return view('client.dashboard.dashboard', compact('loan' , 'active' , 'paid'));
+        //
     }
 
     /**
@@ -57,7 +46,9 @@ class ClientDashboardController extends Controller
      */
     public function show($id)
     {
-        //
+        $loan = LoanApplication::findOrFail($id);
+
+        return view('client.dashboard.express-partial-amort',compact('loan'));
     }
 
     /**

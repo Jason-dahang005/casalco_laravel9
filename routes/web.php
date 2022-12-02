@@ -40,8 +40,11 @@ use App\Http\Controllers\PreSeminarController;
 use App\Http\Controllers\client\ClientDashboardController;
 use App\Http\Controllers\client\LoanHistoryController;
 use App\Http\Controllers\client\ActiveLoanController;
+use App\Http\Controllers\client\ExpressAmortController;
+use App\Http\Controllers\client\ExpressPartialAmortController;
 use App\Http\Controllers\client\ProfileController;
-
+use App\Http\Controllers\client\SpecialAmortController;
+use App\Http\Controllers\client\SpecialPartialAmortController;
 // use App\Http\Controllers\admin\DashboardController;
 // use App\Http\Controllers\admin\MembershipController;
 // use App\Http\Controllers\admin\LoanController;
@@ -124,6 +127,10 @@ Route::middleware(['auth', 'isClient'])->group(function() {
   Route::resource('/profile', ProfileController::class);
   Route::resource('/apply-loan', ApplyLoanController::class);
   Route::resource('/loan-application', LoanApplication::class);
+  Route::resource('/express_amort', ExpressAmortController::class);
+  Route::resource('/express_partial_amort', ExpressPartialAmortController::class);
+  Route::resource('/regular_special_partial_amort', SpecialPartialAmortController::class);
+  Route::resource('/regular_special_amort', SpecialAmortController::class);
 });
 
 
@@ -137,6 +144,7 @@ Route::middleware(['auth', 'isOfficer'])->group(function() {
   Route::resource('/product-loans', ProductLoanController::class);
   Route::resource('/membership_info', MembershipInfoController::class);
   Route::resource('/loan_application', LoanAppController::class);
+ 
   // Route::get('/officer/{id}', [MembershipInfoController::class, 'show']);
   // Route::get('/officer/membership_info/{id}', 'MembershipInfoController@show')->name('displayMembershipApplication');
 

@@ -21,6 +21,9 @@
                             </thead>
                             <tbody>
                                 @foreach ($loan as $l)
+                               
+                                    
+                              
                                     <tr>
                                         <td>{{ ucwords($l->loan_type) }}</td>
                                         <td>{{ date('m-d-Y, h:s:i ', strtotime($l->created_at)) }}</td>
@@ -28,9 +31,19 @@
                                             <span class="badge badge-secondary">Pending</span>
                                         </td>
                                         <td>
-                                            <button class="btn btn-sm bg-success">View Details</button>
+                                            @if ($l->loan_type == 'express' || $l->loan_type == 'lad' )
+                                            <a href="{{ route('express_partial_amort.show', $l->id) }}">
+                                                <button class="btn btn-success">Details</button>
+                                              </a>
+                                            @elseif ($l->loan_type == 'regular' || $l->loan_type == 'special' )
+                                            <a href="{{ route('regular_special_partial_amort.show', $l->id) }}">
+                                                <button class="btn btn-success">Details</button>
+                                              </a>
+                                            @endif
+                                            
                                         </td>
                                     </tr>
+                                   
                                 @endforeach
                             </tbody>
                         </table>
@@ -40,6 +53,9 @@
         </div>
     </div>
 </div>
+
+
+
 
 
 @endsection

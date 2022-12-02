@@ -39,31 +39,31 @@ class PreLoanApplicationController extends Controller
     public function store(Request $r)
     {
         
-        $loan = new LoanApplication();
-        $loan->users_id = $r->user_id;
-        $loan->save();
+        // $loan = new LoanApplication();
+        // $loan->users_id = $r->user_id;
+        // $loan->save();
 
-        $l = new ExpressLoanApp();
-        $l->loan_application_id = $loan->id;
-        $l->acc_id = $r->acc_id;
-        $l->name =$r->name;
-        $l->present_address = $r->present_address;
-        $l->permanent_address = $r->permanent_address;
-        $l->loan_type = $r->loan_type;
-        $l->emp  = $r->emp;
-        $l->emp_address = $r->emp_address;
-        $l->email = $r->email;
-        $l->amount = $r->amount;
-        $l->mode_payment = $r->mode_payment;
-        $l->term_applied = $r->term_applied;
-        $l->phone_no = $r->phone_no;
-        $l->tin = $r->tin;
-        $l->fb_acc = $r->fb_acc;
-        $l->loanApp_type = $r->loanApp_type;
+        // $l = new ExpressLoanApp();
+        // $l->loan_application_id = $loan->id;
+        // $l->acc_id = $r->acc_id;
+        // $l->name =$r->name;
+        // $l->present_address = $r->present_address;
+        // $l->permanent_address = $r->permanent_address;
+        // $l->loan_type = $r->loan_type;
+        // $l->emp  = $r->emp;
+        // $l->emp_address = $r->emp_address;
+        // $l->email = $r->email;
+        // $l->amount = $r->amount;
+        // $l->mode_payment = $r->mode_payment;
+        // $l->term_applied = $r->term_applied;
+        // $l->phone_no = $r->phone_no;
+        // $l->tin = $r->tin;
+        // $l->fb_acc = $r->fb_acc;
+        // $l->loanApp_type = $r->loanApp_type;
      
-        $l->save();
+        // $l->save();
 
-        return back();
+        // return back();
     }
 
     /**

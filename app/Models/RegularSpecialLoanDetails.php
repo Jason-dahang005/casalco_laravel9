@@ -16,10 +16,20 @@ class RegularSpecialLoanDetails extends Model
         'present_position',
     ];
 
-    public function loan_apps()
-    {
-        return $this->belongsTo(App\Model\LoanApplication::class, 'loan_applications_id', 'id');
-    }
+    // public function loan_apps()
+    // {
+    //     return $this->belongsTo(App\Model\LoanApplication::class, 'loan_applications_id', 'id');
+    // }
 
+    public function loan(){
+        return $this->belongsTo(LoanApplication::class, 'loan_applications_id');
+    }
+    public function monthlyE(){
+        return $this->hasOne(MonthlyExpenses::class,'regular_special_loan_details_id');
+
+    }
+    public function monthlyI(){
+        return $this->hasOne(MonthlyIncome::class,'regular_special_loan_details_id');
+    }
 
 }

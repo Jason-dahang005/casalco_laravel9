@@ -67,7 +67,9 @@ class LoanApplicationController extends Controller
      */
     public function edit($id)
     {
-        //
+        
+        $loan = LoanApplication::find($id);
+        return view('client.dashboard.loan-application', compact('loan'));
     }
 
     /**

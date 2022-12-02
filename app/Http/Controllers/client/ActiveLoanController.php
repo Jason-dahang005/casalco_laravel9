@@ -15,14 +15,17 @@ class ActiveLoanController extends Controller
      */
     public function index()
     {
-        $express = Member::join('users', 'users.id', '=', 'members.users_id')
-        ->join('membership_applications', 'membership_applications.id', '=', 'members.membership_application_id')
-        ->select('users.*', 'membership_applications.*')
-        ->where('users_id', '=', auth()->user()->id)
-        ->first();
+        // $express = Member::join('users', 'users.id', '=', 'members.users_id')
+        // ->join('membership_applications', 'membership_applications.id', '=', 'members.membership_application_id')
+        // ->select('users.*', 'membership_applications.*')
+        // ->where('users_id', '=', auth()->user()->id)
+        // ->first();
 
-        $acc_id = $express['acc_id'];
-        $loan = LoanApplication::where('account_no', $acc_id)->get();
+        // $acc_id = $express['acc_id'];
+        // $loan = LoanApplication::where('account_no', $acc_id)->get();
+        $loan = LoanApplication::where('users_id', auth()->user()->id)
+        ->where('is_approved', 2)
+        ->get();
         return view('client.dashboard.active-loan', compact('loan'));
     }
 
@@ -66,7 +69,8 @@ class ActiveLoanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $loan = LoanApplication::find($id);
+        return view('client.dashboard.active-loan', compact('loan'));
     }
 
     /**
