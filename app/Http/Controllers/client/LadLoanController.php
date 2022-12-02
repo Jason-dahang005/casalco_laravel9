@@ -8,6 +8,7 @@ use App\Models\Member;
 use App\Models\User;
 use Carbon\Carbon;
 use App\Models\LoanApplication;
+use App\Models\ExpressLadLoanDetails;
 use Illuminate\Support\Facades\Auth;
 
 class LadLoanController extends Controller
@@ -52,7 +53,27 @@ class LadLoanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $applyloan = new LoanApplication();
+        $applyloan->members_id = $request->member;
+        $applyloan->loan_type = $request->application_type;
+        $applyloan->save();
+
+        $imageName = time().'.'.$request->scanned_signature->extension();
+        $request->scanned_signature->move(public_path('sys_img'), $imageName);
+
+        $express                            = new ExpressLadLoanDetails();
+        $express->loan_applications_id      = $applyloan->id;
+        $express->employer                  = $request->employer;
+        $express->employer_address          = $request->employer_address;
+        $express->amount_applied            = $request->amount_applied;
+        $express->term_applied              = $request->term_applied;
+        $express->mode_of_payment           = $request->mode_of_payment;
+        $express->facebook_account          = $request->facebook_account;
+        $express->scanned_signature         = $imageName;
+        $express->product_loan              = $request->product_loan;
+        $express->save();
+
+        return redirect('loan-application');
     }
 
     /**

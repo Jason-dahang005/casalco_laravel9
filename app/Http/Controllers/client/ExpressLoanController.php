@@ -8,6 +8,7 @@ use App\Models\Member;
 use App\Models\User;
 use Carbon\Carbon;
 use App\Models\LoanApplication;
+use App\Models\ExpressLadLoanDetails;
 use Illuminate\Support\Facades\Auth;
 
 class ExpressLoanController extends Controller
@@ -52,35 +53,57 @@ class ExpressLoanController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name_of_member'        => 'required|string',
-            'account_no'            => 'required',
-            'present_address'       => 'required',
-            'permanent_address'     => 'required',
-            'loan_type'             => 'required',
-            'employer'              => 'required',
-            'employer_address'      => 'required',
-            'date_of_birth'         => 'required',
-            'age'                   => 'required|numeric',
-            'cellphone_no'          => 'required',
-            'tin_no'                => 'required',
-            'email_address'         => 'required',
-            'facebook_account'      => 'required',
-            'amount_applied'        => 'required|numeric',
-            'term_applied'          => 'required|numeric',
-            'mode_of_payment'       => 'required',
-            'scanned_signature'     => 'required',
-        ]);
+        // $request->validate([
+        //     'name_of_member'        => 'required|string',
+        //     'account_no'            => 'required',
+        //     'present_address'       => 'required',
+        //     'permanent_address'     => 'required',
+        //     'loan_type'             => 'required',
+        //     'employer'              => 'required',
+        //     'employer_address'      => 'required',
+        //     'date_of_birth'         => 'required',
+        //     'age'                   => 'required|numeric',
+        //     'cellphone_no'          => 'required',
+        //     'tin_no'                => 'required',
+        //     'email_address'         => 'required',
+        //     'facebook_account'      => 'required',
+        //     'amount_applied'        => 'required|numeric',
+        //     'term_applied'          => 'required|numeric',
+        //     'mode_of_payment'       => 'required',
+        //     'scanned_signature'     => 'required',
+        // ]);
 
-        $loanApp = $request->all();
+        // $loanApp = $request->all();
 
-        $pikshurSaPerma = time().$request->file('scanned_signature')->getClientOriginalName();
-        $path = $request->file('scanned_signature')->storeAs('image', $pikshurSaPerma, 'public');
-        $loanApp["scanned_signature"] = '/storage/'.$path;
+        // $pikshurSaPerma = time().$request->file('scanned_signature')->getClientOriginalName();
+        // $path = $request->file('scanned_signature')->storeAs('image', $pikshurSaPerma, 'public');
+        // $loanApp["scanned_signature"] = '/storage/'.$path;
 
-        LoanApplication::create($loanApp);
+        // LoanApplication::create($loanApp);
 
-        return back()->with('success', 'Application Successfully Sent!');
+        // return back()->with('success', 'Application Successfully Sent!');
+
+        $applyloan = new LoanApplication();
+        $applyloan->members_id = $request->member;
+        $applyloan->loan_type = $request->application_type;
+        $applyloan->save();
+
+        $imageName = time().'.'.$request->scanned_signature->extension();
+        $request->scanned_signature->move(public_path('sys_img'), $imageName);
+
+        $express                            = new ExpressLadLoanDetails();
+        $express->loan_applications_id      = $applyloan->id;
+        $express->employer                  = $request->employer;
+        $express->employer_address          = $request->employer_address;
+        $express->amount_applied            = $request->amount_applied;
+        $express->term_applied              = $request->term_applied;
+        $express->mode_of_payment           = $request->mode_of_payment;
+        $express->facebook_account          = $request->facebook_account;
+        $express->scanned_signature         = $imageName;
+        $express->product_loan              = $request->product_loan;
+        $express->save();
+
+        return redirect('loan-application');
 
 
     }

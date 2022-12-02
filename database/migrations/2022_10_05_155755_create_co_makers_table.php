@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('co_makers', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(RegularSpecialLoan::class)->nullable();
             $table->string('co_maker_history')->nullable();
             $table->string('co_maker_name')->nullable();
             $table->string('co_maker_form')->nullable();

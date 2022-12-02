@@ -1,5 +1,5 @@
 <?php
-use App\Models\RegularSpecialLoan;
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,15 +15,16 @@ return new class extends Migration
     {
         Schema::create('monthly_expenses', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(RegularSpecialLoan::class);
-            $table->string('food_sub');
-            $table->string('educ_bill');
-            $table->string('electric_bill');
-            $table->string('water_bill');
-            $table->string('transportation');
-            $table->string('allowance');
-            $table->string('others');
-
+            $table->unsignedBigInteger('regular_special_loan_details_id');
+            $table->string('scanned_signature');
+            $table->integer('food');
+            $table->integer('education_bill');
+            $table->integer('electric_bill');
+            $table->integer('water_bill');
+            $table->integer('transportation');
+            $table->integer('allowances');
+            $table->integer('others');
+            $table->foreign('regular_special_loan_details_id')->references('id')->on('regular_special_loan_details')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -10,18 +10,13 @@ class MonthlyIncome extends Model
     use HasFactory;
 
     protected $fillable = [
-        'regular_special_loan_id',
+        'regular_special_loan_details_id',
+        'product_loan',
         'borrower_income',
         'other_income',
-        's_income',
-        'loan_type',
-        'amount',
+        'spouse_income',
+        'amount_applied',
         'term_applied',
-        'mode_payment',
-      
+        'mode_of_payment'
     ];
-    public function regular(){
-        return $this->belongsTo(RegularSpecialLoan::class);
-}
-
 }

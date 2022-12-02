@@ -1,4 +1,4 @@
-<form action="">
+<form action="{{ url('/apply-loan') }}" method="POST" enctype="multipart/form-data" class="this-form">
     <div class="content-form-page">
         @csrf
         <div class="header-text">
@@ -12,9 +12,9 @@
 
             @include('client.loan_application.personal-info')
         </div>
-        <div class="row">
-            @include('client.loan_application.credit-assessment-list')
-        </div>
+
+        @include('client.loan_application.credit-assessment-list')
+
         <div class="row">
             @include('client.loan_application.regular_special_submit_btn')
         </div>
