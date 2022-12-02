@@ -48,10 +48,10 @@
 							<div class="row column_title">
 								<div class="col-md-12">
 									 <div class="page_title">
-											<h2>@yield('title')</h2>
+										<h2>@yield('title')</h2>
 									 </div>
 								</div>
-						 </div>
+                            </div>
 							@yield('client_dashboard_content')
 						</div>
 						<div class="container-fluid">
@@ -106,6 +106,7 @@
       "responsive": true, "lengthChange": true, "autoWidth": true,
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
     $('#example2').DataTable({
       "paging": true,
       "lengthChange": true,
@@ -116,6 +117,16 @@
       "responsive": true,
 			order: [[2, 'desc']]
     });
+
+    $('#loan_application').DataTable({
+        "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": true,
+      "responsive": true,
+    })
   });
 	</script>
 </body>

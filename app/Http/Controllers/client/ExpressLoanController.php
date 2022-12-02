@@ -84,7 +84,7 @@ class ExpressLoanController extends Controller
         // return back()->with('success', 'Application Successfully Sent!');
 
         $applyloan = new LoanApplication();
-        $applyloan->members_id = $request->member;
+        $applyloan->users_id = $request->member;
         $applyloan->loan_type = $request->application_type;
         $applyloan->save();
 

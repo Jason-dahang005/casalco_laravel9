@@ -23,7 +23,7 @@ class LadLoanController extends Controller
         if (Auth::check()) {
             $loan = Member::join('users', 'users.id', '=', 'members.users_id')
                         ->join('membership_applications', 'membership_applications.id', '=', 'members.membership_application_id')
-                        ->select('users.*', 'membership_applications.*', 'members.*')
+                        ->select('users.*', 'membership_applications.*')
                         ->where('users_id', '=', auth()->user()->id)
                         ->first();
 
@@ -54,7 +54,7 @@ class LadLoanController extends Controller
     public function store(Request $request)
     {
         $applyloan = new LoanApplication();
-        $applyloan->members_id = $request->member;
+        $applyloan->users_id = $request->member;
         $applyloan->loan_type = $request->application_type;
         $applyloan->save();
 

@@ -4,6 +4,13 @@ namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\LoanApplication;
+use App\Models\User;
+use App\Models\MembershipApplication;
+use App\Models\Member;
+use App\Models\RegularSpecialLoanDetails;
+use App\Models\ExpressLadLoanDetails;
+use Illuminate\Support\Facades\DB;
 
 class LoanApplicationController extends Controller
 {
@@ -14,7 +21,10 @@ class LoanApplicationController extends Controller
      */
     public function index()
     {
-        return view('client.dashboard.loan-application');
+        $loan = LoanApplication::where('users_id', auth()->user()->id)
+                                ->where('is_approved', 0)
+                                ->get();
+        return view('client.dashboard.loan-application', compact('loan'));
     }
 
     /**

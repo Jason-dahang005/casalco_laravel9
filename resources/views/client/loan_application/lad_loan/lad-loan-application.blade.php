@@ -18,10 +18,10 @@
                 <div class="col-lg-9 col-md-9">
 
 
-                        <input type="text" name="application_type" value="lad">
+                        <input type="hidden" name="application_type" value="lad">
 
-                    {{-- MEMBER ID --}}
-                    <input required type="text" name="member" value="@auth {{ $loan->id }} @endauth">
+                    {{-- USER ID --}}
+                    <input required type="hidden" name="member" value="@auth {{ auth()->user()->id }} @endauth">
 
                     <div class="form-group">
                         <small>Name of Member</small><span class="asterisk">*</span>
@@ -55,7 +55,7 @@
                 </div>
 
                 <div class="col-lg-12 col-md-12">
-                    
+
                         <input required type="text" name="product_loan" value="none">
 
                 </div>
@@ -79,7 +79,7 @@
                 <div class="col-lg-4 col-md-4">
                     <div class="form-group">
                         <small>Date of Birth</small><span class="asterisk">*</span>
-                        <input class="form-control" name="date_of_birth" placeholder="Enter date of birth" type="date" value="@auth {{ date('Y-m-d', strtotime('$loan->dob')) }} @endauth">
+                        <input class="form-control" name="date_of_birth" placeholder="Enter date of birth" type="text" value="@auth {{ $loan->dob }} @endauth">
                         <small class="text-danger">@error('date_of_birth') {{ $message }}@enderror</small>
                     </div>
                 </div>

@@ -16,23 +16,10 @@ class RegularSpecialLoanDetails extends Model
         'present_position',
     ];
 
-    /**
-     * Get the income associated with the RegularSpecialLoanDetails
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function income(): HasOne
+    public function loan_apps()
     {
-        return $this->hasOne(MonthlyIncome::class, 'regular_special_loan_details_id', 'id');
+        return $this->belongsTo(App\Model\LoanApplication::class, 'loan_applications_id', 'id');
     }
 
-    /**
-     * Get the expenses associated with the RegularSpecialLoanDetails
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function expenses(): HasOne
-    {
-        return $this->hasOne(MonthlyExpenses::class, 'regular_special_loan_details_id', 'id');
-    }
+
 }

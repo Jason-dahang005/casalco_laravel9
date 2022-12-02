@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('loan_applications', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('members_id');
-            $table->foreign('members_id')->references('id')->on('members')->onDelete('cascade');
+            $table->unsignedBigInteger('users_id');
+            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('loan_type');
             $table->integer('is_approved')->default(0);
             // $table->string('name_of_member');

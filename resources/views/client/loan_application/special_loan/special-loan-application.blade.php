@@ -22,9 +22,10 @@
                         <div class="line"></div>
                         <div class="col-lg-4">
 
-                                <input type="text" name="application_type" value="special">
+                                <input type="hidden" name="application_type" value="special">
 
-                            <input type="text" name="member" value="{{ $loan->id }}">
+                            {{-- USER ID --}}
+                    <input required type="hidden" name="member" value="@auth {{ auth()->user()->id }} @endauth">
 
                             <div class="form-group">
                                 <small>Name of Member</small>

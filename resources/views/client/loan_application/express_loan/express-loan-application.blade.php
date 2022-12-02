@@ -22,10 +22,10 @@
                       <h2 style="font-weight: 900; text-align: center; font-size: .4in; padding: 20px 0">@yield('title')</h2>
                 <div class="col-lg-9 col-md-9">
 
-                        <input type="text" name="application_type" value="express">
+                        <input type="hidden" name="application_type" value="express">
 
-                    {{-- MEMBER ID --}}
-                    <input required type="text" name="member" value="@auth {{ $loan->id }} @endauth">
+                    {{-- USER ID --}}
+                    <input required type="hidden" name="member" value="@auth {{ auth()->user()->id }} @endauth">
 
                     <div class="form-group">
                         <small>Name of Member</small><span class="asterisk">*</span>
@@ -130,7 +130,7 @@
                 <div class="col-lg-4 col-md-4">
                     <div class="form-group">
                         <small>Date of Birth</small><span class="asterisk">*</span>
-                        <input class="form-control" name="date_of_birth" placeholder="Enter date of birth" type="date" value="@auth {{ date('Y-m-d', strtotime('$loan->dob')) }} @endauth">
+                        <input class="form-control" name="date_of_birth" placeholder="Enter date of birth" type="text" value="@auth {{ $loan->dob }} @endauth">
                         <small class="text-danger">@error('date_of_birth') {{ $message }}@enderror</small>
                     </div>
                 </div>
