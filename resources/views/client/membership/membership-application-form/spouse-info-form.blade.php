@@ -44,7 +44,7 @@
 
 	<div class="col-lg-12 col-md-12">
 		<div class="form-group">
-			<small>MOTHER'S MADIEN NAME</small>
+			<small>MOTHER'S MAIDEN NAME</small>
 			<input type="text" class="form-control" name="spouse_mother" placeholder="ENTER MOTHER'S MADIEN NAME">
 		</div>
 	</div>

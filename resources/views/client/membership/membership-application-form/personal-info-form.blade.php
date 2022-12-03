@@ -163,7 +163,7 @@
       <div class="col-lg-4 col-mg-4">
         <div class="form-group">
             <small>EMAIL ADDRESS</small><span class="asterisk">*</span>
-            <input type="email" class="form-control" required name="email" placeholder="ENTER EMAIL">
+            <input type="email" style="text-transform: lowercase !important; ::placeholder: text-transform: none" class="form-control" required name="email" placeholder="ENTER EMAIL">
             <small class="text-danger">@error('email') {{ $message }}@enderror</small>
         </div>
     </div>

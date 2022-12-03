@@ -2,14 +2,14 @@
 <div class="row">
 	<div class="col-lg-4 col-md-4">
 		<div class="form-group">
-			<small>TIN</small>
+			<small>TIN</small><span class="asterisk">*</span>
 			<input type="text" class="form-control" name="TIN" placeholder="ENTER TIN NO">
 		</div>
 	</div>
 
 	<div class="col-lg-4 col-md-4">
 		<div class="form-group">
-			<small>SSS</small>
+			<small>SSS</small><span class="asterisk">*</span>
 			<input type="text" class="form-control" name="SSSnum" placeholder="ENTER SSS NO">
 		</div>
 	</div>
