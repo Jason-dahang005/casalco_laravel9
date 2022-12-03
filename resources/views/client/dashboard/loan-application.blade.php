@@ -21,14 +21,23 @@
                             </thead>
                             <tbody>
                                 @foreach ($loan as $l)
-                               
-                                    
-                              
+
+
+
                                     <tr>
                                         <td>{{ ucwords($l->loan_type) }}</td>
                                         <td>{{ date('m-d-Y, h:s:i ', strtotime($l->created_at)) }}</td>
                                         <td>
-                                            <span class="badge badge-secondary">Pending</span>
+                                            @if ($l->loan_status === 0)
+                                                <span class="badge badge-secondary">Pending</span>
+                                            @elseif($l->loan_status === 1)
+                                                <span class="badge badge-info">Pre-approved</span>
+                                            @elseif($l->loan_status === 2)
+                                                <span class="badge badge-success">Approved</span>
+                                            @elseif($l->loan_status === 5)
+                                                <span class="badge badge-danger">Declined</span>
+                                            @endif
+
                                         </td>
                                         <td>
                                             @if ($l->loan_type == 'express' || $l->loan_type == 'lad' )
@@ -40,10 +49,10 @@
                                                 <button class="btn btn-success">Details</button>
                                               </a>
                                             @endif
-                                            
+
                                         </td>
                                     </tr>
-                                   
+
                                 @endforeach
                             </tbody>
                         </table>

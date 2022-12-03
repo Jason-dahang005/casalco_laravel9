@@ -15,15 +15,15 @@ class ClientDashboardController extends Controller
     public function index()
     {
         $loan = LoanApplication::where('users_id', auth()->user()->id)
-                                ->where('is_approved', 0)
+                                ->where('loan_status', 0)
                                 ->get();
 
         $active = LoanApplication::where('users_id', auth()->user()->id)
-        ->where('is_approved', 2)
+        ->where('loan_status', 2)
         ->get();
 
         $paid = LoanApplication::where('users_id', auth()->user()->id)
-        ->where('is_approved', 3)
+        ->where('loan_status', 3)
         ->get();
         return view('client.dashboard.dashboard', compact('loan' , 'active' , 'paid'));
     }

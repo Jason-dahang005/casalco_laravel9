@@ -22,7 +22,6 @@ class LoanApplicationController extends Controller
     public function index()
     {
         $loan = LoanApplication::where('users_id', auth()->user()->id)
-                                ->where('is_approved', 0)
                                 ->get();
         return view('client.dashboard.loan-application', compact('loan'));
     }
@@ -67,7 +66,7 @@ class LoanApplicationController extends Controller
      */
     public function edit($id)
     {
-        
+
         $loan = LoanApplication::find($id);
         return view('client.dashboard.loan-application', compact('loan'));
     }
