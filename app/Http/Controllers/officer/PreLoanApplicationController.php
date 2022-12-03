@@ -5,6 +5,7 @@ use App\Models\ExpressLoanApp;
 use App\Http\Controllers\Controller;
 use App\Models\LoanApplication;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class PreLoanApplicationController extends Controller
 {
@@ -15,8 +16,46 @@ class PreLoanApplicationController extends Controller
      */
     public function index()
     {
-        $loan = LoanApplication::where('is_approved', 0)->get();
-        
+        $loan  = LoanApplication::leftJoin('users','loan_applications.users_id', '=', 'users.id')
+        ->leftJoin('members', 'members.users_id', '=', 'users.id')
+        ->leftJoin('membership_applications', 'members.membership_application_id', '=', 'membership_applications.id')
+        ->leftJoin('spouses', 'spouses.membership_application_id', '=', 'membership_applications.id')
+        ->leftJoin('beneficiaries', 'beneficiaries.membership_application_id', '=', 'membership_applications.id')
+        ->leftJoin('express_lad_loan_details', 'express_lad_loan_details.loan_applications_id', '=', 'loan_applications.id')
+        ->leftJoin('regular_special_loan_details', 'regular_special_loan_details.loan_applications_id', '=', 'loan_applications.id')
+        ->leftJoin('monthly_expenses', 'monthly_expenses.regular_special_loan_details_id', '=', 'regular_special_loan_details.id')
+        ->leftJoin('monthly_incomes', 'monthly_incomes.regular_special_loan_details_id', '=', 'regular_special_loan_details.id')
+        ->select(
+            'loan_applications.id as LOAN_ID',
+            'loan_applications.loan_type as TypeOfLoan',
+            'loan_applications.created_at as DATE_APPLIED',
+            'loan_applications.updated_at as DATE_PRE_APPROVED',
+
+            'users.*',
+
+            'members.*',
+
+            'membership_applications.*',
+
+            'spouses.*', 'beneficiaries.*',
+
+            'express_lad_loan_details.id as express_id',
+            'express_lad_loan_details.term_applied as exp_ta',
+            'express_lad_loan_details.amount_applied as exp_aa',
+            'express_lad_loan_details.mode_of_payment as exp_mop',
+            'express_lad_loan_details.employer_address as exp_emp_add',
+            'express_lad_loan_details.employer as exp_emp',
+            'express_lad_loan_details.product_loan as express_loan',
+
+            'regular_special_loan_details.*',
+
+            'monthly_expenses.*',
+
+            'monthly_incomes.*'
+            )
+        ->where('loan_status', '=', 0)
+        ->get();
+
         return view('officer.loan', compact('loan'));
     }
 
@@ -38,7 +77,7 @@ class PreLoanApplicationController extends Controller
      */
     public function store(Request $r)
     {
-        
+
         // $loan = new LoanApplication();
         // $loan->users_id = $r->user_id;
         // $loan->save();
@@ -60,7 +99,7 @@ class PreLoanApplicationController extends Controller
         // $l->tin = $r->tin;
         // $l->fb_acc = $r->fb_acc;
         // $l->loanApp_type = $r->loanApp_type;
-     
+
         // $l->save();
 
         // return back();

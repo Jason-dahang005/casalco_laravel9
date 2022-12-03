@@ -66,42 +66,42 @@
                                 <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2">
                                     <small class="text-success">MAX. 8 MONTHS</small>
                                     <div class="form-check">
-                                        <input required class="form-check-input" type="radio" id="pcl" name="product_loan" value="pcl" @checked(old('product_loan') === 'pcl')>
+                                        <input required class="form-check-input" type="radio" id="pcl" name="product_loan" value="pettycash loan" @checked(old('product_loan') === 'pettycash loan')>
                                         <label>PettyCash Loan</label>
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2">
                                     <small class="text-success">MAX. 4 MONTHS</small>
                                     <div class="form-check">
-                                        <input required class="form-check-input" type="radio" id="fcl" name="product_loan" value="fcl" @checked(old('product_loan') === 'fcl')>
+                                        <input required class="form-check-input" type="radio" id="fcl" name="product_loan" value="fastcash loan" @checked(old('product_loan') === 'fastcash loan')>
                                         <label>FastCash Loan</label>
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2">
                                     <small class="text-success">MAX. 1 MONTH</small>
                                     <div class="form-check">
-                                        <input required class="form-check-input" type="radio" id="icl" name="product_loan" value="icl" @checked(old('product_loan') === 'icl')>
+                                        <input required class="form-check-input" type="radio" id="icl" name="product_loan" value="instacash loan" @checked(old('product_loan') === 'instacash loan')>
                                         <label>InstaCash Loan</label>
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2">
                                     <small class="text-success">MAX. 12 MONTHS</small>
                                     <div class="form-check">
-                                        <input required class="form-check-input" type="radio" id="check1" name="product_loan" value="bdl" @checked(old('product_loan') === 'bdl')>
+                                        <input required class="form-check-input" type="radio" id="check1" name="product_loan" value="birthday loan" @checked(old('product_loan') === 'birthday loan')>
                                         <label>Birthday Loan</label>
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2">
                                     <small class="text-success">MAX. 12 MONTHS</small>
                                     <div class="form-check">
-                                        <input required class="form-check-input" type="radio" id="check1" name="product_loan" value="bdl" @checked(old('product_loan') === 'hcl')>
+                                        <input required class="form-check-input" type="radio" id="check1" name="product_loan" value="health-care loan" @checked(old('product_loan') === 'health-care loan')>
                                         <label>Health Care Loan</label>
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2">
                                     <small class="text-success">MAX. 12 MONTHS</small>
                                     <div class="form-check">
-                                        <input required class="form-check-input" type="radio" id="check1" name="product_loan" value="cl"  @checked(old('product_loan') === 'cl')>
+                                        <input required class="form-check-input" type="radio" id="check1" name="product_loan" value="car loan"  @checked(old('product_loan') === 'car loan')>
                                         <label>Calamity Loan </label>
                                     </div>
                                 </div>

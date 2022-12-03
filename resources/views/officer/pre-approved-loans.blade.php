@@ -2,47 +2,49 @@
 @section('title', 'Loan')
 @section('officer_content')
 
+
 <div class="col-md-12">
-<div class="white_shd full margin_bottom_30">
-    <div class="table_section padding_infor_info">
-        <div class="table-responsive-sm">
-            <table class="table table-bordered table-striped table-sm" id="example5">
-                <thead>
-                <tr>
-                  <th>First Name</th>
-                  <th>Account No</th>
-                  {{-- <th>Loan Category</th> --}}
-                  {{-- <th>Image</th> --}}
-                  <th>Loan Type</th>
-                  <th>Date Applied</th>
-                  <th>Status</th>
-                  <th>Actions</th>
-                </tr>
+    <div class="white_shd full margin_bottom_30">
+        <div class="table_section padding_infor_info">
+            <div class="table-responsive-lg">
+              <table class="table table-bordered table-striped table-sm" id="loan_application">
+                  <thead>
+                  <tr>
+                      <th>Last Name</th>
+                      <th>First Name</th>
+                      <th>Account No</th>
+                      <th>Loan Type</th>
+                      <th>Date Applied</th>
+                      <th>Date Pre-approved</th>
+                      <th>Status</th>
+                  </tr>
               </thead>
               <tbody>
-                
-               @foreach ($loan as $l)
-                  <tr>
-                   <td>{{$l->name_of_member}}</td>
-                   <td>{{$l->account_no}}</td>
-                   <td>{{$l->loan_type}}</td>
-                   <td>{{$l->created_at}}</td>
-                 
-                   <td> @if($l->is_approved==1)
-                    <span class="badge badge-secondary">Pre-Approved</span>
-                  @endif
+
+              @foreach ($loan as $l)
+              @if ($l->LS == 0)
+              <tr>
+                  <td>{{$l->last_name}}</td>
+                  <td>{{ $l->first_name }}</td>
+                  <td>{{ $l->acc_id }}</td>
+                  <td>{{$l->TypeOfLoan}}</td>
+                  <td>{{ date('m-d-Y h:i:s a', strtotime($l->DATE_APPLIED)) }}</td>
+                  <td>{{ date('m-d-Y h:i:s a', strtotime($l->DATE_PRE_APPROVED)) }}</td>
+
+                  <td>
+                    <span class="badge badge-info">Pre-approved</span>
                 </td>
-                   {{-- <td>
-                      <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal{{ $l->id }}">Details</button>
-                    </td>  --}}
-                </tr>
-               @endforeach
-                
+
+              </tr>
+              @endif
+              @endforeach
+
               </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-</div>
+              </table>
+
+          </div>
+      </div>
+      </div>
+  </div>
 
 @endsection

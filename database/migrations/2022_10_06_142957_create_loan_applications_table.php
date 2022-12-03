@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('users_id');
             $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('loan_type');
-            $table->integer('is_approved')->default(0);
+            $table->integer('loan_status')->default(0);
             // $table->string('name_of_member');
             // $table->string('account_no');
             // $table->string('present_address');
