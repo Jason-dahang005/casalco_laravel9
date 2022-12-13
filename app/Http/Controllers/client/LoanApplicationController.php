@@ -21,8 +21,7 @@ class LoanApplicationController extends Controller
      */
     public function index()
     {
-        $loan = LoanApplication::where('users_id', auth()->user()->id)
-                                ->get();
+        $loan = LoanApplication::where('users_id', auth()->user()->id)->get();
         return view('client.dashboard.loan-application', compact('loan'));
     }
 

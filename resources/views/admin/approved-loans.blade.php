@@ -4,7 +4,7 @@
 <div class="col-md-12">
   <div class="white_shd full margin_bottom_30">
       <div class="table_section padding_infor_info">
-          <div class="table-responsive-sm">
+          <div class="table-responsive-lg">
               <table class="table table-bordered table-striped table-sm" id="example5">
                   <thead>
                   <tr>
@@ -19,14 +19,14 @@
                   </tr>
                 </thead>
                 <tbody>
-                  
+
                  @foreach ($loan as $l)
                     <tr>
                      <td>{{$l->name_of_member}}</td>
                      <td>{{$l->account_no}}</td>
                      <td>{{$l->loan_type}}</td>
                      <td>{{$l->created_at}}</td>
-                   
+
                      <td> @if($l->is_approved)
                       <span class="badge badge-secondary">Approved</span>
                     @endif
@@ -36,7 +36,7 @@
                       </td>  --}}
                   </tr>
                  @endforeach
-                  
+
                 </tbody>
               </table>
           </div>

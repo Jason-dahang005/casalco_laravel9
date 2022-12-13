@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('express_lad_loan_details', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('loan_applications_id');
+            $table->foreignId('loan_applications_id')->constrained();
             $table->string('product_loan');
             $table->string('employer');
             $table->string('employer_address');
@@ -24,7 +24,6 @@ return new class extends Migration
             $table->string('mode_of_payment');
             $table->string('facebook_account');
             $table->string('scanned_signature');
-            $table->foreign('loan_applications_id')->references('id')->on('loan_applications')->onDelete('cascade');
             $table->timestamps();
         });
     }

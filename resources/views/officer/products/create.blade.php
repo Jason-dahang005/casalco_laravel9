@@ -40,19 +40,33 @@
                         <small class="text-danger">@error('description') {{ $message }} @enderror</small>
                     </div>
 
-                    <dib class="form-group">
+                    <div class="form-group">
                         <div class="form row">
                             <div class="col">
                                 <label for="">Maximum Loanable Amount</label>
-                                <input type="text" name="max_loan_amount" class="form-control" placeholder="Enter Maximum Loanable Amount">
+                                <input type="text" name="max_amount" class="form-control" placeholder="Enter Maximum Loanable Amount">
                             </div>
 
                             <div class="col">
                                 <label for="">Maximum Loanable Amount</label>
-                                <input type="text" name="min_loan_amount" class="form-control" placeholder="Enter Minimum Loanable Amount">
+                                <input type="text" name="min_amount" class="form-control" placeholder="Enter Minimum Loanable Amount">
                             </div>
                         </div>
-                    </dib>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form row">
+                            <div class="col">
+                                <label for="">Maximum Term Applied</label>
+                                <input type="text" name="max_term" class="form-control" placeholder="Enter Maximum Term">
+                            </div>
+
+                            <div class="col">
+                                <label for="">Minimum Term Applied</label>
+                                <input type="text" name="min_term" class="form-control" placeholder="Enter Minimum Term`">
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="form-group">
                         <button type="submit" class="btn cur-p btn-success">Submit</button>

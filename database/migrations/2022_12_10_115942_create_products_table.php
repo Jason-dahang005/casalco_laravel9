@@ -18,8 +18,10 @@ return new class extends Migration
             $table->integer('loan_type');
             $table->string('product_loan');
             $table->text('description');
-            $table->integer('max');
-            $table->integer('min');
+            $table->integer('max_amount');
+            $table->integer('min_amount');
+            $table->integer('max_term');
+            $table->integer('min_term');
             $table->timestamps();
         });
     }

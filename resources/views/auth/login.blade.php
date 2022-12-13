@@ -10,6 +10,7 @@
 		@include('auth.components.login.content')
 	</div>
 	<!-- END SIDEBAR & CONTENT -->
+    <br><br><br><br><br><br><br><br>
 
 @endsection
 

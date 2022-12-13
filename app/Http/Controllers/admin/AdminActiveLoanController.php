@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\admin;
-use App\Models\ExpressLoanApp;
-use App\Http\Controllers\Controller;
+
 use App\Models\LoanApplication;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ApproveLoanApplicationController extends Controller
+class AdminActiveLoanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -67,10 +67,10 @@ class ApproveLoanApplicationController extends Controller
             'monthly_expenses.others as others',
             'monthly_incomes.product_loan as prod_l',
             )
-        ->where('loan_status', '=', 1)
+        ->where('loan_status', '=', 2)
         ->get();
 
-        return view('admin.loan', compact('loan'));
+        return view('admin.active_loan.index', compact('loan'));
     }
 
     /**
@@ -97,10 +97,10 @@ class ApproveLoanApplicationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\LoanApplication  $loanApplication
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(LoanApplication $loanApplication)
     {
         //
     }
@@ -108,40 +108,33 @@ class ApproveLoanApplicationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\LoanApplication  $loanApplication
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(LoanApplication $loanApplication)
     {
-        $loan = LoanApplication::find($id);
-        return view('officer.loan', compact('loan'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\LoanApplication  $loanApplication
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, LoanApplication $loanApplication)
     {
-        $loan = LoanApplication::find($id);
-        $loan->is_approved = $request->is_approved;
-        // $loan->acc_id = $request->acc_id;
-        // $loan->or_no = $request->or_no;
-        $loan->save();
-
-        return redirect('admin/approved-loans');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\LoanApplication  $loanApplication
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(LoanApplication $loanApplication)
     {
         //
     }

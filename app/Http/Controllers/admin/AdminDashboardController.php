@@ -17,7 +17,7 @@ class AdminDashboardController extends Controller
     public function index()
     {
         $membership = MembershipApplication::where('is_approved', 1)->get();
-        $loan = LoanApplication::where('is_approved', '1')->count();
+        $loan = LoanApplication::where('loan_status', '1')->count();
         $members = MembershipApplication::where('is_approved', 2)->count();
         return view('admin.dashboard', compact(['membership', 'members', 'loan']));
     }

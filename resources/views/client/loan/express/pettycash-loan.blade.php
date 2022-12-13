@@ -9,28 +9,20 @@
         <!-- BEGIN PORTFOLIO DESCRIPTION -->
         <div class="col-md-5">
           <h2>PETTYCASH LOAN</h2>
-          <p>Molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa quis tempor incididunt ut et dolore et dolorum fuga. Ut non libero consectetur adipiscing elit magna. Sed et quam lacus.</p>
-          <p>Lorem ipsum dolor sit amet, dolore eiusmod quis tempor incididunt ut et dolore Ut veniam unde nostrudlaboris. Sed unde omnis iste natus error sit voluptatem.</p>
+          <p>To provide business units with sufficient cash to cover minor expenditures..</p>
           <br>
-          {{-- <div class="row front-lists-v2 margin-bottom-15">
-            <div class="col-md-6">
-              <ul class="list-unstyled">
-                <li><i class="fa fa-html5"></i> HTML5/CSS3</li>
-                <li><i class="fa fa-bell"></i> Web Deisgn</li>
-                <li><i class="fa fa-globe"></i> Web Development</li>
-                <li><i class="fa fa-shopping-cart"></i> Shoping Cart</li>
-              </ul>
-            </div>
-            <div class="col-md-6">
-              <ul class="list-unstyled">
-                <li><i class="fa fa-dropbox"></i> Free Storage</li>
-                <li><i class="fa fa-cloud"></i> Cloud Hosting</li>
-                <li><i class="fa fa-comments"></i> Free Support</li>
-                <li><i class="fa fa-star"></i> Awesome UI</li>
+          <div class="row front-lists-v2 margin-bottom-15">
+            <div class="col-md-12">
+              <ul class="list-styled">
+                <li>
+                    <p>Max loanable amount is up to &#8369;15,000.</p>
+                </li>
+                <li>
+                    <p>Maximum term is 8 months.</p>
+                </li>
               </ul>
             </div>
           </div>
-          <a class="btn btn-primary" href="javascript:;"> VISIT THE PROJECT</a> --}}
         </div>
         <!-- END PORTFOLIO DESCRIPTION -->
       </div>

@@ -26,6 +26,7 @@
         <ul class="collapse list-unstyled" id="element">
           <li><a href="/admin/membership">> <span>Membership</span></a></li>
           <li><a href="/admin/loan">> <span>Loan</span></a></li>
+          <li><a href="/admin/active-loan">> <span>Active Loan</span></a></li>
         </ul>
       </li>
       <li><a href="/admin/member-list"><i class="fa fa-users red_color"></i> <span>Members</span></a></li>
@@ -35,6 +36,7 @@
         <ul class="collapse list-unstyled" id="element1">
           <li><a href="/admin/approved-membership">> <span>Approved Memberships</span></a></li>
           <li><a href="/admin/approved-loans">> <span>Approved Loans</span></a></li>
+          <li><a href="/admin/paid-loans">> <span>Paid Loans</span></a></li>
         </ul>
       </li>
     </ul>

@@ -2,8 +2,6 @@
 @section('title', 'Loan Application Details')
 @section('officer_content')
 
-
-
           <!-- Modal Header -->
           <div class="modal-header">
              <h4 class="modal-title">CASALCO Loan Application Form</h4>
@@ -11,14 +9,14 @@
           <!-- Modal body -->
           <form action="{{ route('loan.update', $loan->id) }}" method="POST">
               @csrf
-              
+
               @method('PUT')
               <input type="hidden" value="1" name="is_approved">
           <div class="modal-body">
             <h4>Express Loan</h4>
-           
+
             <input  type="hidden" value="1" name="loanApp_type">
-           
+
             <div class="border border-danger"></div>
             <div class="row pt-3">
               <div class="col-lg-4">
@@ -56,10 +54,10 @@
                   <option value="InstaCash">InstaCash</option>
                   <option value="Health Insurace">Health Insurace</option>
                   <option value="Birthday Loan">Birthday Loan</option>
-                  
+
                 </select>
                 </div>
-             
+
               </div>
               <div class="col-lg-4">
                 <div class="form-group">
@@ -123,37 +121,37 @@
                 <img src="{{ asset($loan->scanned_signature)}}" width = '200' height = '150' class = "img img-responsive" />
               </div>
               <div class="col-sm">
-               
+
               </div>
               <div class="col-sm">
-               
+
               </div>
             </div>
           </div>
           <!-- Modal footer -->
           <div class="modal-footer">
-          
+
           <!-- Modal footer -->
           <div class="modal-footer">
-            
-             
-             
+
+
+
               <button type="submit" class="btn btn-success">Pre-Approved</button>
             </form>
 
               <form action="{{ route('loan.update', $loan->id) }}" method="POST">
                 @csrf
-              
+
                 @method('PUT')
                 <input type="hidden" name="is_approved" value="3">
               <button type="submit" class="btn btn-warning ">Disapproved</button>
                 </form>
-            
-         
+
+
           </div>
        </div>
     </div>
   </div>
-  
+
 
   @endsection

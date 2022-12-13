@@ -15,6 +15,8 @@ use App\Http\Controllers\officer\ProductLoanController;
 use App\Http\Controllers\officer\LoanAppController;
 use App\Http\Controllers\officer\MembershipInfoController;
 use App\Http\Controllers\officer\ProductController;
+use App\Http\Controllers\officer\OfficerLoanApplicationController;
+
 
 // ADMIN CONTROLLER
 use App\Http\Controllers\admin\AdminDashboardController;
@@ -24,6 +26,7 @@ use App\Http\Controllers\admin\LoanApplicationReportsController;
 use App\Http\Controllers\admin\AccountController;
 use App\Http\Controllers\admin\MemberListController;
 use App\Http\Controllers\admin\PreApprovedMembershipController;
+use App\Http\Controllers\admin\AdminActiveLoanController;
 
 // CLIENT CONTROLLER
 use App\Http\Controllers\MembershipReportsController;
@@ -83,7 +86,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function() {
   Route::resource('/admin/member-list', MemberListController::class);
   Route::resource('/admin/accounts', AccountController::class);
   Route::resource('/pre-app-membership', PreApprovedMembershipController::class);
-
+  Route::resource('/admin/active-loan', AdminActiveLoanController::class);
 
 });
 
@@ -147,7 +150,8 @@ Route::middleware(['auth', 'isOfficer'])->group(function() {
   Route::resource('/membership_info', MembershipInfoController::class);
   Route::resource('/loan_application', LoanAppController::class);
   Route::resource('products', ProductController::class);
- 
+  Route::resource('loan-applications', OfficerLoanApplicationController::class);
+
   // Route::get('/officer/{id}', [MembershipInfoController::class, 'show']);
   // Route::get('/officer/membership_info/{id}', 'MembershipInfoController@show')->name('displayMembershipApplication');
 

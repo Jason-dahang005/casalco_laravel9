@@ -9,23 +9,25 @@
           <div class="col-md-12">
               <div class="white_shd margin_bottom_20">
                   <div class="table_section padding_infor_info">
-                      <table class="table" id="loan_application">
+                      <table class="table table-bordered table-striped" id="loan_application">
                           <thead>
                               <tr>
                                   <th>Loan Type</th>
                                   <th>Date Applied</th>
+                                  <th>Datea Approved</th>
                                   <th>Status</th>
                                   <th>Action</th>
                               </tr>
                           </thead>
                           <tbody>
                               @foreach ($loan as $l)
-                             
-                                  
-                            
+
+
+
                                   <tr>
                                       <td>{{ ucwords($l->loan_type) }}</td>
                                       <td>{{ date('m-d-Y, h:s:i ', strtotime($l->created_at)) }}</td>
+                                      <td>{{ date('m-d-Y, h:s:i ', strtotime($l->updated_at)) }}</td>
                                       <td>
                                           <span class="badge badge-success">Active</span>
                                       </td>
@@ -42,7 +44,7 @@
                                         @endif
                                       </td>
                                   </tr>
-                                  
+
                               @endforeach
                           </tbody>
                       </table>
@@ -54,5 +56,5 @@
 </div>
 
 
- 
+
 @endsection

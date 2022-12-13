@@ -14,7 +14,7 @@
 	<meta name="author" content="">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 	<!-- site icon -->
 	<link rel="icon" href="../pluto/images/fevicon.png" type="image/png" />
 	<!-- bootstrap css -->
@@ -54,9 +54,9 @@
 						 </div>
 							@yield('admin_content')
 						</div>
-						<div class="container-fluid">
+						{{-- <div class="container-fluid">
 							@include('admin.footer')
-						</div>
+						</div> --}}
 					</div>
 				</div>
 			</div>
@@ -71,7 +71,7 @@
 	<!-- select country -->
 	<script src="../pluto/js/bootstrap-select.js"></script>
 	<!-- owl carousel -->
-	<script src="../pluto/js/owl.carousel.js"></script> 
+	<script src="../pluto/js/owl.carousel.js"></script>
 	<!-- chart js -->
 	<script src="../pluto/js/Chart.min.js"></script>
 	<script src="../pluto/js/Chart.bundle.min.js"></script>
@@ -113,6 +113,16 @@
       "autoWidth": true,
       "responsive": true,
 			order: [[2, 'desc']]
+    });
+
+    $('#active_loan').DataTable({
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": true,
+      "responsive": true,
     });
   });
 	</script>

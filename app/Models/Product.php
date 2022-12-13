@@ -12,6 +12,10 @@ class Product extends Model
     protected $fillable = [
         'loan_type',
         'product_loan',
-        'description'
+        'description',
+        'max_amount',
+        'min_amount',
+        'max_term',
+        'min_term'
     ];
 }

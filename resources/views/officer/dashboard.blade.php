@@ -3,28 +3,11 @@
 @section('officer_content')
 
 <div class="row column1">
-  <!-- <div class="col-md-6 col-lg-4">
-    <a href="/officer/membership-application">
-      <div class="full counter_section margin_bottom_30">
-				<div class="couter_icon">
-					<div> 
-					<i class="fa fa-user yellow_color"></i>
-					</div>
-				</div>
-				<div class="counter_no">
-					<div>
-					<p class="total_no">0</p>
-					<p class="head_couter">List of Members</p>
-					</div>
-				</div>
-      </div>
-   </a>
-  </div> -->
   <div class="col-md-6 col-lg-6">
     <a href="/officer/membership-application"">
 			<div class="full counter_section margin_bottom_30">
 				<div class="couter_icon">
-					<div> 
+					<div>
 					<i class="fa fa-folder blue1_color"></i>
 					</div>
 				</div>
@@ -41,13 +24,13 @@
     <a href="/officer/loan">
 			<div class="full counter_section margin_bottom_30">
 				<div class="couter_icon">
-					<div> 
+					<div>
 					<i class="fa fa-money green_color"></i>
 					</div>
 				</div>
 				<div class="counter_no">
 					<div>
-					<p class="total_no">0</p>
+					<p class="total_no">{{ count($loan) }}</p>
 					<p class="head_couter">Pending Loan Application
 					</div>
 				</div>
@@ -55,7 +38,7 @@
 		</a>
   </div>
  </div>
- 
+
  {{-- <div class="row column1 social_media_section">
   <div class="col-md-6 col-lg-3">
      <div class="full socile_icons fb margin_bottom_30">
@@ -218,12 +201,12 @@
             <div class="col-md-12">
                <div class="progress_bar">
                   <!-- Skill Bars -->
-                  <span class="skill" style="width:73%;">Facebook <span class="info_valume">73%</span></span>                  
+                  <span class="skill" style="width:73%;">Facebook <span class="info_valume">73%</span></span>
                   <div class="progress skill-bar ">
                      <div class="progress-bar progress-bar-animated progress-bar-striped" role="progressbar" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100" style="width: 73%;">
                      </div>
                   </div>
-                  <span class="skill" style="width:62%;">Twitter <span class="info_valume">62%</span></span>   
+                  <span class="skill" style="width:62%;">Twitter <span class="info_valume">62%</span></span>
                   <div class="progress skill-bar">
                      <div class="progress-bar progress-bar-animated progress-bar-striped" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" style="width: 62%;">
                      </div>

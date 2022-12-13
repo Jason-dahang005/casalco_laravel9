@@ -1,5 +1,5 @@
 @extends('client.layout.index2')
-@section('title', 'Online Membership Application Form')
+@section('title', 'Membership Application Form')
 @section('client_content')
 
 

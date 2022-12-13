@@ -5,8 +5,7 @@
         <!-- BEGIN PORTFOLIO DESCRIPTION -->
         <div class="col-md-5">
           <h2>FASTCASH LOAN</h2>
-          <p>Molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa quis tempor incididunt ut et dolore et dolorum fuga. Ut non libero consectetur adipiscing elit magna. Sed et quam lacus.</p>
-          <p>Lorem ipsum dolor sit amet, dolore eiusmod quis tempor incididunt ut et dolore Ut veniam unde nostrudlaboris. Sed unde omnis iste natus error sit voluptatem.</p>
+          <p>Provides non-collateral and no guarantee required online loan service to every ordinary borrower, to help every member solve their financial problems..</p>
           {{-- <br>
           <div class="row front-lists-v2 margin-bottom-15">
             <div class="col-md-6">

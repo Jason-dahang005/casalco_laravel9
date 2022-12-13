@@ -11,7 +11,7 @@
             <div class="table-responsive-lg">
                 <a href="{{ route('products.create') }}" class="btn cur-p btn-info mb-3"><i class="fa fa-plus"></i> Add Product Loan</a>
                 <table class="table table-bordered table-striped" id="product_table">
-                    <thead class="thead-dark">
+                    <thead>
                         <tr>
                             <th>Loan Type</th>
                             <th>Product Loan</th>

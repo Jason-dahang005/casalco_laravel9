@@ -60,7 +60,7 @@
                          @endif
 						</div>
 						<div class="container-fluid">
-							@include('officer.footer')
+							{{-- @include('officer.footer') --}}
 							@include('sweetalert::alert')
 						</div>
 					</div>

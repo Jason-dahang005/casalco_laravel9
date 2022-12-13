@@ -70,4 +70,7 @@
 	</div>
 	<!-- END SIDEBAR & CONTENT -->
 
+    <br><br><br><br>
+    <br>
+
 @endsection

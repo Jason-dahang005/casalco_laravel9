@@ -33,6 +33,6 @@ class ExpressLadLoanDetails extends Model
 
 
     public function loan(){
-        return $this->belongsTo(LoanApplication::class);
+        return $this->belongsTo(LoanApplication::class, 'loan_application_id', 'id');
 }
 }

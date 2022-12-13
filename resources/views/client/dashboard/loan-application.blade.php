@@ -2,15 +2,13 @@
 @section('title', 'Loan Application')
 @section('client_dashboard_content')
 
-
-<div class="card">
-    <div class="card-body">
-        <div class="row">
-            <!-- table section -->
-            <div class="col-md-12">
-                <div class="white_shd margin_bottom_30">
-                    <div class="table_section padding_infor_info">
-                        <table class="table" id="loan_application">
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="col-md-12">
+            <div class="white_shd full margin_bottom_30">
+                <div class="table_section padding_infor_info">
+                    <div class="table-responsive-lg">
+                        <table class="table table-bordered table-striped" id="loan_application">
                             <thead>
                                 <tr>
                                     <th>Loan Type</th>
@@ -21,11 +19,8 @@
                             </thead>
                             <tbody>
                                 @foreach ($loan as $l)
-
-
-
                                     <tr>
-                                        <td>{{ ucwords($l->loan_type) }}</td>
+                                        <td>{{ ucwords($l->loan_type) }} Loan</td>
                                         <td>{{ date('m-d-Y, h:s:i ', strtotime($l->created_at)) }}</td>
                                         <td>
                                             @if ($l->loan_status === 0)
@@ -62,6 +57,7 @@
         </div>
     </div>
 </div>
+
 
 
 

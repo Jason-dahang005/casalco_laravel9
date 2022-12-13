@@ -7,7 +7,6 @@
 <div class="row margin-bottom-40">
   <!-- BEGIN CONTENT -->
   <div class="col-md-12 col-sm-12">
-    <h1>Online Membership Application</h1>
     <div class="content-page">
       <div class="row margin-bottom-30">
         <!-- BEGIN INFO BLOCK -->

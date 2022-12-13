@@ -15,8 +15,8 @@ class LoanApplicationReportsController extends Controller
      */
     public function index()
     {
-        $loan = LoanApplication::where('is_approved', 2)->get();
-        
+        $loan = LoanApplication::where('loan_status', 2)->get();
+
         return view('admin.approved-loans', compact('loan'));
     }
 
