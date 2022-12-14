@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('monthly_expenses', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('regular_special_loan_details_id');
+            $table->foreignId('regular_special_loan_details_id')->constrained();
             $table->string('scanned_signature');
             $table->integer('food');
             $table->integer('education_bill');
@@ -24,7 +24,6 @@ return new class extends Migration
             $table->integer('transportation');
             $table->integer('allowances');
             $table->integer('others');
-            $table->foreign('regular_special_loan_details_id')->references('id')->on('regular_special_loan_details')->onDelete('cascade');
             $table->timestamps();
         });
     }

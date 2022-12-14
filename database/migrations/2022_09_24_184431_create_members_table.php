@@ -17,10 +17,8 @@ return new class extends Migration
     {
         Schema::create('members', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('membership_application_id');
-            $table->unsignedBigInteger('users_id');
-            $table->foreign('membership_application_id')->references('id')->on('membership_applications')->onDelete('cascade');
-            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignId('membership_applications_id')->constrained();
+            $table->foreignId('users_id')->constrained();
             $table->timestamps();
         });
     }

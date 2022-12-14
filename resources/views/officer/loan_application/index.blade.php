@@ -15,7 +15,7 @@
                             <th>Loan Type</th>
                             <th>Date Applied</th>
                             <th>Status</th>
-                            <th>Actions</th>
+                            <th style="width: 10%">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -34,7 +34,9 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <a href="{{ route('loan-applications.edit',$l->LOAN_ID) }}" class="btn cur-p btn-success"><i class="fa fa-eye"></i> Details</a>
+                                    <a href="{{ route('loan-applications.show',$l->LOAN_ID) }}" class="btn cur-p btn-success"data-toggle="tooltip" data-placement="bottom" title="View Details"><i class="fa fa-eye"></i></a>
+                                    <a href="" class="btn cur-p btn-primary"data-toggle="tooltip" data-placement="bottom" title="Approve Application"><i class="fa fa-check-square"></i></a>
+                                    <a href="" class="btn cur-p btn-danger"data-toggle="tooltip" data-placement="bottom" title="Decline Application"><i class="fa fa-ban"></i></a>
                                 </td>
                             </tr>
                         @endforeach

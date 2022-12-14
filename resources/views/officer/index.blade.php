@@ -132,6 +132,7 @@
 				"info": true,
 				"autoWidth": true,
 				"responsive": true,
+                order: [[4, 'desc']]
 			})
 
 			$('#product_table').DataTable({

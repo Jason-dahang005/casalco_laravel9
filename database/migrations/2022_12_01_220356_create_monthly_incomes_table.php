@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('monthly_incomes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('regular_special_loan_details_id');
+            $table->foreignId('regular_special_loan_details_id')->constrained();
             $table->string('product_loan');
             $table->integer('borrower_income');
             $table->integer('other_income');
@@ -23,7 +23,6 @@ return new class extends Migration
             $table->integer('amount_applied');
             $table->integer('term_applied');
             $table->string('mode_of_payment');
-            $table->foreign('regular_special_loan_details_id')->references('id')->on('regular_special_loan_details')->onDelete('cascade');
             $table->timestamps();
         });
     }

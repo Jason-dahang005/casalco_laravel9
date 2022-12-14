@@ -19,9 +19,10 @@ class LoanApplicationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $loan = LoanApplication::where('users_id', auth()->user()->id)->get();
+        $loan = LoanApplication::with('member.user')->whereRelation('members', 'users_id')->get();
+
         return view('client.dashboard.loan-application', compact('loan'));
     }
 

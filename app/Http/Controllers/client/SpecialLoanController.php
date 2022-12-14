@@ -24,7 +24,7 @@ class SpecialLoanController extends Controller
     {
         if (Auth::check()) {
             $loan = Member::join('users', 'users.id', '=', 'members.users_id')
-                        ->join('membership_applications', 'membership_applications.id', '=', 'members.membership_application_id')
+                        ->join('membership_applications', 'membership_applications.id', '=', 'members.membership_applications_id')
                         ->select('users.*', 'membership_applications.*', 'members.*')
                         ->where('users_id', '=', auth()->user()->id)
                         ->first();
@@ -56,7 +56,7 @@ class SpecialLoanController extends Controller
     public function store(Request $request)
     {
         $applyloan = new LoanApplication();
-        $applyloan->users_id = $request->member;
+        $applyloan->members_id = $request->member;
         $applyloan->loan_type = $request->application_type;
         $applyloan->save();
 

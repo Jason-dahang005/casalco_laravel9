@@ -14,7 +14,11 @@ class LoanApplication extends Model
         return $this->belongsTo(ExpressLadLoanDetails::class, 'id');
     }
     public function regularSpecial(){
-        return $this->hasMany(RegularSpecialLoanDetails::class,'loan_applications_id');
+        return $this->belongsTo(RegularSpecialLoanDetails::class,'id');
+    }
+
+    public function members(){
+        return $this->belongsTo(Member::class, 'id');
     }
 }
 

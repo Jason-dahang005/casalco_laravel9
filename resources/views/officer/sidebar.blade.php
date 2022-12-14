@@ -27,8 +27,8 @@
       <li>
         <a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-folder-open orange_color"></i> <span>Applications</span></a>
         <ul class="collapse list-unstyled" id="element">
-          <li><a href="/officer/membership-application">> <span>Membership Application</span></a></li>
-          <li><a href="/officer/loan">> <span>Loan</span></a></li>
+          <li><a href="/officer/membership-application">> <span>Membership Applications</span></a></li>
+          <li><a href="/loan-applications">> <span>Loan Applications</span></a></li>
         </ul>
       </li>
 

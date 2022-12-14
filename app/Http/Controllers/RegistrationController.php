@@ -57,7 +57,7 @@ class RegistrationController extends Controller
 
             Member::create([
                 'users_id'                  => $user->id,
-                'membership_application_id' => $ms_id
+                'membership_applications_id'     => $ms_id
             ]);
 
             return redirect('client/dashboard');

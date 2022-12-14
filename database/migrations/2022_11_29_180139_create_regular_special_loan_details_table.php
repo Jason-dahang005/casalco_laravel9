@@ -15,11 +15,10 @@ return new class extends Migration
     {
         Schema::create('regular_special_loan_details', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('loan_applications_id');
+            $table->foreignId('loan_applications_id')->constrained();
             $table->string('length_of_service');
             $table->string('employment_status');
             $table->string('present_position');
-            $table->foreign('loan_applications_id')->references('id')->on('loan_applications')->onDelete('cascade');
             $table->timestamps();
         });
     }

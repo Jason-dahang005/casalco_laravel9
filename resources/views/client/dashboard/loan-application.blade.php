@@ -8,7 +8,7 @@
             <div class="white_shd full margin_bottom_30">
                 <div class="table_section padding_infor_info">
                     <div class="table-responsive-lg">
-                        <table class="table table-bordered table-striped" id="loan_application">
+                        {{-- <table class="table table-bordered table-striped" id="loan_application">
                             <thead>
                                 <tr>
                                     <th>Loan Type</th>
@@ -50,7 +50,9 @@
 
                                 @endforeach
                             </tbody>
-                        </table>
+                        </table> --}}
+
+                        {{ $loan->members->id }}
                     </div>
                 </div>
             </div>

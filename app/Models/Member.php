@@ -10,16 +10,11 @@ class Member extends Model
     use HasFactory;
 
     protected $fillable = [
-        'membership_application_id',
+        'membership_applications_id',
         'users_id'
     ];
 
-    public function users(){
-        return $this->belongsTo(User::class);
+    public function user(){
+        return $this->belongsTo(User::class, 'users_id');
     }
-
-    public function mem(){
-        return $this->belongsTo(MembershipApplication::class);
-    }
-
 }

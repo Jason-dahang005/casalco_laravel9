@@ -23,5 +23,5 @@ class MonthlyExpenses extends Model
 
     public function regular(){
         return $this->belongsTo(RegularSpecialLoanDetails::class);
-}
+    }
 }

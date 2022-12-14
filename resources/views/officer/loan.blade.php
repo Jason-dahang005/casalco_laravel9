@@ -67,103 +67,104 @@
 
                   @method('PUT')
                   <input type="hidden" value="1" name="is_approved">
-              <div class="modal-body">
-                <h4>{{ ucwords($l->TypeOfLoan) }} Loan</h4>
+                    <div class="modal-body">
+                      <h4>{{ ucwords($l->TypeOfLoan) }} Loan</h4>
 
-                <input  type="hidden" value="1" name="loanApp_type">
+                      <input  type="hidden" value="1" name="loanApp_type">
 
-                <div class="border border-danger"></div>
-                <div class="row pt-3">
-                  <div class="col-lg-8">
-                    <div class="form-group">
-                    <label for="First Name" class="form-label">Member's Name</label>
-                      <input type="text" class="form-control" name="name" placeholder="Name" value="{{ ucwords($l->last_name) }}, {{ ucwords($l->first_name) }} {{ ucwords($l->middle_name) }}" >
+                      <div class="border border-danger"></div>
+                      <div class="row pt-3">
+                        <div class="col-lg-8">
+                          <div class="form-group">
+                          <label for="First Name" class="form-label">Member's Name</label>
+                            <input type="text" class="form-control" name="name" placeholder="Name" value="{{ ucwords($l->last_name) }}, {{ ucwords($l->first_name) }} {{ ucwords($l->middle_name) }}" >
+                          </div>
+                        </div>
+                        <div class="col-lg-4">
+                          <div class="form-group">
+                          <label for="First Name" class="form-label">Account ID</label>
+                            <input type="text" class="form-control" name="acc_id" placeholder="Account ID" disabled value="{{ $l->acc_id }}">
+                          </div>
+                        </div>
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                          <label for="First Name" class="form-label">Present Address</label>
+                            <input type="text" class="form-control" name="present_address" placeholder="Present Address" value="{{$l->address}}" >
+                          </div>
+                        </div>
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                          <label for="First Name" class="form-label">Permanent Address</label>
+                            <input type="text" class="form-control" name="permanent_address" placeholder="Permanent Address" value="{{$l->address}}">
+                          </div>
+                      </div>
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                          <label for="First Name" class="form-label">Employer</label>
+                            <input type="text" class="form-control" name="emp" placeholder="Employee" value="{{$l->exp_emp}}">
+                          </div>
+                        </div>
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                          <label for="First Name" class="form-label">Employee Address</label>
+                            <input type="text" class="form-control" name="emp_address" placeholder="Employee Address" value="{{$l->exp_emp_add}}" >
+                          </div>
+                        </div>
+                        <div class="col-lg-4">
+                          <div class="form-group">
+                              <label for="First Name" class="form-label">Loan Type</label>
+                              <input type="text" class="form-control" name="loan_type" placeholder="Loan Type" value="{{ $l->express_loan }}">
+                          </div>
+                        </div>
+                        <div class="col-lg-4">
+                          <div class="form-group">
+                              <label for="" class="form-label">Date of Birth</label>
+                              <input type="text" class="form-control" name="dob" placeholder="Date of Birth" value="{{ $l->dob }}">
+                          </div>
+                        </div>
+                        <div class="col-lg-4">
+                          <div class="form-group">
+                          <label for="First Name" class="form-label">Email</label>
+                            <input type="text" class="form-control" name="email" placeholder="Email" value="{{$l->email}}" >
+                          </div>
+                        </div>
+                        <div class="col-lg-4">
+                          <div class="form-group">
+                          <label for="First Name" class="form-label">Amount</label>
+                            <input type="text" class="form-control" name="amount" placeholder="Amount" value="{{$l->exp_aa}}">
+                          </div>
+                        </div>
+                        <div class="col-lg-4">
+                          <div class="form-group">
+                          <label for="First Name" class="form-label">Mode of Payment</label>
+                            <input type="text" class="form-control" name="mode_payment" placeholder="Mode of Payment" value="{{$l->exp_mop}}"">
+                          </div>
+                        </div>
+                        <div class="col-lg-4">
+                          <div class="form-group">
+                          <label for="First Name" class="form-label">Term Applied</label>
+                            <input type="text" class="form-control" name="term_applied" placeholder="Term Applied" value="{{ $l->exp_ta }}">
+                          </div>
+                        </div>
+                        <div class="col-lg-4">
+                          <div class="form-group">
+                          <label for="First Name" class="form-label">Phone No.</label>
+                            <input type="text" class="form-control" name="phone_no" placeholder="Phone No." value="{{$l->contact_number}}">
+                          </div>
+                        </div>
+                        <div class="col-lg-4">
+                          <div class="form-group">
+                          <label for="First Name" class="form-label">TIN</label>
+                            <input type="text" class="form-control" name="tin" placeholder="TIN" value="{{$l->TIN}}" >
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-lg-4">
-                    <div class="form-group">
-                    <label for="First Name" class="form-label">Account ID</label>
-                      <input type="text" class="form-control" name="acc_id" placeholder="Account ID" disabled value="{{ $l->acc_id }}">
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success mb-4 mt-4">Pre-Approved</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Decline</button>
                     </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="form-group">
-                    <label for="First Name" class="form-label">Present Address</label>
-                      <input type="text" class="form-control" name="present_address" placeholder="Present Address" value="{{$l->address}}" >
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="form-group">
-                    <label for="First Name" class="form-label">Permanent Address</label>
-                      <input type="text" class="form-control" name="permanent_address" placeholder="Permanent Address" value="{{$l->address}}">
-                    </div>
-                </div>
-                  <div class="col-lg-6">
-                    <div class="form-group">
-                    <label for="First Name" class="form-label">Employer</label>
-                      <input type="text" class="form-control" name="emp" placeholder="Employee" value="{{$l->exp_emp}}">
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="form-group">
-                    <label for="First Name" class="form-label">Employee Address</label>
-                      <input type="text" class="form-control" name="emp_address" placeholder="Employee Address" value="{{$l->exp_emp_add}}" >
-                    </div>
-                  </div>
-                  <div class="col-lg-4">
-                    <div class="form-group">
-                        <label for="First Name" class="form-label">Loan Type</label>
-                        <input type="text" class="form-control" name="loan_type" placeholder="Loan Type" value="{{ $l->express_loan }}">
-                    </div>
-                  </div>
-                  <div class="col-lg-4">
-                    <div class="form-group">
-                        <label for="" class="form-label">Date of Birth</label>
-                        <input type="text" class="form-control" name="dob" placeholder="Date of Birth" value="{{ $l->dob }}">
-                    </div>
-                  </div>
-                  <div class="col-lg-4">
-                    <div class="form-group">
-                    <label for="First Name" class="form-label">Email</label>
-                      <input type="text" class="form-control" name="email" placeholder="Email" value="{{$l->email}}" >
-                    </div>
-                  </div>
-                  <div class="col-lg-4">
-                    <div class="form-group">
-                    <label for="First Name" class="form-label">Amount</label>
-                      <input type="text" class="form-control" name="amount" placeholder="Amount" value="{{$l->exp_aa}}">
-                    </div>
-                  </div>
-                  <div class="col-lg-4">
-                    <div class="form-group">
-                    <label for="First Name" class="form-label">Mode of Payment</label>
-                      <input type="text" class="form-control" name="mode_payment" placeholder="Mode of Payment" value="{{$l->exp_mop}}"">
-                    </div>
-                  </div>
-                  <div class="col-lg-4">
-                    <div class="form-group">
-                    <label for="First Name" class="form-label">Term Applied</label>
-                      <input type="text" class="form-control" name="term_applied" placeholder="Term Applied" value="{{ $l->exp_ta }}">
-                    </div>
-                  </div>
-                  <div class="col-lg-4">
-                    <div class="form-group">
-                    <label for="First Name" class="form-label">Phone No.</label>
-                      <input type="text" class="form-control" name="phone_no" placeholder="Phone No." value="{{$l->contact_number}}">
-                    </div>
-                  </div>
-                  <div class="col-lg-4">
-                    <div class="form-group">
-                    <label for="First Name" class="form-label">TIN</label>
-                      <input type="text" class="form-control" name="tin" placeholder="TIN" value="{{$l->TIN}}" >
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Modal footer -->
-              <div class="modal-footer">
-                  <button type="submit" class="btn btn-success mb-4 mt-4">Pre-Approved</button>
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">Decline</button>
                 </form>
               </div>
            </div>

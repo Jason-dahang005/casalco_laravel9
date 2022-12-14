@@ -16,7 +16,7 @@ class PreLoanApplicationController extends Controller
      */
     public function index()
     {
-        $loan  = LoanApplication::leftJoin('users','loan_applications.users_id', '=', 'users.id')
+        $loan  = LoanApplication::leftJoin('users','loan_applications.members_id', '=', 'users.id')
         ->leftJoin('members', 'members.users_id', '=', 'users.id')
         ->leftJoin('membership_applications', 'members.membership_application_id', '=', 'membership_applications.id')
         ->leftJoin('spouses', 'spouses.membership_application_id', '=', 'membership_applications.id')

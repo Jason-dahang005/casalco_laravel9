@@ -24,9 +24,6 @@
 
                                 <input type="hidden" name="application_type" value="regular">
 
-                            {{-- USER ID --}}
-                    <input required type="hidden" name="member" value="@auth {{ auth()->user()->id }} @endauth">
-
                             <div class="form-group">
                                 <small>Name of Member</small>
                                 <input type="text" name="name_of_member" class="form-control" placeholder="ENTER NAME OF MEMBER" value="@auth {{ $loan->first_name }} {{ $loan->middle_name }} {{ $loan->last_name }} @endauth">

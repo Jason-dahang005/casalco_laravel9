@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\officer;
 
+use Illuminate\Http\Request;
 use App\Models\LoanApplication;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 
 class OfficerLoanApplicationController extends Controller
 {
@@ -104,7 +105,8 @@ class OfficerLoanApplicationController extends Controller
      */
     public function show(LoanApplication $loanApplication)
     {
-        //
+        // return view('officer.loan_application.show', compact('loanApplication'));
+        return View::make('officer.loan_application.show')->with('loan', $loanApplication);
     }
 
     /**

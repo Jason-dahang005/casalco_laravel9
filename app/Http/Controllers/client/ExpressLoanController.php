@@ -22,7 +22,7 @@ class ExpressLoanController extends Controller
     {
         if (Auth::check()) {
             $loan = Member::join('users', 'users.id', '=', 'members.users_id')
-                        ->join('membership_applications', 'membership_applications.id', '=', 'members.membership_application_id')
+                        ->join('membership_applications', 'membership_applications.id', '=', 'members.membership_applications_id')
                         ->select('users.*', 'membership_applications.*', 'members.*')
                         ->where('users_id', '=', auth()->user()->id)
                         ->first();
@@ -83,8 +83,10 @@ class ExpressLoanController extends Controller
 
         // return back()->with('success', 'Application Successfully Sent!');
 
+        $member = Member::where('users_id', auth()->user()->id)->value('id');
+
         $applyloan = new LoanApplication();
-        $applyloan->users_id = $request->member;
+        $applyloan->members_id = $member;
         $applyloan->loan_type = $request->application_type;
         $applyloan->save();
 
