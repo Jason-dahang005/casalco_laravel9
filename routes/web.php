@@ -27,6 +27,7 @@ use App\Http\Controllers\admin\AccountController;
 use App\Http\Controllers\admin\MemberListController;
 use App\Http\Controllers\admin\PreApprovedMembershipController;
 use App\Http\Controllers\admin\AdminActiveLoanController;
+use App\Http\Controllers\admin\AdminPaidLoanController;
 
 // CLIENT CONTROLLER
 use App\Http\Controllers\MembershipReportsController;
@@ -87,6 +88,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function() {
   Route::resource('/admin/accounts', AccountController::class);
   Route::resource('/pre-app-membership', PreApprovedMembershipController::class);
   Route::resource('/admin/active-loan', AdminActiveLoanController::class);
+  Route::resource('/admin/paid-loans', AdminPaidLoanController::class);
 
 });
 

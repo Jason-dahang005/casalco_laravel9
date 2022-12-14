@@ -18,7 +18,7 @@ class PreLoanApplicationController extends Controller
     {
         $loan  = LoanApplication::leftJoin('users','loan_applications.members_id', '=', 'users.id')
         ->leftJoin('members', 'members.users_id', '=', 'users.id')
-        ->leftJoin('membership_applications', 'members.membership_application_id', '=', 'membership_applications.id')
+        ->leftJoin('membership_applications', 'members.membership_applications_id', '=', 'membership_applications.id')
         ->leftJoin('spouses', 'spouses.membership_application_id', '=', 'membership_applications.id')
         ->leftJoin('beneficiaries', 'beneficiaries.membership_application_id', '=', 'membership_applications.id')
         ->leftJoin('express_lad_loan_details', 'express_lad_loan_details.loan_applications_id', '=', 'loan_applications.id')

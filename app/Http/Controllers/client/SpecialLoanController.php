@@ -55,8 +55,11 @@ class SpecialLoanController extends Controller
      */
     public function store(Request $request)
     {
+
+        $member = Member::where('users_id', auth()->user()->id)->value('id');
+
         $applyloan = new LoanApplication();
-        $applyloan->members_id = $request->member;
+        $applyloan->members_id = $member;
         $applyloan->loan_type = $request->application_type;
         $applyloan->save();
 

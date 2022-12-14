@@ -49,6 +49,6 @@
                                         </video>
 									</div> -->
 
-
+                                    <br>
 
                                     @endsection

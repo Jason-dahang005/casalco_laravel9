@@ -4,4 +4,6 @@
 
 @include('client.online_seminar.seminar-index')
 
+
 @endsection
+

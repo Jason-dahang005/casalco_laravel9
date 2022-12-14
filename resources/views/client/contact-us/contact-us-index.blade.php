@@ -5,7 +5,7 @@
 <div class="row margin-bottom-40">
     <!-- BEGIN CONTENT -->
     <div class="col-md-12">
-      <h1>Contacts</h1>
+      <h1>Our Location</h1>
       <div class="content-page">
         <div class="row">
           <div class="col-md-12">

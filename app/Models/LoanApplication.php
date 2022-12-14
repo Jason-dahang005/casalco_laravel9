@@ -11,14 +11,15 @@ class LoanApplication extends Model
 
 
     public function express(){
-        return $this->belongsTo(ExpressLadLoanDetails::class, 'id');
+        return $this->belongsTo(ExpressLadLoanDetails::class);
     }
+
     public function regularSpecial(){
         return $this->belongsTo(RegularSpecialLoanDetails::class,'id');
     }
 
     public function members(){
-        return $this->belongsTo(Member::class, 'id');
+        return $this->belongsTo(Member::class);
     }
 }
 
