@@ -20,24 +20,33 @@
                             </thead>
                             <tbody>
                                 @foreach ($loan as $l)
-
-
-
                                     <tr>
-                                        <td>{{ ucwords($l->loan_type) }}</td>
+                                        <td>{{ ucwords($l->TypeOfLoan) }} Loan</td>
                                         <td>{{ date('m-d-Y, h:s:i ', strtotime($l->created_at)) }}</td>
                                         <td>{{ date('m-d-Y, h:s:i ', strtotime($l->updated_at)) }}</td>
                                         <td>
 
-                                          @if ($l->loan_type == 'express' || $l->loan_type == 'lad' )
+                                          @if ($l->TypeOfLoan == 'express' || $l->TypeOfLoan == 'lad' )
                                           <a href="{{ route('express_amort.show', $l->id) }}">
-                                              <button class="btn btn-success">Details</button>
+                                              <button class="btn cur-p btn-success">Details</button>
                                             </a>
-                                          @elseif ($l->loan_type == 'regular' || $l->loan_type == 'special' )
+                                          @elseif ($l->TypeOfLoan == 'regular' || $l->TypeOfLoan == 'special' )
                                           <a href="{{ route('regular_special_amort.show', $l->id) }}">
-                                              <button class="btn btn-success">Details</button>
+                                              <button class="btn cur-p btn-success">Details</button>
                                             </a>
                                           @endif
+
+                                          @if ($l->TypeOfLoan == 'express' || $l->TypeOfLoan == 'lad' )
+                                          <a href="{{ route('express_amort.show', $l->id) }}">
+                                              <button class="btn cur-p btn-primary">Details</button>
+                                            </a>
+                                          @elseif ($l->TypeOfLoan == 'regular' || $l->TypeOfLoan == 'special' )
+                                          <a href="{{ route('regular_special_amort.show', $l->id) }}">
+                                              <button class="btn cur-p btn-primary">Details</button>
+                                            </a>
+                                          @endif
+
+
                                         </td>
                                     </tr>
 

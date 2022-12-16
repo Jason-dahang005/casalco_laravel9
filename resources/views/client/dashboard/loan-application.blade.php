@@ -19,37 +19,41 @@
                             </thead>
                             <tbody>
                                 @foreach ($loan as $l)
-                                    @if ($l->members->users_id === Auth::user()->id)
 
                                         <tr>
-                                            <td>{{ ucwords($l->loan_type) }} Loan</td>
-                                            <td>{{ date('m-d-Y, h:s:i ', strtotime($l->created_at)) }}</td>
+                                            <td>{{ ucwords($l->TypeOfLoan) }} Loan</td>
+                                            <td>{{ date('m-d-Y, h:s:i a', strtotime($l->created_at)) }}</td>
                                             <td>
-                                                @if ($l->loan_status === 0)
+                                                @if ($l->LS == 0)
                                                     <span class="badge badge-secondary">Pending</span>
-                                                @elseif($l->loan_status === 1)
+                                                @elseif($l->LS == 1)
                                                     <span class="badge badge-info">Pre-approved</span>
-                                                @elseif($l->loan_status === 2)
+                                                @elseif($l->LS == 2)
                                                     <span class="badge badge-success">Approved</span>
-                                                @elseif($l->loan_status === 5)
-                                                    <span class="badge badge-danger">Declined</span>
                                                 @endif
-
                                             </td>
                                             <td>
-                                                @if ($l->loan_type == 'express' || $l->loan_type == 'lad' )
-                                                <a href="{{ route('express_partial_amort.show', $l->id) }}">
-                                                    <button class="btn btn-success">Details</button>
-                                                </a>
-                                                @elseif ($l->loan_type == 'regular' || $l->loan_type == 'special' )
-                                                <a href="{{ route('regular_special_partial_amort.show', $l->id) }}">
-                                                    <button class="btn btn-success">Details</button>
-                                                </a>
+                                                @if ($l->TypeOfLoan == 'express' || $l->TypeOfLoan == 'lad' )
+                                                    <a href="{{ route('express_partial_amort.show', $l->id) }}">
+                                                        <button class="btn cur-p btn-success" data-toggle="tooltip" data-placement="bottom" title="View Loan Application Details"><i class="fa fa-eye"></i></button>
+                                                    </a>
+                                                @elseif ($l->TypeOfLoan == 'regular' || $l->TypeOfLoan == 'special' )
+                                                    <a href="{{ route('regular_special_partial_amort.show', $l->id) }}">
+                                                        <button class="btn cur-p btn-success" data-toggle="tooltip" data-placement="bottom" title="View Loan Application Details"><i class="fa fa-eye"></i></button>
+                                                    </a>
                                                 @endif
 
+                                                @if ($l->TypeOfLoan == 'express' || $l->TypeOfLoan == 'lad' )
+                                                    <a href="{{ route('express_partial_amort.show', $l->id) }}">
+                                                        <button class="btn cur-p btn-primary" data-toggle="tooltip" data-placement="bottom" title="View Loan Partial Amortization Schedule"><i class="fa fa-calendar"></i></button>
+                                                    </a>
+                                                @elseif ($l->TypeOfLoan == 'regular' || $l->TypeOfLoan == 'special' )
+                                                    <a href="{{ route('regular_special_partial_amort.show', $l->id) }}">
+                                                        <button class="btn cur-p btn-primary" data-toggle="tooltip" data-placement="bottom" title="View Loan Partial Amortization Schedule"><i class="fa fa-calendar"></i></button>
+                                                    </a>
+                                                @endif
                                             </td>
                                         </tr>
-                                    @endif
                                 @endforeach
                             </tbody>
                         </table>

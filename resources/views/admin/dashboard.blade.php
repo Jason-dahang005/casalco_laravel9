@@ -7,7 +7,7 @@
       <a href="/admin/member-list">
         <div class="full counter_section margin_bottom_30">
           <div class="couter_icon">
-            <div> 
+            <div>
             <i class="fa fa-user yellow_color"></i>
             </div>
           </div>
@@ -24,7 +24,7 @@
       <a href="/admin/membership">
         <div class="full counter_section margin_bottom_30">
           <div class="couter_icon">
-            <div> 
+            <div>
             <i class="fa fa-folder blue1_color"></i>
             </div>
           </div>
@@ -41,7 +41,7 @@
       <a href="/admin/loan">
         <div class="full counter_section margin_bottom_30">
           <div class="couter_icon">
-            <div> 
+            <div>
             <i class="fa fa-money green_color"></i>
             </div>
           </div>

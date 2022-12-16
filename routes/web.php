@@ -16,6 +16,7 @@ use App\Http\Controllers\officer\LoanAppController;
 use App\Http\Controllers\officer\MembershipInfoController;
 use App\Http\Controllers\officer\ProductController;
 use App\Http\Controllers\officer\OfficerLoanApplicationController;
+use App\Http\Controllers\officer\LoanApplicationsDetailsController;
 
 
 // ADMIN CONTROLLER
@@ -141,7 +142,7 @@ Route::middleware(['auth', 'isClient'])->group(function() {
 });
 
 
-//offcer
+//officer
 Route::middleware(['auth', 'isOfficer'])->group(function() {
   Route::resource('/officer/dashboard', OfficerDashboardController::class);
   Route::resource('/officer/membership-application', PreMembershipApplicationController::class);
@@ -153,6 +154,7 @@ Route::middleware(['auth', 'isOfficer'])->group(function() {
   Route::resource('/loan_application', LoanAppController::class);
   Route::resource('products', ProductController::class);
   Route::resource('loan-applications', OfficerLoanApplicationController::class);
+  Route::resource('loan-application-details', LoanApplicationsDetailsController::class);
 
   // Route::get('/officer/{id}', [MembershipInfoController::class, 'show']);
   // Route::get('/officer/membership_info/{id}', 'MembershipInfoController@show')->name('displayMembershipApplication');

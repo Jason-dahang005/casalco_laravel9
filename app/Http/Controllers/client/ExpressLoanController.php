@@ -53,40 +53,8 @@ class ExpressLoanController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'name_of_member'        => 'required|string',
-        //     'account_no'            => 'required',
-        //     'present_address'       => 'required',
-        //     'permanent_address'     => 'required',
-        //     'loan_type'             => 'required',
-        //     'employer'              => 'required',
-        //     'employer_address'      => 'required',
-        //     'date_of_birth'         => 'required',
-        //     'age'                   => 'required|numeric',
-        //     'cellphone_no'          => 'required',
-        //     'tin_no'                => 'required',
-        //     'email_address'         => 'required',
-        //     'facebook_account'      => 'required',
-        //     'amount_applied'        => 'required|numeric',
-        //     'term_applied'          => 'required|numeric',
-        //     'mode_of_payment'       => 'required',
-        //     'scanned_signature'     => 'required',
-        // ]);
-
-        // $loanApp = $request->all();
-
-        // $pikshurSaPerma = time().$request->file('scanned_signature')->getClientOriginalName();
-        // $path = $request->file('scanned_signature')->storeAs('image', $pikshurSaPerma, 'public');
-        // $loanApp["scanned_signature"] = '/storage/'.$path;
-
-        // LoanApplication::create($loanApp);
-
-        // return back()->with('success', 'Application Successfully Sent!');
-
-        $member = Member::where('users_id', auth()->user()->id)->value('id');
-
         $applyloan = new LoanApplication();
-        $applyloan->members_id = $member;
+        $applyloan->users_id = auth()->user()->id;
         $applyloan->loan_type = $request->application_type;
         $applyloan->save();
 

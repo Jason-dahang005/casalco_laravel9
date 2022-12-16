@@ -16,7 +16,7 @@ class OfficerLoanApplicationController extends Controller
      */
     public function index()
     {
-        $loan  = LoanApplication::leftJoin('users','loan_applications.members_id', '=', 'users.id')
+        $loan  = LoanApplication::leftJoin('users','loan_applications.users_id', '=', 'users.id')
         ->leftJoin('members', 'members.users_id', '=', 'users.id')
         ->leftJoin('membership_applications', 'members.membership_applications_id', '=', 'membership_applications.id')
         ->leftJoin('spouses', 'spouses.membership_application_id', '=', 'membership_applications.id')
@@ -71,7 +71,7 @@ class OfficerLoanApplicationController extends Controller
             'monthly_expenses.allowances as allow',
             'monthly_expenses.others as others',
             'monthly_incomes.product_loan as prod_l',
-            )->where('loan_status', '=', 0)->get();
+            )->where('loan_status', 0)->get();
 
         return view('officer.loan_application.index', compact('loan'));
     }

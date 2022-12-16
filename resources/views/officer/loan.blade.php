@@ -6,7 +6,7 @@
   <div class="white_shd full margin_bottom_30">
       <div class="table_section padding_infor_info">
           <div class="table-responsive-lg">
-            <table class="table table-bordered table-striped table-sm" id="loan_application">
+            <table class="table table-bordered table-striped" id="loan_application">
                 <thead>
                 <tr>
                     <th>Last Name</th>
@@ -29,12 +29,14 @@
                 <td>{{ ucwords($l->TypeOfLoan) }}</td>
                 <td>{{ date('m-d-Y h:i:s a', strtotime($l->DATE_APPLIED)) }}</td>
 
-                <td> @if($l->LS == 0)
-                    <span class="badge badge-secondary">Pending</span>
-                @endif
-            </td>
                 <td>
-                <button type="button" class="btn cur-p btn-success" data-toggle="modal" data-target="#myModal{{ $l->LOAN_ID }}">View Details</button>
+                  @if($l->LS == 0)
+                    <span class="badge badge-secondary">Pending</span>
+                  @endif
+                </td>
+                <td>
+                  <a class="btn cur-p btn-success" href="{{ route('loan-application-details.edit', $l->LOAN_ID) }}" data-toggle="tooltip" data-placement="bottom" title="View Loan Application Details"><i class="fa fa-eye"></i></a>
+                  <button type="button" class="btn cur-p btn-success" data-toggle="modal" data-target="#myModal{{ $l->LOAN_ID }}">View Details</button>
                 </td>
             </tr>
             @endif

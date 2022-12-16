@@ -1,13 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\officer;
-use App\Models\ExpressLoanApp;
-use App\Http\Controllers\Controller;
-use App\Models\LoanApplication;
-use Illuminate\Http\Request;
-use App\Models\User;
 
-class PreLoanApplicationController extends Controller
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Models\LoanApplication;
+
+class LoanApplicationsDetailsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +15,50 @@ class PreLoanApplicationController extends Controller
      */
     public function index()
     {
-        $loan  = LoanApplication::leftJoin('users','loan_applications.users_id', '=', 'users.id')
+        //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($app_id)
+    {
+        $loan = $loan  = LoanApplication::leftJoin('users','loan_applications.users_id', '=', 'users.id')
         ->leftJoin('members', 'members.users_id', '=', 'users.id')
         ->leftJoin('membership_applications', 'members.membership_applications_id', '=', 'membership_applications.id')
         ->leftJoin('spouses', 'spouses.membership_application_id', '=', 'membership_applications.id')
@@ -31,7 +73,11 @@ class PreLoanApplicationController extends Controller
             'loan_applications.created_at as DATE_APPLIED',
             'loan_applications.updated_at as DATE_PRE_APPROVED',
 
-            'users.*',
+            'users.id as user_id',
+            'users.username as user_name',
+            'users.email as user_email',
+            'users.user_type as role',
+            'users.password as pass',
 
             'members.*',
 
@@ -67,80 +113,9 @@ class PreLoanApplicationController extends Controller
             'monthly_expenses.allowances as allow',
             'monthly_expenses.others as others',
             'monthly_incomes.product_loan as prod_l',
-            )
-        ->where('loan_status', '=', 0)
-        ->get();
+            )->find($app_id);
 
-        return view('officer.loan', compact('loan'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $r)
-    {
-
-        // $loan = new LoanApplication();
-        // $loan->users_id = $r->user_id;
-        // $loan->save();
-
-        // $l = new ExpressLoanApp();
-        // $l->loan_application_id = $loan->id;
-        // $l->acc_id = $r->acc_id;
-        // $l->name =$r->name;
-        // $l->present_address = $r->present_address;
-        // $l->permanent_address = $r->permanent_address;
-        // $l->loan_type = $r->loan_type;
-        // $l->emp  = $r->emp;
-        // $l->emp_address = $r->emp_address;
-        // $l->email = $r->email;
-        // $l->amount = $r->amount;
-        // $l->mode_payment = $r->mode_payment;
-        // $l->term_applied = $r->term_applied;
-        // $l->phone_no = $r->phone_no;
-        // $l->tin = $r->tin;
-        // $l->fb_acc = $r->fb_acc;
-        // $l->loanApp_type = $r->loanApp_type;
-
-        // $l->save();
-
-        // return back();
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        $loan = LoanApplication::find($id);
-        return view('officer.loan', compact('loan'));
+            return view('officer.loan-application-details', compact('loan'));
     }
 
     /**
@@ -152,13 +127,7 @@ class PreLoanApplicationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $loan = LoanApplication::find($id);
-        $loan->is_approved = $request->is_approved;
-        // $loan->acc_id = $request->acc_id;
-        // $loan->or_no = $request->or_no;
-        $loan->save();
-
-        return redirect('officer/pre-approved-loans');
+        //
     }
 
     /**

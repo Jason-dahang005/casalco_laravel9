@@ -1,13 +1,13 @@
 @extends('client.dashboard.index')
-@section('title', 'Amortization')
+@section('title', 'Amortization schedule')
 @section('client_dashboard_content')
 
 @foreach ($loan->regularSpecial as $l )
 
-    
 
-<?php                  
-                    
+
+<?php
+
                     $loan_type = $l->monthlyI->product_loan;
                     $mode_of_payment = $l->monthlyI->mode_of_payment;
                     $amount = (int)$l->monthlyI->amount_applied;
@@ -20,7 +20,7 @@
                     $now = strtotime($date_app);
                     // $start = date('m/15/Y');
                     // // $month_mid = date("m/15/Y", strtotime($start));
-                    // // $month_last = date("m/t/Y", strtotime($start));             
+                    // // $month_last = date("m/t/Y", strtotime($start));
                     // // $start = date("m/d/Y",strtotime($start." +1month"));
                     // // $start = date("m/d/Y",strtotime($start." +15day"));
 
@@ -48,7 +48,7 @@
                             $monthlyINt = $monthly+$interest;
                             $repayment = $totalamount-$monthlyINt;
                         }
-                       
+
                     if($mode_of_payment == "semi-monthly") {
                         if ($amount >= 50000){
                             $servicefee = $amount*0.025+60;
@@ -72,7 +72,7 @@
                             $monthlyINt = $monthly+$interest;
                             $repayment = $totalamount-$monthlyINt;
                         }
-                           
+
 
                     }
 
@@ -112,7 +112,7 @@
                         $monthlyINt = $monthly+$interest;
                         $repayment = $totalamount-$monthlyINt;
                         }
-                       
+
 
                         if($mode_of_payment == "semi-monthly"){
                             if($amount <= 50000){
@@ -152,7 +152,7 @@
                                 $monthlyINt = $monthly+$interest;
                                 $repayment = $totalamount-$monthlyINt;
                                 }
-                        
+
 
                         }
 
@@ -230,7 +230,7 @@
                             $monthlyINt = $monthly+$interest;
                             $repayment = $totalamount-$monthlyINt;
                         }
-                   
+
 
                     if($mode_of_payment == "semi-monthly"){
                         if ($amount >= 9999) {
@@ -255,7 +255,7 @@
                             $monthlyINt = $monthly+$interest;
                             $repayment = $totalamount-$monthlyINt;
                         }
-                   
+
                     }
                     }
                     if($loan_type == "instant loan"){
@@ -282,7 +282,7 @@
                             $repayment = $totalamount-$monthlyINt;
                         }
 
-                    
+
 
                     if($mode_of_payment == "semi-monthly"){
                         if (amount >= 9999) {
@@ -307,7 +307,7 @@
                             $monthlyINt = $monthly+$interest;
                             $repayment = $totalamount-$monthlyINt;
                         }
-                    
+
                     }
                     }
 
@@ -353,7 +353,7 @@
                             $repayment = $totalamount-$monthlyINt;
                         }
 
-                    
+
 
                     if($mode_of_payment == "semi-monthly"){
                         if (amount >= 500000) {
@@ -396,12 +396,12 @@
                             $monthlyINt = $monthly+$interest;
                             $repayment = $totalamount-$monthlyINt;
                         }
-                    
+
                     }
                     }
                     if($loan_type == "provident loan"){
-                        
-                        
+
+
                             $servicefee = $amount*0.02+80;
                             $deduction = $amount-$servicefee;
                             $term_app = $term_applied;
@@ -412,11 +412,11 @@
                             $monthlyINt = $monthly+$interest;
                             $repayment = $totalamount-$monthlyINt;
                         }
-                    
-                    
+
+
 
                     if($mode_of_payment == "semi-monthly"){
-                       
+
 
                             $servicefee = $amount*0.02+80;
                             $deduction = $amount-$servicefee;
@@ -427,19 +427,19 @@
                             $totalamount=$amount+$totalinterest;
                             $monthlyINt = $monthly+$interest;
                             $repayment = $totalamount-$monthlyINt;
-                       
-                    
+
+
                     }
-                    
+
 
     ?>
 
 
 <div class=" text-center">
-                    
+
     <h4 >CASALCO AMORTIZATION</h4>
 </div>
-                
+
     <div class="row pt-5">
         <div class="col-lg-2">
                 </div>
@@ -448,13 +448,13 @@
                 <div class="col-lg-4 col-sm-12">
                 <label for="name">LOAN PRODUCT:</label>
                 <h5>{{$l->monthlyI->product_loan}}</h5>
-                
+
                 </div>
-                
+
                 <div class="col-lg-4 col-sm-12">
                 <label for="name">LOAN TYPE:</label>
                 <h5>{{$loan->loan_type}}</h5>
-                
+
                 </div>
 
                 <div class="col-lg-4 col-sm-12">
@@ -487,10 +487,10 @@
                 <h5>PHP {{number_format($totalamount, 2, '.', ',')}}</h5>
 
                 </fieldset>
-                
-            
+
+
         </div>
-        
+
     </div>
 </div>
 </div>
@@ -506,68 +506,68 @@
                   <table class="table" id="loan_application">
                       <thead>
                           <tr>
-                            
+
                             <th>No.</th>
                             <td>Date</td>
                             <th>Principal</th>
                             <th>Interest</th>
                             <th>Repayment</th>
                             <th>Balance</th>
-                           
+
                           </tr>
                       </thead>
                       <tbody>
-                         
-                              
-                        
-                              
+
+
+
+
                         <tr>
                             @for ($i = $repayment;$i >=0; $i-=$monthlyINt)
-                   
-                  
+
+
                             <tr>
-                            
-                            <td> 
+
+                            <td>
                                 {{$y++}}
                               </td>
                               @if ($mode_of_payment == "semi-monthly")
-                                        
+
                                         <td>
-                                         
-                                          
+
+
                                          every 15 and 30 of the month
-                                              
-                                        
+
+
                                         </td>
-                                          
+
 
 
                                           @else
                                           <td>
                                             <span>{{date('m-d-Y', strtotime('+' . $x++ .' month', $now))}}</span></td>
-                                          
+
                                           @endif
 
-                                        
 
-                               
+
+
                                 <td><span>{{number_format($monthly, 2, '.', ',')}}</span></td>
                                 <td><span>{{number_format($interest, 2, '.', ',')}}</span></td>
                                 <td><span>{{number_format($monthlyINt, 2, '.', ',')}}</span></td>
                                 <td><span>{{number_format($i, 2, '.', ',')}}</span></td>
-                            
+
                             </tr>
-                        
-                        
-                           
+
+
+
                             @endfor
                           </tr>
-                            
-                            
-                               
-                              
-                              
-                            
+
+
+
+
+
+
                       </tbody>
                   </table>
               </div>
@@ -588,6 +588,6 @@
 
 
 
-  
+
 @endforeach
 @endsection
