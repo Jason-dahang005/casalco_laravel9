@@ -5,6 +5,7 @@ namespace App\Http\Controllers\officer;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\LoanApplication;
+use App\Models\User;
 
 class LoanApplicationsDetailsController extends Controller
 {
@@ -58,7 +59,7 @@ class LoanApplicationsDetailsController extends Controller
      */
     public function edit($app_id)
     {
-        $loan = $loan  = LoanApplication::leftJoin('users','loan_applications.users_id', '=', 'users.id')
+        $loan = LoanApplication::leftJoin('users','loan_applications.users_id', '=', 'users.id')
         ->leftJoin('members', 'members.users_id', '=', 'users.id')
         ->leftJoin('membership_applications', 'members.membership_applications_id', '=', 'membership_applications.id')
         ->leftJoin('spouses', 'spouses.membership_application_id', '=', 'membership_applications.id')
@@ -115,7 +116,43 @@ class LoanApplicationsDetailsController extends Controller
             'monthly_incomes.product_loan as prod_l',
             )->find($app_id);
 
-            return view('officer.loan-application-details', compact('loan'));
+            // $active = LoanApplication::leftJoin('regular_special_loan_details', 'regular_special_loan_details.loan_applications_id', '=', 'loan_applications.id')
+            // ->leftJoin('express_lad_loan_details', 'express_lad_loan_details.loan_applications_id', '=', 'loan_applications.id')
+            // ->leftJoin('monthly_expenses', 'monthly_expenses.regular_special_loan_details_id', '=', 'regular_special_loan_details.id')
+            // ->leftJoin('monthly_incomes', 'monthly_incomes.regular_special_loan_details_id', '=', 'regular_special_loan_details.id')
+            // ->select(
+            //     'loan_applications.*',
+            //     'regular_special_loan_details.*',
+            //     'express_lad_loan_details.*',
+            //     'monthly_expenses.*',
+            //     'monthly_incomes.*'
+            //     )->has('id', )->get();
+
+            $users = User::leftJoin('loan_applications', 'loan_applications.users_id', '=', 'users.id')
+            ->leftJoin('express_lad_loan_details', 'express_lad_loan_details.loan_applications_id', '=', 'loan_applications.id')
+            ->leftJoin('regular_special_loan_details', 'regular_special_loan_details.loan_applications_id', '=', 'loan_applications.id')
+            ->leftJoin('monthly_expenses', 'monthly_expenses.regular_special_loan_details_id', '=', 'regular_special_loan_details.id')
+            ->leftJoin('monthly_incomes', 'monthly_incomes.regular_special_loan_details_id', '=', 'regular_special_loan_details.id')
+            ->select(
+
+                // LOAN APPLICATION TABLE QUERY
+                'loan_applications.id as LOAN_ID',
+                'loan_applications.loan_type as TypeOfLoan',
+                'loan_applications.created_at as DATE_APPLIED',
+                'loan_applications.updated_at as DATE_APPROVED',
+
+                // EXPRESS && LAD LOAN TABLE QUERY
+                'express_lad_loan_details.product_loan as LOAN',
+                'express_lad_loan_details.amount_applied as AMOUNT',
+                'express_lad_loan_details.term_applied as TERM',
+
+                // REGULAR && SPECIAL LOAN TABLE QUERY
+                'monthly_incomes.product_loan as LOAN2',
+                'monthly_incomes.amount_applied as AMOUNT2',
+                'monthly_incomes.term_applied as TERM2',
+            )->where('users.id', $loan->users_id)->where('loan_applications.loan_status', 2)->get();
+
+            return view('officer.loan-application-details', compact(['loan', 'users']));
     }
 
     /**
@@ -125,9 +162,24 @@ class LoanApplicationsDetailsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $app_id)
     {
-        //
+        if($request->input('pre-approve')){
+            $loan = LoanApplication::find($app_id);
+            $loan->loan_status = 1;
+            $loan->save();
+
+            return redirect('/officer/pre-approved-loans')->with('yehey', 'WOOOOOOOOOOOOH!');
+
+        }if ($request->input('decline')) {
+            $loan = LoanApplication::find($app_id);
+            $loan->loan_status = 3;
+            $loan->save();
+
+            return redirect('declined-loan-applications');
+        }
+
+
     }
 
     /**

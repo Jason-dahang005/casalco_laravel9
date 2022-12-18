@@ -4,6 +4,12 @@
 
 
 <div class="col-md-12">
+    @if (Session::has('yehey'))
+        <div class="alert alert-success d-flex align-items-center" role="alert">
+            <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+            <div>{{ Session::get('yehey') }}</div>
+        </div>
+    @endif
     <div class="white_shd full margin_bottom_30">
         <div class="table_section padding_infor_info">
             <div class="table-responsive-lg">

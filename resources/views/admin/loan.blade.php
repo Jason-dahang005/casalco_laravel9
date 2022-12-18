@@ -1,5 +1,5 @@
 @extends('admin.index')
-@section('title', 'Loan Application')
+@section('title', 'Pre-approved Loan Application List')
 @section('admin_content')
 
 
@@ -11,12 +11,11 @@
               <table class="table table-bordered table-striped table-sm" id="loan_application">
                   <thead>
                   <tr>
+                    <th>Account No</th>
                       <th>Last Name</th>
                       <th>First Name</th>
-                      <th>Account No</th>
-                      <th>Loan Type</th>
                       <th>Date Applied</th>
-                      <th>Status</th>
+                      <th>Date Pre-approved</th>
                       <th>Actions</th>
                   </tr>
               </thead>
@@ -25,16 +24,11 @@
               @foreach ($loan as $l)
               @if ($l->LS == 0)
               <tr>
+                <td>{{ $l->acc_id }}</td>
                   <td>{{$l->last_name}}</td>
                   <td>{{ $l->first_name }}</td>
-                  <td>{{ $l->acc_id }}</td>
-                  <td>{{$l->TypeOfLoan}}</td>
                   <td>{{ date('m-d-Y h:i:s a', strtotime($l->DATE_APPLIED)) }}</td>
-
-                  <td> @if($l->LS == 0)
-                  <span class="badge badge-secondary">Pending</span>
-              @endif
-              </td>
+                  <td>{{ date('m-d-Y h:i:s a', strtotime($l->DATE_PRE_APPROVED)) }}</td>
                   <td>
                   {{-- <a href="{{ route('loan_application.show', $l->ID) }}">
                   <button class="btn btn-success">Details</button>

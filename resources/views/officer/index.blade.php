@@ -48,16 +48,16 @@
 											<h2>@yield('title')</h2>
 									 </div>
 								</div>
-						 </div>
-                         @if (!Request::is('/officer/dashboard'))
-                            <div class="row">
-                                @yield('officer_content')
                             </div>
-                         @else
-                            <div class="row column">
-                                @yield('officer_content')
-                            </div>
-                         @endif
+                            @if (!Request::is('/officer/dashboard'))
+                                <div class="row">
+                                    @yield('officer_content')
+                                </div>
+                            @else
+                                <div class="row column">
+                                    @yield('officer_content')
+                                </div>
+                            @endif
 						</div>
 						<div class="container-fluid">
 							{{-- @include('officer.footer') --}}
@@ -141,6 +141,16 @@
 				"searching": true,
 				"ordering": true,
 				"info": true,
+				"autoWidth": true,
+				"responsive": true,
+			})
+
+            $('#loan_application_details').DataTable({
+				"paging": false,
+				"lengthChange": false,
+				"searching": false,
+				"ordering": false,
+				"info": false,
 				"autoWidth": true,
 				"responsive": true,
 			})
