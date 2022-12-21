@@ -67,7 +67,7 @@ class ApproveLoanApplicationController extends Controller
             'monthly_expenses.others as others',
             'monthly_incomes.product_loan as prod_l',
             )
-        ->where('loan_status', '=', 1)
+        ->where('loan_status', '=', 2)
         ->get();
 
         return view('admin.loan', compact('loan'));

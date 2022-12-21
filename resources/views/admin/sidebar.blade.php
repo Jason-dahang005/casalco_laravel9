@@ -24,19 +24,19 @@
       <li>
         <a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-folder-open orange_color"></i> <span>Applications</span></a>
         <ul class="collapse list-unstyled" id="element">
-          <li><a href="/admin/membership">> <span>Membership</span></a></li>
-          <li><a href="/admin/loan">> <span>Loan</span></a></li>
-          <li><a href="/admin/active-loan">> <span>Active Loan</span></a></li>
+          <li><a href="/admin/membership">> <span>Membership Applications</span></a></li>
+          <li><a href="/admin/loan">> <span>Loan Applications</span></a></li>
+          <li><a href="/active_loan">> <span>Active Loans</span></a></li>
         </ul>
       </li>
       <li><a href="/admin/member-list"><i class="fa fa-users red_color"></i> <span>Members</span></a></li>
-      <li><a href="/admin/accounts"><i class="fa fa-users red_color"></i> <span>Accounts</span></a></li>
+      <li><a href="/admin/accounts"><i class="fa fa-user  purple_color"></i> <span>Accounts</span></a></li>
       <li>
         <a href="#element1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-clipboard blue1_color"></i> <span>Reports</span></a>
         <ul class="collapse list-unstyled" id="element1">
           <li><a href="/admin/approved-membership">> <span>Approved Memberships</span></a></li>
           <li><a href="/admin/approved-loans">> <span>Approved Loans</span></a></li>
-          <li><a href="/admin/paid-loans">> <span>Paid Loans</span></a></li>
+          <li><a href="/admin/paid-loans">> <span>Settled Loans</span></a></li>
         </ul>
       </li>
     </ul>

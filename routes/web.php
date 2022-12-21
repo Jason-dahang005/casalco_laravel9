@@ -90,7 +90,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function() {
   Route::resource('/admin/member-list', MemberListController::class);
   Route::resource('/admin/accounts', AccountController::class);
   Route::resource('/pre-app-membership', PreApprovedMembershipController::class);
-  Route::resource('/admin/active-loan', AdminActiveLoanController::class);
+  Route::resource('active_loan', AdminActiveLoanController::class);
   Route::resource('/admin/paid-loans', AdminPaidLoanController::class);
 
 });

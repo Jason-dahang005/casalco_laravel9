@@ -9,9 +9,9 @@
                 <table class="table table-bordered table-striped" id="active_loan">
                     <thead>
                     <tr>
+                        <th>Account No.</th>
                         <th>Lastname</th>
                         <th>Firstname</th>
-                        <th>Account No.</th>
                         <th>Product Loan</th>
                         <th>Actions</th>
                     </tr>
@@ -19,13 +19,17 @@
                     <tbody>
                     @foreach ($loan as $l)
                         <tr>
-                            <td>{{ $l->last_name }}</td>
-                            <td>{{ $l->first_name }}</td>
                             <td>{{ $l->acc_id }}</td>
+                            <td>{{ ucwords($l->last_name) }}</td>
+                            <td>{{ ucwords($l->first_name) }}</td>
                             <td>Instacash Loan</td>
                             <td>
-                                <a href="" class="btn cur-p btn-sm btn-success">Details</a>
-                                <a href="" class="btn cur-p btn-sm btn-info">Update</a>
+                                <form action="{{ route('active_loan.update',$l->LOAN_ID) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <a href="{{ route('active_loan.show',$l->LOAN_ID) }}" class="btn cur-p btn-sm btn-success">Details</a>
+                                    <button type="submit" class="btn cur-p btn-sm btn-info">Settled</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach

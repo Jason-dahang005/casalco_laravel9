@@ -19,29 +19,26 @@
                       <th>Actions</th>
                   </tr>
               </thead>
-              <tbody>
-
-              @foreach ($loan as $l)
-              @if ($l->LS == 0)
-              <tr>
-                <td>{{ $l->acc_id }}</td>
-                  <td>{{$l->last_name}}</td>
-                  <td>{{ $l->first_name }}</td>
-                  <td>{{ date('m-d-Y h:i:s a', strtotime($l->DATE_APPLIED)) }}</td>
-                  <td>{{ date('m-d-Y h:i:s a', strtotime($l->DATE_PRE_APPROVED)) }}</td>
-                  <td>
-                  {{-- <a href="{{ route('loan_application.show', $l->ID) }}">
-                  <button class="btn btn-success">Details</button>
-                  </a> --}}
-                  <button type="button" class="btn cur-p btn-success" data-toggle="modal" data-target="#myModal{{ $l->LOAN_ID }}">View Details</button>
-                  </td>
-              </tr>
-              @endif
-              @endforeach
-
-              </tbody>
+                <tbody>
+                    @foreach ($loan as $l)
+                        @if ($l->LS == 0)
+                            <tr>
+                                <td>{{ $l->acc_id }}</td>
+                                <td>{{$l->last_name}}</td>
+                                <td>{{ $l->first_name }}</td>
+                                <td>{{ date('m-d-Y h:i:s a', strtotime($l->DATE_APPLIED)) }}</td>
+                                <td>{{ date('m-d-Y h:i:s a', strtotime($l->DATE_PRE_APPROVED)) }}</td>
+                                <td>
+                                {{-- <a href="{{ route('loan_application.show', $l->ID) }}">
+                                <button class="btn btn-success">Details</button>
+                                </a> --}}
+                                <button type="button" class="btn cur-p btn-success" data-toggle="modal" data-target="#myModal{{ $l->LOAN_ID }}">View Details</button>
+                                </td>
+                            </tr>
+                        @endif
+                    @endforeach
+                </tbody>
               </table>
-
           </div>
       </div>
       </div>

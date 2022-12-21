@@ -1,5 +1,5 @@
 @extends('admin.index')
-@section('title', 'Loan')
+@section('title', 'Approved Loan Applications List')
 @section('admin_content')
 <div class="col-md-12">
   <div class="white_shd full margin_bottom_30">
@@ -8,13 +8,11 @@
               <table class="table table-bordered table-striped table-sm" id="example5">
                   <thead>
                   <tr>
-                    <th>First Name</th>
                     <th>Account No</th>
-                    {{-- <th>Loan Category</th> --}}
-                    {{-- <th>Image</th> --}}
+                    <th>Last Name</th>
+                    <th>First Name</th>
                     <th>Loan Type</th>
                     <th>Date Applied</th>
-                    <th>Status</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
@@ -22,19 +20,15 @@
 
                  @foreach ($loan as $l)
                     <tr>
-                     <td>{{$l->name_of_member}}</td>
-                     <td>{{$l->account_no}}</td>
-                     <td>{{$l->loan_type}}</td>
-                     <td>{{$l->created_at}}</td>
-
-                     <td> @if($l->is_approved)
-                      <span class="badge badge-secondary">Approved</span>
-                    @endif
-                  </td>
-                     {{-- <td>
-                        <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal{{ $l->id }}">Details</button>
-                      </td>  --}}
-                  </tr>
+                        <td>{{ $l->acc_id }}</td>
+                        <td>{{ ucwords($l->last_name) }}</td>
+                        <td>{{ ucwords($l->first_name) }}</td>
+                        <td>{{ ucwords($l->TypeOfLoan) }} Loan</td>
+                        <td>{{ date('m-d-Y h:i:s a', strtotime($l->created_at)) }}</td>
+                        <td>
+                            <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal{{ $l->id }}">Details</button>
+                        </td>
+                    </tr>
                  @endforeach
 
                 </tbody>

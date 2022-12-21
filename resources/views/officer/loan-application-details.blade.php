@@ -2,23 +2,6 @@
 @section('title', 'Loan Application Details')
 @section('officer_content')
 
-{{-- <div class="col-md-12">
-    <div class="white_shd full margin_bottom_30">
-        <div class="card">
-            <div class="card-header ">
-                <h3>
-                    @if ($loan->TypeOfLoan === 'lad' || $loan->TypeOfLoan === 'express')
-                        Loan Against Deposit
-                    @endif
-                </h3>
-            </div>
-            <div class="card-body">
-
-            </div>
-        </div>
-    </div>
-</div> --}}
-
 <div class="midde_cont">
     <div class="container-fluid">
         <div class="row column4 graph">
@@ -27,7 +10,6 @@
                     <div class="full graph_head">
                         <div class="heading1 margin_0">
                             <a href="/officer/loan"><i class="fa fa-arrow-left"></i> Back</a>
-                            {{ $loan->LOAN_ID }}
                         </div>
                     </div>
                     <div class="full gallery_section_inner padding_infor_info">
@@ -37,6 +19,10 @@
                                     Loan Against Deposit Application
                                 @elseif ($loan->TypeOfLoan === 'express')
                                     Express Loan Application
+                                @elseif($loan->TypeOfLoan === 'regular')
+                                    Regular Loan Application
+                                @elseif($loan->TypeOfLoan === 'special')
+                                    Special Loan Application
                                 @endif
                             </h3>
                         </div>
@@ -113,7 +99,11 @@
                             <div class="col-sm-4 col-md-4 col-lg-4">
                                 <div class="form-group">
                                     <small>Amount Applied</small>
-                                    <input type="text" class="form-control" value="&#8369; {{ number_format(($loan->exp_aa / 100), 2, '.', ',') }}">
+                                    @if ($loan->TypeOfLoan === 'express' || $loan->TypeOfLoan === 'lad')
+                                        <input type="text" class="form-control" value="&#8369; {{ number_format(($loan->exp_aa / 100), 2, '.', ',') }}">
+                                    @elseif ($loan->TypeOfLoan === 'special' || $loan->TypeOfLoan === 'regular')
+                                        <input type="text" class="form-control" value="&#8369; {{ number_format(($loan->exp_am_ap / 100), 2, '.', ',') }}">
+                                    @endif
                                 </div>
                             </div>
                             <div class="col-sm-4 col-md-4 col-lg-4">

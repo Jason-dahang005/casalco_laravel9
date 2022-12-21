@@ -124,6 +124,17 @@
       "autoWidth": true,
       "responsive": true,
     });
+
+    $('#settled_loan').DataTable({
+        "paging": true,
+        "lengthChange": true,
+        "searching": true,
+        "ordering": true,
+        "info": true,
+        "autoWidth": true,
+        "responsive": true,
+        order: [[4, 'desc']]
+    });
   });
 	</script>
 </body>
